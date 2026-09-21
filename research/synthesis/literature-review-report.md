@@ -40,7 +40,7 @@ Penelusuran artikel dilakukan menggunakan kombinasi kata kunci bertema deteksi g
   - `"fish activity detection" AND "computer vision"`
   - `"lightweight motion detection" AND "Raspberry Pi"`
 
-Dari penelusuran tersebut, dipilih dan diverifikasi **19 artikel ilmiah (Full-Text PDF tersedia secara lokal di direktori `articles/pdf/`)**, dengan prioritas publikasi 5 tahun terakhir (2022–2026) serta beberapa artikel rujukan fondasional.
+Dari penelusuran tersebut, dipilih dan diverifikasi **19 artikel ilmiah (Full-Text PDF tersedia secara lokal di direktori `articles/artikel computer vision/`)**, dengan prioritas publikasi 5 tahun terakhir (2022–2026) serta beberapa artikel rujukan fondasional.
 
 ---
 

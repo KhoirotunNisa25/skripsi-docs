@@ -2,15 +2,16 @@
 
 Repositori ini adalah ruang kerja riset studi literatur terstruktur untuk penyusunan skripsi akademik. Repositori ini dirancang untuk mencari, mengumpulkan, memverifikasi, menganalisis, membandingkan, dan menyintesis artikel ilmiah secara sistematis.
 
-[![Article Repository](https://img.shields.io/badge/Repository%20Artikel%20PDF-Buka%20Folder%20PDF-2563EB?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](articles/pdf/)
-[![Catalog & DOI Matrix](https://img.shields.io/badge/Katalog%20%26%20DOI%20Matrix-Lihat%20Daftar%20Pustaka-059669?style=for-the-badge&logo=readme&logoColor=white)](articles/pdf/README.md)
+[![Folder Bibit Lele](https://img.shields.io/badge/Folder%20Artikel-Bibit%20Lele-059669?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](articles/artikel%20bibit%20lele/)
+[![Folder Computer Vision](https://img.shields.io/badge/Folder%20Artikel-Computer%20Vision-2563EB?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](articles/artikel%20computer%20vision/)
 
 > [!TIP]
-> ### 📚 Repositori Berkas PDF Artikel Skripsi
-> Kumpulan naskah lengkap artikel ilmiah yang digunakan dalam penelitian dapat diakses dan diorganisasi pada:
+> ### 📚 Repositori Berkas Artikel Ilmiah Terkelompok
+> Kumpulan naskah lengkap artikel ilmiah yang digunakan dalam penelitian dikelompokkan dalam 2 folder:
 > 
-> * 📂 **Folder Berkas PDF**: [**Buka Folder `articles/pdf/`**](articles/pdf/).
-> * 📋 **Katalog & Tautan DOI**: [**Buka Katalog & Matriks Status (`articles/pdf/README.md`)**](articles/pdf/README.md).
+> * 🐟 **Folder Artikel Bibit Lele & Standar Pakan**: [**Buka `articles/artikel bibit lele/`**](articles/artikel%20bibit%20lele/) (Dilengkapi dokumen panduan: [`STANDAR_BIBIT_DAN_PAKAN_LELE.md`](articles/artikel%20bibit%20lele/STANDAR_BIBIT_DAN_PAKAN_LELE.md)).
+> * 👁️ **Folder Artikel Computer Vision & Motion**: [**Buka `articles/artikel computer vision/`**](articles/artikel%20computer%20vision/).
+> * 📋 **Indeks Pusat**: [**Buka `articles/README.md`**](articles/README.md).
 
 ---
 
