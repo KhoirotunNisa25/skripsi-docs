@@ -1,11 +1,13 @@
-# Matriks Perbandingan Artikel Penelitian (Hasil Penelusuran Consensus)
+# Matriks Perbandingan Artikel Penelitian & Metode Deteksi Gerakan
 
-Dokumen ini memuat perbandingan sistematis antar-artikel ilmiah yang diteliti dalam studi literatur skripsi deteksi aktivitas makan ikan berbasis *computer vision*.
+Dokumen ini memuat perbandingan sistematis 19 artikel ilmiah terverifikasi dan 4 kelompok metode deteksi gerakan untuk skripsi deteksi aktivitas makan ikan lele berbasis *computer vision* pada kolam luar ruangan ber-aerator.
 
 ---
 
+## 1. Tabel Perbandingan Artikel Ilmiah (19 Artikel Terverifikasi)
+
 | No | Artikel / Penulis & Tahun | Masalah Penelitian | Metode / Algoritma | Lingkungan & Objek Uji | Hasil Utama | Keterbatasan Terhadap Skripsi Ini | Relevansi |
-|---|---|---|---|---|---|---|---|
+|:---:|---|---|---|---|---|---|:---:|
 | 01 | **Qian et al. (2025)** | Deteksi perilaku makan ikan di kolam kompleks dengan gangguan latar | PM-YOLO (YOLOv8n + Patch-Aware Attention + MPD-IoU) | Kolam air tawar, dataset FeedFishDatas (7.400 citra) | Presisi 87,7%, mAP-50 83,5%, latensi 8,1 ms/frame | Berfokus pada deteksi tubuh ikan di permukaan; rentan jika air sangat keruh | 5 / 5 |
 | 02 | **Hu et al. (2026)** | Kuantifikasi intensitas makan ikan pada sistem budidaya intensif | HVIT (CNN + Vision Transformer + LSTM) | Tangki RAS industri, ikan largemouth bass | Akurasi >98% pada 4 tingkat intensitas makan | Diuji pada RAS dengan pencahayaan terkontrol; komputasi berat untuk edge | 5 / 5 |
 | 03 | **Alahmad et al. (2025)** | Estimasi kecepatan renang ikan untuk membedakan kondisi lapar vs normal | YOLOv8 + algoritma estimasi kecepatan (*velocity estimation*) | Video akuakultur laut | Akurasi deteksi 85%; membuktikan perbedaan kecepatan renang lapar vs kenyang | Mengasumsikan tubuh ikan terlihat jelas di air; belum menguji riak air keruh | 5 / 5 |
@@ -19,4 +21,22 @@ Dokumen ini memuat perbandingan sistematis antar-artikel ilmiah yang diteliti da
 | 11 | **Liu et al. (2014)** | Pengukuran aktivitas makan cepat dan murah pada sistem RAS | *Computer Vision-based Feeding Activity Index* (CVFAI) | Tangki budidaya salmon Atlantik | Metode non-kontak berbiaya rendah dan respon cepat | Diuji pada perairan jernih; belum teruji pada kolam lele keruh ber-aerator | 4 / 5 |
 | 12 | **Zhao et al. (2017)** | Penilaian nafsu makan ikan berdasarkan perilaku renang spontan | Analisis perilaku kolektif spontan berbasis computer vision | Tangki sirkulasi akuakultur | Mampu menilai nafsu makan sebelum pakan ditebar (*pre-feeding appetite*) | Mengasumsikan latar belakang statis tanpa gelembung aerator kontinu | 5 / 5 |
 | 13 | **Zhao et al. (2016)** | Deteksi perilaku khusus kawanan ikan pada sistem sirkulasi | Pemodelan energi kinetik berbasis statistik spasial-temporal | Tangki RAS ikan nila (*Nile tilapia*) | Efektif mendeteksi perilaku abnormal dan perubahan aktivitas kawanan | Memodelkan fluktuasi tanpa mempertimbangkan turbulensi konstan aerator | 4 / 5 |
-| 14 | **Wei et al. (2021)** | Penilaian nafsu makan ikan berbasis karakteristik spasial-temporal | Model energi kinetik termodifikasi + Recurrent Neural Network (RNN) | Sistem sirkulasi akuakultur (RAS) | Akurasi tinggi dalam menilai nafsu makan kawanan ikan | Diuji pada sistem RAS tertutup dengan air jernih dan iluminasi konstan | 5 / 5 |
+| 14 | **Dong et al. (2024)** | Diskriminasi multi-skala intensitas makan kawanan ikan | *Three-Stream Network* (Spasial, Temporal Frame-Diff, Frekuensi) | Video akuakultur industri (*FeedFishNet*) | Akurasi 94,6% kuantifikasi intensitas makan 4 level | Memerlukan GPU desktop; komputasi berat untuk single-board computer edge | 5 / 5 |
+| 15 | **Zhang et al. (2024)** | Segmentasi ikan pada video akuatik berderau fluida dinamis | RUSNet (*Adaptive Selection of Optical Flow*) | Video underwater dinamis berkabut/berarus | mIoU 86,2%, mampu mengabaikan arus fluida acak | Kompleksitas tinggi untuk segmentasi bawah air, bukan riak permukaan kolam | 5 / 5 |
+| 16 | **Aris et al. (2023)** | Penanganan latar belakang dinamis dan derau pada motion detection | Survei komprehensif *Gaussian Mixture Models* (GMM) | Dataset video CCTV lingkungan dinamis | Taksonomi adaptasi model latar terhadap riak gelombang air dan cuaca | Kecepatan adaptasi lambat pada kemunculan objek sangat singkat (3–6 frame) | 5 / 5 |
+| 17 | **Kamal et al. (2025)** | Manajemen pakan otomatis lele budidaya berdensitas tinggi | Sensor Akustik Pasif (Hidrofon) + Machine Learning | Kolam lele intensif (*Clarias gariepinus*) | Efektif mendeteksi suara kunyahan pakan lele secara non-visual | Menggunakan sensor audio/suara, rentan interferensi suara mesin aerator | 4 / 5 |
+| 18 | **Yang et al. (2025)** | Tinjauan terkini riset perilaku makan ikan berbasis computer vision | Survei State-of-the-Art (Low-level Motion vs Deep Learning) | Literatur global AI & akuakultur 2025 | Peta komprehensif trade-off akurasi vs latensi komputasi edge | Kajian teoritis sekunder tanpa dataset pengujian baru | 5 / 5 |
+| 19 | **Vijayalakshmi & Sasithradevi (2025)** | Pemantauan ikan pada kolam terbuka dengan gangguan cahaya matahari | AquaYOLO (Backbone Teroptimasi + C2f-CA Attention) | Kolam luar ruangan (*outdoor ponds*) | Akurasi 91,8%, tahan silau sinar matahari (*sun glare*) dan bayangan | Berbasis deteksi objek frame tunggal, belum mengukur dinamika temporal | 5 / 5 |
+
+---
+
+## 2. Tabel Perbandingan Metode Deteksi Gerakan
+
+| Parameter Evaluasi | Frame Differencing (Temporal) | Optical Flow (Sparse LK vs Dense Farnebäck) | Background Subtraction (GMM / MOG2) | Deep Learning-based (YOLO-nano / MobileNet) |
+|---|---|---|---|---|
+| **Kompleksitas Komputasi** | $O(N)$ (Sangat Ringan) | Sparse LK: Sedang; Dense: Sangat Tinggi | $O(K \cdot N)$ (Sedang) | Sangat Tinggi (Jutaan FLOPS) |
+| **Kesesuaian Raspberry Pi (10 FPS)** | Sangat Sesuai ($<10$ ms/frame) | Sparse LK: Sesuai ($<25$ ms); Dense: Tidak Sesuai ($>300$ ms) | Sesuai ($30–50$ ms/frame) | Batas Kritis ($65–90$ ms/frame, rawan throttling) |
+| **Sensitivitas Event Cepat (3–6 Frame)** | Sangat Tinggi (Instan per-frame) | Tinggi (Vektor perpindahan instan) | Rendah s.d. Sedang (Terlambat beradaptasi) | Rendah pada air kolam keruh |
+| **Ketahanan Aerator Kontinu** | Rendah jika tanpa baseline | Sedang (Bisa pisahkan arah vektor gerak) | Tinggi untuk riak statis, jebol untuk gelembung turbulen | Sedang (Perlu ribuan sampel anotasi gelembung) |
+| **Ketahanan Cuaca / Daun / Burung** | Rendah (Sensitif silau matahari) | Sedang (Filter kecepatan vektor lambat) | Tinggi (Mengasimilasi bayangan ke latar) | Sangat Tinggi (Klasifikasi semantik objek) |
+| **Kebutuhan Anotasi Dataset** | Tidak butuh (Unsupervised) | Tidak butuh (Model-driven) | Tidak butuh (Statistical) | Sangat Tinggi (Ribuan citra berlabel) |

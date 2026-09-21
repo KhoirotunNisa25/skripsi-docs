@@ -3,10 +3,13 @@
 ## Judul Penelitian
 **Deteksi Aktivitas Ikan Lele (*Clarias sp.*) sebagai Indikasi Lapar Berbasis *Computer Vision* pada Kolam Luar Ruangan Ber-aerator**
 
-## Identitas Peneliti
+## Identitas Peneliti & Pembimbing
+- **Mahasiswa**: Khoirotun Nisa'
+- **NIM**: 2341720057
+- **Dosen Pembimbing**: Dr. Ulla Delfana Rosiani, ST., MT.
 - **Topik**: *Computer Vision* untuk Akuakultur / Deteksi Perilaku Ikan Lele
 - **Fokus**: Pemodelan Baseline Aerator, Ekstraksi Fitur Gerak / Optical Flow, Deteksi Status Lapar
-- **Institusi**: Politeknik Negeri Malang
+- **Institusi**: Program Studi Sarjana Terapan Teknik Informatika, Politeknik Negeri Malang
 
 ---
 

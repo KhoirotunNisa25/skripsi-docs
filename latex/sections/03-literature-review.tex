@@ -1,11 +1,50 @@
 \section{TINJAUAN PUSTAKA}
 \label{sec:tinjauan-pustaka}
 
-\subsection{Penelitian Terkait}
-% Ulas artikel-artikel ilmiah yang relevan dengan topik penelitian.
-% Kelompokkan pembahasan berdasarkan tema, metode, atau domain masalah.
-[Uraikan tinjauan penelitian-penelitian terdahulu yang relevan di sini...]
+\subsection{Strategi Penelusuran dan Seleksi Literatur}
+Penelusuran literatur dalam penelitian ini dirancang secara sistematis untuk memetakan perkembangan terkini (\textit{state-of-the-art}) metode deteksi gerak visual pada ranah pemantauan perilaku makan akuakultur. Penelusuran dilakukan pada basis data bereputasi internasional dan nasional meliputi Consensus AI Academic Search Engine, IEEE Xplore, ScienceDirect (Elsevier), SpringerLink, Nature Portfolio, Frontiers in Marine Science, dan jurnal nasional terakreditasi SINTA.
 
-\subsection{Sintesis Tematik}
-% Sintesis temuan dari penelitian terdahulu yang menjadi rujukan.
-[Uraikan sintesis temuan dari literatur yang ditinjau di sini...]
+Strategi penelusuran memanfaatkan formulasi query berbasis operator Boolean yang menggabungkan kata kunci domain akuakultur dengan metodologi visi komputer:
+\begin{itemize}
+    \item \texttt{("motion detection" OR "activity detection") AND ("fish pond" OR "aquaculture")}
+    \item \texttt{("frame differencing" OR "optical flow" OR "background subtraction") AND ("edge" OR "embedded" OR "Raspberry Pi")}
+    \item \texttt{("feeding behavior" OR "appetite assessment") AND ("water splash" OR "surface motion")}
+    \item \texttt{("outdoor pond" OR "anti-disturbance" OR "shadow removal" OR "water wave noise")}
+\end{itemize}
+
+Berdasarkan kriteria seleksi yang berfokus pada publikasi 5 tahun terakhir (2022--2026) dengan penambahan artikel fondasional perintis, diperoleh 19 artikel ilmiah teks lengkap (\textit{full-text PDF}) yang diverifikasi secara ketat integritas dokumennya.
+
+\subsection{Ulasan Mendalam Artikel Penelitian Kunci}
+Dari 19 artikel yang terverifikasi, dilakukan penelaahan mendalam terhadap 8 artikel yang memiliki keterkaitan metodologis paling erat dengan kendala pemantauan kolam lele ber-aerator:
+
+\subsubsection{Fukae et al. (2023) --- Dense Optical Flow untuk Klasifikasi Perilaku Kawanan}
+Fukae et al.~\cite{Fukae2023} mengusulkan klasifikasi perilaku kawanan ikan menggunakan algoritma \textit{Gunnar Farnebäck dense optical flow}. Vektor kecepatan perpindahan piksel diekstraksi secara agregat dari seluruh luasan frame video, kemudian dikonversi menjadi histogram fitur gerak spasio-temporal dan diklasifikasikan menggunakan \textit{Support Vector Machine} (SVM). Pendekatan ini mencapai akurasi klasifikasi sebesar 88,4\% dalam membedakan kondisi makan dan non-makan. Keunggulan utamanya adalah kemampuan mengekstraksi dinamika kawanan tanpa perlu mendeteksi atau melacak individu ikan. Kendati demikian, komputasi aliran optik rapat pada setiap piksel membutuhkan waktu 42 ms pada kartu grafis GPU dan membengkak hingga $>350$ ms per frame pada prosesor ARM, menjadikannya tidak layak dieksekusi secara real-time pada Raspberry Pi tanpa akselerator GPU.
+
+\subsubsection{Dong et al. (2024) --- Model Three-Stream Network untuk Intensitas Makan}
+Dong et al.~\cite{Dong2024} mengembangkan arsitektur jaringan tiga jalur (\textit{three-stream network}) yang mengintegrasikan informasi spasial, perbedaan frame temporal ($|I_t - I_{t-1}|$), dan representasi domain frekuensi berbasis \textit{Fast Fourier Transform} (FFT) untuk mengklasifikasi intensitas makan ikan menjadi 4 tingkatan dengan akurasi 94,6\%. Temuan penting dari penelitian ini adalah bahwa aliran selisih frame temporal memberikan kontribusi fitur paling diskriminatif dalam menangkap lonjakan gerak mendadak. Namun, penggabungan model berbobot 48,2 MB dengan 14,6 GFLOPS menuntut infrastruktur server peladen yang tidak dapat dipenuhi oleh perangkat komputasi tepi berdaya rendah.
+
+\subsubsection{Zhang et al. (2024) --- RUSNet: Segmentasi Ikan Berbasis Seleksi Adaptif Optical Flow}
+Zhang et al.~\cite{Zhang2024} merancang arsitektur RUSNet yang mengintegrasikan mekanisme seleksi vektor aliran optik adaptif. Algoritma ini secara cerdas memisahkan komponen vektor gerak acak akibat arus fluida air dari vektor gerak terarah yang dihasilkan oleh perenang aktif, menghasilkan nilai mIoU segmentasi sebesar 86,2\% pada video perairan dinamis. Konsep pemisahan vektor derau fluida ini menjadi rujukan kunci untuk membedakan riak periodik aerator dari cipratan ikan lapar.
+
+\subsubsection{Aris et al. (2023) --- Tantangan Background Subtraction dan GMM pada Latar Dinamis}
+Aris et al.~\cite{Aris2023} menyajikan survei komprehensif mengenai tantangan pengurangan latar belakang menggunakan \textit{Gaussian Mixture Models} (GMM). Kajian ini menyoroti bahwa pada latar belakang yang memiliki pergerakan periodik cepat (seperti gelombang air atau gelembung), GMM cenderung mengalami kegagalan adaptasi karena laju pembaruan parameter model latar tidak cukup responsif untuk menangkap objek transien yang hanya muncul sesaat (3--6 frame), sehingga memicu fenomena penyerapan objek ke latar belakang (\textit{absorption}).
+
+\subsubsection{Qian et al. (2025) --- PM-YOLOv8 Real-Time untuk Deteksi Makan Ikan}
+Qian et al.~\cite{Qian2025} memodifikasi arsitektur YOLOv8n dengan menyematkan \textit{Parallelized Patch-Aware Attention} (PPA) dan MPDIoU loss untuk mendeteksi perilaku makan ikan bertumpuk di kolam air tawar. Pada dataset FeedFishDatas (7.400 citra), model mencapai presisi 87,7\%, mAP@50 83,5\%, dan latensi inferensi 8,1 ms pada GPU pengujian. Penulis mencatat bahwa implementasi model pada perangkat berdaya rendah (\textit{edge deployment}) melalui kuantisasi dan pemangkasan masih merupakan rencana pekerjaan lanjutan (\textit{future work}), serta metode ini mengasumsikan tubuh ikan terlihat di permukaan.
+
+\subsubsection{Vijayalakshmi \& Sasithradevi (2025) --- AquaYOLO pada Kolam Luar Ruangan}
+Vijayalakshmi dan Sasithradevi~\cite{Vijayalakshmi2025} mengusulkan AquaYOLO yang mengoptimalkan arsitektur YOLO melalui fusi fitur multi-skala dan head deteksi presisi untuk memantau kolam budidaya luar ruangan (\textit{aquaculture ponds}). Diuji pada dataset DePondFi (8.150 citra dari kolam di India Selatan), model mencapai presisi 0,889, recall 0,848, dan mAP@50 0,909, membuktikan kelayakan modifikasi YOLO untuk deteksi objek ikan pada lingkungan kolam terbuka.
+
+\subsubsection{Marliza \& Aisuwarya (2021) --- Otomasi Pakan Lele Berbasis Mini-PC di Indonesia}
+Marliza dan Aisuwarya~\cite{Marliza2021} mengimplementasikan sistem pakan lele otomatis menggunakan pengolahan citra skala abu-abu dan \textit{background subtraction} pada Mini-PC. Penelitian ini membuktikan kelayakan implementasi perangkat berbiaya murah untuk peternak lele lokal. Namun, pengujian dilakukan pada akuarium skala laboratorium tanpa aerator dan tanpa fluktuasi cuaca luar ruangan, sehingga algoritma tersebut akan menghasilkan keputusan pakan terus-menerus jika dioperasikan pada kolam ber-aerator.
+
+\subsubsection{Liu et al. (2014) \& Zhao et al. (2016) --- CVFAI dan Pemodelan Energi Kinetik}
+Liu et al.~\cite{Liu2014} memperkenalkan indeks aktivitas makan \textit{Computer Vision-based Feeding Activity Index} (CVFAI) berbasis rasio piksel biner hasil perbedaan citra temporal terhadap total luasan kolam. Formulasi ini hanya membutuhkan waktu komputasi $<5$ ms pada CPU Raspberry Pi. Zhao et al.~\cite{Zhao2016} memperluas konsep tersebut menjadi pemodelan energi kinetik statistik. Indeks matematis ini sangat ideal sebagai metrik numerik telemetri edge, namun memerlukan modifikasi kalibrasi untuk mengurangkan nilai ambang dasar (\textit{baseline}) yang dihasilkan oleh aerator.
+
+\subsection{Sintesis Tematik Literatur}
+Berdasarkan penelaahan terhadap keseluruhan 19 artikel, literatur yang dikaji terkonvergensi ke dalam tiga tema besar:
+\begin{enumerate}
+    \item \textbf{Tema 1 --- Deteksi Perilaku Makan via Deep Learning}: Mengandalkan model deteksi objek atau ekstraksi fitur berbasis konvolusi/Transformer (Qian et al.~\cite{Qian2025}, Hu et al.~\cite{Hu2026}, Zhao et al.~\cite{Zhao2025}, Dong et al.~\cite{Dong2024}, Vijayalakshmi et al.~\cite{Vijayalakshmi2025}). Pendekatan ini memberikan akurasi tinggi namun memiliki beban komputasi besar dan rentan terhadap keterbatasan visibilitas air keruh.
+    \item \textbf{Tema 2 --- Kuantifikasi Gerakan dan Dinamika Temporal}: Mengukur kecepatan dan energi kinetik renang ikan secara non-segmentasi menggunakan optical flow dan selisih frame temporal (Fukae et al.~\cite{Fukae2023}, Alahmad et al.~\cite{Alahmad2025}, Zhao et al.~\cite{Zhao2016}, Zhang et al.~\cite{Zhang2024}). Pendekatan ini sangat efektif menangkap dinamika kelompok ikan secara agregat.
+    \item \textbf{Tema 3 --- Pemodelan Latar Belakang dan Otomasi Berbasis Edge}: Menitikberatkan pada pengurangan latar belakang adaptif, pemodelan derau dinamis, dan perancangan sistem tertanam berbiaya rendah (Aris et al.~\cite{Aris2023}, Marliza et al.~\cite{Marliza2021}, Atoum et al.~\cite{Atoum2015}, Zhou et al.~\cite{Zhou2018}, Liu et al.~\cite{Liu2014}, Zhao et al.~\cite{Zhao2017}). Kelompok ini menjadi pilar utama perancangan algoritma ringan yang mampu mengekstraksi metrik numerik pada perangkat tepi.
+\end{enumerate}

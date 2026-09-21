@@ -12,19 +12,21 @@
     \centering
     \vspace*{0.2cm}
     
-    {\Large\bfseries [JUDUL PENELITIAN SKRIPSI]\par}
+    {\Large\bfseries DETEKSI AKTIVITAS IKAN LELE SEBAGAI INDIKASI LAPAR BERBASIS COMPUTER VISION PADA KOLAM LUAR RUANGAN BER-AERATOR\par}
     
     \vspace{1.0cm}
     
-    {\large\bfseries STUDI LITERATUR\par}
+    {\large\bfseries LAPORAN STUDI LITERATUR\par}
     \vspace{0.3cm}
-    {\large Disusun untuk Memenuhi Salah Satu Prasyarat Bimbingan Skripsi\par}
+    {\large Disusun untuk Memenuhi Tugas Studi Literatur Pra-Skripsi\par}
+    {\large Dosen Pembimbing: Dr. Ulla Delfana Rosiani, ST., MT.\par}
     
     \vspace{1.0cm}
     
     {\large\bfseries Oleh:\par}
     \vspace{0.2cm}
-    {\large\bfseries [Nama Mahasiswa] \qquad NIM. [Nomor Induk Mahasiswa]\par}
+    {\large\bfseries Khoirotun Nisa'\par}
+    {\large\bfseries NIM. 2341720057\par}
     
     \vspace{0.8cm}
     
@@ -45,10 +47,10 @@
 % ==================== ABSTRAK ====================
 \section*{ABSTRAK}
 \addcontentsline{toc}{section}{ABSTRAK}
-[Tuliskan uraian abstrak studi literatur atau proposal penelitian skripsi Anda di sini. Abstrak memuat konteks latar belakang permasalahan, tujuan penelitian, metodologi yang dikaji, kesenjangan penelitian yang ditemukan, serta kontribusi atau arah penelitian yang diusulkan.]
+Pemberian pakan pada budidaya ikan lele (\textit{Clarias sp.}) intensif menyerap hingga 70\% dari total biaya operasional. Praktik pemberian pakan konvensional berbasis jadwal waktu tetap kerap memicu pemborosan pakan (\textit{overfeeding}) yang mencemari kualitas air atau kekurangan pakan (\textit{underfeeding}) yang memicu kanibalisme massal. Otomasi pemberian pakan berbasis kebutuhan aktual (\textit{demand-feeding}) menggunakan visi komputer (\textit{computer vision}) non-kontak menjadi solusi potensial, namun menghadapi kendala teknis ekstrem di lingkungan kolam luar ruangan (\textit{outdoor}) ber-aerator kontinu. Laporan studi literatur ini melakukan analisis komprehensif terhadap 19 artikel ilmiah terverifikasi (dengan lebih dari 63\% terbit pada kurun waktu 2023--2026) untuk memetakan metode deteksi gerakan objek yang tepat. Penelaahan difokuskan pada penanganan empat kendala utama: keberadaan turbulensi gelembung aerator 24 jam (\textit{continuous aeration baseline}), karakteristik kemunculan lele yang sangat cepat dan transien (3--6 frame pada 10 FPS atau 0,3--0,6 detik) di air keruh, keterbatasan komputasi perangkat tepi (\textit{Raspberry Pi 4B/5} tanpa GPU diskrit), serta pengiriman telemetri berbasis metrik numerik ringkas. Hasil sintesis mengidentifikasi kesenjangan penelitian mendasar (\textit{continuous aeration baseline gap}), di mana metode konvensional (seperti \textit{dense optical flow} dan \textit{deep learning} kompleks) tidak layak dieksekusi secara real-time pada perangkat tepi, sedangkan \textit{simple frame differencing} polos mengalami kegagalan akibat derau riak aerator. Sebagai solusi, direkomendasikan metode hibrida dua tahap: \textit{Adaptive Running Temporal Variance Subtraction} untuk mengeliminasi derau aerator yang dipadukan dengan perbedaan citra temporal berbobot ringan, menghasilkan throughput stabil $\ge 10$ FPS dengan latensi $<25$ ms per frame pada CPU Raspberry Pi.
 
 \vspace{0.5cm}
-\textbf{Kata Kunci}: [Kata Kunci 1], [Kata Kunci 2], [Kata Kunci 3], [Kata Kunci 4], Studi Literatur.
+\textbf{Kata Kunci}: \textit{Computer Vision}, Deteksi Aktivitas Makan, Ikan Lele, Kolam Luar Ruangan, Aerator Kontinu, Raspberry Pi, Studi Literatur.
 
 \newpage
 
@@ -60,20 +62,38 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
+% 1. Pendahuluan
 \input{sections/01-introduction.tex}
-\input{sections/02-background.tex}
-\input{sections/03-literature-review.tex}
-\input{sections/04-comparison.tex}
-\input{sections/05-research-gap.tex}
-\input{sections/06-positioning.tex}
-\input{sections/07-conclusion.tex}
+\newpage
 
+% 2. Landasan Teori
+\input{sections/02-background.tex}
+\newpage
+
+% 3. Tinjauan Pustaka
+\input{sections/03-literature-review.tex}
+\newpage
+
+% 4. Perbandingan Penelitian
+\input{sections/04-comparison.tex}
+\newpage
+
+% 5. Kesenjangan Penelitian
+\input{sections/05-research-gap.tex}
+\newpage
+
+% 6. Posisi Penelitian
+\input{sections/06-positioning.tex}
+\newpage
+
+% 7. Kesimpulan
+\input{sections/07-conclusion.tex}
 \newpage
 
 % ==================== DAFTAR PUSTAKA ====================
+\phantomsection
 \addcontentsline{toc}{section}{DAFTAR PUSTAKA}
-\nocite{*}
-\bibliographystyle{plainnat}
+\bibliographystyle{unsrtnat}
 \bibliography{references}
 
 \end{document}

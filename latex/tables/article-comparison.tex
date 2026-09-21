@@ -21,7 +21,7 @@
 \bottomrule
 \endlastfoot
 
-{Qian et al.~\cite{Qian2025}} & PM-YOLO (YOLOv8n + Patch Attention) & Kolam air tawar (FeedFishDatas) & Presisi 87,7\%, mAP 83,5\%, latensi 8,1 ms & Fokus tubuh ikan di permukaan; rentan air sangat keruh \\
+{Qian et al.~\cite{Qian2025}} & PM-YOLO (YOLOv8n + Patch Attention) & Kolam air tawar (FeedFishDatas) & Presisi 87,7\%, mAP 83,5\%, 8,1 ms (GPU) & Edge deployment masih future work; belum diuji di SBC \\
 \addlinespace
 
 {Hu et al.~\cite{Hu2026}} & HVIT (CNN + ViT + LSTM) & Tangki RAS industri (Largemouth Bass) & Akurasi $>$98\% kuantifikasi intensitas makan & Diuji pada RAS terkontrol; komputasi berat untuk edge \\
@@ -75,7 +75,7 @@
 {Yang et al.~\cite{Yang2025}} & Tinjauan Komprehensif State-of-the-Art 2025 & Domain computer vision akuakultur & Analisis kelemahan model deep learning terkini & Tinjauan survei sekunder tanpa data pengujian empiris langsung \\
 \addlinespace
 
-{Vijayalakshmi et al.~\cite{Vijayalakshmi2025}} & AquaYOLO (Backbone Teroptimasi \& Attention) & Kolam luar ruangan (\textit{outdoor ponds}) & Deteksi ikan akurat pada lingkungan terbuka dengan derau visual & Belum memodelkan dinamika temporal riak makan sub-detik \\
+{Vijayalakshmi et al.~\cite{Vijayalakshmi2025}} & AquaYOLO (CSP + Multi-Scale Fusion) & Kolam luar ruangan (Dataset DePondFi) & Presisi 0,889, Recall 0,848, mAP@50 0,909 & Berbasis deteksi objek per frame tanpa dinamika temporal \\
 
 \end{longtable}
 \end{small}

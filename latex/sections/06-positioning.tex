@@ -1,13 +1,18 @@
 \section{POSISI PENELITIAN (\textit{THESIS POSITIONING})}
 \label{sec:positioning}
 
-% Jelaskan posisi penelitian Anda relatif terhadap penelitian-penelitian sebelumnya.
 \subsection{Pemosisian Terhadap Penelitian Terkait}
-[Jelaskan posisi penelitian ini di antara penelitian-penelitian yang sudah ada sebelumnya...]
-
-\subsection{Kontribusi dan Kebaruan Penelitian}
-Penelitian ini diharapkan memberikan kontribusi utama sebagai berikut:
+Berdasarkan tinjauan komprehensif terhadap literatur yang ada, penelitian skripsi ini diposisikan secara strategis untuk menjembatani jurang antara riset teoritis berbasis server berdaya tinggi dengan tuntutan implementasi praktis pada tambak kolam luar ruangan:
 \begin{enumerate}
-    \item [Kontribusi atau kebaruan 1]
-    \item [Kontribusi atau kebaruan 2]
+    \item \textbf{Kelanjutan dari Paradigma Kuantifikasi Gerak Agregat}: Penelitian ini mengadopsi prinsip dasar kuantifikasi gerak kawanan tanpa segmentasi individu yang dirintis oleh Liu et al.~\cite{Liu2014}, Zhao et al.~\cite{Zhao2016}, dan Fukae et al.~\cite{Fukae2023}. Namun, alih-alih menggunakan perhitungan \textit{dense optical flow} yang boros komputasi, penelitian ini mengusulkan formulasi selisih temporal terkalibrasi yang jauh lebih efisien untuk prosesor ARM berdaya rendah.
+    \item \textbf{Evolusi dari Otomasi Pakan Lele Lokal}: Penelitian ini menyempurnakan implementasi perintis Marliza dan Aisuwarya~\cite{Marliza2021} di Indonesia dengan melompat dari skala akuarium laboratorium menuju lingkungan riil kolam luar ruangan yang menuntut ketahanan terhadap aerator kontinu 24 jam dan variasi iluminasi alami.
+    \item \textbf{Alternatif Efisien terhadap Model Deep Learning Berat}: Penelitian ini memosisikan diri sebagai alternatif komputasi tepi yang efisien terhadap model-model Transformer dan CNN multi-stream yang diajukan oleh Hu et al.~\cite{Hu2026} dan Dong et al.~\cite{Dong2024}. Pada air kolam lele yang sangat keruh di mana morfologi fisik ikan tertutup, deteksi deviasi gerak permukaan terbukti jauh lebih reliabel dan responsif daripada detektor berbasis bentuk tubuh.
+\end{enumerate}
+
+\subsection{Kontribusi dan Kebaruan Penelitian (\textit{Research Novelty})}
+Penelitian ini memberikan tiga kontribusi kebaruan utama:
+\begin{enumerate}
+    \item \textbf{Kebaruan Metodologis (Two-Stage Adaptive Baseline Subtraction)}: Mengembangkan metode deteksi gerak hibrida dua tahap yang secara eksplisit mengalibrasi distribusi varians spatio-temporal aerator kolam terlebih dahulu, sehingga mampu mengekstrak sinyal kemunculan ikan lele yang berdurasi sangat singkat (3--6 frame @ 10 FPS) tanpa terganggu oleh gelembung udara kontinu.
+    \item \textbf{Eksplorasi Alur Komputasi Tepi (Edge-Optimized Pipeline)}: Merancang alur pemrosesan citra yang diupayakan ringan pada prosesor ARM Raspberry Pi 4B/5, dengan target pengujian stabilitas laju tangkap mendekati 10 FPS untuk menangkap dinamika perubahan gerakan cepat tanpa membebani perangkat secara berlebihan.
+    \item \textbf{Kebaruan Integrasi Telemetri Numerik IoT}: Mengintegrasikan ekstraksi indeks deviasi aktivitas makan $\Delta M_t$ menjadi data telemetri numerik ringkas yang ditransmisikan melalui protokol MQTT, memungkinkan pemantauan dan pengendalian pakan otomatis lingkar tertutup (\textit{closed-loop}) tanpa membebani bandwidth jaringan internet kolam.
 \end{enumerate}

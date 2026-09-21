@@ -2,28 +2,43 @@
 \label{sec:pendahuluan}
 
 \subsection{Latar Belakang}
-% Tuliskan latar belakang permasalahan penelitian di sini.
-% Jelaskan konteks permasalahan, fenomena/isu nyata, dan urgensi topik yang diteliti.
-[Tuliskan uraian latar belakang penelitian skripsi Anda di sini...]
+Sektor akuakultur air tawar di Indonesia memegang peranan strategis dalam ketahanan pangan nasional dan pemberdayaan ekonomi masyarakat, dengan ikan lele (\textit{Clarias sp.}) sebagai salah satu komoditas unggulan utama. Namun, efisiensi operasional budidaya lele intensif sangat dibatasi oleh tingginya porsi biaya pakan yang mencapai 60\% hingga 70\% dari keseluruhan biaya produksi~\cite{Li2020}. Hingga saat ini, sebagian besar pembudidaya masih mengandalkan metode pemberian pakan konvensional berbasis jadwal waktu tetap (\textit{fixed-time scheduling}) atau estimasi visual manual secara subjektif.
+
+Metode konvensional tersebut memicu dua permasalahan kritis:
+\begin{enumerate}
+    \item \textbf{Pemberian Pakan Berlebih (\textit{Overfeeding})}: Pelet pakan yang tidak terkonsumsi akan tenggelam dan mengalami dekomposisi organik di dasar kolam. Proses pembusukan ini meningkatkan konsentrasi amonia terlarut ($NH_3$) dan menurunkan kadar oksigen terlarut (\textit{Dissolved Oxygen}), sehingga memicu mortalitas massal dan memperburuk rasio konversi pakan (\textit{Feed Conversion Ratio} / FCR)~\cite{Zhou2018}.
+    \item \textbf{Kekurangan Pakan (\textit{Underfeeding})}: Ikan lele memiliki sifat biologis kanibalistik yang sangat agresif ketika mengalami defisit energi atau kelaparan (\textit{starvation-stress})~\cite{Marliza2021}. Keterlambatan pemberian pakan secara langsung memicu agresi sesama ikan, menyebabkan penurunan biomassa panen secara signifikan.
+\end{enumerate}
+
+Untuk mewujudkan otomasi pemberian pakan adaptif (\textit{demand-feeding system}), teknologi visi komputer (\textit{computer vision}) non-kontak menjadi solusi yang sangat potensial untuk memantau respons nafsu makan ikan secara langsung tanpa menimbulkan stres fisik~\cite{Al-Abri2025,Yang2025}. Kendati demikian, implementasi visi komputer pada kolam budidaya lele luar ruangan (\textit{outdoor}) menghadapi sejumlah kendala teknis ekstrem:
+\begin{enumerate}
+    \item \textbf{Keberadaan Aerator Kontinu}: Berbeda dengan tangki laboratorium tertutup, kolam lele komersial dilengkapi aerator mekanis (kincir atau gelembung udara) yang beroperasi secara kontinu selama 24 jam untuk menjaga pasokan oksigen. Turbulensi dan riak air konstan ini menyebabkan metode deteksi gerak konvensional mendeteksi pergerakan palsu secara terus-menerus. Dengan demikian, prinsip dasar yang harus ditegakkan adalah: \textit{pergerakan permukaan air kolam tidak sama dengan indikasi ikan lapar}.
+    \item \textbf{Karakteristik Temporal Kemunculan Sub-Detik}: Air kolam lele bersifat keruh (berwarna hijau pekat atau cokelat akibat alga dan lumpur), sehingga tubuh ikan tidak terdeteksi saat berada di kedalaman air. Ikan lele hanya muncul ke permukaan air ketika terstimulasi lapar, menyambar pakan, dan segera kembali menyelam ke dasar kolam. Kemunculan ini berlangsung dalam jendela waktu transien yang sangat singkat, berkisar antara 3 hingga 6 frame pada kecepatan rekam 10 FPS (durasi total hanya 0,3 hingga 0,6 detik).
+    \item \textbf{Keterbatasan Komputasi Perangkat Tertanam (\textit{Edge Computing})}: Sistem pemantau harus diimplementasikan langsung di tepi kolam menggunakan perangkat berdaya rendah seperti Raspberry Pi 4B/5 tanpa dukungan kartu grafis (GPU) diskrit. Model deep learning konvensional yang memerlukan miliaran operasi komputasi tidak dapat berjalan secara stabil pada frekuensi $\ge 10$ FPS.
+    \item \textbf{Keterbatasan Bandwidth Komunikasi}: Jaringan komunikasi di tambak rakyat umumnya memiliki keterbatasan kuota dan stabilitas sinyal. Sistem dituntut untuk memproses komputasi secara lokal di \textit{edge} dan hanya mentransmisikan telemetri metrik numerik ringkas (indeks deviasi gerak dan status lapar) melalui protokol IoT seperti MQTT, bukan mentransmisikan aliran video mentah (\textit{raw video streaming}).
+\end{enumerate}
+
+Berdasarkan latar belakang tersebut, penelitian ini bertujuan mengembangkan metode deteksi aktivitas gerak ikan lele berbasis visi komputer yang ringan, adaptif terhadap derau aerator, dan mampu mengekstraksi event kemunculan sub-detik secara real-time pada perangkat Raspberry Pi.
 
 \subsection{Perumusan Masalah}
-% Tuliskan rumusan masalah dalam bentuk pertanyaan penelitian yang spesifik dan terukur.
-Berdasarkan latar belakang tersebut, perumusan masalah dalam penelitian ini meliputi:
+Berdasarkan latar belakang dan batasan lingkungan yang telah diuraikan, rumusan masalah dalam penelitian ini dirumuskan sebagai berikut:
 \begin{enumerate}
-    \item [Rumusan masalah 1]
-    \item [Rumusan masalah 2]
-    \item [Rumusan masalah 3]
+    \item Bagaimana memodelkan dan mengompensasi derau gerak permukaan air yang ditimbulkan oleh aerator kontinu pada kolam luar ruangan agar tidak memicu deteksi positif palsu (\textit{false positive})?
+    \item Bagaimana merancang algoritma deteksi gerakan spasio-temporal yang memiliki kompleksitas komputasi rendah sehingga mampu mengeksekusi analisis citra secara real-time ($\ge 10$ FPS) pada perangkat Raspberry Pi untuk menangkap event kemunculan lele berdurasi 3--6 frame?
+    \item Bagaimana memetakan deviasi gerak permukaan air menjadi indeks kuantitatif aktivitas makan dan menghasilkan keputusan status lapar (\textit{hungry} vs. \textit{satiated}) yang akurat?
 \end{enumerate}
 
 \subsection{Tujuan Penelitian}
-% Tuliskan tujuan yang ingin dicapai melalui penelitian ini.
-Tujuan dari penelitian ini adalah:
+Tujuan yang hendak dicapai dalam penelitian ini adalah:
 \begin{enumerate}
-    \item [Tujuan penelitian 1]
-    \item [Tujuan penelitian 2]
-    \item [Tujuan penelitian 3]
+    \item Mengembangkan mekanisme pemodelan \textit{baseline} dinamis untuk mengeliminasi komponen derau gerak aerator pada citra kolam luar ruangan.
+    \item Merancang dan mengimplementasikan algoritma deteksi gerak hibrida berbasis varians temporal dan perbedaan citra yang ringan untuk mengekstraksi lonjakan aktivitas makan sub-detik pada Raspberry Pi.
+    \item Menghasilkan metrik kuantitatif indeks aktivitas makan ikan lele yang dapat ditransmisikan secara efisien melalui jaringan IoT sebagai acuan otomasi pakan.
 \end{enumerate}
 
 \subsection{Manfaat Penelitian}
-% Jelaskan manfaat akademis/teoritis dan praktis dari penelitian ini.
-Penelitian ini diharapkan memberikan kontribusi akademis bagi pengembangan ilmu pengetahuan serta manfaat praktis bagi implementasi solusi di lapangan.
+Penelitian ini diharapkan memberikan kontribusi ganda:
+\begin{itemize}
+    \item \textbf{Manfaat Akademis}: Memberikan kontribusi teoritis dalam pemodelan latar belakang dinamis (\textit{dynamic background subtraction}) pada fluida bergolak dan ekstraksi event spasio-temporal transien berdaya rendah di bidang visi komputer terapan akuakultur.
+    \item \textbf{Manfaat Praktis}: Menyediakan solusi teknologi tepat guna berbiaya rendah (\textit{low-cost edge AI}) bagi peternak lele lokal untuk mencegah pemborosan pakan, menjaga kualitas air kolam, dan menekan angka kanibalisme ikan.
+\end{itemize}

@@ -2,34 +2,60 @@
 
 ## Log Perubahan Dokumen Riset
 
-### 2026-09-21 (Sesi 3)
+### 2026-09-21 (Sesi 5)
 - **Perubahan**:
-  - Penapisan berkas `result 2.csv` (20 artikel mutakhir Consensus 2022–2026).
-  - Melakukan audit menyeluruh terhadap keotentikan berkas PDF di `articles/pdf/`. Menemukan berkas anomali `[14]` (ternyata naskah non-akuakultur Massimo Cacciari 2005 dari JSTOR) dan langsung menghapusnya.
-  - Mengunduh dan memverifikasi 6 artikel mutakhir (2023–2025) berkualitas tinggi melalui endpoint resmi Open Access tanpa live browser berat:
-    - `[14]` Dong et al. (2024) - PLOS ONE (Three-stream network, 24 hal.)
-    - `[15]` Zhang et al. (2024) - Frontiers in Marine Science (RUSNet adaptive optical flow, 14 hal.)
-    - `[16]` Aris et al. (2023) - IAES IJ-AI (Background subtraction & GMM dynamic water waves, 12 hal.)
-    - `[17]` Kamal et al. (2025) - Techno Agriculturae (Automated feed management for catfish, 11 hal.)
-    - `[18]` Yang et al. (2025) - Journal of Big Data and Computing (State-of-the-Art CV fish feeding 2025, 9 hal.)
-    - `[19]` Vijayalakshmi & Sasithradevi (2025) - Scientific Reports (AquaYOLO outdoor pond, 12 hal.)
-  - Memperbarui katalog `articles/pdf/README.md`, `latex/references.bib`, dan `latex/tables/article-comparison.tex` (dengan `longtable` multi-halaman).
-  - Kompilasi ulang dokumen LaTeX menghasilkan `output/main.pdf` (14 halaman) dengan status **0 error**.
-  - Menyiapkan git remote ke `https://github.com/KhoirotunNisa25/skripsi-imoet.git` dan melakukan commit.
-- **Alasan**: Permintaan pengguna untuk menambahkan artikel dari pencarian terbaru `result 2.csv`, mengutamakan publikasi $\le 5$ tahun terakhir (2022–2026), mengaudit isi PDF, dan melakukan commit ke repositori GitHub tujuan.
-- **Dampak**: Total artikel ilmiah PDF yang tersimpan bertambah menjadi 19 artikel terverifikasi dengan komposisi $>63\%$ terbit pada rentang 2023–2026.
+  - **Audit Integritas Sitasi & Penghapusan Halusinasi AI**:
+    - Memverifikasi secara langsung berkas fisik PDF `articles/pdf/[01]` (Qian et al., *Discover Applied Sciences* 2026, DOI: 10.1007/s42452-025-08043-5) dan `articles/pdf/[19]` (Vijayalakshmi & Sasithradevi, *Scientific Reports* 2025, DOI: 10.1038/s41598-025-89611-y).
+    - Menghapus klaim angka ekstrapolasi/halusinasi AI sebelumnya: menghapus klaim "latensi 68 ms di Raspberry Pi" pada Qian et al. (paper aslinya hanya menguji di GPU 8,1 ms dan menyebut edge deployment sebagai *future work*), serta mengoreksi klaim AquaYOLO menjadi metrik asli paper (Precision 0,889, Recall 0,848, mAP@50 0,909 pada dataset DePondFi tanpa klaim fiktif ketahanan silau/daun).
+    - Menghapus seluruh klaim angka performa spekulatif yang belum pernah diuji secara empiris di lab/lapangan (seperti latensi <25 ms, throughput $\ge 10$ FPS, memori <60 MB) dari naskah LaTeX dan dokumen sintesis.
+  - **Perampingan Dokumen Sesuai Permintaan Nyata Dosen Pembimbing (Bu Ulla)**:
+    - Merombak total `research/synthesis/literature-review-report.md` dari gaya pseudo-tesis yang *over-scoped* menjadi laporan studi literatur yang proporsional, jujur (*humble*), dan fokus pada 4 bagian konkret:
+      1. Tabel 19 artikel terverifikasi (Judul, Penulis, Tahun, Jurnal/Konferensi, Link/DOI).
+      2. Ringkasan 3–5 kalimat per artikel (100% fakta murni dari teks paper asli tanpa bumbu).
+      3. Insight kasar & pola bacaan (metode konvensional vs deep learning, kondisi riil kolam luar ruangan & aerator kontinu, kendala komputasi edge).
+      4. Arah metode tentatif untuk dicoba (bukan klaim rekomendasi mutlak).
+      5. Daftar Pustaka lengkap 19 referensi standar IEEE.
+  - **Sinkronisasi Naskah LaTeX & Tabel**:
+    - Memperbarui `latex/tables/article-comparison.tex`, `latex/sections/03-literature-review.tex`, `latex/sections/06-positioning.tex`, dan `latex/sections/07-conclusion.tex`.
+    - Kompilasi ulang `output/main.pdf` (27 halaman, 0 error).
+- **Alasan**: Umpan balik kritis dan tepat dari pengguna mengenai bahaya sitasi bermasalah, integritas akademik, dan penyelarasan dengan lingkup tugas riil Bu Ulla.
+- **Status**: Selesai (*Completed*)
+
+---
+
+### 2026-09-21 (Sesi 4)
+- **Perubahan**:
+  - Menyusun dokumen studi literatur komprehensif 8 bagian sesuai format penugasan Bu Ulla dan hasil brainstorming pengguna di `research/synthesis/literature-review-report.md`.
+  - Mengintegrasikan analisis perbandingan mendalam 4 kelompok metode deteksi gerakan (*Frame Differencing*, *Optical Flow*, *GMM Background Subtraction*, dan *Deep Learning*) ke dalam `research/synthesis/comparison.md` dan tabel LaTeX `latex/tables/method-comparison.tex`.
+  - Mengembangkan seluruh bab naskah LaTeX Polinema:
+    - `latex/main.tex`: Halaman judul resmi Polinema, data mahasiswa (Khoirotun Nisa), dosen pembimbing (Siti Nurul Hidayah, S.Kom., M.Kom. / Bu Ulla), dan abstrak formal.
+    - `latex/sections/01-introduction.tex`: Latar belakang komprehensif kolam lele outdoor, over/underfeeding, 4 kendala teknis (aerator kontinu, event 3--6 frame @ 10 FPS, Raspberry Pi edge, telemetri numerik), rumusan masalah, tujuan, dan manfaat.
+    - `latex/sections/02-background.tex`: Landasan teori lengkap biologi lele, formulasi matematika *frame differencing*, *optical flow*, GMM, dan arsitektur komputasi Raspberry Pi.
+    - `latex/sections/03-literature-review.tex`: Strategi penelusuran basis data, taksonomi query Boolean, dan ulasan mendalam 8 artikel kunci.
+    - `latex/sections/04-comparison.tex`: Analisis naratif tabel perbandingan 19 artikel dan tabel perbandingan 4 metode deteksi gerak.
+    - `latex/sections/05-research-gap.tex`: Formulasi tiga kesenjangan penelitian berbasis bukti (*Continuous Aeration Baseline Gap*, *Edge Sub-Second Latency Gap*, *Low-Cost Outdoor Monitoring Gap*).
+    - `latex/sections/06-positioning.tex`: Posisi penelitian terhadap literatur global dan 3 poin kebaruan penelitian (*research novelty*).
+    - `latex/sections/07-conclusion.tex`: Kesimpulan sintesis dan rekomendasi metode utama (*Adaptive Temporal Variance Subtraction*) serta metode alternatif (*Quantized YOLOv8n + FSM*).
+  - Berhasil mengompilasi naskah proposal/studi literatur lengkap ke `output/main.pdf` (**25 halaman, 0 error, 0 undefined reference**).
+- **Alasan**: Permintaan penugasan studi literatur dari Bu Ulla dengan format 8 bagian yang disesuaikan secara presisi dengan kondisi riil kolam lele ber-aerator.
+- **Dampak**: Dokumen siap diserahkan/dikonsultasikan kepada dosen pembimbing.
+- **Status**: Selesai (*Completed*)
+
+---
+
+### 2026-09-21 (Sesi 3)
+- **Perubahan**: Penapisan `result 2.csv`, audit integritas berkas PDF (penghapusan berkas salah Massimo Cacciari 2005), pengunduhan 6 artikel Open Access mutakhir 2023--2025, pembaruan katalog 19 artikel terverifikasi, dan inisialisasi Git commit.
+- **Alasan**: Pembaruan literatur fokus 5 tahun terakhir (2022–2026).
 - **Status**: Selesai (*Completed*)
 
 ---
 
 ### 2026-09-21 (Sesi 2)
-- **Perubahan**: Integrasi topik skripsi baru pengguna ("Deteksi Aktivitas Ikan Lele sebagai Indikasi Lapar Berbasis Computer Vision") dari `conteks.md`, penapisan 100 entri `consensus result.csv`, pengunduhan 14 artikel ilmiah teks lengkap (*full-text PDF*) ke `articles/pdf/`, penataan katalog pada `articles/pdf/README.md`, serta sinkronisasi `business-logic.md`, `research-requirements.md`, dan `search-log.md`.
-- **Alasan**: Pengguna memberikan rincian konteks penelitian kolam lele outdoor dengan aerator dan hasil pencarian Consensus untuk mulai membangun studi literatur skripsi baru.
+- **Perubahan**: Integrasi topik skripsi baru pengguna ("Deteksi Aktivitas Ikan Lele sebagai Indikasi Lapar Berbasis Computer Vision") dari `conteks.md`, penapisan 100 entri `consensus result.csv`, pengunduhan 14 artikel ilmiah teks lengkap (*full-text PDF*) ke `articles/pdf/`.
 - **Status**: Selesai (*Completed*)
 
 ---
 
 ### 2026-09-21 (Sesi 1)
-- **Perubahan**: Reset repositori dan pembersihan total dari data skripsi teman (Git reset, pembersihan artikel PDF lama, pembersihan konsep lead generation, dan pembersihan naskah LaTeX).
-- **Alasan**: Inisialisasi awal repositori bersih untuk topik baru pengguna.
+- **Perubahan**: Reset repositori dan pembersihan total dari data skripsi teman.
 - **Status**: Selesai (*Completed*)

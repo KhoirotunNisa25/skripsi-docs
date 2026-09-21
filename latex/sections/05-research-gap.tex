@@ -1,11 +1,24 @@
 \section{KESENJANGAN PENELITIAN (\textit{RESEARCH GAP})}
 \label{sec:research-gap}
 
-% Identifikasi celah atau kesenjangan yang belum terselesaikan oleh penelitian terdahulu.
-Berdasarkan analisis kritis terhadap literatur yang ditinjau, ditemukan beberapa kesenjangan penelitian (\textit{research gap}) utama:
+Berdasarkan sintesis kritis terhadap 19 artikel ilmiah yang ditelaah, diidentifikasi tiga kesenjangan penelitian (\textit{research gap}) fundamental yang belum terpecahkan dalam domain visi komputer akuakultur:
 
-\subsection{Kesenjangan Metodologis dan Integrasi}
-[Uraikan kesenjangan metodologis, keterbatasan teknis, atau kekurangan integrasi dari penelitian terdahulu...]
+\subsection{Gap 1: Ketiadaan Pemodelan Baseline Aerator Kontinu (\textit{Continuous Aeration Baseline Gap})}
+Hampir seluruh literatur deteksi aktivitas makan ikan yang ada saat ini dibangun di atas asumsi bahwa permukaan air kolam berada dalam kondisi tenang atau hanya dipengaruhi oleh arus sirkulasi laminar yang lambat:
+\begin{itemize}
+    \item Penelitian Liu et al.~\cite{Liu2014}, Zhao et al.~\cite{Zhao2016}, dan Zhao et al.~\cite{Zhao2017} menguji coba sistem pada tangki RAS laboratorium tertutup dengan air jernih dan permukaan statis, di mana setiap riak air diasumsikan berasal dari pergerakan ikan.
+    \item Penelitian Marliza dan Aisuwarya~\cite{Marliza2021} yang meneliti otomasi pakan lele di Indonesia menguji algoritma pada akuarium kaca tanpa aerasi.
+    \item Ketika metode-metode tersebut dihadapkan pada kolam budidaya lele luar ruangan yang dilengkapi aerator gelembung kontinu 24 jam, algoritma mengalami kegagalan total karena gelembung aerator menghasilkan nilai aktivitas biner yang terus-menerus tinggi.
+\end{itemize}
+Belum ditemukan penelitian yang secara spesifik memodelkan karakteristik fluktuasi aerator kontinu sebagai garis dasar (\textit{dynamic noise baseline}) untuk kemudian diekstraksi deviasi pergerakan ikan di atas ambang batas tersebut.
 
-\subsection{Kesenjangan Evaluasi dan Pengujian}
-[Uraikan kekurangan atau celah dalam hal evaluasi empiris, dataset, atau pengujian performa...]
+\subsection{Gap 2: Kesenjangan Komputasi Tepi untuk Event Sub-Detik (\textit{Edge Sub-Second Latency Gap})}
+Terdapat kesenjangan yang tajam antara performa model dan kelayakan implementasi pada perangkat komputasi tepi (*edge hardware*):
+\begin{itemize}
+    \item Model-model mutakhir yang memiliki akurasi tinggi di atas 90\% (seperti HVIT oleh Hu et al.~\cite{Hu2026} dan Three-Stream Network oleh Dong et al.~\cite{Dong2024}) mengandalkan arsitektur Vision Transformer dan CNN multi-jalur yang membutuhkan miliaran operasi komputasi per detik (GFLOPS) dan hanya dapat dieksekusi pada kartu grafis server seperti NVIDIA RTX 3090.
+    \item Di sisi lain, model deteksi ringan yang dirancang untuk perangkat edge (seperti PM-YOLOv8 oleh Qian et al.~\cite{Qian2025}) mengasumsikan bentuk fisik tubuh ikan terlihat secara utuh dari kamera atas. Pada kolam lele komersial, air kolam berwarna hijau pekat atau cokelat pekat, sehingga tubuh ikan sama sekali tidak tampak hingga ikan menyambar pakan di permukaan.
+    \item Durasi kemunculan menyambar pakan hanya berlangsung 3 hingga 6 frame pada laju tangkap 10 FPS (0,3--0,6 detik). Belum ada metode komputasi tepi yang secara khusus dirancang untuk menangkap lonjakan transien sub-detik ini pada air keruh menggunakan prosesor ARM Raspberry Pi.
+\end{itemize}
+
+\subsection{Gap 3: Kesenjangan Solusi End-to-End Kolam Luar Ruangan Berbiaya Rendah}
+Kondisi operasional tambak lele rakyat di negara berkembang menuntut solusi teknologi yang tangguh terhadap gangguan cuaca luar ruangan (seperti silau matahari siang hari dan pantulan lampu malam) namun tetap berbiaya sangat terjangkau (\textit{low-cost}). Penelitian Vijayalakshmi dan Sasithradevi~\cite{Vijayalakshmi2025} telah mulai menyentuh tantangan kolam luar ruangan, namun belum memadukannya dengan transmisi data telemetri berbasis metrik numerik ringkas (MQTT) untuk menghemat bandwidth internet di area perdesaan.

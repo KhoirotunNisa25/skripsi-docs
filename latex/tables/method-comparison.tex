@@ -1,0 +1,25 @@
+% Method Comparison Table
+\begin{table}[htbp]
+\centering
+\caption{Matriks Perbandingan Karakteristik Metode Deteksi Gerakan Objek}
+\label{tab:method-comparison}
+\begin{small}
+\begin{tabularx}{\textwidth}{p{3.2cm} X X X X}
+\toprule
+\textbf{Parameter Evaluasi} & \textbf{Frame Differencing} & \textbf{Optical Flow} & \textbf{Background Subtraction (GMM)} & \textbf{Deep Learning (YOLO-nano)} \\
+\midrule
+\textbf{Kompleksitas Komputasi} & $O(N)$ (Sangat Rendah, operasi matriks dasar) & Sparse: Sedang; Dense: Sangat Tinggi ($O(N \cdot W^2)$) & $O(K \cdot N)$ (Sedang, pemeliharaan $K$ Gaussian) & Sangat Tinggi (Jutaan operasi MACs / FLOPS) \\
+\addlinespace
+\textbf{Kesesuaian Raspberry Pi (10 FPS)} & Sangat Sesuai ($<10$ ms/frame, beban CPU $<15\%$) & Sparse LK: Sesuai ($<25$ ms); Dense: Tidak Sesuai ($>300$ ms) & Sesuai ($30$--$50$ ms/frame, optimasi C++) & Batas Kritis ($65$--$90$ ms/frame, rawan \textit{thermal throttling}) \\
+\addlinespace
+\textbf{Sensitivitas Gerakan Cepat (3--6 Frame)} & Sangat Tinggi (Respons instan per-frame tanpa jeda histori) & Tinggi (Mendeteksi arah dan magnitudo vektor seketika) & Rendah s.d. Sedang (Inersia adaptasi lambat, rawan \textit{ghosting}) & Rendah pada air keruh (objek lele tertutup hingga muncul) \\
+\addlinespace
+\textbf{Ketahanan Aerator Kontinu} & Rendah jika tanpa \textit{baseline subtraction} & Sedang (Arah vektor aerator acak, tapi boros komputasi) & Tinggi untuk riak statis, jebol untuk gelembung turbulen & Sedang (Perlu ribuan sampel anotasi variasi gelembung) \\
+\addlinespace
+\textbf{Ketahanan Gangguan Cuaca / Cahaya} & Rendah (Sensitif perubahan iluminasi global mendadak) & Sedang (Mampu menyaring vektor gerak daun yang lambat) & Tinggi (Mengasimilasi bayangan ke dalam model latar) & Sangat Tinggi (Kemampuan abstraksi semantik membedakan objek) \\
+\addlinespace
+\textbf{Kebutuhan Dataset Pelatihan} & Nol (\textit{Unsupervised / Rule-based}) & Nol (\textit{Model-driven Motion Vector}) & Nol (\textit{Statistical Background Learning}) & Sangat Tinggi (Membutuhkan ribuan citra beranotasi) \\
+\bottomrule
+\end{tabularx}
+\end{small}
+\end{table}

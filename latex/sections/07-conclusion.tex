@@ -1,10 +1,37 @@
-\section{KESIMPULAN DAN ARAH PENELITIAN}
+\section{KESIMPULAN DAN REKOMENDASI METODE}
 \label{sec:kesimpulan}
 
 \subsection{Kesimpulan}
-% Rangkuman kesimpulan dari studi literatur / penelitian yang dilakukan.
-[Tuliskan kesimpulan utama dari studi literatur / penelitian Anda di sini...]
+Studi literatur yang dilakukan terhadap 19 artikel ilmiah terverifikasi (dengan lebih dari 63\% terbit pada rentang 2023--2026) menghasilkan sejumlah kesimpulan penting:
+\begin{enumerate}
+    \item Pemantauan perilaku makan ikan secara non-kontak berbasis visi komputer telah terbukti efektif dalam literatur global untuk menekan rasio konversi pakan (FCR), meningkatkan kualitas air, dan mencegah kanibalisme lele.
+    \item Terdapat kesenjangan penelitian mendasar (\textit{continuous aeration baseline gap}) di mana sebagian besar metode terdahulu mengasumsikan permukaan air kolam yang tenang. Pada kolam budidaya lele luar ruangan yang dilengkapi aerator mekanis 24 jam, metode deteksi gerak konvensional mengalami kegagalan akibat positif palsu yang dipicu oleh turbulensi gelembung air.
+    \item Karakteristik kemunculan makan lele pada air keruh bersifat sangat singkat dan impulsif (berlangsung hanya 3 hingga 6 frame pada kecepatan rekam 10 FPS atau durasi 0,3--0,6 detik). Model deteksi deep learning berbasis bentuk tubuh dan dense optical flow penuh terbukti terlalu berat dan lambat untuk dioperasikan pada perangkat edge Raspberry Pi tanpa kartu grafis.
+    \item Diperlukan metode hibrida yang mengombinasikan efisiensi komputasi perbedaan frame temporal ($O(N)$) dengan pemodelan statistik varians latar belakang untuk mereduksi derau aerator secara dinamis.
+\end{enumerate}
 
-\subsection{Saran dan Arah Penelitian Masa Depan}
-% Rekomendasi untuk penelitian lanjutan di masa mendatang.
-[Tuliskan saran untuk penelitian lanjutan di masa depan...]
+\subsection{Rekomendasi Metode untuk Diuji Coba}
+Berdasarkan sintesis komparatif yang telah dilakukan, dirumuskan dua rekomendasi metode untuk diimplementasikan dan diuji coba pada tahap eksperimen skripsi:
+
+\subsubsection{Metode Utama (Rekomendasi 1): Adaptive Temporal Variance Subtraction}
+Metode utama yang direkomendasikan adalah pendekatan hibrida dua tahap:
+\begin{enumerate}
+    \item \textbf{Tahap Kalibrasi Baseline}: Menghitung peta varians temporal lokal $\sigma_{\text{aerator}}^2(x,y)$ dari sekuens air kolam saat aerator beroperasi untuk memetakan sebaran turbulensi gelembung air.
+    \item \textbf{Tahap Deteksi Transien}: Menerapkan operasi perbedaan citra temporal absolut $|I_t - I_{t-1}|$ dengan ambang batas adaptif berbasis peta varians $\Theta(x,y) = \gamma \cdot \sigma_{\text{aerator}}(x,y) + \tau_0$.
+    \item \textbf{Ekstraksi Metrik Numerik}: Menghitung indeks deviasi aktivitas $\Delta M_t$ pada CPU Raspberry Pi 4B/5 yang ditargetkan mampu memproses citra pada laju tangkap 10 FPS, lalu mentransmisikannya sebagai payload data numerik via protokol MQTT.
+\end{enumerate}
+Pendekatan ini menjadi alternatif prioritas untuk dieksplorasi karena memiliki kompleksitas komputasi yang relatif ringan, sensitif terhadap perubahan mendadak, dan tidak menuntut dataset beranotasi besar.
+
+\subsubsection{Arah Alternatif untuk Dicoba: Quantized Lightweight YOLO + FSM}
+Sebagai model pembanding alternatif yang dapat dieksplorasi jika sumber daya komputasi memungkinkan:
+\begin{enumerate}
+    \item Menguji model deteksi objek ringan (YOLOv8-nano) yang dikuantisasi ke format INT8 (NCNN atau TensorFlow Lite) untuk mengevaluasi kemampuan deteksi cipratan air (\textit{feeding splash}) atau bagian tubuh ikan di permukaan.
+    \item Memvalidasi kontinuitas deteksi menggunakan mesin status terhingga (\textit{Finite State Machine}) temporal untuk mengurangi kesalahan deteksi akibat gangguan acak.
+\end{enumerate}
+
+\subsection{Saran dan Arah Pengembangan}
+Pada tahap pengujian eksperimental berikutnya, disarankan untuk:
+\begin{itemize}
+    \item Menguji ketahanan algoritma terhadap perubahan pencahayaan ekstrem (kondisi terik matahari siang hari vs. pencahayaan lampu buatan malam hari).
+    \item Melakukan kalibrasi nilai sensitivitas ambang batas $\gamma$ terhadap variasi debit aerasi dan kepadatan populasi ikan lele di kolam uji.
+\end{itemize}

@@ -1,9 +1,24 @@
-\section{PERBANDINGAN PENELITIAN}
+\section{PERBANDINGAN PENELITIAN DAN ANALISIS METODE}
 \label{sec:perbandingan}
 
-% Bab ini memuat analisis perbandingan sistematis antar-artikel ilmiah yang diteliti.
-Perbandingan sistematis terhadap penelitian-penelitian terdahulu disajikan pada Tabel~\ref{tab:article-comparison}.
+\subsection{Perbandingan Sistematis Artikel Penelitian Terdahulu}
+Untuk memahami pemetaan teknologi pemantauan makan ikan di ranah global, dilakukan analisis komparatif terhadap 19 artikel ilmiah yang telah ditelaah. Ringkasan perbandingan sistematis disajikan pada Tabel~\ref{tab:article-comparison}.
 
 \input{tables/article-comparison.tex}
 
-[Uraikan analisis dan pembahasan mengenai matriks perbandingan penelitian di atas...]
+Berdasarkan Tabel~\ref{tab:article-comparison}, terlihat bahwa mayoritas penelitian terkini (seperti Hu et al.~\cite{Hu2026}, Zhao et al.~\cite{Zhao2025}, dan Dong et al.~\cite{Dong2024}) berfokus pada peningkatan akurasi klasifikasi intensitas makan pada sistem budidaya intensif modern seperti \textit{Recirculating Aquaculture Systems} (RAS). Sistem RAS memiliki karakteristik lingkungan yang sangat terkontrol: air jernih, pencahayaan artifisial konstan, dan latar belakang tangki yang seragam. Kondisi ini bertolak belakang dengan kondisi kolam lele luar ruangan di Indonesia yang memiliki air hijau pekat berlumpur, perubahan intensitas sinar matahari terik, serta turbulensi air konstan akibat aerator mekanis.
+
+\subsection{Perbandingan Karakteristik Metode Deteksi Gerakan}
+Selain perbandingan antar-artikel, dilakukan analisis kritis terhadap empat kelompok paradigma metode deteksi gerakan yang muncul dari literatur: \textit{Temporal Frame Differencing}, \textit{Optical Flow}, \textit{Background Subtraction} berbasis GMM, dan \textit{Deep Learning-based Detection}. Matriks perbandingan disajikan pada Tabel~\ref{tab:method-comparison}.
+
+\input{tables/method-comparison.tex}
+
+\subsection{Analisis Trade-Off dan Keterbatasan Metode Tunggal}
+Analisis mendalam terhadap Tabel~\ref{tab:method-comparison} mengungkap bahwa \textbf{tidak ada satu pun metode konvensional tunggal yang mampu memenuhi seluruh kendala penelitian ini secara mandiri}:
+\begin{enumerate}
+    \item \textbf{Kendala Deep Learning di Lingkungan Edge}: Model deteksi objek seperti YOLOv8n~\cite{Qian2025} atau arsitektur transformer spasio-temporal~\cite{Hu2026} memang memiliki ketahanan semantik yang sangat baik terhadap gangguan bayangan dedaunan atau burung. Namun, beban komputasinya menuntut latensi $>65$ ms per inferensi pada Raspberry Pi, memicu panas berlebih (\textit{thermal throttling}), dan tidak efektif mendeteksi ikan lele yang tersembunyi di dalam air keruh sebelum menyentuh permukaan.
+    \item \textbf{Kendala Dense Optical Flow}: Meskipun dense optical flow~\cite{Fukae2023} mampu mengagregasi dinamika kawanan ikan tanpa deteksi individual, latensinya yang mencapai $>300$ ms pada prosesor ARM menjadikannya tidak mungkin mengeksekusi analisis pada frekuensi tangkap 10 FPS, sehingga event kemunculan lele berdurasi 3--6 frame (0,3--0,6 detik) akan terlewatkan.
+    \item \textbf{Kendala Frame Differencing Tanpa Baseline}: Perbedaan frame temporal memiliki kecepatan komputasi tertinggi ($<10$ ms) dan respons instan terhadap perubahan transien. Namun, jika diterapkan secara langsung pada kolam ber-aerator, algoritma ini akan menghasilkan derau biner tanpa henti karena gelembung udara terus bergerak aktif.
+\end{enumerate}
+
+Oleh karena itu, diperlukan perancangan metode hibrida yang mengombinasikan efisiensi komputasi \textit{Temporal Frame Differencing} dengan mekanisme kalibrasi \textit{Adaptive Baseline Noise Subtraction} untuk menekan derau aerator.

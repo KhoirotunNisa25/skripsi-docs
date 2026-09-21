@@ -1,10 +1,66 @@
 \section{LANDASAN TEORI}
 \label{sec:landasan-teori}
 
-\subsection{Konsep Dasar}
-% Jelaskan teori-teori dasar, konsep keilmuan, dan definisi penting yang melandasi penelitian.
-[Uraikan konsep dasar yang relevan dengan topik penelitian Anda di sini...]
+\subsection{Karakteristik Biologis dan Perilaku Makan Ikan Lele}
+Ikan lele (\textit{Clarias sp.}) merupakan spesies ikan air tawar bertubuh memanjang dan tidak bersisik yang tergolong dalam ordo Siluriformes. Secara biologis, ikan lele memiliki organ pernapasan tambahan berupa \textit{arborescent organ} yang memungkinkannya bertahan pada perairan dengan konsentrasi oksigen terlarut rendah~\cite{Marliza2021}. Dalam kondisi lingkungan kolam intensif, lele memiliki karakteristik fotofobik (menghindari intensitas cahaya matahari terik) dan cenderung berdiam atau berenang perlahan di dasar perairan yang terlindung.
 
-\subsection{Metode dan Algoritma Terkait}
-% Uraikan metode, arsitektur, atau algoritma yang digunakan dalam penelitian.
-[Uraikan metode, algoritma, atau kerangka kerja teknis yang diterapkan di sini...]
+Ketika mengalami peningkatan nafsu makan atau kelaparan (\textit{starvation-stress}), pola perilaku renang lele mengalami transisi drastis dari kondisi diam (\textit{quiescent state}) menjadi fase pencarian makan aktif (\textit{active foraging})~\cite{Alahmad2025}. Sifat makan lele ditandai dengan gerakan meluncur vertikal berkecepatan tinggi menuju permukaan air, menyambar pakan dengan gerakan menyamping (\textit{surface thrashing}), memicu buih dan cipratan air, lalu menyelam kembali ke dasar kolam~\cite{Li2020}. Karakteristik kemunculan permukaan ini bersifat transien dan terlokalisasi, dengan rentang durasi tipikal hanya 3 hingga 6 frame pada laju tangkap kamera 10 FPS (0,3--0,6 detik).
+
+\subsection{Metode Deteksi Gerakan dalam Visi Komputer}
+Deteksi gerakan objek pada sekuens video merupakan proses identifikasi region spasial yang mengalami perubahan intensitas piksel signifikan seiring berjalannya waktu. Terdapat tiga paradigma klasik dan satu paradigma modern yang umum diterapkan dalam pemantauan visual akuakultur~\cite{Al-Abri2025,Yang2025}:
+
+\subsubsection{Temporal Frame Differencing}
+Metode perbedaan frame temporal (\textit{temporal frame differencing}) mengekstrak region gerak dengan menghitung selisih nilai intensitas absolut antara dua atau tiga frame yang berurutan secara berpasangan~\cite{Dong2024}. Untuk sekuens citra skala abu-abu $I(x,y,t)$, operasi selisih dua frame dinyatakan sebagai:
+\begin{equation}
+    D_2(x,y,t) = |I(x,y,t) - I(x,y,t-1)|
+    \label{eq:frame-diff-2}
+\end{equation}
+Region gerak biner $M(x,y,t)$ diperoleh melalui penerapan ambang batas (\textit{thresholding}):
+\begin{equation}
+    M(x,y,t) = \begin{cases} 
+        1, & \text{jika } D_2(x,y,t) > \tau \\
+        0, & \text{lainnya}
+    \end{cases}
+    \label{eq:binary-diff}
+\end{equation}
+Metode ini memiliki keunggulan utama berupa kompleksitas komputasi yang sangat rendah berordo $O(N)$ (di mana $N$ adalah jumlah piksel), kebutuhan memori RAM yang minimal, serta sensitivitas instan tanpa jeda waktu akumulasi histori~\cite{Liu2014}. Namun, kelemahan utamanya adalah kerentanan ekstrem terhadap derau fluida bergerak kontinu seperti gelembung aerator.
+
+\subsubsection{Optical Flow}
+Aliran optik (\textit{optical flow}) memodelkan pola kecepatan semu dari pergerakan objek antara dua frame berurutan berdasarkan asumsi konsistensi kecerahan (\textit{brightness constancy assumption}):
+\begin{equation}
+    I(x,y,t) = I(x + \Delta x, y + \Delta y, t + \Delta t)
+    \label{eq:brightness-constancy}
+\end{equation}
+Ekspansi deret Taylor orde pertama menghasilkan persamaan konstrain aliran optik dasar:
+\begin{equation}
+    \frac{\partial I}{\partial x} u + \frac{\partial I}{\partial y} v + \frac{\partial I}{\partial t} = 0 \quad \iff \quad I_x u + I_y v + I_t = 0
+    \label{eq:optical-flow-constraint}
+\end{equation}
+di mana $(u,v) = \left(\frac{\Delta x}{\Delta t}, \frac{\Delta y}{\Delta t}\right)$ merepresentasikan komponen vektor kecepatan gerak horizontal dan vertikal. 
+
+Pendekatan aliran optik terbagi menjadi dua kategori:
+\begin{itemize}
+    \item \textbf{Dense Optical Flow (Metode Gunnar Farnebäck)}: Menghitung vektor perpindahan pada seluruh piksel citra secara rapat~\cite{Fukae2023}. Pendekatan ini mampu menangkap dinamika kawanan ikan secara utuh, namun menuntut operasi matriks kuadrat terkecil lokal yang sangat intensif, menjadikannya tidak layak dieksekusi secara real-time pada prosesor berdaya rendah.
+    \item \textbf{Sparse Optical Flow (Metode Lucas-Kanade)}: Hanya menghitung vektor gerak pada titik-titik sudut fitur terdefinisi (misalnya titik fitur Shi-Tomasi)~\cite{Zhang2024}. Pendekatan sparse jauh lebih ringan dan cocok diterapkan pada region deviasi gerak terpilih di perangkat edge.
+\end{itemize}
+
+\subsubsection{Adaptive Background Subtraction dan Gaussian Mixture Models}
+Pengurangan latar belakang adaptif memisahkan objek latar depan (\textit{foreground}) dengan cara memodelkan dan memperbarui representasi latar belakang referensi $B(x,y,t)$ secara berkala~\cite{Aris2023}:
+\begin{equation}
+    B(x,y,t) = (1 - \alpha) B(x,y,t-1) + \alpha I(x,y,t)
+    \label{eq:running-average}
+\end{equation}
+di mana $\alpha \in (0,1)$ adalah laju pembelajaran (\textit{learning rate}). Pada lingkungan latar belakang dinamis yang memiliki fluktuasi periodik (seperti permukaan air yang berombak), \textit{Gaussian Mixture Model} (GMM) memodelkan densitas probabilitas setiap nilai piksel sebagai kombinasi linear dari $K$ distribusi Gaussian:
+\begin{equation}
+    P(I_t) = \sum_{k=1}^K \omega_{k,t} \cdot \eta(I_t; \mu_{k,t}, \Sigma_{k,t})
+    \label{eq:gmm}
+\end{equation}
+Meskipun GMM tangguh mengasimilasi riak air statis berulang, model ini memiliki inersia adaptasi yang relatif lambat terhadap event kemunculan sangat singkat (3--6 frame), sehingga rentan memicu fenomena \textit{ghosting} atau melewatkan puncak cipratan makan lele~\cite{Aris2023}.
+
+\subsubsection{Deteksi Berbasis Deep Learning}
+Dalam beberapa tahun terakhir, arsitektur \textit{Convolutional Neural Networks} (CNN) dan YOLO (\textit{You Only Look Once}) nano telah diadaptasi untuk mendeteksi tubuh ikan dan riak pakan secara langsung~\cite{Qian2025,Vijayalakshmi2025}. Model deep learning menawarkan kemampuan abstraksi fitur semantik yang unggul dalam membedakan objek asing (seperti daun hanyut atau bayangan burung). Namun, pengoperasian model deteksi objek pada resolusi video tinggi pada prosesor ARM tanpa akselerator tensor khusus menimbulkan latensi eksekusi yang mendekati atau melampaui batas batas waktu frame rate 10 FPS ($\ge 100$ ms per inferensi).
+
+\subsection{Arsitektur Komputasi Tepi (Edge Computing) Menggunakan Raspberry Pi}
+Komputasi tepi (\textit{edge computing}) memindahkan beban pemrosesan data analitik dari peladen terpusat (*cloud/server*) langsung ke simpul perangkat pemroses lokal di dekat sumber sensor. Raspberry Pi 4B/5 yang mengusung prosesor quad-core ARM Cortex-A72/A76 menjadi platform edge yang ideal untuk sistem akuakultur terdistribusi karena memiliki konsumsi daya rendah ($<15$ Watt), antarmuka kamera pita CSI (\textit{Camera Serial Interface}) berlatensi rendah, dan dukungan pustaka optimasi numerik OpenCV serta NumPy berbasis instruksi ARM NEON.
+
+Pada sistem pemantau kolam lele, kamera dipasang pada posisi pandang atas (\textit{top-view}) tegak lurus terhadap permukaan kolam pada ketinggian $1,5 - 2,0$ meter. Alur data citra beroperasi pada laju tangkap 10 FPS, di mana setiap frame segera diproses dalam memori RAM tanpa penulisan ke media penyimpanan sekunder (SD card) guna mencegah \textit{I/O bottleneck}. Output yang dihasilkan berupa metrik numerik indeks deviasi gerak $\Delta M_t$ yang ditransmisikan melalui pesan JSON ke broker MQTT, menjamin efisiensi bandwidth transmisi jaringan nirkabel.
