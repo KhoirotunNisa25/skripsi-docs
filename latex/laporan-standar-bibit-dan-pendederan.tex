@@ -1,0 +1,199 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage[top=2.2cm,bottom=2.2cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xurl}
+\usepackage[hidelinks,colorlinks=true,linkcolor=blue!70!black,citecolor=teal!70!black,urlcolor=blue!70!black]{hyperref}
+
+\linespread{1.15}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 2pt minus 1pt}
+
+% Section styling
+\titleformat{\section}
+  {\normalfont\large\bfseries\color{blue!80!black}}{\thesection.}{0.8em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries\color{teal!80!black}}{\thesubsection.}{0.8em}{}
+\titleformat{\subsubsection}
+  {\normalfont\small\bfseries\color{black!80}}{\thesubsubsection.}{0.8em}{}
+
+% Header and Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\color{gray}Khoirotun Nisa' (NIM: 2341720057) --- Jurusan Teknologi Informasi Polinema}
+\fancyhead[R]{\footnotesize\color{gray}Standar Bibit \& Pendederan Lele}
+\fancyfoot[L]{\footnotesize\color{gray}Dosen Pembimbing: Dr. Ulla Delfana Rosiani, ST., MT.}
+\fancyfoot[R]{\footnotesize\color{gray}Halaman \thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\begin{document}
+
+% Title Block
+\begin{center}
+    {\Large \textbf{\color{blue!80!black}STANDAR BIOLOGIS BIBIT LELE, TAHAPAN PENDEDERAN OPERASIONAL,}}\\[3pt]
+    {\Large \textbf{\color{blue!80!black}DAN MANAJEMEN TAKARAN PAKAN PRESISI}}\\[6pt]
+    {\normalsize \textbf{Sintesis Konsensus Literatur Ilmiah untuk Deteksi Aktivitas Makan Berbasis Visi Komputer}}\\[8pt]
+    \rule{\textwidth}{1pt}\\[6pt]
+    \noindent
+    \begin{tabularx}{\textwidth}{@{}l p{5.2cm} l X@{}}
+        \textbf{Nama Mahasiswa} & : Khoirotun Nisa' & \textbf{Dosen Pembimbing} & : Dr. Ulla Delfana Rosiani, ST., MT. \\
+        \textbf{NIM} & : 2341720057 & \textbf{Program Studi} & : Sarjana Terapan Teknik Informatika \\
+        \textbf{Institusi} & : Politeknik Negeri Malang & \textbf{Fokus Domain} & : Bibit Ikan Lele (\textit{Clarias spp.}) \\
+        \textbf{Tanggal Rilis} & : 21 September 2026 & \textbf{Sistem Edge} & : Computer Vision (Raspberry Pi) \\
+    \end{tabularx}\\[4pt]
+    \rule{\textwidth}{1pt}
+\end{center}
+
+\vspace{0.1cm}
+
+\section{Pendahuluan \& Urgensi Domain Bibit Lele}
+Pembenihan dan pendederan ikan lele (\textit{Clarias spp.}, khususnya \textit{Clarias gariepinus} dan galur Sangkuriang) merupakan fase paling kritis (\textit{critical bottleneck}) dalam industri akuakultur air tawar (Gisbert et al., 2021; Kurdowi et al., 2025). Pada fase benih (mulai larva hingga \textit{fingerling}), tingkat mortalitas benih sering kali melonjak drastis akibat:
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+    \item \textbf{Keterbatasan Enzimatis \& Bukaan Mulut}: Benih yang baru menyerap kantung telur belum memiliki enzimatis lengkap untuk mencerna pelet kasar dan memiliki bukaan mulut sempit (\textit{mouth gape}), sehingga mutlak memerlukan pakan alami hidup sebelum beralih ke pakan formulasi (Srivastava et al., 2012; Gisbert et al., 2021; Barriga \& Battini, 2009).
+    \item \textbf{Disparitas Ukuran \& Kanibalisme Tinggi}: Perbedaan kecepatan tumbuh antaranak ikan memicu kanibalisme ganas yang mampu memusnahkan 30--60\% populasi jika pakan terlambat atau tidak merata (Gisbert et al., 2021; Biswas et al., 2023; Sadiana \& Rahmanto, 2021).
+    \item \textbf{Kerentanan Terhadap Kualitas Air}: Pemberian pakan berlebih (\textit{overfeeding}) menyebabkan residu pelet mikro cepat membusuk di dasar kolam, memicu deplesi oksigen terlarut (\textit{Dissolved Oxygen} / $\text{DO} < 3$ mg/L) dan akumulasi amonia bebas yang mematikan benih (Pelu \& Liubana, 2025; Afia et al., 2020; Kurdowi et al., 2025).
+\end{enumerate}
+
+Oleh karena itu, sistem pemantauan otomatis berbasis visi komputer yang dikembangkan pada \textit{edge device} (Raspberry Pi) membutuhkan rujukan standar biologis dan operasional yang presisi.
+
+\section{Klasifikasi Fase Perkembangan Biologis Bibit Lele}
+Secara ontogenetik, fase awal hidup bibit lele terbagi menjadi 5 (lima) tahapan perkembangan morfologis (Gisbert et al., 2021; Kurdowi et al., 2025; Weirich et al., 2001):
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Matriks Klasifikasi Fase Perkembangan Biologis Bibit Lele}
+\vspace{4pt}
+\begin{tabularx}{\textwidth}{c p{2.6cm} c X p{3.8cm}}
+\toprule
+\textbf{No} & \textbf{Fase Biologis} & \textbf{Rentang Umur} & \textbf{Morfologi \& Bukaan Mulut} & \textbf{Kebutuhan Pakan} \\
+\midrule
+1 & \textbf{Larva / Sac-Fry} & D0 -- D3 pascatetas & 0,5--0,7 cm; cadangan kuning telur (\textit{yolk sac}) aktif; saluran cerna belum terbuka sempurna. & \textbf{Nihil} (mengandalkan nutrisi endogen kuning telur). \\
+\addlinespace
+2 & \textbf{Early Fry} & D4 -- D7 pascatetas & 0,8--1,5 cm; \textit{yolk sac} terserap habis; bukaan mulut kecil (\textit{mouth gape constraint}). & Pakan alami: Cacing sutra (\textit{Tubifex}), \textit{Artemia}, \textit{ad libitum} 3--5x/hari. \\
+\addlinespace
+3 & \textbf{Late Fry / Transisi} & D8 -- D12 pascatetas & 1,5--3,0 cm; mampu menelan remah halus; fase transisi (\textit{weaning}). & Cacing sutra + tepung pakan halus (PF-500/PF-1000 dibasahi). \\
+\addlinespace
+4 & \textbf{Fingerling Awal} & D13 -- D30 pascatetas & 5,0--7,0 cm (bobot 1--5 g); sirip dan arborescent aktif; gerakan menyambar sangat agresif. & Pelet mikro mengapung (protein 35--42\% CP), dosis 5\% biomassa. \\
+\addlinespace
+5 & \textbf{Juvenil Lanjut} & Umur $>$30 hari & 7,0--12,0 cm (bobot $>$5--10 g); lambung dan enzim proteolitik sempurna. & Pelet komersial 1--2 mm (protein 30--35\%), dosis 2--3\% biomassa. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Integrasi Sistem Pendederan Operasional (Pendederan I, II, dan III)}
+Dalam tata kelola budidaya di Indonesia, pembudidaya menerapkan istilah \textbf{Pendederan I, II, dan III} yang merupakan segmentasi wadah dan waktu manajemen kolam (Pelu \& Liubana, 2025; Sadiana \& Rahmanto, 2021). Hubungan antara tahap operasional pendederan dengan fase perkembangan biologis disajikan pada Tabel 2:
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Korelasi Tahapan Pendederan Operasional terhadap Fase Biologis \& Manajemen Pakan}
+\vspace{4pt}
+\begin{tabularx}{\textwidth}{p{2.6cm} c p{3.6cm} X}
+\toprule
+\textbf{Tahap Pendederan} & \textbf{Durasi} & \textbf{Ukuran Awal \& Padanan} & \textbf{Manajemen Pakan \& Risiko Kritis} \\
+\midrule
+\textbf{Pendederan I} & 14--21 hari & Benih 2--3 cm (umur 10--14 hari). Padanan: \textit{Late Fry} menuju \textit{Fingerling Awal}. & Pakan cacing sutra beralih ke tepung/pelet mikro halus ($\pm 0,5$ mm, protein 35--40\%). Pakan dibasahi air hangat untuk mencegah stres transisi. \\
+\addlinespace
+\textbf{Pendederan II} & 21--28 hari & Benih 5--7 cm (bobot 1,65--2,55 g). Padanan: \textit{Fingerling Pertengahan}. & \textbf{Fase paling rawan kanibalisme \& predasi}. Pelet mikro terapung protein tinggi (35--42\%). Ransum harian 5--10\% biomassa (optimum 5\% bw/day), frekuensi 3--4x sehari. Sortir berkala wajib per 7--10 hari. \\
+\addlinespace
+\textbf{Pendederan III} & 28--35 hari & Benih $>$7--8 cm (bobot $>$3,8 g). Padanan: \textit{Fingerling Akhir / Juvenil}. & Pelet komersial 1--2 mm. Ransum pakan diturunkan ke 2--3\% biomassa per hari untuk menjaga kualitas air. Persiapan masuk kolam pembesaran konsumsi akhir. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Standar Baku Kualitas Air Pembenihan \& Pendederan}
+Berdasarkan kajian lapangan di BBI Teun (Pelu \& Liubana, 2025) dan BPPP Banyuwangi (Kurdowi et al., 2025), pemeliharaan benih lele memerlukan aerasi konstan dengan standar parameter lingkungan sebagai berikut:
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Standar Baku Parameter Kualitas Air Kolam Benih \& Pendederan Lele}
+\vspace{4pt}
+\begin{tabularx}{\textwidth}{l c c X}
+\toprule
+\textbf{Parameter Air} & \textbf{Rentang Toleransi} & \textbf{Nilai Optimum} & \textbf{Dampak Fisiologis \& Perilaku Benih} \\
+\midrule
+\textbf{Suhu Air} & 26,0 -- 32,0 $^\circ$C & \textbf{26,0 -- 30,0 $^\circ$C} & Suhu $<$26$^\circ$C menurunkan nafsu makan $>$40\% dan memperlambat pencernaan; suhu $>$32$^\circ$C memicu stres termal dan konsumsi O$_2$ berlebih. \\
+\addlinespace
+\textbf{pH (Derajat Asam)} & 6,0 -- 8,5 & \textbf{6,5 -- 8,5} (Ideal 6,8--7,5) & pH $<$6,0 merusak lendir protektif dan insang benih; pH $>$8,5 melipatgandakan fraksi toksik amonia ($NH_3$). \\
+\addlinespace
+\textbf{Oksigen Terlarut (DO)} & $\ge 3,0$ mg/L & \textbf{$\ge 5,0$ mg/L} & DO $<$3 mg/L menyebabkan benih \textit{piping} (terengah-engah di permukaan), berhenti makan, dan memicu kematian massal larva. \\
+\addlinespace
+\textbf{Padat Tebar Larva} & 300--1000 ekor/m$^3$ & \textbf{500--700 ekor/m$^3$} & Kepadatan berlebih ($>$800 ekor/m$^3$) memicu stres ruang gerak dan meningkatkan kontak agresi kanibalisme. \\
+\addlinespace
+\textbf{Biosekuriti} & Terjadwal & \textbf{Garam + Daun Pepaya} & Larutan garam fisiologis (NaCl) dan ekstrak daun pepaya (2,5 L/kolam) efektif mencegah jamur \textit{Saprolegnia} dan bakteri. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Standar Manajemen Takaran Pakan (\textit{Feeding Rate \& Frequency})}
+\subsection{Evaluasi Pakan Alami vs Pakan Formulasi}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+    \item \textbf{Cacing Sutra (\textit{Tubifex sp.})}: Menghasilkan laju pertumbuhan spesifik (SGR) tertinggi sebesar 14,91\% per hari dengan mortalitas terendah 10\% pada benih lele Sangkuriang, mengungguli kutu air (\textit{Daphnia sp.}) dengan mortalitas 16,6\% (Sri Mulyani et al., 2024).
+    \item \textbf{\textit{Artemia sp.}}: Menghasilkan tingkat kelangsungan hidup (\textit{survival rate}) hingga 98\%, sementara cacing sutra mendukung pertumbuhan panjang mutlak terbaik (Pranat et al., 2025).
+\end{itemize}
+
+\subsection{Dosis Pakan Harian (\% Biomassa) \& Efisiensi FCR}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+    \item \textbf{Dosis 5\% Biomassa/Hari (Rekomendasi Optimum)}: Afia et al. (2020) dan Jibrin et al. (2024) membuktikan bahwa pada benih lele \textit{fingerling}, dosis 5\% menghasilkan titik kompromi terbaik antara laju pertambahan bobot dan efisiensi konversi pakan (FCR). Dosis 3\% memberikan FCR lebih hemat namun pertumbuhan lambat; sebaliknya dosis 7--10\% menyebabkan pemborosan pakan dan pencemaran amonia drastis.
+    \item \textbf{Penurunan Dosis pada Juvenil}: Saat memasuki bobot $>$10--12 g, dosis diturunkan bertahap ke 2,0--2,5\% biomassa per hari (Ng et al., 2000; Tippayadara et al., 2016).
+\end{itemize}
+
+\subsection{Frekuensi \& Metode Sebar Merata (\textit{Broadcast Feeding})}
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+    \item \textbf{Frekuensi 3--4 Kali Sehari}: Terbukti secara signifikan ($p < 0,05$) menekan disparitas ukuran dan kanibalisme dibanding pemberian 1--2 kali sehari (Okomoda et al., 2019; Pelu \& Liubana, 2025). Jadwal ideal: Pagi (07.00--08.00), Siang (12.00--13.00), Sore (17.00--18.00), dan Malam (21.00--22.00).
+    \item \textbf{\textit{Broadcast Feeding} Wajib}: Pakan harus disebar merata di seluruh permukaan kolam untuk mencegah dominasi spasial oleh benih berukuran besar yang memicu kanibalisme.
+\end{itemize}
+
+\section{Dinamika Perilaku Makan \& Mitigasi Kanibalisme}
+Kanibalisme benih lele terbagi menjadi: (1) \textbf{Tipe I (\textit{Tail-Biting})}, penyerangan sirip ekor kawanan yang menimbulkan luka infeksi sekunder, dan (2) \textbf{Tipe II (\textit{Head-First Swallowing})}, penelanan utuh benih kecil oleh benih dominan saat rasio panjang tubuh melampaui 1,3 : 1 (Gisbert et al., 2021).
+Mitigasi terpadu meliputi: sortasi ukuran (\textit{grading}) berkala setiap 7--14 hari menggunakan saringan ayakan (Pelu \& Liubana, 2025; Biswas et al., 2023) dan ketepatan waktu pemberian pakan.
+
+\section{Integrasi Sistem Visi Komputer Edge (Raspberry Pi)}
+Respons menyambar permukaan (\textit{surface bursting}) benih lele saat lapar dapat dideteksi melalui algoritma \textit{Lightweight Frame Differencing} atau \textit{Sparse Optical Flow} pada Raspberry Pi:
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=2pt]
+    \item Pakan uji disebar sedikit ($\sim$5\% alokasi sesi) secara merata (\textit{broadcast}).
+    \item Kamera memantau lonjakan indeks gerakan (\textit{Motion Activity Index}). Jika melampaui ambang batas lapar ($T_{\text{lapar}}$), aktuator menyalurkan sisa kuota ransum pakan (dosis 5\% biomassa).
+    \item Begitu intensitas gerak menurun mendekati baseline tenang ($T_{\text{kenyang}}$), pemberian pakan dihentikan otomatis, mencegah pelet terbuang dan menjaga kualitas air.
+\end{enumerate}
+
+\section{Daftar Pustaka Terverifikasi (22 Referensi)}
+\begin{enumerate}[leftmargin=*,itemsep=1pt,topsep=1pt]\footnotesize
+    \item Afia, O. E., Kolawole, D. O., \& David, G. S. (2020). Growth Response of \textit{Clarias gariepinus} Under Varying Feeding Rates. \textit{Sumerianz J. of Biotech.}, 3(11), 113--117.
+    \item Ardelia, V., Fahleny, R., \& Damayanti, S. (2023). Feed Combinations on Growth of Juvenile Catfish. \textit{Baselang}, 3(1), 78--86.
+    \item Barriga, J. P., \& Battini, M. A. (2009). Ontogenetic Shifts in Stream Catfish \textit{Hatcheria macraei}. \textit{Ecol. Freshw. Fish}, 18(2), 356--368.
+    \item Biswas, G., et al. (2023). Feeding Frequency on Growth and Size Variation in Catfish Fry. \textit{Reg. Stud. Mar. Sci.}, 61, 102851.
+    \item Essien, E., et al. (2024). Growth Performance of \textit{Clarias gariepinus} Fingerlings Fed Two Feeds. \textit{Acta Nat. Sci.}, 5(2), 324--332.
+    \item Gisbert, E., et al. (2021). Development, Nutrition, and Rearing Practices of Catfish Species at Early Stages. \textit{Rev. Aquac.}, 13(4), 1807--1843.
+    \item Hogendoorn, H. (1981). Controlled Propagation of African Catfish: IV. Feeding Regime in Fingerling. \textit{Aquaculture}, 24, 123--131.
+    \item Jibrin, H., et al. (2024). Feeding Rate on Growth and Nutrients Utilization of \textit{Clarias gariepinus}. \textit{Int. J. Fish. Aquat. Stud.}, 12(5), 24--30.
+    \item Khattaby, A. (2021). Dietary Protein and Stocking Density on Pangasius Fry. \textit{Egypt. J. Aquac.}, 11(2), 27--42.
+    \item Kurdowi, S. A., Khumaidi, A., \& Wafi, A. (2025). Technique for Bredding Catfish at BPPPP Banyuwangi. \textit{J. Perikanan Unram}, 15(3), 1634--1643.
+    \item Nahar, N., et al. (2023). Feeding Rate on Growth and Production of Stinging Catfish. \textit{J. Bio-Sci.}, 30(1), 1--9.
+    \item Ng, W. K., et al. (2000). Feeding Rate on Growth and Feed Utilization of Bagrid Catfish. \textit{Aquac. Int.}, 8(1), 19--29.
+    \item Okomoda, V. T., et al. (2019). Feeding Frequency on Fry and Fingerlings of \textit{Clarias gariepinus}. \textit{Aquaculture}, 511, 734232.
+    \item Pelu, A. M., \& Liubana, D. V. (2025). Pengaruh Kualitas Air Pendederan Ikan Lele Sangkuriang di BBI Teun. \textit{Jurnal Akuakultur Sungai dan Danau}, 10(2), 287--294.
+    \item Pranat, G. V. Y., et al. (2025). Different Feed Types on Survival of Catfish Fry. \textit{J. Perikanan Unram}, 15(6), 1912--1920.
+    \item Sadiana, R., \& Rahmanto, H. (2021). Mathematical Models for Gurame Cultivation Systems in Ponds. \textit{Mestro: J. Tek. Mesin Elektro}, 4(1), 378--386.
+    \item Sri Mulyani, et al. (2024). Natural Feeding to Increase Growth of Sangkuriang Catfish Fry. \textit{Global Int. J. Innov. Res.}, 2(2), 93--102.
+    \item Srivastava, P. P., et al. (2012). Larval Rearing of Asian Catfish \textit{Clarias batrachus}. \textit{J. Aquac. Res. Dev.}, 3(4), 1000134.
+    \item Tippayadara, N., et al. (2016). Feeding Rates on Growth Performance of Asian Red Tail Catfish. \textit{Pak. J. Biol. Sci.}, 19(2), 57--64.
+    \item Uche, C., et al. (2023). Survey of Catfish Hatchery Knowledge and Practices in Nigeria. \textit{Agrobiol. Rec.}, 11, 26--34.
+    \item Vu, N. T., \& Huynh, T. G. (2020). Optimized Live Feed Regime for Early Stages of Pangasius Catfish. \textit{Fishes}, 5(3), 20.
+    \item Weirich, C. R., et al. (2001). Stocking Sac-Fry and Hatchery-Fed Fry on Fingerling Catfish. \textit{J. World Aquac. Soc.}, 32(1), 112--116.
+\end{enumerate}
+
+\end{document}

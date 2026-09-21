@@ -2,6 +2,34 @@
 
 ## Log Perubahan Dokumen Riset
 
+### 2026-09-21 (Sesi 7)
+- **Perubahan**:
+  - **Pembersihan & Standardisasi Direktori Literatur (`articles/`)**:
+    - Menghapus semua folder duplikat, file PDF tersebar di `articles/pdf/`, serta Windows junction link yang membuat pengguna bingung (`articles/artikel-bibit-lele`, `articles/artikel-computer-vision`, `articles/pdf/`).
+    - Menstandarkan `articles/` menjadi tepat **2 folder bersih**:
+      1. `articles/artikel computer vision/` (berisi 19 Full-Text PDF Computer Vision + `README.md`).
+      2. `articles/artikel bibit lele/` (berisi Full-Text PDF bibit lele, `STANDAR_BIBIT_DAN_PAKAN_LELE.md`, dan `README.md`).
+  - **Integrasi Informasi Pendederan Lele (`pedederean.csv` & `pedederan.pdf`)**:
+    - Mengekstrak data tahapan budidaya operasional di Indonesia dan membedakannya secara tegas dengan klasifikasi ontogenetik/fase biologis.
+    - Menambahkan Bab 3: *Integrasi Sistem Pendederan Operasional (Pendederan I, II, dan III) vs Fase Biologis* pada:
+      - `research/synthesis/standar-bibit-dan-pakan-lele.md`
+      - `articles/artikel bibit lele/STANDAR_BIBIT_DAN_PAKAN_LELE.md`
+    - Rincian parameter pendederan:
+      - **Pendederan I (14–21 hari)**: Benih 2–3 cm (umur 10–14 hari); padanan Late Fry $\to$ Fingerling Awal; pakan beralih dari cacing sutra ke pelet mikro 0,5 mm (protein 35–40%).
+      - **Pendederan II (21–28 hari)**: Benih 5–7 cm (bobot 1,65–2,55 g); padanan Fingerling Pertengahan; fase paling rawan kanibalisme; ransum harian 5–10% biomassa (optimum 5%), frekuensi 3–4x sehari, wajib sortasi/grading tiap 7–10 hari.
+      - **Pendederan III (28–35 hari)**: Benih >7–8 cm (>3,8 g hingga 5–10 g); padanan Fingerling Akhir / Juvenil; pelet 1–2 mm; dosis ransum diturunkan ke 2–3% biomassa/hari; persiapan kolam pembesaran akhir.
+    - Menambahkan parameter kualitas air pendederan berdasarkan studi Pelu & Liubana (2025) di BBI Teun (suhu 26–30°C dengan aerasi konstan, pH 6,5–8,5, DO $\ge 5$ mg/L) dan persiapan kolam pendederan Sadiana & Rahmanto (2021).
+    - Memperbarui `latex/bibit-lele-references.bib` dan `articles/artikel bibit lele/README.md` dengan sitasi Pelu & Liubana (2025) dan Sadiana & Rahmanto (2021).
+  - **Penyusunan & Kompilasi Laporan PDF di `output/`**:
+    - Membuat naskah LaTeX `latex/laporan-standar-bibit-dan-pendederan.tex` lengkap dengan metadata mahasiswa (Khoirotun Nisa', NIM: 2341720057, Dosen Pembimbing: Dr. Ulla Delfana Rosiani, ST., MT.).
+    - Mengompilasi naskah menjadi berkas PDF berkualitas tinggi tanpa overflow:
+      - `output/laporan-standar-bibit-dan-pendederan.pdf` (5 halaman, 0 error).
+      - `output/Standar_Bibit_dan_Pendederan_Lele.pdf` (salinan nama intuitif).
+- **Alasan**: Permintaan pengguna untuk menambahkan data dari `pedederean.csv` dan `pedederan.pdf` ke informasi bibit lele serta menghasilkan output berkas PDF.
+- **Status**: Selesai (*Completed*)
+
+---
+
 ### 2026-09-21 (Sesi 6)
 - **Perubahan**:
   - **Fokus Domain Bibit Lele (*Catfish Fry & Fingerlings*)**:

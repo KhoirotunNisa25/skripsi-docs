@@ -53,31 +53,68 @@ flowchart TD
 
 ---
 
-## 3. Standar Parameter Kualitas Air Pembenihan Bibit Lele
+## 3. Integrasi Sistem Pendederan Operasional (Pendederan I, II, dan III) vs Fase Biologis
 
-Benih lele membutuhkan stabilitas parameter lingkungan yang jauh lebih ketat dibandingkan lele dewasa konsumsi. Meskipun ikan lele dewasa terkenal memiliki toleransi tinggi terhadap air keruh dan rendah oksigen berkat organ pernapasan tambahan (*arborescent organ*), organ tersebut **belum terbentuk sempurna pada fase larva hingga fingerling awal** (Gisbert et al., 2021). Oleh karena itu, benih lele sangat bergantung pada pertukaran oksigen terlarut melalui insang dan permukaan kulit tipisnya.
+Dalam praktik akuakultur di Indonesia, sering kali timbul kerancuan antara penyebutan **fase biologis benih** dan **tahapan pendederan operasional** (Pendederan I, II, dan III). Konsensus literatur menegaskan bahwa keduanya memiliki fokus yang berbeda namun saling melengkapi secara langsung (Pelu & Liubana, 2025; Sadiana & Rahmanto, 2021):
+- **Fase Biologis (*Ontogenetic Stages*)**: Mengklasifikasikan tahapan metamorfosis organ tubuh ikan, mulai dari penyerapan kantung kuning telur, perkembangan bukaan mulut (*mouth gape*), hingga pembentukan organ arborescent dan lambung fungsional (Gisbert et al., 2021).
+- **Tahapan Pendederan Operasional (*Nursery Management*)**: Merupakan sistem segmentasi wadah, waktu, dan manajemen tebar kolam budidaya bertingkat yang diterapkan peternak untuk mengantisipasi disparitas laju pertumbuhan, mengoptimalkan pergantian pakan, dan meminimalkan kanibalisme (Pelu & Liubana, 2025; Sadiana & Rahmanto, 2021).
 
-### Tabel 2: Batas Toleransi & Nilai Optimum Parameter Fisikokimia Air Kolam Benih Lele
+```mermaid
+flowchart LR
+    subgraph Pendederan I [Pendederan I: 14-21 Hari]
+        A1["Benih 2-3 cm (D10-D14)"] --> A2["Late Fry / Transisi"]
+        A2 --> A3["Cacing Sutra beralih ke Pelet Mikro 0,5 mm"]
+    end
+    subgraph Pendederan II [Pendederan II: 21-28 Hari]
+        B1["Benih 5-7 cm (1,65-2,55 g)"] --> B2["Fingerling Pertengahan"]
+        B2 --> B3["Rawan Kanibalisme! Ransum 5-10% Biomassa"]
+    end
+    subgraph Pendederan III [Pendederan III: 28-35 Hari]
+        C1["Benih >7-8 cm (>3,8 g)"] --> C2["Fingerling Akhir / Juvenil"]
+        C2 --> C3["Pelet 1-2 mm, Siap Kolam Pembesaran"]
+    end
+
+    Pendederan I --> Pendederan II --> Pendederan III
+    style Pendederan I fill:#e0f2fe,stroke:#0284c7,stroke-width:2px;
+    style Pendederan II fill:#ffedd5,stroke:#ea580c,stroke-width:2px;
+    style Pendederan III fill:#f3e8ff,stroke:#9333ea,stroke-width:2px;
+```
+
+### Tabel 2: Korelasi Tahapan Pendederan Operasional terhadap Fase Biologis & Manajemen Pakan
+
+| Tahap Pendederan | Durasi Pemeliharaan | Ukuran & Bobot Awal | Padanan Fase Biologis | Karakteristik Manajemen & Formulasi Pakan | Risiko Kritis & Mitigasi | Rujukan Ilmiah |
+|---|:---:|:---:|:---:|---|---|:---:|
+| **Pendederan I** | 14 – 21 hari | Benih panjang 2 – 3 cm<br>(umur 10 – 14 hari) | *Late Fry* / Transisi menuju *Fingerling Awal* | Pakan alami cacing sutra (*Tubifex sp.*) beralih bertahap ke tepung pelet/pelet mikro halus ($\pm 0,5$ mm, kadar protein 35–40%). | Mortalitas akibat transisi pakan (*weaning stress*). Pakan mikro dibasahi air hangat sebelum ditebar. | Pelu & Liubana (2025); Kurdowi et al. (2025) |
+| **Pendederan II** | 21 – 28 hari | Benih panjang 5 – 7 cm<br>(bobot rata-rata 1,65 – 2,55 g) | *Fingerling Pertengahan* | Diberikan pelet butiran mikro mengapung protein tinggi (35–42% CP). Dosis ransum 5–10% total biomassa harian (optimal 5% bw/day untuk FCR terbaik), frekuensi 3–4 kali/hari (pagi, siang, sore, malam). | **Fase paling rawan kanibalisme dan predasi**. Sortasi berkala (*grading*) wajib dilakukan setiap 7–10 hari. | Pelu & Liubana (2025); Sadiana & Rahmanto (2021); Afia et al. (2020) |
+| **Pendederan III** | 28 – 35 hari | Benih panjang $>7$ – 8 cm<br>(bobot $>3,8$ g hingga 5–10 g) | *Fingerling Akhir* / *Juvenil* | Pelet komersial mengapung ukuran 1,0 – 2,0 mm dengan protein 30–35%. Dosis pakan diturunkan bertahap ke 2–3% biomassa per hari. Persiapan transfer ke kolam pembesaran konsumsi akhir. | Penurunan kualitas air akibat ekskresi amonia tinggi. Pemantauan DO dan aerasi mutlak diperketat. | Pelu & Liubana (2025); Ng et al. (2000); Tippayadara et al. (2016) |
+
+---
+
+## 4. Standar Parameter Kualitas Air Pembenihan & Pendederan Lele
+
+Berdasarkan studi empiris Balai Benih Ikan (BBI) Teun pada Lele Sangkuriang (Pelu & Liubana, 2025) serta pusat pelatihan pembenihan BPPP Banyuwangi (Kurdowi et al., 2025), keberhasilan pendederan benih lele sangat bergantung pada pengendalian mutu fisikokimia air dengan dukungan aerasi yang konstan.
+
+### Tabel 3: Batas Toleransi & Nilai Optimum Parameter Fisikokimia Air Kolam Benih & Pendederan Lele
 
 | Parameter Lingkungan | Rentang Toleransi | Nilai Optimum | Dampak Terhadap Perilaku & Fisiologi Bibit Lele | Rujukan Ilmiah Terverifikasi |
 |---|:---:|:---:|---|---|
-| **Suhu Air (°C)** | 26,0 – 32,0 °C | **28,0 – 31,0 °C** | Penurunan suhu di bawah 26°C menurunkan metabolisme dan nafsu makan hingga >40%, memperpanjang waktu retensi pakan di lambung. Kenaikan suhu >32°C meningkatkan konsumsi O2 dan memicu stres termal. | Kurdowi et al. (2025); Ng et al. (2000); Srivastava et al. (2012) |
-| **Derajat Keasaman (pH)** | 6,0 – 8,5 | **6,5 – 8,0**<br>(Ideal: 6,8 – 7,5) | pH asam (<6,0) mengikis lendir protektif kulit dan merusak filamen insang benih; pH basa (>8,5) meningkatkan proporsi toksisitas amonia bebas ($NH_3$). | Kurdowi et al. (2025); Essien et al. (2024); Srivastava et al. (2012) |
-| **Oksigen Terlarut (DO)** | $\ge 3,0$ mg/L | **$\ge 5,0$ mg/L** | DO < 3 mg/L menyebabkan benih berkumpul di permukaan air terengah-engah (*piping*), menghentikan aktivitas makan, dan memicu kematian massal larva. | Kurdowi et al. (2025); Srivastava et al. (2012); Essien et al. (2024) |
+| **Suhu Air (°C)** | 26,0 – 32,0 °C | **26,0 – 30,0 °C**<br>(Ideal: 28–30 °C) | Penurunan suhu di bawah 26°C menurunkan metabolisme dan nafsu makan hingga >40%, memperpanjang waktu retensi pakan di lambung. Kenaikan suhu >32°C meningkatkan konsumsi O2 dan memicu stres termal. | Pelu & Liubana (2025); Kurdowi et al. (2025); Ng et al. (2000); Srivastava et al. (2012) |
+| **Derajat Keasaman (pH)** | 6,0 – 8,5 | **6,5 – 8,5**<br>(Ideal: 6,8 – 7,5) | pH asam (<6,0) mengikis lendir protektif kulit dan merusak filamen insang benih; pH basa (>8,5) meningkatkan proporsi toksisitas amonia bebas ($NH_3$). | Pelu & Liubana (2025); Kurdowi et al. (2025); Essien et al. (2024) |
+| **Oksigen Terlarut (DO)** | $\ge 3,0$ mg/L | **$\ge 5,0$ mg/L** | DO < 3 mg/L menyebabkan benih berkumpul di permukaan air terengah-engah (*piping*), menghentikan aktivitas makan, dan memicu kematian massal larva. Aerasi konstan mutlak diperlukan. | Pelu & Liubana (2025); Kurdowi et al. (2025); Srivastava et al. (2012) |
 | **Densitas Tebar Larva** | 300 – 1000 ekor/m³ | **500 – 700 ekor/m³** | Kepadatan berlebih (>800 ekor/m³) memicu stres kontak fisik dan meningkatkan laju kanibalisme secara signifikan. | Kurdowi et al. (2025); Khattaby (2021) |
 | **Perlakuan Biosekuriti / Profilaksis** | Sesuai dosis | **Garam (NaCl) + Ekstrak Daun Pepaya 2,5 L** | Pemberian larutan garam fisiologis dan fitofarmaka ekstrak daun pepaya terbukti efektif mencegah infeksi jamur (*Saprolegnia*) dan parasit protozoa pada benih. | Kurdowi et al. (2025) |
 
 ---
 
-## 4. Standar Manajemen Takaran Pakan (*Feeding Rate & Regimes*)
+## 5. Standar Manajemen Takaran Pakan (*Feeding Rate & Regimes*)
 
-### 4.1. Evaluasi Pakan Alami vs Pakan Formulasi pada Benih Awal
+### 5.1. Evaluasi Pakan Alami vs Pakan Formulasi pada Benih Awal
 
 Pada fase *Early Fry* (hari ke-4 hingga ke-12), pemberian jenis pakan alami yang tepat merupakan penentu utama kelulushidupan (*survival rate*):
 - **Cacing Sutra (*Tubifex sp.*)**: Penelitian Sri Mulyani et al. (2024) pada benih Lele Sangkuriang (*Clarias sp.*, bobot 1,02–1,04 g) menunjukkan bahwa perlakuan pakan cacing sutra menghasilkan **Laju Pertumbuhan Spesifik (SGR) tertinggi sebesar 14,91% per hari** dengan **angka mortalitas terendah yaitu 10%**, jauh mengungguli pakan kutu air (*Daphnia sp.*) yang mencatat mortalitas 16,6% dan jentik nyamuk.
 - **Nauplii *Artemia sp.* & Kuning Telur**: Pranat et al. (2025) membuktikan bahwa pemberian *Artemia sp.* mampu menjaga tingkat kelangsungan hidup (*survival rate*) benih lele hingga mencapai **98%**, sedangkan pakan cacing sutra mendukung pertumbuhan panjang mutlak terbaik (0,42 mm/minggu).
 
-### 4.2. Takaran Ransum Harian Berbasis Persentase Bobot Biomassa (% BW/Day)
+### 5.2. Takaran Ransum Harian Berbasis Persentase Bobot Biomassa (% BW/Day)
 
 Setelah memasuki fase *fingerling* (bobot >1–2 gram), pemberian pakan beralih penuh ke pakan buatan komersial berprotein tinggi (35–42% CP). Penentuan persentase takaran pakan harian (*feeding rate*) terhadap bobot biomassa total menjadi faktor paling menentukan keberhasilan budidaya:
 
@@ -113,15 +150,16 @@ Berdasarkan kajian eksperimental literatur:
    - Dosis di atas 7% menghasilkan penurunan efisiensi pakan yang drastis, sehingga direkomendasikan batas aman pemberian pakan benih adalah **maksimal 5% dari total bobot biomassa**.
 3. **Essien et al. (2024)** mengevaluasi benih lele berbobot rata-rata 2,25 g dengan ransum standar **5% biomassa per hari** yang dibagi dalam 2 kali pemberian selama 10 minggu:
    - Pakan komersial kualitas prima (*Coppens*) mencatatkan kelulushidupan (*survival rate*) sebesar **100%** dengan bobot akhir 53,10 g.
-4. **Ng et al. (2000) & Tippayadara et al. (2016)** menunjukkan bahwa ketika lele bertumbuh memasuki fase juvenil lanjut (bobot >10–12 g), takaran pakan optimum harus segera **diturunkan ke rentang 2,0% hingga 2,5% bobot tubuh/hari** guna mempertahankan efisiensi rasio konversi pakan dan menekan ekskresi limbah amonia kolam.
+4. **Pelu & Liubana (2025) & Sadiana & Rahmanto (2021)** mencatat bahwa pada fase pendederan lele sangkuriang, peternak menerapkan ransum **5% hingga 10% dari total biomassa** yang dibagi dalam frekuensi pemberian intensif guna mengimbangi laju metabolisme benih yang sangat tinggi.
+5. **Ng et al. (2000) & Tippayadara et al. (2016)** menunjukkan bahwa ketika lele bertumbuh memasuki fase juvenil lanjut (bobot >10–12 g), takaran pakan optimum harus segera **diturunkan ke rentang 2,0% hingga 2,5% bobot tubuh/hari** guna mempertahankan efisiensi rasio konversi pakan dan menekan ekskresi limbah amonia kolam.
 
-### 4.3. Frekuensi Pemberian Pakan Harian (*Feeding Frequency*)
+### 5.3. Frekuensi Pemberian Pakan Harian (*Feeding Frequency*)
 
-Kajian Okomoda et al. (2019) dan Biswas et al. (2023) menunjukkan bahwa membagi ransum harian ke dalam **3 hingga 4 kali waktu makan per hari** menghasilkan laju pertumbuhan spesifik dan tingkat kelulushidupan yang jauh lebih unggul dibandingkan pemberian 1 atau 2 kali sehari:
-- **Jadwal 3 Kali Sehari**: Pagi (07.30 - 08.30 WIB; alokasi 30%), Siang (12.30 - 13.30 WIB; alokasi 35%), dan Sore/Malam (17.30 - 18.30 WIB; alokasi 35%) (Kurdowi et al., 2025).
+Kajian Okomoda et al. (2019), Biswas et al. (2023), dan Pelu & Liubana (2025) menunjukkan bahwa membagi ransum harian ke dalam **3 hingga 4 kali waktu makan per hari** menghasilkan laju pertumbuhan spesifik dan tingkat kelulushidupan yang jauh lebih unggul dibandingkan pemberian 1 atau 2 kali sehari:
+- **Jadwal 4 Kali Sehari (Pendederan Intensif)**: Pagi (07.00 - 08.00 WIB), Siang (12.00 - 13.00 WIB), Sore (17.00 - 18.00 WIB), dan Malam (21.00 - 22.00 WIB) (Pelu & Liubana, 2025; Kurdowi et al., 2025).
 - Frekuensi 3–4 kali makan per hari memperpendek jeda rasa lapar benih lele sehingga menekan dorongan memangsa sesama kawan (*cannibalistic drive*).
 
-### 4.4. Pola Sebar Pakan (*Broadcast Feeding*)
+### 5.4. Pola Sebar Pakan (*Broadcast Feeding*)
 
 Dalam budidaya benih lele, pemberian pakan **wajib disebar merata ke seluruh permukaan kolam (*broadcast feeding*)** dan tidak boleh dikonsentrasikan hanya pada satu titik sudut:
 - Penyebaran merata memastikan seluruh individu benih memperoleh akses nutrisi secara setara.
@@ -129,23 +167,23 @@ Dalam budidaya benih lele, pemberian pakan **wajib disebar merata ke seluruh per
 
 ---
 
-## 5. Dinamika Perilaku Makan & Mitigasi Kanibalisme
+## 6. Dinamika Perilaku Makan & Mitigasi Kanibalisme
 
-### 5.1. Tipe Kanibalisme pada Bibit Lele
-Gisbert et al. (2021) mengidentifikasi dua pola kanibalisme utama pada larva dan *fingerling* ikan lele (*Siluriformes*):
+### 6.1. Tipe Kanibalisme pada Bibit Lele
+Gisbert et al. (2021) dan Sadiana & Rahmanto (2021) mengidentifikasi bahwa pendederan ikan lele (*Siluriformes*) sangat rentan terhadap dua pola kanibalisme utama:
 1. **Kanibalisme Tipe I (Inkomplit / *Tail-Biting*)**: Benih menyerang dan menggigit sirip ekor atau sirip perut kawanannya hingga luka terbuka. Luka ini kemudian memicu serangan massal dari benih lain atau infeksi bakteri sekunder (*Aeromonas hydrophila*).
 2. **Kanibalisme Tipe II (Komplit / *Head-First Swallowing*)**: Benih berukuran lebih besar menelan utuh individu yang lebih kecil mulai dari kepala atau ekor. Hal ini terjadi begitu rasio perbedaan ukuran panjang tubuh melampaui 1,3 : 1 (Gisbert et al., 2021).
 
-### 5.2. Protokol Pencegahan Terpadu
-1. **Sortasi Ukuran Berkala (*Grading*)**: Dilakukan setiap 7 hingga 14 hari sekali menggunakan saringan ayakan khusus (*grading net*) untuk memisahkan benih menjadi kelompok ukuran homogen (Kurdowi et al., 2025; Biswas et al., 2023).
+### 6.2. Protokol Pencegahan Terpadu pada Fase Pendederan
+1. **Sortasi Ukuran Berkala (*Grading*)**: Dilakukan setiap 7 hingga 14 hari sekali menggunakan saringan ayakan khusus (*grading net*) untuk memisahkan benih menjadi kelompok ukuran homogen sebelum dipindahkan ke kolam pendederan berikutnya (Pendederan I $\to$ II $\to$ III) (Pelu & Liubana, 2025; Biswas et al., 2023).
 2. **Kesesuaian Takaran Pakan**: Kekurangan pakan (*underfeeding*) langsung memicu naluri memangsa dalam waktu <6 jam keterlambatan pakan.
 3. **Pemberian Pakan Tepat Waktu Berbasis Deteksi Kebutuhan**: Pakan diberikan tepat saat nafsu makan benih berada pada puncak aktivitasnya.
 
 ---
 
-## 6. Integrasi dengan Sistem Deteksi Aktivitas Makan Berbasis Computer Vision (Skripsi Pengguna)
+## 7. Integrasi dengan Sistem Deteksi Aktivitas Makan Berbasis Computer Vision (Skripsi Pengguna)
 
-Sintesis standar biologis ini memberikan dasar ilmiah yang kokoh bagi perancangan sistem visi komputer yang dikembangkan oleh peneliti (**Khoirotun Nisa'**):
+Sintesis standar biologis dan tahapan pendederan ini memberikan dasar ilmiah yang kokoh bagi perancangan sistem visi komputer yang dikembangkan oleh peneliti (**Khoirotun Nisa'**):
 
 ```mermaid
 sequenceDiagram
@@ -160,24 +198,24 @@ sequenceDiagram
     Kamera->>Algoritma: Kirim Aliran Frame (10-15 FPS)
     Algoritma->>Algoritma: Hitung Indeks Aktivitas Kinetik Permukaan (MKF / Motion Area)
     alt Indeks Gerakan > Ambang Batas Lapar (T_lapar)
-        Algoritma->>Feeder: Picu Pemberian Pakan Penuh (Dosis 5% Biomassa Terbagi)
+        Algoritma->>Feeder: Picu Pemberian Pakan Penuh (Dosis Sesuai Tahap Pendederan I/II/III)
         Feeder->>Feeder: Sebar Merata (Broadcast Feeding) ke Seluruh Kolam
         Algoritma->>Algoritma: Monitor Dinamika Penurunan Intensitas Gerak
         Note over Algoritma,Feeder: Saat pergerakan turun mendekati baseline (T_kenyang), pakan dihentikan
     else Indeks Gerakan <= Ambang Batas Lapar (T_lapar)
-        Algoritma->>Feeder: Hentikan Pemberian Pakan (Ikan Belum Lapar / Stres Lingkungan)
+        Algoritma->>Feeder: Hentikan Pemberian Pakan (Ikan Belum Lapar / Stres Kualitas Air)
         Algoritma->>Pengelola: Log Status Kolam & Catat Suhu/Kualitas Air
     end
 ```
 
 ### Keunggulan Integrasi Visi Komputer pada Bibit Lele:
 1. **Pencegahan Kanibalisme Tanpa Menimbulkan Overfeeding**: Sistem mampu mengenali saat benih lele mulai menunjukkan peningkatan agresivitas renang permukaan, sehingga pakan segera diberikan sebelum kanibalisme terjadi.
-2. **Efisiensi Pakan Maksimal (FCR Rendah)**: Dengan membatasi pemberian pakan pada batas optimum 5% biomassa dan menghentikannya saat pergerakan makan mereda (indikasi kenyang), pelet tidak terbuang sia-sia ke dasar kolam (Afia et al., 2020; Jibrin et al., 2024).
+2. **Efisiensi Pakan Maksimal (FCR Rendah)**: Dengan membatasi pemberian pakan pada batas optimum (5% biomassa) dan menghentikannya saat pergerakan makan mereda (indikasi kenyang), pelet tidak terbuang sia-sia ke dasar kolam (Afia et al., 2020; Jibrin et al., 2024).
 3. **Eksekusi Ringan di Raspberry Pi**: Karena bibit lele menyambar pakan secara serentak di permukaan (*surface bursting*), deteksi perubahan gerakan berbasis *lightweight temporal frame differencing* atau *sparse optical flow* memiliki beban komputasi rendah (<15% CPU load pada Raspberry Pi), menghilangkan kebutuhan GPU berdaya tinggi (Qian et al., 2025; Fukae et al., 2023; Aris et al., 2023).
 
 ---
 
-## 7. Daftar Pustaka Ilmiah Terverifikasi (References)
+## 8. Daftar Pustaka Ilmiah Terverifikasi (References)
 
 1. **Afia, O. E., Kolawole, D. O., & David, G. S. (2020).** Growth Response of *Clarias gariepinus* (North African Catfish) Under Varying Feeding Rates. *Sumerianz Journal of Biotechnology*, 3(11), 113–117. [https://doi.org/10.47752/sjb.311.113.117](https://doi.org/10.47752/sjb.311.113.117)
 2. **Ardelia, V., Fahleny, R., & Damayanti, S. (2023).** The Effect Of Different Feed Combinations On The Growth Rate, Efficiency And Survival Rate Of Juvenile Catfish (*Clarias* Sp.). *Baselang Journal*, 3(1), 78–86. [https://doi.org/10.36355/bsl.v3i1.78](https://doi.org/10.36355/bsl.v3i1.78)
@@ -192,10 +230,12 @@ sequenceDiagram
 11. **Nahar, N., Hossain, M. I., Uddin, M., & Rahman, M. L. (2023).** Effects of Feeding Rate on Growth and Production of Stinging Catfish, *Heteropneustes Fossilis* (Bloch 1974) In Cage Monoculture System. *Journal of Bio-Science*, 30(1), 1–9. [https://doi.org/10.3329/jbs.v30i1.63096](https://doi.org/10.3329/jbs.v30i1.63096)
 12. **Ng, W. K., Lu, K. S., Hashim, R., & Ali, A. B. (2000).** Effects of feeding rate on growth, feed utilization and body composition of a tropical bagrid catfish. *Aquaculture International*, 8(1), 19–29. [https://doi.org/10.1023/a:1009216831360](https://doi.org/10.1023/a:1009216831360)
 13. **Okomoda, V. T., Aminem, W., Hassan, A., & Martins, C. O. (2019).** Effects of feeding frequency on fry and fingerlings of African catfish *Clarias gariepinus*. *Aquaculture*, 511, 734232. [https://doi.org/10.1016/j.aquaculture.2019.734232](https://doi.org/10.1016/j.aquaculture.2019.734232)
-14. **Pranat, G. V. Y., Heirina, A., Murtini, S., & Neksidin, N. (2025).** THE EFFECT OF DIFFERENT FEED TYPES ON THE SURVIVAL OF CATFISH FRY (*Clarias sp.*). *Jurnal Perikanan Unram*, 15(6), 1912–1920. [https://doi.org/10.29303/jp.v15i6.1912](https://doi.org/10.29303/jp.v15i6.1912)
-15. **Sri Mulyani, Budi, S., Cahyono, I., & Khaer, M. F. (2024).** Natural Feeding to Increase the Growth of Sangkuriang Catfish Fry (*Clarias sp*). *Global International Journal of Innovative Research*, 2(2), 93–102. [https://doi.org/10.59613/global.v2i2.93](https://doi.org/10.59613/global.v2i2.93)
-16. **Srivastava, P. P., Raizada, S., Dayal, R., Chowdhary, S., Lakra, W. S., Yadav, A. K., Sharma, P., & Gupta, J. (2012).** Breeding and Larval Rearing of Asian Catfish, *Clarias batrachus* (Linnaeus, 1758) on Live and Artificial Feed. *Journal of Aquaculture Research and Development*, 3(4), 1000134. [https://doi.org/10.4172/2155-9546.1000134](https://doi.org/10.4172/2155-9546.1000134)
-17. **Tippayadara, N., Doolgindachbaporn, S., & Suksri, A. (2016).** Effects of Feeding Rates on Growth Performance, Feed Utilization and Body Composition of Asian Red Tail Catfish (*Hemibagrus wyckioides*), Cultured in Northeast Thailand. *Pakistan Journal of Biological Sciences*, 19(2), 57–64. [https://doi.org/10.3923/pjbs.2016.57.64](https://doi.org/10.3923/pjbs.2016.57.64)
-18. **Uche, C., et al. (2023).** Survey of Catfish Hatchery Knowledge and Practices in Obio-Akpor Local Government Area, Rivers State, Nigeria. *Agrobiological Records*, 11, 26–34. [https://doi.org/10.47278/journal.abr/2023.026](https://doi.org/10.47278/journal.abr/2023.026)
-19. **Vu, N. T., & Huynh, T. G. (2020).** Optimized Live Feed Regime Significantly Improves Growth Performance and Survival Rate for Early Life History Stages of Pangasius Catfish (*Pangasianodon hypophthalmus*). *Fishes*, 5(3), 20. [https://doi.org/10.3390/fishes5030020](https://doi.org/10.3390/fishes5030020)
-20. **Weirich, C. R., O'Neal, C. C., Delbos, B., & Lutz, C. G. (2001).** Effects of Stocking Sac‐Fry and Hatchery‐Fed Fry on Production of Fingerling Channel Catfish *Ictalurus punctatus*. *Journal of The World Aquaculture Society*, 32(1), 112–116. [https://doi.org/10.1111/j.1749-7345.2001.tb00929.x](https://doi.org/10.1111/j.1749-7345.2001.tb00929.x)
+14. **Pelu, A. M., & Liubana, D. V. (2025).** Pengaruh Kualitas Air Pendederan Ikan Lele Sangkuriang (*Clarias gariepinus*) dI BBI Teun. *Jurnal Akuakultur Sungai dan Danau*, 10(2), 287–294. [https://doi.org/10.33087/akuakultur.v10i2.287](https://doi.org/10.33087/akuakultur.v10i2.287)
+15. **Pranat, G. V. Y., Heirina, A., Murtini, S., & Neksidin, N. (2025).** THE EFFECT OF DIFFERENT FEED TYPES ON THE SURVIVAL OF CATFISH FRY (*Clarias sp.*). *Jurnal Perikanan Unram*, 15(6), 1912–1920. [https://doi.org/10.29303/jp.v15i6.1912](https://doi.org/10.29303/jp.v15i6.1912)
+16. **Sadiana, R., & Rahmanto, H. (2021).** Analysis of Mathematical Models for Gurame Cultivation Systems in Empang Ponds in Tembelang Bekasi Regency. *Mestro: Jurnal Teknik Mesin dan Elektro*, 4(1), 378–386. [https://doi.org/10.47685/mestro.v4i01.378](https://doi.org/10.47685/mestro.v4i01.378)
+17. **Sri Mulyani, Budi, S., Cahyono, I., & Khaer, M. F. (2024).** Natural Feeding to Increase the Growth of Sangkuriang Catfish Fry (*Clarias sp*). *Global International Journal of Innovative Research*, 2(2), 93–102. [https://doi.org/10.59613/global.v2i2.93](https://doi.org/10.59613/global.v2i2.93)
+18. **Srivastava, P. P., Raizada, S., Dayal, R., Chowdhary, S., Lakra, W. S., Yadav, A. K., Sharma, P., & Gupta, J. (2012).** Breeding and Larval Rearing of Asian Catfish, *Clarias batrachus* (Linnaeus, 1758) on Live and Artificial Feed. *Journal of Aquaculture Research and Development*, 3(4), 1000134. [https://doi.org/10.4172/2155-9546.1000134](https://doi.org/10.4172/2155-9546.1000134)
+19. **Tippayadara, N., Doolgindachbaporn, S., & Suksri, A. (2016).** Effects of Feeding Rates on Growth Performance, Feed Utilization and Body Composition of Asian Red Tail Catfish (*Hemibagrus wyckioides*), Cultured in Northeast Thailand. *Pakistan Journal of Biological Sciences*, 19(2), 57–64. [https://doi.org/10.3923/pjbs.2016.57.64](https://doi.org/10.3923/pjbs.2016.57.64)
+20. **Uche, C., et al. (2023).** Survey of Catfish Hatchery Knowledge and Practices in Obio-Akpor Local Government Area, Rivers State, Nigeria. *Agrobiological Records*, 11, 26–34. [https://doi.org/10.47278/journal.abr/2023.026](https://doi.org/10.47278/journal.abr/2023.026)
+21. **Vu, N. T., & Huynh, T. G. (2020).** Optimized Live Feed Regime Significantly Improves Growth Performance and Survival Rate for Early Life History Stages of Pangasius Catfish (*Pangasianodon hypophthalmus*). *Fishes*, 5(3), 20. [https://doi.org/10.3390/fishes5030020](https://doi.org/10.3390/fishes5030020)
+22. **Weirich, C. R., O'Neal, C. C., Delbos, B., & Lutz, C. G. (2001).** Effects of Stocking Sac‐Fry and Hatchery‐Fed Fry on Production of Fingerling Channel Catfish *Ictalurus punctatus*. *Journal of The World Aquaculture Society*, 32(1), 112–116. [https://doi.org/10.1111/j.1749-7345.2001.tb00929.x](https://doi.org/10.1111/j.1749-7345.2001.tb00929.x)

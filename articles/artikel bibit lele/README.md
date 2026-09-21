@@ -30,6 +30,8 @@ Data literatur dihimpun berdasarkan penelusuran konsensus akademik dari berkas `
 | **18** | *Terindeks Metadata* | J. Barriga, M. Battini (2009) | **Ecological significances of ontogenetic shifts in the stream‐dwelling catfish, Hatcheria macraei (Siluriformes, Trichomycteridae), in a Patagonian river** | *Ecology of Freshwater Fish* (Q2) | [10.1111/j.1600-0633.2009.00356.x](https://doi.org/10.1111/j.1600-0633.2009.00356.x) | 🌐 DOI Terverifikasi |
 | **19** | *Terindeks Metadata* | Vera Ardelia, R. Fahleny, Susi Damayanti (2023) | **The Effect Of Different Feed Combinations On The Growth Rate, Efficiency And Survival Rate Of Juvenile Catfish (Clarias Sp.)** | *Baselang Journal* | [10.36355/bsl.v3i1.78](https://doi.org/10.36355/bsl.v3i1.78) | 🌐 DOI Terverifikasi |
 | **20** | [`[20] - Srivastava et al. (2012) - Breeding and Larval Rearing of Asian Catfish, Clarias batrachus (Linnaeus, 1758).pdf`]([20] - Srivastava et al. (2012) - Breeding and Larval Rearing of Asian Catfish, Clarias batrachus (Linnaeus, 1758).pdf) | P. P. Srivastava, S. Raizada, R. Dayal, S. Chowdhary, W. Lakra, A. Yadav, Priya Sharma, J. Gupta (2012) | **Breeding and Larval Rearing of Asian Catfish, Clarias batrachus (Linnaeus, 1758) on Live and Artificial Feed** | *Journal of Aquaculture Research and Development* | [10.4172/2155-9546.1000134](https://doi.org/10.4172/2155-9546.1000134) | ✅ Full-Text PDF (1,3 MB) |
+| **21** | [`[21] - Pelu & Liubana (2025) - Pengaruh Kualitas Air Terhadap Kelangsungan Hidup Ikan Lele Sangkuriang.pdf`]([21] - Pelu & Liubana (2025) - Pengaruh Kualitas Air Terhadap Kelangsungan Hidup Ikan Lele Sangkuriang.pdf) | Adriana M. Pelu, Daniel V. Liubana (2025) | **Pengaruh Kualitas Air Terhadap Tingkat Kelangsungan Hidup Ikan Lele Sangkuriang (Clarias gariepinus) pada Tahap Pendederan di Balai Benih Ikan (BBI) Teun** | *Jurnal Akuakultur Sungai dan Danau* | [10.35965/jasd.v10i2.7533](https://doi.org/10.35965/jasd.v10i2.7533) | ✅ Full-Text PDF (243 KB) |
+| **22** | *Terindeks Metadata* | R. Sadiana, H. Rahmanto (2021) | **Mathematical Models for Gurame Cultivation Systems in Ponds** | *Mestro: Jurnal Teknik Mesin dan Elektro* | [10.53697/mestro.v4i1.378](https://doi.org/10.53697/mestro.v4i1.378) | 🌐 DOI Terverifikasi |
 
 ---
 
@@ -44,6 +46,8 @@ Data literatur dihimpun berdasarkan penelusuran konsensus akademik dari berkas `
 2. **Teknik Pembenihan, Standar Kualitas Air & Manajemen Penetasan**:
    - `[02] Kurdowi et al. (2025)`: SOP pembenihan *Clarias gariepinus* BPPP Banyuwangi (suhu 28–31°C, pH 6,5–8,0, DO $\ge 5$ mg/L, densitas 500–700 ekor/m³).
    - `[17] Uche et al. (2023)`: Survei praktik pembenihan lele dan frekuensi pakan di kalangan pembudidaya.
+   - `[21] Pelu & Liubana (2025)`: Kajian kualitas air (suhu 26–30°C, pH 7–8, DO $\ge 5$ mg/L) pada tahap pendederan lele Sangkuriang di BBI Teun dengan aerasi konstan.
+   - `[22] Sadiana & Rahmanto (2021)`: Model matematika dan persiapan kolam pendederan/budidaya air tawar (pengeringan, pemupukan organik, biosekuriti).
 
 3. **Pakan Alami Awal (Cacing Sutra, Artemia, Kuning Telur)**:
    - `[05] Sri Mulyani et al. (2024)`: Pakan alami cacing sutra (*Tubifex sp.*) terbukti memberikan laju pertumbuhan harian terbaik (SGR 14,91%) dan mortalitas terendah (10%) pada benih Lele Sangkuriang.
