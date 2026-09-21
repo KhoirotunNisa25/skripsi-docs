@@ -30,6 +30,3 @@ Thumbs.db
 *.swp
 *.swo
 
-# Windows Local Junction Folders (Aliases)
-articles/artikel bibit lele
-articles/artikel computer vision

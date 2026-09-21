@@ -11,23 +11,21 @@ Seluruh literatur ilmiah pendukung skripsi telah dikelompokkan secara terstruktu
 
 ```
 articles/
-├── artikel-computer-vision/     <-- 19 Artikel Ilmiah Full-Text PDF (Domain Computer Vision & Otomasi)
-│   ├── [01] s.d. [19] PDF
-│   └── README.md                <-- Katalog & DOI Matrix Visi Komputer
+├── artikel bibit lele/          <-- Folder Artikel & Dokumen Standar Bibit Lele & Pakan
+│   ├── STANDAR_BIBIT_DAN_PAKAN_LELE.md  <-- Dokumen Hasil Standar & Takaran Pakan Lengkap
+│   ├── README.md                <-- Katalog 20 Artikel Ilmiah Bibit Lele
+│   └── [01], [02], [03], [06], [08], [11], [20] PDF Jurnal Terverifikasi
 │
-├── artikel-bibit-lele/          <-- 20 Artikel Ilmiah (Domain Biologi Bibit Lele, Nutrisi & Pakan)
-│   ├── [01], [02], [03], [06], [08], [11], [20] Full-Text PDF
-│   └── README.md                <-- Katalog & Sintesis Standar Bibit Lele & Pakan
-│
-├── artikel computer vision      <-- Shortcut Folder Junction (Windows)
-└── artikel bibit lele           <-- Shortcut Folder Junction (Windows)
+└── artikel computer vision/     <-- 19 Artikel Ilmiah Full-Text PDF (Computer Vision)
+    ├── README.md                <-- Katalog & DOI Matrix Visi Komputer
+    └── [01] s.d. [19] PDF
 ```
 
 ---
 
 ## 📁 1. Direktori: Artikel Computer Vision & Motion Detection
-- **Jalur Folder**: [`articles/artikel-computer-vision/`](file:///e:/SKRIPSI/sekeripsi/articles/artikel-computer-vision/) (atau alias [`articles/artikel computer vision/`](file:///e:/SKRIPSI/sekeripsi/articles/artikel%20computer%20vision/))
-- **Katalog Lengkap**: [Lihat README Katalog Visi Komputer](file:///e:/SKRIPSI/sekeripsi/articles/artikel-computer-vision/README.md)
+- **Jalur Folder**: [`articles/artikel computer vision/`](file:///e:/SKRIPSI/sekeripsi/articles/artikel%20computer%20vision/)
+- **Katalog Lengkap**: [Lihat README Katalog Visi Komputer](file:///e:/SKRIPSI/sekeripsi/articles/artikel%20computer%20vision/README.md)
 - **Fokus Kajian**:
   1. *Real-time fish feeding behavior detection* (PM-YOLO, YOLOv8, AquaYOLO).
   2. *Lightweight motion analysis* & *optical flow* (Dense Optical Flow, RUSNet, Farnebäck).
@@ -39,9 +37,9 @@ articles/
 ---
 
 ## 📁 2. Direktori: Artikel Standar Bibit Lele & Manajemen Pakan
-- **Jalur Folder**: [`articles/artikel-bibit-lele/`](file:///e:/SKRIPSI/sekeripsi/articles/artikel-bibit-lele/) (atau alias [`articles/artikel bibit lele/`](file:///e:/SKRIPSI/sekeripsi/articles/artikel%20bibit%20lele/))
-- **Katalog Lengkap**: [Lihat README Katalog Bibit Lele](file:///e:/SKRIPSI/sekeripsi/articles/artikel-bibit-lele/README.md)
-- **Laporan Sintesis Ilmiah**: [Baca Dokumen Standar Bibit & Pakan Lele](file:///e:/SKRIPSI/sekeripsi/research/synthesis/standar-bibit-dan-pakan-lele.md)
+- **Jalur Folder**: [`articles/artikel bibit lele/`](file:///e:/SKRIPSI/sekeripsi/articles/artikel%20bibit%20lele/)
+- **Dokumen Hasil Standar & Takaran Pakan**: [Buka `STANDAR_BIBIT_DAN_PAKAN_LELE.md`](file:///e:/SKRIPSI/sekeripsi/articles/artikel%20bibit%20lele/STANDAR_BIBIT_DAN_PAKAN_LELE.md) (atau di [`research/synthesis/standar-bibit-dan-pakan-lele.md`](file:///e:/SKRIPSI/sekeripsi/research/synthesis/standar-bibit-dan-pakan-lele.md))
+- **Katalog Lengkap**: [Lihat README Katalog Bibit Lele](file:///e:/SKRIPSI/sekeripsi/articles/artikel%20bibit%20lele/README.md)
 - **Fokus Kajian**:
   1. Klasifikasi 5 fase hidup benih lele (*sac-fry*, *early fry*, *late fry/transisi*, *fingerling*, *juvenil*).
   2. Standar kualitas air pembenihan (suhu 28–31°C, pH 6,5–8,0, DO $\ge 5$ mg/L, densitas 500–700 ekor/m³).
