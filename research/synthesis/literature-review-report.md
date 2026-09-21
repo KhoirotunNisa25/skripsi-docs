@@ -72,7 +72,7 @@ Seluruh artikel berikut telah diunduh berkas lengkapnya (PDF asli), diverifikasi
 
 ---
 
-## 4. Ringkasan Faktual 19 Artikel (3–5 Kalimat per Artikel)
+## 4. Ringkasan Faktual Tiap Artikel
 
 Berikut adalah ringkasan yang disusun secara obyektif berdasarkan isi teks dan temuan asli masing-masing artikel:
 
@@ -168,12 +168,12 @@ Berdasarkan telaah terhadap ke-19 artikel ilmiah di atas, beberapa pola penting 
 
 Sebagai tindak lanjut dari hasil telaah literatur ini, terdapat beberapa alternatif arah metode yang masuk akal dan relevan untuk dieksplorasi serta diuji secara empiris pada skripsi:
 
-### Arah 1: *Frame Differencing* Adaptif Berbasis Pengurangan Derau Riak (Opsi Utama)
-- **Konsep**: Mengadopsi prinsip dasar *frame differencing* yang sangat ringan dari Liu et al. (2014) dan Marliza & Aisuwarya (2021), namun dilengkapi dengan mekanisme kalibrasi latar belakang gerak riak air konstan. 
+### Arah 1: *Adaptive Frame Differencing* Berbasis Kalibrasi Baseline Riak Aerator (Opsi Utama)
+- **Konsep**: Pada praktik budidaya lele, pakan ditebar secara merata ke seluruh permukaan kolam (*broadcast feeding*), sehingga sistem tidak dapat membagi kolam menjadi zona pakan dan zona semburan aerator yang terpisah. Sebagai gantinya, sistem memantau seluruh permukaan kolam dan mengalibrasi pola variabilitas riak normal yang dihasilkan aerator secara global.
 - **Rencana Eksplorasi**:
-  1. Melakukan pemetaan area kolam (*Region of Interest* / ROI) untuk memisahkan area semburan aerator langsung dari area pemberian pakan.
-  2. Menerapkan perhitungan ambang batas adaptif lokal berdasarkan variabilitas riak air normal, sehingga hanya lonjakan gerak impulsif (saat ikan lele menyambar permukaan) yang dihitung sebagai nilai aktivitas makan.
-- **Kelebihan**: Beban komputasi sangat ringan, dapat diproses dengan pustaka OpenCV/NumPy standar pada prosesor ARM Raspberry Pi secara stabil di target 10 FPS.
+  1. Memodelkan baseline variabilitas riak air normal saat aerator beroperasi tanpa adanya pakan.
+  2. Menerapkan perhitungan ambang batas adaptif lokal berdasarkan variabilitas riak air dasar tersebut, sehingga saat pakan ditebar merata, hanya lonjakan cipratan aktif lele di permukaan yang melebihi variasi riak normal yang dihitung sebagai nilai aktivitas makan.
+- **Kelebihan**: Beban komputasi sangat ringan, tidak membutuhkan pemisahan zona buatan, dan paling realistis untuk dieksekusi secara stabil pada CPU Raspberry Pi tanpa GPU diskrit.
 
 ### Arah 2: Analisis Aliran Optik Ringan (*Sparse Lucas-Kanade Optical Flow*)
 - **Konsep**: Terinspirasi dari temuan Fukae et al. (2023) dan Alahmad et al. (2025) mengenai perbedaan kecepatan renang.
