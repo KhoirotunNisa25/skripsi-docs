@@ -2,6 +2,35 @@
 
 ## Log Perubahan Dokumen Riset
 
+### 2026-09-21 (Sesi 8)
+- **Perubahan**:
+  - **Fokus Ketat pada Literatur Terunduh (9 Berkas PDF Fisik)**:
+    - Menghilangkan pemaksaan 22 artikel referensi; membatasi dokumen hanya mengacu pada **9 artikel ilmiah yang berkas fisik Full-Text PDF-nya benar-benar telah diunduh secara lokal** di `articles/artikel bibit lele/`.
+    - Melakukan penomoran ulang berkas PDF di folder `articles/artikel bibit lele/` secara teratur dari `[01]` hingga `[09]`:
+      1. `[01]` Gisbert et al. (2021) - *Reviews in Aquaculture*
+      2. `[02]` Kurdowi et al. (2025) - *Jurnal Perikanan Unram*
+      3. `[03]` Afia et al. (2020) - *Sumerianz J. of Biotech*
+      4. `[04]` Pranat et al. (2025) - *Jurnal Perikanan Unram*
+      5. `[05]` Essien et al. (2024) - *Acta Nat. Sci.*
+      6. `[06]` Jibrin et al. (2024) - *Int. J. Fish. Aquat. Stud.*
+      7. `[07]` Uche et al. (2023) - *Agrobiological Records*
+      8. `[08]` Srivastava et al. (2012) - *J. Aquac. Res. Dev.*
+      9. `[09]` Pelu & Liubana (2025) - *Jurnal Akuakultur Sungai dan Danau*
+    - Menyinkronkan ulang seluruh naskah agar hanya menyitir ke-9 artikel terunduh ini:
+      - `articles/artikel bibit lele/STANDAR_BIBIT_DAN_PAKAN_LELE.md` (9 dari 9 disitir dan ada di Daftar Pustaka).
+      - `research/synthesis/standar-bibit-dan-pakan-lele.md`
+      - `articles/artikel bibit lele/README.md`
+      - `latex/bibit-lele-references.bib`
+      - `latex/laporan-standar-bibit-dan-pendederan.tex`
+  - **Pembersihan Berkas PDF Ganda di `output/`**:
+    - Menghapus berkas ganda `output/laporan-standar-bibit-dan-pendederan.pdf` dan berkas *auxiliary*-nya.
+    - Mengompilasi naskah LaTeX secara langsung menghasilkan **1 berkas PDF utama tunggal**:
+      - `output/Standar_Bibit_dan_Pendederan_Lele.pdf` (5 halaman, 0 error, tata letak tabel rapi).
+- **Alasan**: Permintaan pengguna untuk tidak memaksakan 22 artikel dan hanya menggunakan artikel yang sudah diunduh secara fisik, serta klarifikasi dan pembersihan file PDF output yang ganda.
+- **Status**: Selesai (*Completed*)
+
+---
+
 ### 2026-09-21 (Sesi 7)
 - **Perubahan**:
   - **Pembersihan & Standardisasi Direktori Literatur (`articles/`)**:
