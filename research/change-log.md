@@ -2,6 +2,33 @@
 
 ## Log Perubahan Dokumen Riset
 
+### 2026-09-21 (Sesi 6)
+- **Perubahan**:
+  - **Fokus Domain Bibit Lele (*Catfish Fry & Fingerlings*)**:
+    - Memproses data literatur konsensus dari `bibit lele.csv` dan laporan `bibit lele consensus.pdf` (20 entri artikel ilmiah).
+    - Melakukan restrukturisasi dan pengelompokan direktori artikel ilmiah di `articles/`:
+      - Direktori `articles/artikel-computer-vision/` (menampung 19 artikel Full-Text PDF domain Visi Komputer & Analisis Gerakan).
+      - Direktori `articles/artikel-bibit-lele/` (menampung artikel ilmiah domain Biologi Pembenihan, Nutrisi & Manajemen Pakan Bibit Lele).
+      - Menambahkan junction folder Windows `articles/artikel computer vision` dan `articles/artikel bibit lele` untuk kenyamanan navigasi tanpa duplikasi ruang disk.
+    - Mengunduh berkas fisik Full-Text PDF artikel bibit lele yang berstatus Open Access (`[01] Gisbert et al. 2021`, `[02] Kurdowi et al. 2025`, `[03] Afia et al. 2020`, `[06] Pranat et al. 2025`, `[08] Essien et al. 2024`, `[11] Jibrin et al. 2024`, `[20] Srivastava et al. 2012`) ke `articles/artikel-bibit-lele/`.
+  - **Penyusunan Dokumen Sintesis Standar Bibit & Manajemen Pakan**:
+    - Membuat naskah panduan akademik komprehensif `research/synthesis/standar-bibit-dan-pakan-lele.md` yang memuat:
+      1. Klasifikasi 5 fase perkembangan bibit lele (*Sac-fry* D0–D3, *Early fry* D4–D7, *Late fry/Transisi* D8–D12, *Fingerling* D13–D30, *Juvenil* >D30).
+      2. Standar baku kualitas air kolam benih (suhu 28–31°C, pH 6,5–8,0, DO $\ge 5,0$ mg/L, densitas tebar 500–700 ekor/m³).
+      3. Kebutuhan nutrisi pakan alami (Cacing sutra *Tubifex sp.*, *Artemia*, *Daphnia*) dan pelet mikro protein tinggi (35–42% CP).
+      4. Standar takaran pakan harian (*Feeding Rate*): Rekomendasi optimum 5% bobot tubuh/hari pada fase fingerling untuk keseimbangan laju pertumbuhan dan efisiensi FCR, serta penurunan bertahap ke 2–2,5% pada fase juvenil.
+      5. Frekuensi pakan (3–4 kali/hari) dan metode sebar merata (*broadcast feeding*) di seluruh permukaan kolam untuk mencegah dominasi spasial dan kanibalisme.
+      6. Integrasi langsung dengan sistem visi komputer pada Raspberry Pi (pemicuan kuota pakan otomatis berbasis deteksi lonjakan aktivitas kinetik menyambar pakan).
+      7. Daftar Pustaka lengkap 20 artikel referensi standar APA dengan DOI aktif.
+  - **Katalog & Berkas Sitasi**:
+    - Menyusun `articles/artikel-bibit-lele/README.md` (katalog 20 artikel dan pengelompokan tematik).
+    - Menyusun `articles/README.md` sebagai master index navigasi seluruh literatur.
+    - Menghasilkan berkas BibTeX `latex/bibit-lele-references.bib` berisi 20 entri sitasi terverifikasi.
+- **Alasan**: Permintaan pengguna untuk pemfokusan objek penelitian pada fase bibit lele, pengunduhan referensi pendukung dari Consensus, pengelompokan folder artikel, dan pembuatan dokumen standar benih & takaran pakan beserta sitasi dan dafpus.
+- **Status**: Selesai (*Completed*)
+
+---
+
 ### 2026-09-21 (Sesi 5)
 - **Perubahan**:
   - **Audit Integritas Sitasi & Penghapusan Halusinasi AI**:
