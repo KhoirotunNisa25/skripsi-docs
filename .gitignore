@@ -1,0 +1,31 @@
+# LaTeX Build Auxiliary Files
+*.aux
+*.log
+*.bbl
+*.blg
+*.brf
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.out
+*.lof
+*.lot
+*.run.xml
+*-blx.bib
+
+# Compiled Output
+output/*
+!output/.gitkeep
+
+# Temporary Scratch Files
+scratch/*
+!scratch/.gitkeep
+
+# Operating System & Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

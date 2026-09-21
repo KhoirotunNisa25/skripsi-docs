@@ -1,0 +1,79 @@
+\documentclass[12pt,a4paper]{article}
+
+% Load Configurations
+\input{config/packages.tex}
+\input{config/formatting.tex}
+\input{config/commands.tex}
+
+\begin{document}
+
+% ==================== COVER PAGE (SESUAI TEMPLATE POLINEMA) ====================
+\begin{titlepage}
+    \centering
+    \vspace*{0.2cm}
+    
+    {\Large\bfseries [JUDUL PENELITIAN SKRIPSI]\par}
+    
+    \vspace{1.0cm}
+    
+    {\large\bfseries STUDI LITERATUR\par}
+    \vspace{0.3cm}
+    {\large Disusun untuk Memenuhi Salah Satu Prasyarat Bimbingan Skripsi\par}
+    
+    \vspace{1.0cm}
+    
+    {\large\bfseries Oleh:\par}
+    \vspace{0.2cm}
+    {\large\bfseries [Nama Mahasiswa] \qquad NIM. [Nomor Induk Mahasiswa]\par}
+    
+    \vspace{0.8cm}
+    
+    \includegraphics[width=3.8cm]{assets/polinema-logo.png}
+    
+    \vfill
+    
+    {\large\bfseries PROGRAM STUDI SARJANA TERAPAN TEKNIK INFORMATIKA\par}
+    {\large\bfseries JURUSAN TEKNOLOGI INFORMASI\par}
+    {\large\bfseries POLITEKNIK NEGERI MALANG\par}
+    {\large\bfseries 2026\par}
+\end{titlepage}
+
+\cleardoublepage
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+% ==================== ABSTRAK ====================
+\section*{ABSTRAK}
+\addcontentsline{toc}{section}{ABSTRAK}
+[Tuliskan uraian abstrak studi literatur atau proposal penelitian skripsi Anda di sini. Abstrak memuat konteks latar belakang permasalahan, tujuan penelitian, metodologi yang dikaji, kesenjangan penelitian yang ditemukan, serta kontribusi atau arah penelitian yang diusulkan.]
+
+\vspace{0.5cm}
+\textbf{Kata Kunci}: [Kata Kunci 1], [Kata Kunci 2], [Kata Kunci 3], [Kata Kunci 4], Studi Literatur.
+
+\newpage
+
+% ==================== DAFTAR ISI ====================
+\tableofcontents
+\newpage
+
+% ==================== ISI UTAMA (ARABIC PAGE NUMBERING) ====================
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{sections/01-introduction.tex}
+\input{sections/02-background.tex}
+\input{sections/03-literature-review.tex}
+\input{sections/04-comparison.tex}
+\input{sections/05-research-gap.tex}
+\input{sections/06-positioning.tex}
+\input{sections/07-conclusion.tex}
+
+\newpage
+
+% ==================== DAFTAR PUSTAKA ====================
+\addcontentsline{toc}{section}{DAFTAR PUSTAKA}
+\nocite{*}
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

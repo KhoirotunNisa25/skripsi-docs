@@ -1,0 +1,81 @@
+% Article Comparison Table (Longtable for multi-page support)
+\begin{small}
+\begin{longtable}{p{2.6cm} p{3.2cm} p{2.8cm} p{3.4cm} p{2.6cm}}
+\caption{Matriks Perbandingan Artikel Penelitian Utama Hasil Sintesis Consensus\label{tab:article-comparison}} \\
+\toprule
+\textbf{Artikel} & \textbf{Metode / Pendekatan} & \textbf{Dataset / Lingkungan} & \textbf{Hasil Utama} & \textbf{Keterbatasan} \\
+\midrule
+\endfirsthead
+
+\caption[]{Matriks Perbandingan Artikel Penelitian Utama (\textit{Lanjutan})} \\
+\toprule
+\textbf{Artikel} & \textbf{Metode / Pendekatan} & \textbf{Dataset / Lingkungan} & \textbf{Hasil Utama} & \textbf{Keterbatasan} \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{5}{r}{\textit{Bersambung ke halaman berikutnya\dots}} \\
+\bottomrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+{Qian et al.~\cite{Qian2025}} & PM-YOLO (YOLOv8n + Patch Attention) & Kolam air tawar (FeedFishDatas) & Presisi 87,7\%, mAP 83,5\%, latensi 8,1 ms & Fokus tubuh ikan di permukaan; rentan air sangat keruh \\
+\addlinespace
+
+{Hu et al.~\cite{Hu2026}} & HVIT (CNN + ViT + LSTM) & Tangki RAS industri (Largemouth Bass) & Akurasi $>$98\% kuantifikasi intensitas makan & Diuji pada RAS terkontrol; komputasi berat untuk edge \\
+\addlinespace
+
+{Alahmad et al.~\cite{Alahmad2025}} & YOLOv8 + Estimasi Kecepatan Renang & Video akuakultur laut & Akurasi 85\%; beda kecepatan renang lapar vs kenyang & Mengasumsikan tubuh ikan terlihat; belum uji riak keruh \\
+\addlinespace
+
+{Fukae et al.~\cite{Fukae2023}} & Dense Optical Flow + Histogram + SVM & Kolam budidaya ikan & Klasifikasi makan vs tidak makan secara agregat & Komputasi optical flow padat; belum atasi gelembung aerator \\
+\addlinespace
+
+{Zhao et al.~\cite{Zhao2025}} & Two-Stage Net (Pose + GCN) & Tangki akuakultur industri & Akurasi kenyang 98,1\%, reduksi parameter 31,4\% & Bergantung pada pose fisik ikan yang terlihat jelas \\
+\addlinespace
+
+{Li et al.~\cite{Li2020}} & Tinjauan Sistematis Pengenalan Makan & Sistem budidaya global & Peta komparatif visual, akustik, dan biosensor & Tinjauan literatur tanpa implementasi sistem outdoor \\
+\addlinespace
+
+{Marliza et al.~\cite{Marliza2021}} & Pengolahan Citra Digital + Background Sub & Akuarium / kolam ikan air tawar & Pemberian pakan otomatis saat ikan aktif di permukaan & Skala laboratorium; belum tangani aerator dan cuaca outdoor \\
+\addlinespace
+
+{Atoum et al.~\cite{Atoum2015}} & Analisis Gerak Kuantitatif Temporal & Tangki budidaya densitas tinggi & Otomasi kontrol pakan adaptif mengurangi limbah & Diuji pada pencahayaan konstan tanpa turbulensi aerator \\
+\addlinespace
+
+{Al-Abri et al.~\cite{Al-Abri2025}} & Tinjauan Computer Vision Akuakultur & Literatur global AI dan IoT & Pemetaan tren metode deteksi dan klasifikasi pakan & Tinjauan survei tanpa pengujian empiris khusus lele \\
+\addlinespace
+
+{Zhou et al.~\cite{Zhou2018}} & Near-Infrared Vision + ANFIS Neuro-Fuzzy & Sistem sirkulasi akuakultur & Turunkan FCR 10,77\% dan polusi air 9,8\% & Gunakan kamera NIR khusus; belum tangani aerator outdoor \\
+\addlinespace
+
+{Liu et al.~\cite{Liu2014}} & Feeding Activity Index (CVFAI) & Tangki RAS salmon Atlantik & Deteksi aktivitas non-kontak berbiaya rendah & Diuji pada air jernih; belum teruji pada air kolam keruh \\
+\addlinespace
+
+{Zhao et al.~\cite{Zhao2017}} & Analisis Perilaku Kolektif Spontan & Tangki sirkulasi akuakultur & Mampu menilai nafsu makan sebelum pakan ditebar & Asumsi latar belakang statis tanpa aerator gelembung kontinu \\
+\addlinespace
+
+{Zhao et al.~\cite{Zhao2016}} & Pemodelan Energi Kinetik Spasial-Temporal & Tangki RAS ikan nila & Deteksi perilaku abnormal dan perubahan aktivitas & Belum mempertimbangkan turbulensi konstan aerator outdoor \\
+\addlinespace
+
+{Dong et al.~\cite{Dong2024}} & Three-Stream Network (Spatial, Temporal, Frequency) & Akuakultur industri (FeedFishNet) & Klasifikasi intensitas makan presisi tinggi multi-skala & Membutuhkan akselerasi GPU; belum diuji pada single-board computer \\
+\addlinespace
+
+{Zhang et al.~\cite{Zhang2024}} & RUSNet (Adaptive Optical Flow Selection) & Video lingkungan akuatik dinamis & Segmentasi objek ikan adaptif terhadap degradasi visual & Fokus pada segmentasi under-water, bukan riak permukaan \\
+\addlinespace
+
+{Aris et al.~\cite{Aris2023}} & Survei Background Subtraction \& GMM & Dataset video dinamis multikondisi & Taksonomi komparatif adaptasi latar belakang dinamis & Kajian teoritis; butuh penyesuaian khusus gelombang aerator \\
+\addlinespace
+
+{Kamal et al.~\cite{Kamal2025}} & Akustik Pasif (Hydrophone) + Machine Learning & Kolam lele intensif (\textit{Clarias gariepinus}) & Otomasi pakan lele densitas tinggi berbasis suara kunyahan & Menggunakan sensor audio/suara, bukan visi kamera komputer \\
+\addlinespace
+
+{Yang et al.~\cite{Yang2025}} & Tinjauan Komprehensif State-of-the-Art 2025 & Domain computer vision akuakultur & Analisis kelemahan model deep learning terkini & Tinjauan survei sekunder tanpa data pengujian empiris langsung \\
+\addlinespace
+
+{Vijayalakshmi et al.~\cite{Vijayalakshmi2025}} & AquaYOLO (Backbone Teroptimasi \& Attention) & Kolam luar ruangan (\textit{outdoor ponds}) & Deteksi ikan akurat pada lingkungan terbuka dengan derau visual & Belum memodelkan dinamika temporal riak makan sub-detik \\
+
+\end{longtable}
+\end{small}

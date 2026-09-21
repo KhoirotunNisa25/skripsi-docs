@@ -1,0 +1,51 @@
+% Formatting Configuration
+
+% Line Spacing (1.5 Spacing)
+\onehalfspacing
+
+% Hyperref Setup (All Black / Hide Links)
+\hypersetup{
+    colorlinks=false,
+    hidelinks,
+    pdftitle={[Judul Penelitian Skripsi]},
+    pdfauthor={[Nama Mahasiswa]}
+}
+
+% Section Titles: Centered, Bold, Uppercase, Unnumbered Label
+% Subsections: Numbered (1.1, 1.2, 2.1, 2.2...)
+\setcounter{secnumdepth}{2}
+
+% Make every \section start on a new page
+\newcommand{\sectionbreak}{\clearpage}
+
+\titleformat{\section}[block]{\centering\Large\bfseries}{}{0pt}{}
+\titleformat{\subsection}[block]{\large\bfseries}{\thesubsection\quad}{0pt}{}
+\titleformat{\subsubsection}[block]{\bfseries}{\thesubsubsection\quad}{0pt}{}
+
+% Table of Contents (Daftar Isi) Formatting
+\renewcommand{\contentsname}{DAFTAR ISI}
+\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill\null}
+
+% Dense dot leaders for all entries (titik-titik padat)
+\renewcommand{\cftdotsep}{0.5}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+
+% Remove section number for major section titles in TOC
+\newcommand{\cftignore}[1]{}
+\renewcommand{\cftsecpresnum}{\cftignore}
+\setlength{\cftsecnumwidth}{0pt}
+
+% Section font in TOC: Bold
+\renewcommand{\cftsecfont}{\normalfont\bfseries}
+\renewcommand{\cftsecpagefont}{\normalfont\bfseries}
+
+% Rename Bibliography Header to DAFTAR PUSTAKA
+\addto\captionsindonesian{
+  \renewcommand{\refname}{DAFTAR PUSTAKA}
+}
+
+% Paragraph Spacing
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
