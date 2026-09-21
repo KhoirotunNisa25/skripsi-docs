@@ -113,6 +113,7 @@ Berdasarkan studi empiris Balai Benih Ikan (BBI) Teun pada Lele Sangkuriang (Pel
 Pada fase *Early Fry* (hari ke-4 hingga ke-12), pemberian jenis pakan alami yang tepat merupakan penentu utama kelulushidupan (*survival rate*):
 - **Cacing Sutra (*Tubifex sp.*)**: Penelitian Sri Mulyani et al. (2024) pada benih Lele Sangkuriang (*Clarias sp.*, bobot 1,02–1,04 g) menunjukkan bahwa perlakuan pakan cacing sutra menghasilkan **Laju Pertumbuhan Spesifik (SGR) tertinggi sebesar 14,91% per hari** dengan **angka mortalitas terendah yaitu 10%**, jauh mengungguli pakan kutu air (*Daphnia sp.*) yang mencatat mortalitas 16,6% dan jentik nyamuk.
 - **Nauplii *Artemia sp.* & Kuning Telur**: Pranat et al. (2025) membuktikan bahwa pemberian *Artemia sp.* mampu menjaga tingkat kelangsungan hidup (*survival rate*) benih lele hingga mencapai **98%**, sedangkan pakan cacing sutra mendukung pertumbuhan panjang mutlak terbaik (0,42 mm/minggu).
+- **Rejim Pakan Alami Hidup Teroptimasi**: Vu & Huynh (2020) membuktikan bahwa optimasi inisiasi waktu pemberian pakan alami (*rotifer* dan kutu air *Moina*) serta pengaturan kepadatan pakan mampu melipatgandakan tingkat kelangsungan hidup larva hingga 66%, menegaskan krusialnya manajemen nutrisi pakan hidup sebelum transisi ke pakan mikro formulasi.
 
 ### 5.2. Takaran Ransum Harian Berbasis Persentase Bobot Biomassa (% BW/Day)
 
@@ -150,14 +151,18 @@ Berdasarkan kajian eksperimental literatur:
    - Dosis di atas 7% menghasilkan penurunan efisiensi pakan yang drastis, sehingga direkomendasikan batas aman pemberian pakan benih adalah **maksimal 5% dari total bobot biomassa**.
 3. **Essien et al. (2024)** mengevaluasi benih lele berbobot rata-rata 2,25 g dengan ransum standar **5% biomassa per hari** yang dibagi dalam 2 kali pemberian selama 10 minggu:
    - Pakan komersial kualitas prima (*Coppens*) mencatatkan kelulushidupan (*survival rate*) sebesar **100%** dengan bobot akhir 53,10 g.
-4. **Pelu & Liubana (2025) & Sadiana & Rahmanto (2021)** mencatat bahwa pada fase pendederan lele sangkuriang, peternak menerapkan ransum **5% hingga 10% dari total biomassa** yang dibagi dalam frekuensi pemberian intensif guna mengimbangi laju metabolisme benih yang sangat tinggi.
-5. **Ng et al. (2000) & Tippayadara et al. (2016)** menunjukkan bahwa ketika lele bertumbuh memasuki fase juvenil lanjut (bobot >10–12 g), takaran pakan optimum harus segera **diturunkan ke rentang 2,0% hingga 2,5% bobot tubuh/hari** guna mempertahankan efisiensi rasio konversi pakan dan menekan ekskresi limbah amonia kolam.
+4. **Nahar et al. (2023)** meneliti pengaruh variasi takaran pakan harian 5%, 7%, dan 9% pada ikan lele: perlakuan 7% memberikan sintasan 83,1% dan laju pertumbuhan tertinggi (1,91% bw/day) pada sistem budidaya intensif, mengindikasikan batas atas toleransi nutrisi benih sebelum terjadi pemborosan pakan.
+5. **Ardelia, Fahleny, & Damayanti (2023)** membuktikan bahwa formulasi dan kombinasi pakan pelet yang tepat pada fase benih menuju juvenil (*Clarias sp.*) mampu meningkatkan efisiensi pemanfaatan pakan hingga 3,55% dan mempertahankan tingkat kelangsungan hidup di atas 95%.
+6. **Hogendoorn (1981) & Khattaby (2021)**: Hogendoorn (1981) membuktikan bahwa rejim pakan kontinu atau terjadwal teratur pada benih lele (*Clarias lazera*) menghasilkan pemanfaatan pakan yang optimal, sementara Khattaby (2021) mengonfirmasi bahwa pakan pelet berkadar protein 35% dengan padat tebar terkontrol menghasilkan retensi protein dan pertumbuhan fingerling lele terbaik.
+7. **Pelu & Liubana (2025) & Sadiana & Rahmanto (2021)** mencatat bahwa pada fase pendederan lele sangkuriang, peternak menerapkan ransum **5% hingga 10% dari total biomassa** yang dibagi dalam frekuensi pemberian intensif guna mengimbangi laju metabolisme benih yang sangat tinggi.
+8. **Ng et al. (2000) & Tippayadara et al. (2016)** menunjukkan bahwa ketika lele bertumbuh memasuki fase juvenil lanjut (bobot >10–12 g), takaran pakan optimum harus segera **diturunkan ke rentang 2,0% hingga 2,5% bobot tubuh/hari** guna mempertahankan efisiensi rasio konversi pakan dan menekan ekskresi limbah amonia kolam.
 
 ### 5.3. Frekuensi Pemberian Pakan Harian (*Feeding Frequency*)
 
 Kajian Okomoda et al. (2019), Biswas et al. (2023), dan Pelu & Liubana (2025) menunjukkan bahwa membagi ransum harian ke dalam **3 hingga 4 kali waktu makan per hari** menghasilkan laju pertumbuhan spesifik dan tingkat kelulushidupan yang jauh lebih unggul dibandingkan pemberian 1 atau 2 kali sehari:
 - **Jadwal 4 Kali Sehari (Pendederan Intensif)**: Pagi (07.00 - 08.00 WIB), Siang (12.00 - 13.00 WIB), Sore (17.00 - 18.00 WIB), dan Malam (21.00 - 22.00 WIB) (Pelu & Liubana, 2025; Kurdowi et al., 2025).
 - Frekuensi 3–4 kali makan per hari memperpendek jeda rasa lapar benih lele sehingga menekan dorongan memangsa sesama kawan (*cannibalistic drive*).
+- **Praktik Pembenihan Lapangan**: Temuan ini sejalan dengan survei unit pembenihan komersial oleh Uche et al. (2023) yang menegaskan bahwa keteraturan jadwal pemberian pakan dan manajemen ransum yang ketat merupakan pilar utama keberhasilan pembenihan lele dan pencegahan kematian massal larva.
 
 ### 5.4. Pola Sebar Pakan (*Broadcast Feeding*)
 
