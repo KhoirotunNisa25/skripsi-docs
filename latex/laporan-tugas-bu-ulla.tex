@@ -1,0 +1,204 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    citecolor=blue!70!black,
+    urlcolor=blue!70!black
+}
+
+\setlist{noitemsep, topsep=3pt}
+
+% Title styling
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{0.5em}{}
+
+\begin{document}
+
+% ==================== HEADER TUGAS ====================
+\begin{center}
+    {\Large\bfseries LAPORAN STUDI LITERATUR PRA-SKRIPSI}\\[0.3em]
+    {\large\bfseries Pengamatan Gerakan Objek untuk Deteksi Perubahan Gerakan pada Lingkungan Kolam Ikan}\\[0.8em]
+    \rule{\textwidth}{1pt}\\[0.6em]
+    \begin{tabular}{ll@{\hspace{2cm}}ll}
+        \textbf{Nama Mahasiswa} & : Khoirotun Nisa' & \textbf{Dosen Pembimbing} & : Dr. Ulla Delfana Rosiani, ST., MT. \\
+        \textbf{NIM} & : 2341720057 & \textbf{Program Studi} & : Sarjana Terapan Teknik Informatika \\
+        \textbf{Institusi} & : Politeknik Negeri Malang & \textbf{Tahun} & : 2026 \\
+    \end{tabular}\\[0.4em]
+    \rule{\textwidth}{1pt}
+\end{center}
+
+\vspace{0.5em}
+
+\section{Konteks dan Tujuan Penelusuran}
+Dokumen ini disusun untuk memenuhi tugas awal penelusuran studi literatur dari Dosen Pembimbing dengan arahan: \textit{mencari artikel penelitian terkait mengamati gerakan objek (diupayakan di sekitar kolam ikan, kandang binatang, atau CCTV) untuk mendeteksi perubahan gerakan}.
+
+\textbf{Relevansi dengan Topik Skripsi:}
+Pada budidaya ikan lele (\textit{Clarias sp.}), pemberian pakan yang efisien sangat dipengaruhi oleh respons gerak ikan di permukaan. Ketika lapar, ikan menunjukkan lonjakan pergerakan mendadak ke permukaan (\textit{burst}), menyambar pakan, lalu kembali menyelam. Namun, pada kolam luar ruangan, aerator atau kincir air yang beroperasi 24 jam terus menghasilkan riak dan buih air (\textit{pergerakan air $\neq$ ikan lapar}). Selain itu, implementasi ditargetkan menggunakan modul komputasi tepi (\textit{Single-Board Computer} seperti Raspberry Pi) tanpa kartu grafis diskrit (GPU). Oleh karena itu, penelusuran literatur ini bertujuan memetakan metode deteksi gerak yang ada, memahami kelebihan dan batasannya, serta merumuskan arah metode yang realistis untuk diuji coba.
+
+\section{Kata Kunci dan Strategi Pencarian}
+Penelusuran dilakukan pada basis data akademik terkemuka: IEEE Xplore, ScienceDirect (Elsevier), SpringerLink, Nature Portfolio, Frontiers in Marine Science, Consensus AI, dan jurnal nasional (SINTA/Garuda).
+Kombinasi kata kunci yang digunakan meliputi:
+\begin{itemize}
+    \item \texttt{"motion detection" AND "fish pond monitoring"}
+    \item \texttt{"animal behavior detection" AND "CCTV"}
+    \item \texttt{"frame differencing" AND "object movement detection"}
+    \item \texttt{"optical flow" AND "aquaculture fish behavior"}
+    \item \texttt{"background subtraction" AND "dynamic water background"}
+    \item \texttt{"lightweight motion detection" AND "Raspberry Pi"}
+\end{itemize}
+Dari hasil penelusuran, terkumpul \textbf{19 artikel ilmiah teks lengkap (Full-Text PDF)} yang telah diverifikasi keaslian dan kesesuaian isinya.
+
+\section{Daftar 19 Artikel Ilmiah Terverifikasi}
+
+\begin{small}
+\begin{longtable}{p{0.6cm} p{3.2cm} p{5.5cm} p{3.2cm} p{3.0cm}}
+\toprule
+\textbf{No} & \textbf{Penulis \& Tahun} & \textbf{Judul Artikel} & \textbf{Jurnal / Konferensi} & \textbf{DOI / Tautan} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{No} & \textbf{Penulis \& Tahun} & \textbf{Judul Artikel} & \textbf{Jurnal / Konferensi} & \textbf{DOI / Tautan} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+01 & Qian et al. (2026) & Real-time detection of fish feeding behavior with PM-YOLO utilizing YOLOv8 & Discover Applied Sciences (Springer) & \href{https://doi.org/10.1007/s42452-025-08043-5}{10.1007/s42452-025-08043-5} \\
+\addlinespace
+02 & Hu et al. (2026) & A vision-based framework for quantifying fish feeding behavior in industrial RAS & Scientific Reports (Nature) & \href{https://doi.org/10.1038/s41598-026-54934-x}{10.1038/s41598-026-54934-x} \\
+\addlinespace
+03 & Alahmad et al. (2025) & Visual-Based System for Fish Detection and Velocity Estimation in Marine Aquaculture & ICAROB 2025 Proceedings & \href{https://doi.org/10.5954/icarob.2025.os12-3}{10.5954/icarob.2025.os12-3} \\
+\addlinespace
+04 & Fukae et al. (2023) & Fish School Behaviour Classification for Optimal Feeding Using Dense Optical Flow & IEICE Trans. Inf. \& Syst. & \href{https://doi.org/10.1587/transinf.2022OFP0003}{10.1587/transinf.2022OFP0003} \\
+\addlinespace
+05 & Zhao et al. (2025) & Fish feeding behavior recognition via lightweight two stage network and satiety experiments & Scientific Reports (Nature) & \href{https://doi.org/10.1038/s41598-025-15241-z}{10.1038/s41598-025-15241-z} \\
+\addlinespace
+06 & Li et al. (2020) & Automatic recognition methods of fish feeding behavior in aquaculture: A review & Aquaculture (Elsevier) & \href{https://doi.org/10.1016/j.aquaculture.2020.735508}{10.1016/j.aquaculture.2020.735508} \\
+\addlinespace
+07 & Marliza \& Aisuwarya (2021) & Rancang Bangun Sistem Pemberian Pakan Ikan Berdasarkan Perilaku Ikan Menggunakan Kamera Mini PC & CHIPSET (Univ. Andalas) & \href{https://doi.org/10.25077/chipset.2.01.11-19.2021}{10.25077/chipset.2.01.11-19.2021} \\
+\addlinespace
+08 & Atoum et al. (2015) & Automatic Feeding Control for Dense Aquaculture Fish Tanks & IEEE Signal Processing Letters & \href{https://doi.org/10.1109/LSP.2014.2385794}{10.1109/LSP.2014.2385794} \\
+\addlinespace
+09 & Al-Abri et al. (2025) & Computer vision based approaches for fish monitoring systems: a comprehensive study & Artificial Intelligence Review & \href{https://doi.org/10.1007/s10462-025-11180-3}{10.1007/s10462-025-11180-3} \\
+\addlinespace
+10 & Zhou et al. (2018) & Near infrared computer vision and neuro-fuzzy feeding decision system for fish & Comput. Electron. Agric. & \href{https://doi.org/10.1016/j.compag.2018.02.006}{10.1016/j.compag.2018.02.006} \\
+\addlinespace
+11 & Liu et al. (2014) & Measuring feeding activity of fish in RAS using computer vision (CVFAI) & Aquacultural Engineering & \href{https://doi.org/10.1016/j.aquaeng.2014.03.005}{10.1016/j.aquaeng.2014.03.005} \\
+\addlinespace
+12 & Zhao et al. (2017) & Assessing appetite of swimming fish based on spontaneous collective behaviors & Aquacultural Engineering & \href{https://doi.org/10.1016/j.aquaeng.2017.07.008}{10.1016/j.aquaeng.2017.07.008} \\
+\addlinespace
+13 & Zhao et al. (2016) & Spatial behavioral characteristics and kinetic energy modeling of a shoal of fish & Comput. Electron. Agric. & \href{https://doi.org/10.1016/j.compag.2016.06.025}{10.1016/j.compag.2016.06.025} \\
+\addlinespace
+14 & Dong et al. (2024) & An integrated three-stream network model for discriminating fish feeding intensity & PLOS ONE & \href{https://doi.org/10.1371/journal.pone.0310356}{10.1371/journal.pone.0310356} \\
+\addlinespace
+15 & Zhang et al. (2024) & RUSNet: Robust fish segmentation in underwater videos based on adaptive optical flow & Frontiers in Marine Science & \href{https://doi.org/10.3389/fmars.2024.1471312}{10.3389/fmars.2024.1471312} \\
+\addlinespace
+16 & Aris \& Jamaian (2023) & Background subtraction challenges in motion detection using Gaussian mixture model: a survey & IAES Int. J. of AI & \href{https://doi.org/10.11591/ijai.v12.i3.pp1007-1018}{10.11591/ijai.v12.i3.pp1007-1018} \\
+\addlinespace
+17 & Kamal et al. (2025) & An Automated Feed Management System for Catfish Using Acoustic Sensors and ML & Techno Agriculturae & \href{https://doi.org/10.70177/agriculturae.v2i6.2962}{10.70177/agriculturae.v2i6.2962} \\
+\addlinespace
+18 & Yang et al. (2025) & A Review of Research on Fish Feeding Behavior Based on Computer Vision & J. of Big Data and Computing & \href{https://doi.org/10.62517/jbdc.202501107}{10.62517/jbdc.202501107} \\
+\addlinespace
+19 & Vijayalakshmi \& Sasithradevi (2025) & AquaYOLO: Advanced YOLO-based fish detection for optimized pond monitoring & Scientific Reports (Nature) & \href{https://doi.org/10.1038/s41598-025-89611-y}{10.1038/s41598-025-89611-y} \\
+\end{longtable}
+\end{small}
+
+\newpage
+
+\section{Ringkasan Faktual Tiap Artikel (3--5 Kalimat)}
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Qian et al. (2026) --- PM-YOLOv8}: Mengembangkan model PM-YOLO berbasis arsitektur YOLOv8n untuk mendeteksi perilaku makan ikan di kolam dengan menambahkan modul atensi \textit{Parallelized Patch-Aware} (PPA) dan loss MPDIoU guna menangani target ikan yang saling bertumpuk. Pada dataset \textit{FeedFishDatas} (7.400 citra), model mencapai presisi 87,7\%, mAP-50 83,5\%, dan latensi 8,1 ms per frame pada workstation GPU. Penulis mencatat bahwa implementasi model pada perangkat tepi (\textit{edge}) melalui kuantisasi dan pemangkasan model masih merupakan pekerjaan masa depan (\textit{future work}). Relevansi: membuktikan modifikasi YOLO dapat mendeteksi ikan bertumpuk, namun belum langsung siap dioperasikan di Raspberry Pi tanpa kompresi lanjutan.
+
+    \item \textbf{Hu et al. (2026) --- HVIT}: Mengusulkan kerangka hibrida HVIT (CNN + Vision Transformer + LSTM) untuk mengukur intensitas makan ikan pada sistem resirkulasi industri (RAS). CNN mengekstrak fitur spasial lokal, Transformer menangkap korelasi global, dan LSTM memodelkan deret waktu gerakan makan, menghasilkan akurasi tinggi pada RAS industri. Keterbatasannya adalah beban komputasi GPU yang berat sehingga tidak dirancang untuk perangkat berdaya rendah. Relevansi: memperkuat pentingnya pemodelan dinamika temporal antar-frame dalam menilai nafsu makan.
+
+    \item \textbf{Alahmad et al. (2025) --- Velocity Estimation}: Merancang sistem deteksi ikan berbasis YOLOv8 yang dipadukan dengan estimasi kecepatan renang (\textit{swimming velocity}) pada jaring apung laut. Hasil pengujian menunjukkan bahwa kecepatan renang ikan meningkat signifikan saat periode lapar/mencari makan dan menurun drastis saat kenyang. Relevansi: membuktikan secara biologis bahwa perubahan kecepatan pergerakan objek ikan merupakan parameter kuantitatif yang valid untuk membedakan status lapar dan kenyang.
+
+    \item \textbf{Fukae et al. (2023) --- Dense Optical Flow \& SVM}: Mengklasifikasikan perilaku kawanan ikan untuk optimasi pemberian pakan menggunakan \textit{Gunnar Farnebäck Dense Optical Flow} dan klasifikasi SVM. Menghasilkan akurasi klasifikasi rata-rata 88,4\% pada video akuakultur nyata tanpa perlu mendeteksi satu per satu ikan. Namun, perhitungan dense optical flow membutuhkan beban komputasi besar dan belum memperhitungkan derau aerator. Relevansi: pendekatan gerak agregat kawanan sangat tepat untuk air keruh, namun algoritmanya perlu dibuat lebih efisien.
+
+    \item \textbf{Zhao et al. (2025) --- Pose Detection + GCN}: Mengembangkan model deteksi pose ringan berbasis GhostNet dipadukan dengan \textit{Spatio-Temporal GCN} untuk mengenali perilaku makan dan tingkat kenyang ikan. Mencapai akurasi klasifikasi kenyang 98,1\% pada tangki terkontrol dengan parameter 31,4\% lebih kecil dari model standar. Relevansi: membuktikan pemisahan status lapar vs kenyang secara objektif, namun metode titik kerangka menuntut air yang jernih dan sulit diterapkan di kolam lele yang keruh pekat.
+
+    \item \textbf{Li et al. (2020) --- Tinjauan Otomasi Perilaku Makan}: Menyajikan ulasan komprehensif mengenai metode sensor akustik, biomassa, dan visi komputer untuk memantau perilaku makan ikan akuakultur. Menggarisbawahi bahwa visi komputer adalah metode non-kontak terbaik, namun memiliki tantangan besar pada variasi cahaya alami, oklusi, dan kekeruhan air kolam. Relevansi: literatur dasar mengenai taksonomi perilaku makan ikan yang telah diuji secara global.
+
+    \item \textbf{Marliza \& Aisuwarya (2021) --- Mini-PC Pakan Ikan}: Mengembangkan purwarupa sistem pemberian pakan otomatis berbasis pengolahan citra skala abu-abu dan \textit{background subtraction} sederhana menggunakan Mini-PC Raspberry Pi. Sistem berhasil mendeteksi keberadaan pergerakan ikan di permukaan akuarium laboratorium dan menggerakkan dispenser pakan servo. Namun, sistem belum diuji pada kolam luar ruangan dengan gangguan riak aerator aktif. Relevansi: bukti rujukan implementasi lokal bahwa Raspberry Pi dapat digunakan untuk otomasi pakan lele.
+
+    \item \textbf{Atoum et al. (2015) --- Automatic Feeding Control}: Merancang sistem pengontrol pakan ikan otomatis pada tangki budidaya densitas tinggi dengan membatasi analisis pada wilayah lokal (\textit{particle filter}), ekstraksi fitur perbedaan frame berbasis DCT, dan klasifikasi SVM. Sistem mencapai akurasi deteksi makan sekitar 98\% dan mencegah pemborosan pelet pakan. Relevansi: membuktikan bahwa pengamatan gerak pada area lokal memadai untuk kontrol pakan tanpa harus melacak setiap ikan.
+
+    \item \textbf{Al-Abri et al. (2025) --- Tinjauan Pemantauan Visi Komputer}: Melakukan studi komprehensif mengenai dataset benchmark dan metode visi komputer pemantauan ikan, serta menyoroti kesenjangan besar antara riset GPU berdaya tinggi dengan kebutuhan implementasi nyata pada perangkat tertanam hemat daya. Relevansi: memperkuat justifikasi akademik untuk memprioritaskan metode komputasi ringan yang dapat berjalan di perangkat tepi.
+
+    \item \textbf{Zhou et al. (2018) --- NIR \& Neuro-Fuzzy (ANFIS)}: Mengembangkan sistem keputusan pakan ikan menggunakan kamera inframerah dekat (NIR) untuk mereduksi silau permukaan air dan model inferensi neuro-fuzzy (ANFIS). Berhasil menurunkan rasio konversi pakan (FCR) sebesar 10,77\% dan polusi sisa pakan sebesar 9,8\%. Relevansi: memberikan wawasan penting tentang cara menangani silau pantulan cahaya air, meski kamera NIR membutuhkan biaya perangkat keras tambahan.
+
+    \item \textbf{Liu et al. (2014) --- CVFAI Index}: Merumuskan indeks kuantitatif \textit{Computer Vision-based Feeding Activity Index} (CVFAI) berdasarkan persentase luas piksel hasil selisih biner antar-frame (\textit{frame differencing}) pada tangki RAS. Indeks ini terbukti berkorelasi sangat kuat ($R^2 > 0,90$) dengan nafsu makan riil ikan. Relevansi: menyediakan rumus matematika dasar yang sangat ringan dan ideal diimplementasikan pada perangkat terbatas.
+
+    \item \textbf{Zhao et al. (2017) --- Perilaku Renang Kolektif Spontan}: Menilai nafsu makan ikan berdasarkan analisis perilaku renang spontan sebelum pakan ditebar menggunakan kovariansi spasial dan model energi kinetik. Hasilnya membuktikan korelasi kuat antara dinamika pergerakan sebelum makan dengan tingkat konsumsi pakan. Relevansi: memperkuat dasar bahwa ikan lapar menunjukkan perubahan gerakan bahkan sebelum pelet pakan ditebar.
+
+    \item \textbf{Zhao et al. (2016) --- Pemodelan Energi Kinetik Kawanan}: Mengusulkan model energi kinetik agregat berbasis statistik kecepatan dan dispersi spasial tanpa melacak individu ikan, berjalan real-time pada 25 FPS di CPU standar. Model berhasil mengenali lonjakan aktivitas fisik saat ikan lapar atau stres. Relevansi: mengonfirmasi bahwa pengamatan energi gerak agregat jauh lebih hemat komputasi dibanding pelacakan individu.
+
+    \item \textbf{Dong et al. (2024) --- Three-Stream Network}: Merancang model jaringan tiga jalur yang menggabungkan citra spasial, selisih frame temporal, dan frekuensi untuk mengklasifikasi intensitas makan ikan dengan akurasi 94,6\%. Namun, model membutuhkan akselerasi GPU workstation (RTX 3090). Relevansi: membuktikan secara empiris bahwa informasi selisih temporal antar-frame sangat efektif menangkap dinamika makan.
+
+    \item \textbf{Zhang et al. (2024) --- RUSNet \& Adaptive Optical Flow}: Mengembangkan model RUSNet untuk segmentasi ikan pada video bawah air berarus dengan menyaring vektor optical flow acak dari fluida air. Relevansi: memberikan konsep bagaimana memisahkan derau fluida air yang bergerak kontinu dari objek biologis aktif.
+
+    \item \textbf{Aris \& Jamaian (2023) --- Survei GMM Background Subtraction}: Menyajikan kajian tantangan algoritma \textit{Gaussian Mixture Model} (GMM) pada lingkungan kamera dengan latar dinamis (seperti ombak air dan daun bergoyang). Menguraikan bahwa GMM rentan gagal membedakan objek bergerak jika laju pembaruan parameter tidak seimbang dengan kecepatan latar. Relevansi: rujukan teoritis mengenai kelemahan metode background subtraction standar pada kolam ber-aerator aktif.
+
+    \item \textbf{Kamal et al. (2025) --- Sensor Akustik Pakan Lele}: Mengembangkan sistem otomasi pakan spesifik ikan lele (\textit{Clarias gariepinus}) densitas tinggi menggunakan sensor hidrofon akustik untuk mendeteksi suara kunyahan pakan, mencapai akurasi 93,5\% tanpa terpengaruh air keruh. Relevansi: studi pembanding lintas-modalitas (akustik vs visi), di mana kamera visual memiliki keunggulan biaya perangkat keras yang jauh lebih terjangkau.
+
+    \item \textbf{Yang et al. (2025) --- Tinjauan Visi Komputer Perilaku Makan}: Memetakan tren visi komputer akuakultur tahun 2025 menjadi dua kelompok: metode deteksi gerak konvensional yang ringan tapi sensitif derau, serta metode deep learning yang tahan derau tapi berat komputasi. Relevansi: menegaskan perlunya riset yang menjembatani efisiensi komputasi untuk penerapan praktis di tambak.
+
+    \item \textbf{Vijayalakshmi \& Sasithradevi (2025) --- AquaYOLO}: Mengusulkan AquaYOLO dengan arsitektur CSP dan fusi fitur multi-skala untuk deteksi ikan di kolam luar ruangan. Diuji pada dataset \textit{DePondFi} (8.150 citra kolam di India Selatan), model mencapai Precision 0,889, Recall 0,848, dan mAP@50 0,909. Relevansi: membuktikan kelayakan modifikasi YOLO pada citra kolam terbuka serta menjadi pembanding terhadap metode deteksi gerak langsung.
+\end{enumerate}
+
+\section{Insight Awal dan Pola Pengamatan}
+\begin{enumerate}
+    \item \textbf{Pola Metode}: Metode konvensional (\textit{frame differencing}) sangat hemat komputasi dan cocok untuk Raspberry Pi, namun sensitif terhadap gangguan riak air konstan. Sebaliknya, metode \textit{deep learning} (seperti YOLO atau Vision Transformer) memiliki ketahanan visual yang baik, namun membutuhkan daya komputasi GPU yang besar dan belum tentu efektif di air keruh lele di mana ikan tertutup air sampai benar-benar menyambar permukaan.
+    \item \textbf{Pola Lingkungan}: Mayoritas artikel menguji pada tangki laboratorium jernih atau RAS tanpa semburan aerator yang mengacaukan permukaan air. Pada kolam lele nyata dengan aerator 24 jam nonstop, prinsip dasarnya adalah: \textbf{pergerakan air $\neq$ ikan lapar}. Sistem harus memiliki mekanisme untuk mengabaikan riak konstan aerator.
+    \item \textbf{Kesenjangan Hardware}: Sebagian besar penelitian tingkat lanjut masih berada pada tahap pengujian GPU workstation, dan sangat sedikit yang menguji metode deteksi gerak ringan secara langsung pada perangkat tepi hemat daya di kolam luar ruangan.
+\end{enumerate}
+
+\section{Arah Metode yang Relevan untuk Dicoba}
+Berdasarkan telaah literatur di atas, arah metode yang relevan untuk dieksplorasi secara empiris pada skripsi adalah:
+\begin{itemize}
+    \item \textbf{Opsi 1: Frame Differencing Terbobot dengan Region of Interest (ROI)} --- Menggunakan selisih frame temporal yang ringan, dengan membagi zona kolam (memisahkan zona semburan aerator dan zona pakan) atau menggunakan ambang batas lokal. Paling berpeluang berjalan ringan dan stabil di CPU Raspberry Pi.
+    \item \textbf{Opsi 2: Sparse Lucas-Kanade Optical Flow} --- Menghitung vektor kecepatan hanya pada titik-titik fitur tertentu di permukaan air untuk membedakan arah gerakan ikan dari riak aerator, tanpa beban komputasi sebesar \textit{dense optical flow}.
+    \item \textbf{Opsi 3: Model Deteksi Objek Terkompresi (YOLO-nano Terkuantisasi INT8) sebagai Pembanding} --- Menguji model YOLO versi terkecil untuk mengevaluasi apakah pendekatan deteksi cipratan berbasis AI layak dijalankan di Raspberry Pi sebagai data pembanding terhadap metode selisih citra langsung.
+\end{itemize}
+
+\section*{Daftar Pustaka}
+\addcontentsline{toc}{section}{Daftar Pustaka}
+\begin{enumerate}[label={[\arabic*]}, leftmargin=*]
+    \item R. Qian, H. Deng, Z. Wang, L. Zhou, B. Li, J. He, and J. Ling, ``Real-time detection of fish feeding behavior with PM-YOLO utilizing YOLOv8,'' \textit{Discover Applied Sciences}, vol. 8, no. 1, art. no. 48, 2026. \url{https://doi.org/10.1007/s42452-025-08043-5}.
+    \item C. Hu, Z.-Q. Feng, Y. Li, J. Chen, S.-Z. Wei, X. Guo, and Z. Zhang, ``A vision-based framework for quantifying fish feeding behavior in industrial recirculating aquaculture systems,'' \textit{Scientific Reports}, vol. 16, art. no. 23967, 2026. \url{https://doi.org/10.1038/s41598-026-54934-x}.
+    \item R. Alahmad, D. B. Solpico, S. Masuda, T. Ishizuka, K. Naramura, Z. Dong, Z. Li, Y. Nishida, and K. Ishii, ``Visual-Based System for Fish Detection and Velocity Estimation in Marine Aquaculture,'' in \textit{Proc. ICAROB 2025}, Oita, Japan, 2025. \url{https://doi.org/10.5954/icarob.2025.os12-3}.
+    \item K. Fukae, T. Imai, K. Arai, and T. Kobayashi, ``Fish School Behaviour Classification for Optimal Feeding Using Dense Optical Flow,'' \textit{IEICE Trans. Inf. \& Syst.}, vol. E106-D, no. 9, pp. 1472--1479, 2023. \url{https://doi.org/10.1587/transinf.2022OFP0003}.
+    \item S. Zhao, K. Cai, Y. Dong, G. Feng, Y. Wang, H. Pang, and Y. Liu, ``Fish feeding behavior recognition via lightweight two stage network and satiety experiments,'' \textit{Scientific Reports}, vol. 15, art. no. 4710, 2025. \url{https://doi.org/10.1038/s41598-025-15241-z}.
+    \item D. Li, Z. Wang, S. Wu, Z. Miao, L. Du, and Y. Duan, ``Automatic recognition methods of fish feeding behavior in aquaculture: A review,'' \textit{Aquaculture}, vol. 528, art. no. 735508, 2020. \url{https://doi.org/10.1016/j.aquaculture.2020.735508}.
+    \item Y. Marliza and R. Aisuwarya, ``Rancang Bangun Sistem Pemberian Pakan Ikan Secara Otomatis Berdasarkan Perilaku Ikan Menggunakan Kamera Berbasis Mini PC,'' \textit{CHIPSET}, vol. 2, no. 1, pp. 11--19, 2021. \url{https://doi.org/10.25077/chipset.2.01.11-19.2021}.
+    \item Y. Atoum, S. Srivastava, and X. Liu, ``Automatic Feeding Control for Dense Aquaculture Fish Tanks,'' \textit{IEEE Signal Processing Letters}, vol. 22, no. 8, pp. 1089--1093, 2015. \url{https://doi.org/10.1109/LSP.2014.2385794}.
+    \item S. Al-Abri, S. Keshvari, K. Al-Rashdi, R. Al-Hmouz, and H. Bourdoucen, ``Computer vision based approaches for fish monitoring systems: a comprehensive study,'' \textit{Artificial Intelligence Review}, vol. 58, art. no. 185, 2025. \url{https://doi.org/10.1007/s10462-025-11180-3}.
+    \item C. Zhou, K. Lin, D. Xu, L. Chen, S. Zhu, J. Zhao, Y. Liu, and Y. Sun, ``Near infrared computer vision and neuro-fuzzy model-based feeding decision system for fish in aquaculture,'' \textit{Computers and Electronics in Agriculture}, vol. 146, pp. 14--24, 2018. \url{https://doi.org/10.1016/j.compag.2018.02.006}.
+    \item Z. Liu, X. Li, L. Fan, H. Lu, L. Liu, and Y. Liu, ``Measuring feeding activity of fish in RAS using computer vision,'' \textit{Aquacultural Engineering}, vol. 60, pp. 20--27, 2014. \url{https://doi.org/10.1016/j.aquaeng.2014.03.005}.
+    \item J. Zhao, W. Bao, F. Zhang, Z. Ye, Y. Liu, M. Shen, and S. Zhu, ``Assessing appetite of the swimming fish based on spontaneous collective behaviors in a recirculating aquaculture system,'' \textit{Aquacultural Engineering}, vol. 78, pp. 196--204, 2017. \url{https://doi.org/10.1016/j.aquaeng.2017.07.008}.
+    \item J. Zhao, Z. Gu, M. Shi, H. Lu, J. Li, M. Shen, Z. Ye, and S. Zhu, ``Spatial behavioral characteristics and statistics-based kinetic energy modeling in special behaviors detection of a shoal of fish,'' \textit{Computers and Electronics in Agriculture}, vol. 127, pp. 271--280, 2016. \url{https://doi.org/10.1016/j.compag.2016.06.025}.
+    \item Y. Dong, S. Zhao, Y. Wang, K. Cai, and H. Zhao, ``An integrated three-stream network model for discriminating fish feeding intensity using multi-feature analysis and deep learning,'' \textit{PLOS ONE}, vol. 19, no. 9, art. no. e0310356, 2024. \url{https://doi.org/10.1371/journal.pone.0310356}.
+    \item P. Zhang, Z. Yang, H. Yu, W. Tu, C. Gao, and Y. Wang, ``RUSNet: Robust fish segmentation in underwater videos based on adaptive selection of optical flow,'' \textit{Frontiers in Marine Science}, vol. 11, art. no. 1471312, 2024. \url{https://doi.org/10.3389/fmars.2024.1471312}.
+    \item N. A. M. Aris and S. S. Jamaian, ``Background subtraction challenges in motion detection using Gaussian mixture model: a survey,'' \textit{IAES Int. J. of AI}, vol. 12, no. 3, pp. 1007--1018, 2023. \url{https://doi.org/10.11591/ijai.v12.i3.pp1007-1018}.
+    \item M. Kamal, M. Abdallah, and T. Youssef, ``An Automated Feed Management System for High-Density Catfish Aquaculture Using Acoustic Sensors and Machine Learning,'' \textit{Techno Agriculturae Studium of Research}, vol. 2, no. 6, pp. 321--331, 2025. \url{https://doi.org/10.70177/agriculturae.v2i6.2962}.
+    \item Y. Yang, L. Jia, W. Long, and L. Jiang, ``A Review of Research on Fish Feeding Behavior Based on Computer Vision,'' \textit{Journal of Big Data and Computing}, vol. 3, no. 1, pp. 107--115, 2025. \url{https://doi.org/10.62517/jbdc.202501107}.
+    \item M. Vijayalakshmi and A. Sasithradevi, ``AquaYOLO: Advanced YOLO-based fish detection for optimized aquaculture pond monitoring,'' \textit{Scientific Reports}, vol. 15, art. no. 6588, 2025. \url{https://doi.org/10.1038/s41598-025-89611-y}.
+\end{enumerate}
+
+\end{document}
