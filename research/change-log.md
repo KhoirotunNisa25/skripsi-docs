@@ -2,6 +2,31 @@
 
 ## Log Perubahan Dokumen Riset
 
+### 2026-09-26 (Sesi 12)
+- **Perubahan**:
+  - **Identifikasi Detail Merk & Spesifikasi Hardware Kamera di Literatur CV**:
+    - Mengekstrak data riil dari seluruh 20 artikel CV mengenai merk dan model spesifik yang digunakan:
+      1. Qian et al. (2025): Hikvision DS-2CD1245-LA (PoE Bullet Cam, 1/2.8'' CMOS, 1440p/2K QHD, overhead 3 m).
+      2. Fukae et al. (2023): Canon VB-H651V (2.1 MP CMOS, optical zoom 2.8x, PoE Gigabit, 1080p 30 FPS).
+      3. Marliza & Aisuwarya (2021): Raspberry Pi Camera Module-V2 (Sony IMX219 8 MP, MIPI-CSI).
+      4. Zhou et al. (2018): AVT Mako G-223B (GigE NIR CMOS) + iluminator Near-Infrared HEROWEI MVIR0460 850 nm.
+      5. Liu et al. (2014): Micro-vision MV-VS078FC (1/3'' Sony CCD) + capture card IEEE-1394.
+      6. Zhao et al. (2016, 2017): Hikvision DS-2CD6233F-SDI (CCD HDV 1080p) + LED Kingbright 100W.
+      7. Kamal et al. (2025): Piezoelectric Underwater Acoustic Hydrophone (Non-kamera optik).
+    - Memperbarui Tabel Master 1 di LaTeX dan Markdown dengan detail merk dan hardware kamera ini.
+  - **Penegasan Posisi Kajian Model Temporal (LSTM, Multi-Stream, dkk.)**:
+    - Menegaskan bahwa LSTM **bukan rumusan final skripsi yang sudah dikunci**, melainkan **telaah literatur kritis** terhadap bagaimana paper-paper terdahulu (Hu et al. 2026, Dong et al. 2024, Fukae et al. 2023, Li et al. 2020) menerapkan pemodelan sekuensial deret waktu:
+      - Mengapa model temporal dibutuhkan: menangkap siklus makan dinamis (lapar $\to$ riak puncak $\to$ kenyang) dan mengeliminasi alarm palsu aerator sesaat.
+      - Bagaimana model Hu et al. bekerja: ResNet18 + ViT $\to$ sekuens $T=5$ frame $\to$ single-layer LSTM 256 unit. Keterbatasan komputasi: butuh GPU RTX 3090, 28.6 juta parameter.
+      - Bagaimana model Dong et al. bekerja: Three-Stream CNN (Optical Flow + Spasial Biner + Tekstur GLCM).
+      - Implikasi bagi skripsi: Jika kelak menguji model temporal, masukan bukan raw video melainkan vektor 1D terkompresi ternormalisasi baseline aerator (Z-Score). Model temporal ringan ini ditempatkan sebagai **salah satu hipotesis pembanding** terhadap model *baseline rule-based*, bukan formula final mutlak.
+  - **Kompilasi Ulang LaTeX**:
+    - Kompilasi ulang `latex/laporan-analisis-pakan-dan-cv.tex` menghasilkan `output/analisis-pakan-dan-cv/laporan-analisis-pakan-dan-cv.pdf` tepat 4 halaman tanpa overfull hbox.
+- **Alasan**: Permintaan klarifikasi pengguna terkait spesifikasi merk kamera dan penegasan bahwa LSTM saat ini adalah telaah literatur mendalam, bukan perumusan final skripsi.
+- **Status**: Selesai (*Completed*)
+
+---
+
 ### 2026-09-26 (Sesi 11)
 - **Perubahan**:
   - **Sinkronisasi Hasil Bimbingan Dosen (Bu Ulla)**:

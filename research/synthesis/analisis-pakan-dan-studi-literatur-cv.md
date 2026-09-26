@@ -99,31 +99,32 @@ Berikut adalah analisis komprehensif terhadap **seluruh 20 artikel ilmiah** bida
 
 ---
 
-### A. Tabel Master 1: Spesifikasi Fisik Kamera, Sudut, & Lingkungan Kolam (20 Artikel)
+### A. Tabel Master 1: Merk Kamera, Spesifikasi Hardware, Sudut, & Lingkungan Kolam (20 Artikel)
 
-| No | Penulis & Tahun | Objek Ikan & Fase | Lingkungan & Jenis Kolam | Aerator / Permukaan | Posisi Kamera | Ketinggian | Sudut | Resolusi & FPS | Jenis Kamera |
+| No | Penulis & Tahun | Objek Ikan & Fase | Lingkungan & Jenis Kolam | Aerator / Permukaan | Posisi Kamera | Tinggi | Sudut | Resolusi & FPS | Merk Kamera & Spesifikasi Hardware Eksplisit |
 |:--:|---|---|---|---|---|:---:|:---:|:---:|---|
-| **01** | **Qian et al. (2025)** | Ikan air tawar (*Crucian carp*) | Kolam luar ruangan (*outdoor pond*) | Air tenang tanpa aerasi di ROI | *Overhead / Top-view* | 1,8 m | $90^\circ$ nadir | 1080p, 25--30 FPS | Kamera industri optik RGB |
-| **02** | **Hu et al. (2026)** | *Largemouth bass* (1.200 ekor dewasa) | Industrial RAS, tangki bundar $\varnothing$ 4 m, d 1,4 m | Bergelombang dinamis (arus RAS) | *Oblique* (miring) | 0,7 m | $45^\circ\text{--}60^\circ$ | $512 \times 512$ (crop), 25 FPS | Kamera industri digital HD |
-| **03** | **Alahmad et al. (2025)** | Ikan laut budidaya (*seabream*) | Keramba jaring apung laut (*marine cage*) | Arus bawah laut alami | *Underwater* (bawah air) | Kedalaman 3,4 m | Horizontal samping | 1080p, 30 FPS | Kamera bawah air tahan tekanan |
-| **04** | **Fukae et al. (2023)** | Kawanan ikan air tawar | Tangki budidaya indoor | Tenang tanpa arus/aerator saat rekam | *Overhead / Top-view* | 1,5 m | $90^\circ$ tegak lurus | 1080p, 30 FPS | Kamera RGB PoE industri |
-| **05** | **Zhao et al. (2025)** | *Carassius auratus* / Nila | Tangki budidaya terkontrol | Air sangat jernih, tenang | *Top-view* overhead | 1,2 m | $90^\circ$ nadir | 1080p, 30 FPS | Kamera digital RGB resolusi tinggi |
-| **06** | **Li et al. (2020)** | Berbagai spesies ikan akuakultur | Tinjauan sistematis multi-kolam | Komparasi air tenang vs beriak | Komparasi top, side, underwater | Bervariasi | $0^\circ\text{--}90^\circ$ | Multi-resolusi | Visible, NIR, Stereo, Sonar |
-| **07** | **Marliza & Aisuwarya (2021)** | **Ikan Lele (*Clarias sp.*)** | Kolam terpal lokal Indonesia | Tenang (tanpa pemodelan aerator) | *Top-view* di atas kolam | $\approx 0,8\text{--}1,0\text{ m}$ | $90^\circ$ tegak lurus | 480p, 15 FPS | **Raspberry Pi Camera Module** |
-| **08** | **Atoum et al. (2015)** | Kawanan ikan densitas tinggi | Tangki akuakultur tertutup | Berriak dinamis saat makan | *Overhead* di atas tangki | 1,0 m | $90^\circ$ nadir | 720p, 30 FPS | Kamera video overhead RGB |
-| **09** | **Al-Abri et al. (2025)** | Multi-spesies akuakultur | Tinjauan komparatif kolam & laut | Bervariasi (outdoor & indoor) | Tinjauan overhead & underwater | Multi-tinggi | $0^\circ\text{--}90^\circ$ | Multi-resolusi | Tinjauan sensor RGB & Multispektral |
-| **10** | **Zhou et al. (2018)** | Ikan Nila (*Oreochromis niloticus*) | Tangki budidaya indoor | Tenang, bebas turbulensi | *Overhead* di atas tangki | 1,2 m | $90^\circ$ nadir | 720p, 25 FPS | **Kamera Near-Infrared (NIR 850 nm)** |
-| **11** | **Liu et al. (2014)** | Salmon Atlantik (*Salmo salar*) | Tangki resirkulasi RAS indoor | Arus sirkulasi teratur | *Overhead* di atas tangki | 1,5 m | $90^\circ$ nadir | 768 $\times$ 576, 25 FPS | Kamera monokrom CCD industri |
-| **12** | **Zhao et al. (2017)** | Ikan Nila (*Oreochromis niloticus*) | Tangki bulat radius 100 cm, d 80 cm | Air jernih tenang terkontrol | *Overhead* di atas tangki | 1,2 m ($\pm 0,2$ cm) | $90^\circ$ nadir | 1080p, 25 FPS | Kamera digital RGB resolusi tinggi |
-| **13** | **Zhao et al. (2016)** | Ikan mas / nila di tangki | Tangki akuakultur RAS | Permukaan tenang teriluminasi | *Overhead* tepat di atas air | 1,2 m | $90^\circ$ nadir | 1080 $\times$ 1920, 25 FPS | Kamera digital RGB |
-| **14** | **Dong et al. (2024)** | Ikan Kerapu (*Epinephelus coioides*) | Tangki pembiakan indoor (372 lux) | Tenang sebelum feeding | *Overhead* di atas air | 0,5 m | $90^\circ$ tegak lurus | 480 $\times$ 270, 30 FPS | Kamera industri controlled PC |
-| **15** | **Zhang et al. (2024)** | Ikan laut liar / budidaya | Bawah air laut dinamis | Turbulensi arus laut | *Underwater* (bawah air) | Di dalam kolom air | Horizontal | 1080p Full HD, 30 FPS | Kamera underwater digital HD |
-| **16** | **Aris et al. (2023)** | Gerakan dinamis umum | Lingkungan video pengawasan | Riak air bergelombang | Kamera pengawas luar ruangan | 2,0--3,0 m | Miring $45^\circ$ | 720p, 25 FPS | Kamera CCTV RGB outdoor |
-| **17** | **Kamal et al. (2025)** | **Ikan Lele (*Clarias gariepinus*)** | Kolam terpal densitas tinggi | **Kolam ber-aerator kontinu** | Terendam dalam air (akustik) | Submerged | Omnidirectional | Frekuensi audio 48 kHz | **Sensor Akustik Hidrofon (Bukan Kamera)** |
-| **18** | **Yang et al. (2025)** | Ikan budidaya komersial | Tinjauan kolam air tawar & laut | Komparasi air tenang vs beriak | Tinjauan side & overhead | Multi-jarak | $45^\circ\text{--}90^\circ$ | Multi-resolusi | Tinjauan kamera modern 2025 |
-| **19** | **Vijayalakshmi (2025)** | Ikan kolam air tawar (DePondFi) | Kolam luar ruangan (*aquaponds*) | Permukaan air kolam outdoor | *Overhead / Oblique* | 1,5--2,0 m | $60^\circ\text{--}90^\circ$ | Resolusi tinggi (8.150 citra) | Kamera RGB kolam terbuka |
-| **20** | **Wu et al. (2024)** | *Largemouth bass* remaja/dewasa | Tangki budidaya terkontrol | Tenang sebelum pakan ditebar | *Overhead / Top-view* | 1,2--1,5 m | $90^\circ$ nadir | 1080p cropped, 30 FPS | Kamera RGB digital industri |
-| **--** | **Skripsi Mahasiswa** | **Bibit Ikan Lele (*Clarias sp.*, 2--7 cm)** | **Kolam Terpal Outdoor (Luar Ruangan)** | **AERATOR MENYALA KONSTAN (BASELINE)** | ***Overhead / Top-View* Tegak Lurus** | **0,8--1,2 m** | **$90^\circ$ (atau sudut koreksi silau)** | **720p / 480p, 10 FPS** | **Raspberry Pi Camera Module (Edge)** |
+| **01** | **Qian et al. (2025)** | Ikan mas (*Crucian carp*) | Kolam luar ruangan (*outdoor pond*) | Air tenang tanpa aerasi di ROI | *Overhead / Top-view* | 1,8 m | $90^\circ$ nadir | 1080p, 25--30 FPS | **Hikvision DS-2CD1245-LA** (Network Surveillance Bullet Camera) |
+| **02** | **Hu et al. (2026)** | *Largemouth bass* (1.200 ekor dewasa) | Industrial RAS, tangki bundar $\varnothing$ 4 m, d 1,4 m | Bergelombang dinamis (arus RAS) | *Oblique* (miring) | 0,7 m | $45^\circ\text{--}60^\circ$ | $512 \times 512$ (crop), 25 FPS | **Kamera Digital HD Industri** (Rig mounting oblique di atas tangki) |
+| **03** | **Alahmad et al. (2025)** | Ikan laut budidaya (*seabream*) | Keramba jaring apung laut (*marine cage*) | Arus bawah laut alami | *Underwater* (bawah air) | Kedalaman 3,4 m | Horizontal samping | 1080p, 30 FPS | **Kamera Digital Kedap Air Bawah Laut** (*pressure-resistant housing*) |
+| **04** | **Fukae et al. (2023)** | Kawanan ikan air tawar | Tangki budidaya indoor | Tenang tanpa arus/aerator saat rekam | *Overhead / Top-view* | 1,5 m | $90^\circ$ tegak lurus | 1080p, 30 FPS | **Canon VB-H651V** (Network Camera, 2.1 Megapixel, PoE, 30 fps) |
+| **05** | **Zhao et al. (2025)** | *Carassius auratus* / Nila | Tangki budidaya terkontrol | Air sangat jernih, tenang | *Top-view* overhead | 1,2 m | $90^\circ$ nadir | 1080p, 30 FPS | **Kamera Digital RGB High-Resolution** (Computer-controlled) |
+| **06** | **Li et al. (2020)** | Berbagai spesies ikan akuakultur | Tinjauan sistematis multi-kolam | Komparasi air tenang vs beriak | Komparasi top, side, underwater | Bervariasi | $0^\circ\text{--}90^\circ$ | Multi-resolusi | **Tinjauan Sensor**: CCD, CMOS, Near-Infrared, Stereo, Sonar Hidroakustik |
+| **07** | **Marliza & Aisuwarya (2021)** | **Ikan Lele (*Clarias sp.*)** | Kolam terpal lokal Indonesia | Tenang (tanpa pemodelan aerator) | *Top-view* di atas kolam | $\approx 0,8\text{--}1,0\text{ m}$ | $90^\circ$ tegak lurus | 480p, 15 FPS | **Raspberry Pi Camera Module** (Konektor MIPI-CSI, sensor CMOS) |
+| **08** | **Atoum et al. (2015)** | Kawanan ikan densitas tinggi | Tangki akuakultur tertutup | Berriak dinamis saat makan | *Overhead* di atas tangki | 1,0 m | $90^\circ$ nadir | 720p, 30 FPS | **Kamera Video Overhead RGB** (Koneksi workstation Intel i5) |
+| **09** | **Al-Abri et al. (2025)** | Multi-spesies akuakultur | Tinjauan komparatif kolam & laut | Bervariasi (outdoor & indoor) | Tinjauan overhead & underwater | Multi-tinggi | $0^\circ\text{--}90^\circ$ | Multi-resolusi | **Tinjauan Sensor Optik**: RGB High-Speed, Multispektral, LiDAR, Sonar |
+| **10** | **Zhou et al. (2018)** | Ikan Nila (*Oreochromis niloticus*) | Tangki budidaya indoor | Tenang, bebas turbulensi | *Overhead* di atas tangki | 1,2 m | $90^\circ$ nadir | 720p, 25 FPS | **Mako G-223B (AVT - Allied Vision, Jerman)** + Iluminator NIR HEROWEI MVIR0460 850 nm |
+| **11** | **Liu et al. (2014)** | Salmon Atlantik (*Salmo salar*) | Tangki resirkulasi RAS indoor | Arus sirkulasi teratur | *Overhead* di atas tangki | 1,5 m | $90^\circ$ nadir | 768 $\times$ 576, 25 FPS | **Kamera Monokrom Industri CCD** (Overhead rearing tank mount) |
+| **12** | **Zhao et al. (2017)** | Ikan Nila (*Oreochromis niloticus*) | Tangki bulat radius 100 cm, d 80 cm | Air jernih tenang terkontrol | *Overhead* di atas tangki | 1,2 m ($\pm 0,2$ cm) | $90^\circ$ nadir | 1080p, 25 FPS | **Hikvision DS-2CD6233F-SDI** (CCD High Definition Video Camera) + LED Kingbright 100 W |
+| **13** | **Zhao et al. (2016)** | Ikan mas / nila di tangki | Tangki akuakultur RAS | Permukaan tenang teriluminasi | *Overhead* tepat di atas air | 1,2 m | $90^\circ$ nadir | 1080 $\times$ 1920, 25 FPS | **Hikvision DS-2CD6233F-SDI** (CCD HDV Camera) + LED Kingbright 100 W |
+| **14** | **Dong et al. (2024)** | Ikan Kerapu (*Epinephelus coioides*) | Tangki pembiakan indoor (372 lux) | Tenang sebelum feeding | *Overhead* di atas air | 0,5 m | $90^\circ$ tegak lurus | 480 $\times$ 270, 30 FPS | **Kamera Digital Industri Terhubung PC** (Pencahayaan buatan 372 lux) |
+| **15** | **Zhang et al. (2024)** | Ikan laut liar / budidaya | Bawah air laut dinamis | Turbulensi arus laut | *Underwater* (bawah air) | Di dalam kolom air | Horizontal | 1080p Full HD, 30 FPS | **Kamera Digital Bawah Air High-Definition** (Submersible optic casing) |
+| **16** | **Aris et al. (2023)** | Gerakan dinamis umum | Lingkungan video pengawasan | Riak air bergelombang | Kamera pengawas luar ruangan | 2,0--3,0 m | Miring $45^\circ$ | 720p, 25 FPS | **Kamera CCTV Outdoor RGB Surveilans** (Fixed surveillance optical camera) |
+| **17** | **Kamal et al. (2025)** | **Ikan Lele (*Clarias gariepinus*)** | Kolam terpal densitas tinggi | **Kolam ber-aerator kontinu** | Terendam dalam air (akustik) | Submerged | Omnidirectional | Frekuensi audio 48 kHz | **Sensor Akustik Hidrofon Bawah Air** (*Acoustic sensor*, non-kamera optik) |
+| **18** | **Yang et al. (2025)** | Ikan budidaya komersial | Tinjauan kolam air tawar & laut | Komparasi air tenang vs beriak | Tinjauan side & overhead | Multi-jarak | $45^\circ\text{--}90^\circ$ | Multi-resolusi | **Tinjauan Perangkat Keras**: IP Camera Industri, CCTV Bullet, Kamera Stereo 3D |
+| **19** | **Vijayalakshmi (2025)** | Ikan kolam air tawar (DePondFi) | Kolam luar ruangan (*aquaponds*) | Permukaan air kolam outdoor | *Overhead / Oblique* | 1,5--2,0 m | $60^\circ\text{--}90^\circ$ | Resolusi tinggi (8.150 citra) | **Kamera Pengawas Kolam Terbuka RGB** (DePondFi Dataset Image Acquisition) |
+| **20** | **Wu et al. (2024)** | *Largemouth bass* remaja/dewasa | Tangki budidaya terkontrol | Tenang sebelum pakan ditebar | *Overhead / Top-view* | 1,2--1,5 m | $90^\circ$ nadir | 1080p cropped, 30 FPS | **Kamera Digital RGB Industri dengan Lensa Wide-Angle** |
+| **--** | **Skripsi Mahasiswa** | **Bibit Ikan Lele (*Clarias sp.*, 2--7 cm)** | **Kolam Terpal Outdoor (Luar Ruangan)** | **AERATOR MENYALA KONSTAN (BASELINE)** | ***Overhead / Top-View* Tegak Lurus** | **0,8--1,2 m** | **$90^\circ$ (atau sudut koreksi silau)** | **720p / 480p, 10 FPS** | **Raspberry Pi Camera Module v2 (Sony IMX219) / v1 (OV5647)** |
+
 
 ---
 
@@ -196,70 +197,77 @@ Untuk tahap skripsi saat ini, metode tidak langsung dikunci secara kaku. Berikut
 
 ---
 
-## 🧠 BAGIAN V: SPESIFIKASI JIKA MODEL TEMPORAL (LSTM) DIGUNAKAN
+## 🧠 BAGIAN V: TELAAH KRITIS LITERATUR MODEL TEMPORAL (LSTM, MULTI-STREAM, & DERET WAKTU) SERTA IMPLIKASINYA
 
-Jika skripsi mengadopsi model temporal seperti **LSTM (Long Short-Term Memory)** atau **GRU (Gated Recurrent Unit)**, arsitektur harus dirancang secara rasional dan dapat dijelaskan secara ilmiah:
+> **Pernyataan Posisi Riset Mahasiswa**:
+> Mahasiswa **belum merumuskan atau mengunci model skripsi** (skripsi ini tidak mengklaim sejak awal bahwa arsitektur sistem sudah pasti menggunakan LSTM).
+> Sebaliknya, bagian ini merupakan **pendalaman komparatif literatur (*critical literature deep-dive*)** untuk menelaah secara sistematis:
+> 1. Bagaimana model sekuensial temporal diterapkan oleh para peneliti dunia (khususnya Hu et al., 2026; Dong et al., 2024; Fukae et al., 2023; Li et al., 2020).
+> 2. Apa metode dan model yang mereka gunakan, bagaimana inputnya dibentuk, dan bagaimana model tersebut bekerja.
+> 3. Mengapa pemodelan waktu (*temporal modeling*) dibutuhkan dalam mengidentifikasi siklus makan ikan (*feeding cycle*).
+> 4. Apa konsekuensi komputasi dan keterbatasannya terhadap implementasi *edge device* (Raspberry Pi) pada kolam terbuka ber-aerator.
+> 5. Apa pelajaran objektif bagi perumusan skripsi mahasiswa kelak (menempatkan model temporal ringan sebagai salah satu hipotesis pembanding terhadap model *rule-based* / *thresholding*, bukan keputusan mutlak tanpa pengujian).
 
 ```
-[Frame Video 10 FPS]
-         │
-         ▼
-[Prapemrosesan ROI & Normalisasi]
-         │
-         ▼
-[Ekstraksi Vektor Fitur Per-Frame] ───► e.g., [Motion Intensity, Spatial Variance, Ripple Density]
-         │                              (Dimensi Fitur: d = 3 s.d. 8 per frame)
-         ▼
-[Jendela Sekuens Geser (Sliding Window)] ───► T = 15 frame (1,5 detik, overlap 50%)
-         │
-         ▼
-[Model Temporal: 1-Layer LSTM / GRU] ───► Mengingat ritme baseline aerator vs impuls bibit lele
-         │
-         ▼
-[Dense Layer + Sigmoid / Softmax]
-         │
-         ▼
-[Status Aktivitas Makan: Baseline (0) vs Lonjakan Riak Lele (1)]
+[Kajian Literatur: Bagaimana Paper SOTA Memodelkan Perilaku Makan Ikan?]
+
+1. Model Hu et al. (2026) - Hybrid ViT + LSTM (HVIT):
+   Video RAS ──► Crop Oblique 512x512 ──► Jendela 15 Detik (Sampling T=5 Frame)
+                      │
+                      ├─── ResNet18 (Mish) ──► Fitur Spasial Lokal
+                      └─── 5-Layer ViT    ──► Fitur Relasi Global
+                                │
+                      Konkatenasi Tensor (B=1, T=5, D=256)
+                                │
+                      1-Layer LSTM (256 Hidden Units, Dropout 0.3)
+                                │
+                      Klasifikasi 4 Tingkat Intensitas (Akurasi 95.10%, Latensi 145 ms di GPU RTX 3090)
+
+2. Model Dong et al. (2024) - Three-Stream CNN:
+   Video Tangki ──► Aliran 1: Lucas-Kanade Optical Flow (Temporal Vector Field)
+                ──► Aliran 2: Binarisasi Citra (Spasial Area Sebaran Ikan)
+                ──► Aliran 3: Matriks Tekstur GLCM (Tekstur Permukaan Air)
+                                │
+                      Fusi Tiga Cabang CNN ──► Klasifikasi 4 Tingkat Agresi (Akurasi 99.28%)
+
+3. Model Fukae et al. (2023) - Akumulasi Optical Flow:
+   Video Tangki ──► Dense Optical Flow Farnebäck ──► Akumulasi Waktu Geser ──► SVM (Akurasi 88.3%)
 ```
 
-### 1. Apa Input Sequence-nya?
-- **Bukan Raw Video Piksel Berat**: Mengalirkan raw video $512 \times 512$ ke LSTM (seperti Hu et al. 2026) akan membebani Raspberry Pi dan menyebabkan latensi tinggi.
-- **Vektor Fitur Gerak Terkompresi (*Compact 1D Feature Sequence*)**: Input sequence berupa sekuens temporal berdimensi $(B, T, D)$:
-  - $B$: *Batch size* (saat inferensi $B = 1$).
-  - $T$: Panjang jendela sekuens waktu (misalnya $T = 15\text{--}20$ frame pada 10 FPS, mencakup durasi $1,5\text{--}2,0$ detik).
-  - $D$: Jumlah fitur per-frame ($D \approx 4\text{--}6$ fitur).
+### 1. Mengapa Peneliti Terdahulu Membutuhkan Model Temporal?
+- **Dinamika Siklus Makan (*Feeding Life Cycle*)**:
+  Aktivitas makan ikan bukanlah fenomena statis 1 frame foto, melainkan proses transisi waktu yang berkesinambungan:
+  $$\text{Fase Tenang / Lapar} \longrightarrow \text{Pakan Ditebar} \longrightarrow \text{Lonjakan Riak / Agresi Makan} \longrightarrow \text{Deselerasi Kenyang} \longrightarrow \text{Tenang Kembali}$$
+- **Kelemahan Model Spasial Murni (Frame Tunggal)**:
+  Jika hanya menggunakan model deteksi objek tunggal (seperti YOLOv8 atau ViT murni), model hanya memproses satu *snapshot* citra:
+  - Model tidak mengetahui apakah riak air sedang meningkat (ikan baru mulai makan) atau sedang menurun (ikan sudah mulai kenyang).
+  - Model sangat rentan terhadap **letupan sesaat buih aerator / pantulan cahaya matahari**, yang dapat memicu alarm palsu (*false positive*) karena tidak adanya memori riwayat frame sebelumnya.
+- **Peran Sel Temporal (LSTM / Recurrent Gates)**:
+  Pintu gerbang pada LSTM (*Forget Gate, Input Gate, Output Gate*) bertindak sebagai penyaring dinamis: jika riak hanya melonjak pada 1 frame akibat gelembung aerator pecah lalu langsung hilang, *forget gate* akan mengabaikan noise tersebut. Sebaliknya, jika riak bertahan selama beberapa frame secara konsisten (seperti perilaku kawanan lele yang menyambar pakan), akumulasi status sel (*cell state*) akan mencatatnya sebagai event makan nyata.
 
-### 2. Fitur Aktivitas Apa yang Digunakan ($D$)?
-Untuk setiap frame $t$, diekstraksi fitur gerakan permukaan yang mewakili riak:
-1. $M_t$: **Indeks Intensitas Gerak (*Motion Intensity*)**, rata-rata nilai perbedaan frame terbobot $\frac{1}{N} \sum |I_t - I_{t-1}|$.
-2. $V_t$: **Varians Spasial Gerakan (*Spatial Variance*)**, mengukur apakah riak terkonsentrasi di titik aerator atau menyebar akibat bibit lele.
-3. $A_t$: **Luas Area Aktif (*Active Ripple Area*)**, persentase piksel di atas ambang batas biner.
-4. $\Delta M_t$: **Gradien Laju Perubahan Energi (*Temporal Energy Derivative*)**, $M_t - M_{t-1}$.
+### 2. Apa Masukan (Input), Metode, dan Cara Kerja Model pada Literatur?
+- **Hu et al. (2026)**:
+  - *Input*: Jendela waktu 15 detik yang disampling menjadi $T = 5$ frame berjarak 3 detik antar-frame.
+  - *Metode*: Menggunakan pendekatan *late temporal fusion*. Tiap frame diproses secara independen oleh dua cabang ekstraktor spasial (ResNet18 dan Vision Transformer), menghasilkan vektor embedding 256 dimensi per frame. Vektor-vektor ini disusun berurutan waktu menjadi tensor $(B=1, T=5, D=256)$ yang dialirkan ke dalam 1 lapis LSTM.
+  - *Kelemahan Komputasi*: Model memiliki 28,6 juta parameter dan membutuhkan daya komputasi workstation GPU NVIDIA RTX 3090, sehingga tidak mungkin dijalankan secara langsung pada SBC mini (*Raspberry Pi*).
+- **Dong et al. (2024)**:
+  - *Input*: Video sekuens beresolusi $480 \times 270$ pada 30 FPS.
+  - *Metode*: Tiga cabang independen (vektor medan optical flow LK untuk gerak, citra biner untuk posisi, dan GLCM untuk riak tekstur air) diekstrak secara paralel menggunakan Convolutional Neural Network (CNN) lalu difusikan di lapisan *fully-connected*.
+  - *Kelemahan Komputasi*: Menjalankan tiga cabang CNN secara simultan membebani CPU secara ekstrem dan tidak realistis untuk pemrosesan *edge* tanpa pendingin aktif dan GPU diskrit.
 
-### 3. Bagaimana Sequence Dibentuk?
-- Menggunakan **Jendela Geser (*Sliding Window*)** dengan panjang $T = 15$ frame ($1,5$ detik) dan langkah pergeseran (*stride*) 3 frame ($0,3$ detik, setara $70\%$ overlap).
-- Panjang jendela $1,5$ detik dipilih karena event riak bibit lele berlangsung $0,3\text{--}0,6$ detik (3–6 frame). Jendela $1,5$ detik memberikan konteks sebelum event (*baseline pre-event*), saat event (*peak event*), dan setelah event (*post-event relaxation*).
-
-### 4. Apa Target / Label-nya?
-- **Klasifikasi Biner Operasional**:
-  - Label `0`: **Kondisi Normal / Baseline Kolam** (aerator menyala normal, permukaan beriak periodik, ikan tenang/tidak merespons pakan).
-  - Label `1`: **Lonjakan Aktivitas Riak Bibit Lele** (bibit lele menyambar aktif ke permukaan kolam menghasilkan deviasi riak yang signifikan).
-
-### 5. Mengapa Model Temporal Diperlukan?
-- **Perbedaan Karakteristik Waktu Antara Aerator vs Bibit Lele**:
-  - Gejolak aerator bersifat **siklis dan kuasi-periodik** dengan frekuensi relatif stabil sepanjang waktu.
-  - Aktivitas bibit lele saat lapar bersifat **impulsif dan stokastik** (tiba-tiba muncul lonjakan tajam selama 3–6 frame lalu mereda).
-- Model spasial murni (frame-by-frame) hanya melihat intensitas sesaat, sehingga mudah tertipu oleh letupan gelembung besar aerator sesaat (*false alarm*). Model temporal (LSTM) melihat **dinamika riwayat frame sebelumnya** untuk memastikan apakah lonjakan tersebut merupakan anomali aerator atau lonjakan riak kawanan lele.
-
-### 6. Bagaimana Baseline Aerator Ditangani?
-1. **Pemodelan Baseline Adaptif (*Running Moving Average & Variance*)**:
-   - Sistem secara berkala menghitung rata-rata bergerak $\mu_{\text{baseline}}$ dan standar deviasi $\sigma_{\text{baseline}}$ intensitas gerak saat tidak ada pakan.
-   - Sinyal yang masuk ke LSTM adalah sinyal ternormalisasi deviasi terhadap baseline:
-     $$Z_t = \frac{M_t - \mu_{\text{baseline}}}{\sigma_{\text{baseline}}}$$
-2. **Masking Spasial (*Region of Interest / ROI*)**:
-   - Area titik semprotan gelembung aerator utama di kolam dapat diberi bobot lebih rendah atau di-masking secara parsial, sehingga kamera lebih sensitif mengamati permukaan air di sekeliling aerator tempat bibit lele berkerumun.
-3. **Penyaringan Waktu Tenang (*Post-Feeding Refractory Period*)**:
-   - Setelah feeder mendispensasikan porsi pakan, sistem menerapkan jeda waktu tenang (*refractory cooldown*, misal 3–5 menit) sebelum deteksi riak diaktifkan kembali, agar cipratan sisa makan tidak memicu pakan berulang kali.
+### 3. Pelajaran dan Implikasi Kritis bagi Perumusan Skripsi Mahasiswa
+Dari telaah kritis literatur di atas, mahasiswa menarik pelajaran metodologis yang rasional untuk konteks bibit lele di kolam luar ruangan:
+1. **Tidak Meniru Arsitektur Berat Secara Buta**: Skripsi mahasiswa tidak akan memaksakan model berparameter raksasa seperti Hu et al. (28,6M parameter) atau Dong et al. (3-stream CNN) ke dalam Raspberry Pi, karena akan memicu latensi tinggi dan sistem *freeze*.
+2. **Prinsip Kompresi Fitur Sebelum Masuk ke Model Temporal**:
+   Jika skripsi kelak menguji model temporal, masukan yang digunakan **bukan citra piksel mentah**, melainkan **vektor fitur gerak 1D terkompresi** ($D \approx 4$ fitur):
+   - $M_t$: Indeks intensitas gerak rata-rata (*Motion Intensity*) dari selisih frame biner terbobot.
+   - $V_t$: Varians spasial sebaran gerak (membedakan semburan terpusat aerator vs sebaran acak lele).
+   - $A_t$: Luas persentase area aktif riak air.
+   - $\Delta M_t$: Gradien laju perubahan energi antar-frame ($M_t - M_{t-1}$).
+3. **Normalisasi Terhadap Baseline Aerator**:
+   Menghitung deviasi dinamis terhadap baseline aerator menggunakan skor standar ($Z_t = \frac{M_t - \mu_{\text{base}}}{\sigma_{\text{base}}}$) sehingga model temporal hanya belajar mengenali anomali riak makan lele terhadap gejolak normal aerator.
+4. **Posisi dalam Rencana Skripsi: Hipotesis Komparasi Terbuka**:
+   Model temporal ringan (seperti 1D-LSTM atau 1D-GRU) akan ditempatkan sebagai **salah satu alternatif pembanding** yang diuji secara empiris berdampingan dengan metode non-deep learning sederhana (*Rule-based Motion Thresholding* dan *Moving Average Filter*). Tujuannya adalah menguji secara objektif apakah penambahan lapisan temporal benar-benar memberikan peningkatan akurasi yang signifikan di kolam nyata dibanding metode *thresholding* sederhana yang jauh lebih hemat daya.
 
 ---
 
