@@ -13,9 +13,15 @@
       5. Perumusan rancangan evaluasi lapang 1 bulan (didahului 1 minggu observasi baseline riak) dengan pembanding kolam manual tanpa alat, mencakup metrik FCR, bobot, panjang, survival, dan kuota pakan.
   - **Penyusunan Dua Output Analisis Mendalam**:
     - Output 1: Analisis kebiasaan bibit lele dan respon biologis jika pakan dibatasi vs *loss* (*ad libitum*) berdasarkan literatur lokal (`pakannya bibit lele/`).
-    - Output 2: Studi literatur mendalam *computer vision* (Hu et al. 2026, Wu et al. 2024, Qian, Fukae, Zhao, Marliza, Kamal) diekstrak secara rigid dalam **25 parameter teknis** serta komparasi metode temporal (LSTM vs model lain).
-- **Alasan**: Permintaan pengguna untuk mengingatkan kembali dan menyelaraskan seluruh alur riset dengan hasil bimbingan dosen pembimbing.
+    - Output 2: Riset mendalam computer vision yang diperluas mencakup **seluruh 20 artikel CV terverifikasi** (19 Full-Text PDF lokal + Wu et al. 2024), menyajikan:
+      - **Tabel Master 1**: Spesifikasi fisik kamera (jenis, posisi top-view/oblique/side/underwater, ketinggian, sudut, resolusi, FPS), objek, lingkungan kolam, dan kondisi aerator.
+      - **Tabel Master 2**: Metode computer vision, model machine learning/deep learning, input, output, penanganan noise visual, hasil eksperimen, dan keterbatasan utama terhadap skripsi bibit lele outdoor ber-aerator.
+      - Analisis karakteristik 6 metode visual & formulasi spesifikasi teknis model temporal LSTM (input vektor 1D, sliding window $T=15$, target biner, normalisasi Z-score baseline aerator).
+  - **Kompilasi Luaran PDF Resmi**:
+    - Menghasilkan berkas PDF resmi 4 halaman: `output/analisis-pakan-dan-cv/laporan-analisis-pakan-dan-cv.pdf` bebas overfull.
+- **Alasan**: Permintaan pengguna untuk memperluas kajian ke seluruh 20 artikel CV yang telah ditemukan, mengekstrak rincian kamera, sudut, ketinggian, resolusi, metode, dan modelnya.
 - **Status**: Selesai (*Completed*)
+
 
 ---
 

@@ -93,129 +93,66 @@ Dari sintesis biologis di atas, terlihat keselarasan mutlak dengan arahan dosen 
 
 ---
 
-## 📷 BAGIAN III (OUTPUT 2): RISET MENDALAM STUDI LITERATUR COMPUTER VISION
+## 📷 BAGIAN III (OUTPUT 2): RISET MENDALAM SELURUH ARTIKEL COMPUTER VISION
 
-Di bawah ini adalah ekstraksi mendalam **25 Parameter Detail** dari dua paper fokus utama (**Hu et al. 2026** dan **Wu et al. 2024**) serta paper-paper pendukung top-view/outdoor/temporal lainnya.
-
----
-
-### A. Bedah Ekstraksi 25 Parameter Paper Utama 1: Hu et al. (2026)
-*Publikasi: Scientific Reports (Nature), Vol. 16, Art. 54934, DOI: 10.1038/s41598-026-54934-x.*
-*Judul: A vision-based framework for quantifying fish feeding behavior in industrial recirculating aquaculture systems.*
-
-1. **Objek Ikan**: *Largemouth bass* (*Micropterus salmoides*).
-2. **Ukuran / Fase Ikan**: Ikan teraklimatisasi selama 4 bulan, populasi komersial $>20.000$ ekor; kelompok uji 1.200 ekor ikan aktif (*flow-conditioned*).
-3. **Lingkungan Kolam**: Sistem Akuakultur Resirkulasi Industri (*Industrial RAS*).
-4. **Indoor / Outdoor**: Semi-indoor / fasilitas tertutup industri RAS dengan penerangan terkontrol.
-5. **Jenis Kolam**: Tangki bundar budidaya berdiameter $4,0\text{ m}$, tinggi tangki $1,5\text{ m}$, dengan kedalaman operasional air $1,4\text{ m}$.
-6. **Kondisi Permukaan Air**: Dinamis dengan arus sirkulasi air RAS dan riak gelombang air akibat pergerakan kawanan ikan.
-7. **Apakah Menggunakan Aerator**: Sistem menggunakan aerasi/oksigenasi RAS terintegrasi serta aliran air hidrodinamis tangki bundar.
-8. **Posisi Kamera**: Kamera dipasang miring (*oblique angle / top-oblique view*).
-9. **Ketinggian Kamera**: Sekitar **$70\text{ cm}$** di atas permukaan air.
-10. **Sudut Kamera**: Sudut miring menghadap permukaan air (*oblique angle* $\approx 45^\circ\text{--}60^\circ$).
-11. **Resolusi Video**: Resolusi tinggi, dipotong/diresize menjadi $512 \times 512$ piksel untuk input komputasi model.
-12. **FPS**: Video standar industri ($25\text{--}30\text{ FPS}$), diekstraksi ke jendela temporal $T = 5$ frame.
-13. **Jenis Kamera**: Kamera industri optik digital *high-definition*.
-14. **Durasi Pengambilan Data**: Perekaman kontinu selama sesi pemberian pakan komersial berulang selama beberapa minggu.
-15. **Waktu Pengambilan Data**: Waktu pemberian pakan rutin industri RAS.
-16. **Cara Anotasi Data**: Anotasi 4 tingkat intensitas makan (*None, Weak, Medium, Strong*) yang divalidasi oleh pakar akuakultur berdasarkan intensitas riak, cipratan, dan kecepatan makan.
-17. **Fitur yang Digunakan**: Fitur spasial tekstur gelombang air, riak permukaan (*ripples*), cipratan (*splashes*), dan pola temporal ketergantungan antar-frame sekuensial.
-18. **Metode Computer Vision**: Ekstraksi spasial konvolusional CNN + *Patch Embedding* Vision Transformer + pemodelan dependensi waktu.
-19. **Model Machine Learning / Deep Learning**: **Arsitektur Hibrida HVIT (ResNet18 CNN Backbone + 5-Layer Vision Transformer + Single-Layer LSTM)** dengan parameter $\approx 28,6\text{ Juta}$.
-20. **Input Model**: Sekuens jendela temporal video berukuran $T = 5$ frame resolusi $512 \times 512 \times 3$.
-21. **Output Model**: Klasifikasi 4 status intensitas perilaku makan: *None, Weak, Medium, Strong*.
-22. **Cara Membedakan Makan vs Normal**:
-    - *None*: Permukaan air tenang/arus biasa, ikan tidak merespons pelet.
-    - *Weak*: Sebagian kecil ikan naik ke permukaan, menimbulkan riak halus (*slight ripples*).
-    - *Medium*: Sebagian kelompok ikan menyambar pakan dengan cipratan sedang.
-    - *Strong*: Agresi makan massal, ikan menyambar rakus dan menimbulkan riak gelombang besar dan cipratan luas.
-23. **Cara Menangani Noise**: Modul Vision Transformer memusatkan *self-attention* pada area riak pakan dinamis dan mengabaikan latar belakang statis dinding tangki dan pantulan cahaya statis.
-24. **Hasil Eksperimen**: Rata-rata akurasi mencapai **$95,10 \pm 1,05\%$** (mengungguli model statis murni ConvNeXt dan Swin Transformer); latensi inferensi $145\text{ ms}$ per jendela 5-frame.
-25. **Keterbatasan Penelitian**:
-    - Membutuhkan komputasi GPU tinggi ($28,6\text{ M}$ parameter), sulit dijalankan langsung pada mikrokontroler/Raspberry Pi murni tanpa akselerator.
-    - Diuji pada tangki indoor RAS dengan pencahayaan buatan stabil, belum diuji pada kolam terbuka dengan perubahan cahaya matahari ekstrem dan aerator gelembung luar ruangan.
+Berikut adalah analisis komprehensif terhadap **seluruh 20 artikel ilmiah** bidang Computer Vision dan Pengenalan Perilaku Makan Ikan yang telah dihimpun (19 Full-Text PDF lokal + Wu et al. 2024), diekstrak secara rigid mencakup **spesifikasi kamera, ketinggian, sudut, resolusi, lingkungan kolam, aerator, metode ekstraksi fitur, model machine learning/deep learning, penanganan noise, dan keterbatasannya**.
 
 ---
 
-### B. Bedah Ekstraksi 25 Parameter Paper Utama 2: Wu et al. (2024)
-*Publikasi: Journal of Marine Science and Engineering (JMSE), Vol. 12, Issue 5, Art. 726, DOI: 10.3390/jmse12050726 & Feeding Splash Study.*
-*Judul: Identification of fish hunger degree with deformable attention transformer & Fish feeding intensity assessment method using deep learning-based analysis of feeding splashes.*
+### A. Tabel Master 1: Spesifikasi Fisik Kamera, Sudut, & Lingkungan Kolam (20 Artikel)
 
-1. **Objek Ikan**: *Largemouth bass* (*Micropterus salmoides*).
-2. **Ukuran / Fase Ikan**: Fase pembesaran / ikan remaja menjelang dewasa.
-3. **Lingkungan Kolam**: Kolam / tangki budidaya terkontrol.
-4. **Indoor / Outdoor**: Indoor / semi-outdoor beratap naungan.
-5. **Jenis Kolam**: Tangki terpal / fiberglass persegi budidaya.
-6. **Kondisi Permukaan Air**: Air jernih-sedang dengan permukaan relatif tenang sebelum pakan disebar.
-7. **Apakah Menggunakan Aerator**: Aerasi dimatikan atau dialirkan secara tenang selama sesi perekaman pakan agar riak cipratan terlihat kontras.
-8. **Posisi Kamera**: Posisi atas tegak lurus (*top-view / overhead*).
-9. **Ketinggian Kamera**: Sekitar $1,2\text{--}1,5\text{ m}$ di atas permukaan air.
-10. **Sudut Kamera**: Tegak lurus $90^\circ$ vertikal ke bawah (*nadir*).
-11. **Resolusi Video**: $1920 \times 1080$ Full HD, dipotong ke area *feeding splash thumbnails*.
-12. **FPS**: 30 FPS.
-13. **Jenis Kamera**: Kamera digital RGB industri dengan lensa *wide-angle* terpasang pada rig overhead.
-14. **Durasi Pengambilan Data**: Perekaman multi-hari saat interval pemberian pakan terjadwal.
-15. **Waktu Pengambilan Data**: Pagi dan siang hari saat pemberian pakan rutin.
-16. **Cara Anotasi Data**: Anotasi 3 tingkat rasa lapar (*Weakly hungry, Moderately hungry, Strongly hungry*) berdasarkan luas cipratan dan tingkat agregasi ikan.
-17. **Fitur yang Digunakan**: *Feeding splash thumbnails* (potongan citra cipratan air putih berbusa), kontras intensitas piksel buih air, dan tingkat pengelompokan (*aggregation level*).
-18. **Metode Computer Vision**: Ekstraksi lokal *feeding splash thumbnails* untuk mengeliminasi gangguan area luas permukaan air.
-19. **Model Machine Learning / Deep Learning**: **Deformable Attention Vision Transformer (DeformAtt-ViT)**.
-20. **Input Model**: Potongan gambar citra cipratan air (*splash thumbnails*).
-21. **Output Model**: Klasifikasi 3 tingkat rasa lapar (*Weakly, Moderately, Strongly Hungry*) serta sinyal pemicu *feeder* (ON saat agregasi tinggi, OFF saat dispersi).
-22. **Cara Membedakan Makan vs Normal**:
-    - Mengukur kerapatan dan luas sebaran cipratan buih putih (*splashes*) yang dihasilkan saat mulut dan ekor ikan membentur permukaan air saat menangkap pelet.
-    - Tidak ada cipratan = ikan kenyang/normal; cipratan sporadis = agak lapar; cipratan meluas masif = sangat lapar.
-23. **Cara Menangani Noise**: Penggunaan *feeding splash thumbnails* secara efektif memotong dan mengabaikan pantulan cahaya matahari (*specular reflection*), riak air tenang, dan bayangan lingkungan karena model hanya mengevaluasi area cipratan mikro.
-24. **Hasil Eksperimen**: Akurasi **$95,50\%$**, F1-Score **$94,13\%$**, Recall **$95,87\%$**, dan Precision **$92,45\%$**.
-25. **Keterbatasan Penelitian**:
-    - **TIDAK COCOK UNTUK BIBIT IKAN (*FISH FRY*)**: Peneliti dan literatur penelaah mencatat bahwa metode *feeding splash thumbnails* mengalami penurunan performa drastis pada **bibit ikan / benih** karena bibit ikan terlalu kecil untuk menghasilkan cipratan air berbusa putih (*inconspicuous splashing*).
-    - **Mengasumsikan Air Awal Tenang**: Mengasumsikan permukaan air tenang sebelum pakan jatuh, sehingga tidak siap menghadapi turbulensi aerator gelembung mekanis konstan seperti di kolam lele luar ruangan.
+| No | Penulis & Tahun | Objek Ikan & Fase | Lingkungan & Jenis Kolam | Aerator / Permukaan | Posisi Kamera | Ketinggian | Sudut | Resolusi & FPS | Jenis Kamera |
+|:--:|---|---|---|---|---|:---:|:---:|:---:|---|
+| **01** | **Qian et al. (2025)** | Ikan air tawar (*Crucian carp*) | Kolam luar ruangan (*outdoor pond*) | Air tenang tanpa aerasi di ROI | *Overhead / Top-view* | 1,8 m | $90^\circ$ nadir | 1080p, 25--30 FPS | Kamera industri optik RGB |
+| **02** | **Hu et al. (2026)** | *Largemouth bass* (1.200 ekor dewasa) | Industrial RAS, tangki bundar $\varnothing$ 4 m, d 1,4 m | Bergelombang dinamis (arus RAS) | *Oblique* (miring) | 0,7 m | $45^\circ\text{--}60^\circ$ | $512 \times 512$ (crop), 25 FPS | Kamera industri digital HD |
+| **03** | **Alahmad et al. (2025)** | Ikan laut budidaya (*seabream*) | Keramba jaring apung laut (*marine cage*) | Arus bawah laut alami | *Underwater* (bawah air) | Kedalaman 3,4 m | Horizontal samping | 1080p, 30 FPS | Kamera bawah air tahan tekanan |
+| **04** | **Fukae et al. (2023)** | Kawanan ikan air tawar | Tangki budidaya indoor | Tenang tanpa arus/aerator saat rekam | *Overhead / Top-view* | 1,5 m | $90^\circ$ tegak lurus | 1080p, 30 FPS | Kamera RGB PoE industri |
+| **05** | **Zhao et al. (2025)** | *Carassius auratus* / Nila | Tangki budidaya terkontrol | Air sangat jernih, tenang | *Top-view* overhead | 1,2 m | $90^\circ$ nadir | 1080p, 30 FPS | Kamera digital RGB resolusi tinggi |
+| **06** | **Li et al. (2020)** | Berbagai spesies ikan akuakultur | Tinjauan sistematis multi-kolam | Komparasi air tenang vs beriak | Komparasi top, side, underwater | Bervariasi | $0^\circ\text{--}90^\circ$ | Multi-resolusi | Visible, NIR, Stereo, Sonar |
+| **07** | **Marliza & Aisuwarya (2021)** | **Ikan Lele (*Clarias sp.*)** | Kolam terpal lokal Indonesia | Tenang (tanpa pemodelan aerator) | *Top-view* di atas kolam | $\approx 0,8\text{--}1,0\text{ m}$ | $90^\circ$ tegak lurus | 480p, 15 FPS | **Raspberry Pi Camera Module** |
+| **08** | **Atoum et al. (2015)** | Kawanan ikan densitas tinggi | Tangki akuakultur tertutup | Berriak dinamis saat makan | *Overhead* di atas tangki | 1,0 m | $90^\circ$ nadir | 720p, 30 FPS | Kamera video overhead RGB |
+| **09** | **Al-Abri et al. (2025)** | Multi-spesies akuakultur | Tinjauan komparatif kolam & laut | Bervariasi (outdoor & indoor) | Tinjauan overhead & underwater | Multi-tinggi | $0^\circ\text{--}90^\circ$ | Multi-resolusi | Tinjauan sensor RGB & Multispektral |
+| **10** | **Zhou et al. (2018)** | Ikan Nila (*Oreochromis niloticus*) | Tangki budidaya indoor | Tenang, bebas turbulensi | *Overhead* di atas tangki | 1,2 m | $90^\circ$ nadir | 720p, 25 FPS | **Kamera Near-Infrared (NIR 850 nm)** |
+| **11** | **Liu et al. (2014)** | Salmon Atlantik (*Salmo salar*) | Tangki resirkulasi RAS indoor | Arus sirkulasi teratur | *Overhead* di atas tangki | 1,5 m | $90^\circ$ nadir | 768 $\times$ 576, 25 FPS | Kamera monokrom CCD industri |
+| **12** | **Zhao et al. (2017)** | Ikan Nila (*Oreochromis niloticus*) | Tangki bulat radius 100 cm, d 80 cm | Air jernih tenang terkontrol | *Overhead* di atas tangki | 1,2 m ($\pm 0,2$ cm) | $90^\circ$ nadir | 1080p, 25 FPS | Kamera digital RGB resolusi tinggi |
+| **13** | **Zhao et al. (2016)** | Ikan mas / nila di tangki | Tangki akuakultur RAS | Permukaan tenang teriluminasi | *Overhead* tepat di atas air | 1,2 m | $90^\circ$ nadir | 1080 $\times$ 1920, 25 FPS | Kamera digital RGB |
+| **14** | **Dong et al. (2024)** | Ikan Kerapu (*Epinephelus coioides*) | Tangki pembiakan indoor (372 lux) | Tenang sebelum feeding | *Overhead* di atas air | 0,5 m | $90^\circ$ tegak lurus | 480 $\times$ 270, 30 FPS | Kamera industri controlled PC |
+| **15** | **Zhang et al. (2024)** | Ikan laut liar / budidaya | Bawah air laut dinamis | Turbulensi arus laut | *Underwater* (bawah air) | Di dalam kolom air | Horizontal | 1080p Full HD, 30 FPS | Kamera underwater digital HD |
+| **16** | **Aris et al. (2023)** | Gerakan dinamis umum | Lingkungan video pengawasan | Riak air bergelombang | Kamera pengawas luar ruangan | 2,0--3,0 m | Miring $45^\circ$ | 720p, 25 FPS | Kamera CCTV RGB outdoor |
+| **17** | **Kamal et al. (2025)** | **Ikan Lele (*Clarias gariepinus*)** | Kolam terpal densitas tinggi | **Kolam ber-aerator kontinu** | Terendam dalam air (akustik) | Submerged | Omnidirectional | Frekuensi audio 48 kHz | **Sensor Akustik Hidrofon (Bukan Kamera)** |
+| **18** | **Yang et al. (2025)** | Ikan budidaya komersial | Tinjauan kolam air tawar & laut | Komparasi air tenang vs beriak | Tinjauan side & overhead | Multi-jarak | $45^\circ\text{--}90^\circ$ | Multi-resolusi | Tinjauan kamera modern 2025 |
+| **19** | **Vijayalakshmi (2025)** | Ikan kolam air tawar (DePondFi) | Kolam luar ruangan (*aquaponds*) | Permukaan air kolam outdoor | *Overhead / Oblique* | 1,5--2,0 m | $60^\circ\text{--}90^\circ$ | Resolusi tinggi (8.150 citra) | Kamera RGB kolam terbuka |
+| **20** | **Wu et al. (2024)** | *Largemouth bass* remaja/dewasa | Tangki budidaya terkontrol | Tenang sebelum pakan ditebar | *Overhead / Top-view* | 1,2--1,5 m | $90^\circ$ nadir | 1080p cropped, 30 FPS | Kamera RGB digital industri |
+| **--** | **Skripsi Mahasiswa** | **Bibit Ikan Lele (*Clarias sp.*, 2--7 cm)** | **Kolam Terpal Outdoor (Luar Ruangan)** | **AERATOR MENYALA KONSTAN (BASELINE)** | ***Overhead / Top-View* Tegak Lurus** | **0,8--1,2 m** | **$90^\circ$ (atau sudut koreksi silau)** | **720p / 480p, 10 FPS** | **Raspberry Pi Camera Module (Edge)** |
 
 ---
 
-### C. Bedah Ringkas Paper Pendukung Terpilih (Kamera Top-View & Edge)
+### B. Tabel Master 2: Metode, Model Deep Learning, Noise Handling, & Keterbatasan (20 Artikel)
 
-| Penulis & Tahun | Objek & Kolam | Setup Kamera & Posisi | Metode & Model | Hasil & Latensi | Keterbatasan Utama Terhadap Kasus User |
-|---|---|---|---|---|---|
-| **Qian et al. (2025)** (*Discover Appl. Sci.*) | Ikan air tawar, kolam luar ruangan | *Overhead*, tinggi 1,8 m, $90^\circ$ nadir, Full HD | PM-YOLOv8 (YOLOv8 + Partial Convolution) | mAP 94,8%, inferensi 8,1 ms di GPU | Mengharuskan visual tubuh ikan terlihat jelas; gagal di air kolam bibit lele yang keruh kehijauan/kecokelatan. |
-| **Fukae et al. (2023)** (*IEICE Trans.*) | Kawanan ikan, tangki budidaya | *Overhead*, tinggi 1,5 m, $90^\circ$, 30 FPS | *Dense Optical Flow* (Farnebäck) + SVM | Akurasi klasifikasi 88,3% | Komputasi Farnebäck sangat berat untuk Raspberry Pi; mengasumsikan nol gerakan saat diam (rusak jika ada aerator konstan). |
-| **Zhao et al. (2025)** (*Sci. Rep.*) | Ikan air tawar, tangki observasi | *Top-view*, air jernih dengan pencahayaan bawah | *Pose Estimation* keypoint (kepala, punggung, ekor) + GCN | Akurasi kenyang 93,7% | Membutuhkan deteksi keypoint anatomi individual; mustahil diterapkan pada air lele keruh berbusa. |
-| **Marliza & Aisuwarya (2021)** (*JNTE*) | Ikan lele (*Clarias sp.*), kolam lokal terpal | *Top-view*, Raspberry Pi Camera di atas kolam | Grayscale + Binerisasi Thresholding + Bounding Contour | Pakan otomatis terpicu kontur lele | Sangat rentan *false trigger* akibat gelembung aerator dan pantulan sinar matahari outdoor. |
-| **Kamal et al. (2025)** (*Techno Agric.*) | Ikan lele (*Clarias gariepinus*) densitas tinggi | Sensor hidrofon akustik terendam dalam air | Ekstraksi fitur audio + Machine Learning | Akurasi klasifikasi lapar lele 91,2% | Kinerja anjlok drastis jika ada aerator mekanis karena kebisingan gelembung menutupi spektrum suara kunyahan lele. |
+| No | Penulis & Tahun | Metode Computer Vision & Fitur | Model Machine Learning / DL | Input & Output Model | Penanganan Noise Visual | Hasil Eksperimen | Keterbatasan Terhadap Skripsi Bibit Lele Outdoor |
+|:--:|---|---|---|---|---|---|---|
+| **01** | Qian et al. (2025) | Bounding box object detection, Partial Conv | PM-YOLO (Enhancement YOLOv8n) | Input: Citra RGB 640x640; Output: Box & status pakan | Backbone PConv mereduksi noise clutter | Precision 87.7%, mAP@50 83.5%, 8.1 ms (GPU) | Bergantung visual kontras tubuh ikan; gagal di air kolam lele keruh pekat. |
+| **02** | Hu et al. (2026) | Patch CNN + ViT Attention + Temporal LSTM | HVIT (ResNet18 + 5L-ViT + 1L-LSTM) | Input: Jendela 5 frame ($512^2$); Output: 4 kelas intensitas | Self-attention ViT fokus ke gelombang riak | Akurasi 95.10%, latensi 145 ms | Model berat (28,6 M param, butuh GPU); belum diuji kolam terbuka ber-aerator. |
+| **03** | Alahmad et al. (2025) | Underwater detection + simplified optical flow | YOLOv8 + Optical Flow Tracker | Input: Frame bawah air; Output: Kecepatan renang | Filter thresholding kecepatan renang | Akurasi deteksi ikan 85% | Butuh kamera underwater & air jernih laut; tidak cocok kolam lele overhead. |
+| **04** | Fukae et al. (2023) | Dense Optical Flow Farnebäck (magnitudo gerak) | Support Vector Machine (SVM) | Input: Matriks optical flow agregat; Output: 3 kelas aktivitas | Threshold magnitudo kecepatan gerak | Akurasi klasifikasi kawanan 88.3% | Farnebäck sangat lambat di Raspberry Pi (<2 FPS); gagal jika ada aerator konstan. |
+| **05** | Zhao et al. (2025) | Keypoint skeleton pose estimation + ST-GCN | Lightweight Two-Stage (Pose + GCN) | Input: Koordinat keypoint; Output: 3 level kenyang | Topologi graph anatomi memfilter noise air | Akurasi klasifikasi kenyang 98.5% | Menuntut air sangat jernih agar keypoint terdeteksi; mustahil di kolam lele keruh. |
+| **06** | Li et al. (2020) | Tinjauan: frame diff, optical flow, texture | Tinjauan: CNN, Fuzzy, SVM, Thresholding | Tinjauan berbagai skema input & output | Tinjauan filter refleksi & polarisasi | Analisis komparatif komprehensif | Menegaskan belum terselesaikannya pemodelan noise aerator mekanis konstan. |
+| **07** | Marliza & Aisuwarya (2021) | Grayscale + Thresholding Biner + Contour | Rule-Based Kontur Thresholding (RPi) | Input: Frame biner; Output: Pemicu motor pakan | Tanpa penanganan pantulan cahaya & aerator | Pakan terpicu saat ikan berkumpul | Sangat rentan *false trigger* akibat gelembung aerator & silau sinar matahari. |
+| **08** | Atoum et al. (2015) | Dynamic texture analysis + motion energy | Rule-Based Feedback Control | Input: Citra tekstur riak; Output: Sinyal pakan ON/OFF | Normalisasi variasi pencahayaan | Pakan terhenti saat ikan kenyang | Mengasumsikan kolam tenang tanpa semburan gelembung aerator di area pandang. |
+| **09** | Al-Abri et al. (2025) | Tinjauan: segmentation, object detection, ViT | Tinjauan: YOLOv7-v9, Transformer, DL | Tinjauan arsitektur input-output modern | Tinjauan adaptasi domain & data sintetis | Tinjauan performa SOTA global | Menyoroti trade-off beratnya model DL modern terhadap keterbatasan daya edge. |
+| **10** | Zhou et al. (2018) | Near-Infrared imaging (NIR 850 nm) + binarisasi | Adaptive Neuro-Fuzzy (ANFIS) | Input: Area aktivitas NIR; Output: Keputusan pakan | Filter optik NIR mengeliminasi silau cahaya | Akurasi feeding decision 98.0% | Butuh lampu NIR khusus; kurang efektif di bawah sinar matahari tropis terik. |
+| **11** | Liu et al. (2014) | Frame difference biner + akumulasi piksel | Computer Vision Feeding Index (CVFAI) | Input: Selisih frame; Output: Indeks numerik CVFAI | Threshold piksel bergerak minimal | Korelasi kuat ($R^2 > 0.90$) dengan nafsu makan | Asumsi air tenang tanpa aerator kontinu; gelembung akan terhitung sebagai CVFAI. |
+| **12** | Zhao et al. (2017) | Tracking kecepatan renang & turning angle | Modified Social Force Model + Kinetic | Input: Vektor lintasan ikan; Output: Nilai nafsu makan | Tracking filter Kalman | Akurasi penilaian nafsu makan 92.5% | Membutuhkan tracking ikan individual di air jernih; lele berkerumun pekat. |
+| **13** | Zhao et al. (2016) | Moving Fish Segmentation (BMFS) + PAOF | Kinetic Energy Network Model | Input: Vektor PAOF; Output: Indeks energi kinetik | Adaptive thresholding berbasis warna YCbCr | Korelasi tinggi dengan agresi makan | Komputasi optical flow per-piksel berat; tidak ada pemodelan gelembung aerator. |
+| **14** | Dong et al. (2024) | Three-stream: optical flow, binarize, texture | Three-Stream Convolutional Neural Net | Input: 3 cabang fitur; Output: 4 status feeding | Fusi multi-cabang mereduksi noise parsial | Akurasi diskriminasi intensitas 99.28% | Sangat berat (tiga cabang CNN); mustahil dijalankan real-time di Raspberry Pi. |
+| **15** | Zhang et al. (2024) | Adaptive optical flow selection + segmentation | RUSNet (Underwater Deep Segmentation) | Input: Frame & optical flow; Output: Mask segmentasi | Seleksi adaptif mengabaikan aliran blur | mIoU 92.4% pada video bawah air buram | Ditujukan untuk segmentasi bawah air, bukan kuantifikasi feeding overhead. |
+| **16** | Aris et al. (2023) | Gaussian Mixture Model (GMM) background sub | Analisis survei algoritma GMM | Input: Video sekuens; Output: Foreground mask | Model multi-Gaussian latar belakang dinamis | Menunjukkan keterbatasan adaptasi GMM | GMM gagal pada gelembung aerator konstan (terjadi *cavity* & false foreground). |
+| **17** | Kamal et al. (2025) | Sinyal audio hidrofon (kunyahan ikan lele) | Machine Learning (SVM, Random Forest) | Input: Spektrogram suara; Output: Status lapar | Bandpass filter akustik | Akurasi deteksi lapar lele 91.2% | Bising putaran motor aerator merusak SNR audio; visi komputer lebih unggul. |
+| **18** | Yang et al. (2025) | Tinjauan: deteksi cipratan pakan & gelombang | Tinjauan: DL, Spatial-Temporal Transformer | Tinjauan tren riset visi komputer 2025 | Tinjauan edge-enhancement & channel attention| Review mutakhir State-of-the-Art | Memperkuat urgensi metode temporal untuk mengatasi riak air stokastik. |
+| **19** | Vijayalakshmi (2025) | Bounding box detection pada kolam outdoor | AquaYOLO (Enhanced YOLOv8 for Ponds) | Input: Citra kolam outdoor; Output: Bounding box | CSP layers ekstraksi fitur robust | Precision 88.9%, Recall 84.8%, mAP 90.9% | Bounding box gagal mendeteksi bibit lele yang bersembunyi di bawah buih aerator. |
+| **20** | Wu et al. (2024) | *Feeding splash thumbnails* (crop buih air) | Deformable Attention ViT (DeformAtt-ViT) | Input: Thumbnail cipratan; Output: 3 tingkat lapar | Thumbnail mengabaikan permukaan air luar | Akurasi 95.50%, F1-Score 94.13% | GAGAL PADA BENIH BIBIT LELE & AIR BER-AERATOR (Cipratan benih tidak berbusa). |
+| **--** | **Skripsi Mahasiswa** | **Baseline Normal Modeling + Temporal Motion Index** | **Model Temporal Ringan (LSTM/Rule 1D)** | **Input: Sekuens vektor gerak 1D; Output: Trigger Sub-Porsi** | **Z-Score Normalization Baseline Aerator + Cooldown** | **Target: Akurasi $\ge 85\%$ pada Raspberry Pi 10 FPS** | **Solusi Spesifik: Mengatasi noise aerator kontinu & komputasi edge bibit lele.** |
 
----
-
-### D. Tabel Komparasi 25 Parameter: Literatur Terdahulu vs Kondisi Riil Skripsi User
-
-Tabel komparatif berikut menyejajarkan literatur mutakhir dengan kondisi riil skripsi mahasiswa:
-
-| No | Parameter Ekstraksi | Hu et al. (2026) | Wu et al. (2024) | Fukae et al. (2023) | Kondisi Skripsi Mahasiswa (Bibit Lele) |
-|:--:|---|---|---|---|---|
-| **1** | **Objek Ikan** | *Largemouth bass* | *Largemouth bass* | Ikan air tawar (*marine/fresh*) | **Bibit Ikan Lele (*Clarias sp.*)** |
-| **2** | **Ukuran / Fase** | Dewasa (1.200 ekor diuji) | Remaja – Dewasa | Fase pembesaran | **Fase Benih / Pendederan (2–7 cm)** |
-| **3** | **Lingkungan Kolam** | RAS Industri Tertutup | Tangki Eksperimental | Tangki Akuakultur | **Kolam Budidaya Terpal Luar Ruangan (*Outdoor*)** |
-| **4** | **Indoor / Outdoor** | Indoor / Fasilitas RAS | Indoor / Semi-outdoor beratap | Indoor terkontrol | **Outdoor Murni (Terpapar Cuaca & Cahaya Alami)** |
-| **5** | **Jenis Kolam** | Tangki bundar $\varnothing$ 4 m, d 1,4 m | Tangki persegi budidaya | Tangki bundar budidaya | **Kolam terpal bundar/kotak outdoor** |
-| **6** | **Kondisi Permukaan** | Dinamis karena sirkulasi RAS | Relatif tenang sebelum pakan | Air tenang tanpa arus | **Bergolak konstan akibat aerator mekanis** |
-| **7** | **Penggunaan Aerator** | Terintegrasi RAS | Dimatikan saat perekaman | Tanpa aerator saat rekam | **AERATOR MENYALA AKTIF TERUS-MENERUS** |
-| **8** | **Posisi Kamera** | *Oblique* (miring) | *Overhead / Top-view* | *Overhead / Top-view* | ***Overhead / Top-View* (Tegak lurus kolam)** |
-| **9** | **Ketinggian Kamera** | Sekitar 70 cm di atas air | 1,2 – 1,5 meter | 1,5 meter | **Sekitar 0,8 – 1,2 meter di atas kolam** |
-| **10** | **Sudut Kamera** | $45^\circ\text{--}60^\circ$ miring | $90^\circ$ vertikal | $90^\circ$ vertikal | **$90^\circ$ vertikal (atau sedikit sudut koreksi silau)** |
-| **11** | **Resolusi Video** | Resize ke $512 \times 512$ | 1080p cropped ke splash | 1080p Full HD | **720p / 640x480 (Disesuaikan kapasitas Edge)** |
-| **12** | **FPS (Frame Rate)** | 25–30 FPS ($T=5$ frames) | 30 FPS | 30 FPS | **10 FPS (Event cepat 3–6 frame = 0,3–0,6 detik)** |
-| **13** | **Jenis Kamera** | Kamera optik industri HD | Kamera digital RGB | Kamera digital RGB | **Raspberry Pi Camera Module** |
-| **14** | **Durasi Data** | Multi-sesi makan RAS | Sesi makan terjadwal | Multi-menit per feeding | **1 minggu observasi awal + 1 bulan evaluasi** |
-| **15** | **Waktu Pengambilan** | Jam pakan industri | Pagi dan siang hari | Siang pencahayaan stabil | **Pagi (06.00), Siang (12.00), Petang/Malam (18.00–22.00)** |
-| **16** | **Cara Anotasi** | 4 kelas (*None, Weak, Med, Strong*) | 3 kelas (*Weak, Mod, Strong*) | 3 status aktivitas | **2 kelas operasional (Riak Baseline vs Riak Bibit Lele)** |
-| **17** | **Fitur Visual** | Tekstur riak + dependensi waktu | *Feeding splash thumbnails* | Vektor gerak *dense optical flow* | **Fluktuasi intensitas riak & varians temporal deviasi** |
-| **18** | **Metode CV** | CNN Patch + Transformer + LSTM | Deformable Attention ViT | Farnebäck Optical Flow | **Baseline Modeling + Temporal Motion Variance** |
-| **19** | **Model ML / DL** | HVIT (ResNet18 + ViT + LSTM) | DeformAtt-ViT | Support Vector Machine (SVM) | **Model Temporal Ringan (LSTM / GRU / 1D-CNN) atau Rule Baseline** |
-| **20** | **Input Model** | Jendela 5 frame ($512\times 512$) | *Splash thumbnails* citra | Matriks magnitudo aliran optik | **Sekuens vektor energi gerak $T$ frame ($T \approx 10\text{--}20$)** |
-| **21** | **Output Model** | 4 kelas intensitas makan | 3 derajat lapar lele | Status aktivitas kawanan | **Pemicu dispensasi sub-porsi pakan (Trigger Feeding)** |
-| **22** | **Pembeda Makan vs Normal** | Luas riak dan cipratan pakan | Keberadaan cipratan buih putih | Peningkatan vektor kecepatan | **Lonjakan deviasi energi riak terhadap baseline aerator** |
-| **23** | **Penanganan Noise** | *Self-attention* fokus area riak | Crop spesifik thumbnail cipratan | Pemotongan threshold biner | **Pemodelan statistik baseline aerator + filter silau/daun** |
-| **24** | **Hasil Eksperimen** | Akurasi 95,10%, Latensi 145 ms | Akurasi 95,50%, F1 94,13% | Akurasi 88,3% | *Target: Akurasi $\ge 85\%$, F1 $\ge 80\%$ pada Raspberry Pi* |
-| **25** | **Keterbatasan Utama** | Berat (28,6 M param), bukan outdoor | Gagal pada bibit lele & air ber-aerator | Terlalu lambat untuk Raspberry Pi | Tantangan komputasi edge & fluktuasi cuaca outdoor |
 
 ---
 

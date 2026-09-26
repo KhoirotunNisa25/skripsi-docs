@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{times}
-\usepackage[top=2.0cm,bottom=2.0cm,left=2.2cm,right=2.2cm]{geometry}
+\usepackage[top=1.5cm,bottom=1.5cm,left=1.8cm,right=1.8cm]{geometry}
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{tabularx}
@@ -17,17 +17,18 @@
 \usepackage{tcolorbox}
 \usepackage[hidelinks,colorlinks=true,linkcolor=blue!75!black,citecolor=teal!75!black,urlcolor=blue!75!black]{hyperref}
 
-\linespread{1.12}
+\linespread{1.07}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{4pt plus 1.5pt minus 1pt}
+\setlength{\parskip}{3pt plus 1pt minus 0.5pt}
+
 
 % Section styling
 \titleformat{\section}
-  {\normalfont\large\bfseries\color{blue!80!black}}{\thesection.}{0.7em}{}
+  {\normalfont\large\bfseries\color{blue!80!black}}{\thesection.}{0.6em}{}
 \titleformat{\subsection}
-  {\normalfont\normalsize\bfseries\color{teal!80!black}}{\thesubsection.}{0.7em}{}
+  {\normalfont\normalsize\bfseries\color{teal!80!black}}{\thesubsection.}{0.6em}{}
 \titleformat{\subsubsection}
-  {\normalfont\small\bfseries\color{black!85}}{\thesubsubsection.}{0.7em}{}
+  {\normalfont\small\bfseries\color{black!85}}{\thesubsubsection.}{0.6em}{}
 
 % Header and Footer
 \pagestyle{fancy}
@@ -43,95 +44,124 @@
 
 % Title Block
 \begin{center}
-    {\Large \textbf{\color{blue!85!black}LAPORAN KAJIAN AKADEMIK DAN SINTESIS RISET}}\\[3pt]
+    {\Large \textbf{\color{blue!85!black}LAPORAN KAJIAN AKADEMIK DAN SINTESIS RISET}}\\[2pt]
     {\large \textbf{\color{blue!85!black}Sistem Pemberian Pakan Adaptif Berbasis Deteksi Riak Permukaan Bibit Lele}}\\[2pt]
-    {\normalsize \textbf{Analisis Kebiasaan \& Kesehatan Bibit Lele (Pakan Dibatasi vs Loss) serta Riset Mendalam Computer Vision 25 Parameter}}\\[6pt]
-    \rule{\textwidth}{1pt}\\[4pt]
+    {\normalsize \textbf{Analisis Kebiasaan Bibit Lele (Pakan Dibatasi vs Loss) serta Riset Mendalam 20 Artikel Computer Vision}}\\[4pt]
+    \rule{\textwidth}{0.8pt}\\[3pt]
     \noindent
     \begin{tabularx}{\textwidth}{@{}l p{5.5cm} l X@{}}
         \textbf{Nama Mahasiswa} & : Khoirotun Nisa' & \textbf{Dosen Pembimbing} & : Dr. Ulla Delfana Rosiani, ST., MT. \\
         \textbf{NIM} & : 2341720057 & \textbf{Program Studi} & : Sarjana Terapan Teknik Informatika \\
         \textbf{Institusi} & : Politeknik Negeri Malang & \textbf{Fokus Objek} & : Bibit Ikan Lele (\textit{Clarias sp.}) \\
         \textbf{Konteks Kolam} & : Luar Ruangan (\textit{Outdoor}) + Aerator & \textbf{Arsitektur Edge} & : Raspberry Pi Camera (Top-View) \\
-    \end{tabularx}\\[3pt]
-    \rule{\textwidth}{1pt}
+    \end{tabularx}\\[2pt]
+    \rule{\textwidth}{0.8pt}
 \end{center}
 
-\vspace{-0.2cm}
+\vspace{-0.3cm}
 
 \section{Konsep Sistem \& Arahan Hasil Bimbingan Dosen}
 Berdasarkan arahan langsung dosen pembimbing (Dr. Ulla Delfana Rosiani, ST., MT.), fondasi sistem dirumuskan secara tegas:
-\begin{enumerate}[leftmargin=*,itemsep=1pt,topsep=2pt]
-    \item \textbf{Fokus Objek \& Batasan Mutlak}: Objek spesifik adalah \textbf{BIBIT IKAN LELE} (\textit{Clarias sp.}) pada fase benih/pendederan. Penelitian \textbf{TIDAK berfokus pada kualitas air} (kualitas air adalah domain kolaborator/keterbatasan lingkungan) dan \textbf{TIDAK berfokus pada diagnosis kesehatan ikan}.
-    \item \textbf{Logika Sistem (\textit{Mengamati Riak $\to$ Pakan Terkontrol})}: Pemberian pakan tidak menggunakan konsep \textit{timer} kaku (``tiap jam pasti diberi pakan''). Petani memegang kendali penuh dengan menentukan kapasitas kuota harian (misal 1 kg/hari). Sistem visi komputer membagi jatah tersebut ke dalam sub-porsi (50--100 g) yang dikeluarkan mengikuti ritme riak makan bibit lele. Pakan otomatis berhenti jika kuota habis guna mencegah \textit{overfeeding}.
-    \item \textbf{Tantangan Computer Vision Utama}: Kolam \textit{outdoor} menggunakan aerator terus-menerus. Gejolak aerator merupakan \textbf{BASELINE NORMAL}. Sistem tidak memakai aturan naïf ``ada gerakan = ikan lapar'', melainkan mendeteksi deviasi/perubahan temporal lonjakan riak bibit lele terhadap riak normal aerator.
-    \item \textbf{Rencana Evaluasi Lapangan}: Didahului observasi baseline 1 minggu (10--15 menit tiap jam), dilanjutkan uji lapang 1 bulan membandingkan kolam sistem adaptif dengan kolam pakan manual pada parameter pertumbuhan, kelangsungan hidup (SR), dan FCR.
+\begin{enumerate}[leftmargin=*,itemsep=0.5pt,topsep=1.5pt]
+    \item \textbf{Fokus Objek \& Batasan Mutlak}: Objek penelitian adalah \textbf{BIBIT IKAN LELE} (\textit{Clarias sp.}) fase benih/pendederan. Penelitian \textbf{TIDAK berfokus pada kualitas air} (kualitas air adalah domain kolaborator/keterbatasan lingkungan) dan \textbf{TIDAK berfokus pada diagnosis kesehatan ikan}.
+    \item \textbf{Logika Sistem (\textit{Mengamati Riak $\to$ Pakan Terkontrol})}: Pemberian pakan tidak menggunakan konsep \textit{timer} kaku (``tiap jam pasti pakan''). Petani menentukan batas kuota harian (misal 1 kg/hari). Sistem visi komputer membagi jatah ke dalam sub-porsi (50--100 g) mengikuti ritme riak makan bibit lele. Pakan otomatis berhenti jika kuota harian habis guna mencegah pemborosan pakan.
+    \item \textbf{Tantangan Computer Vision}: Kolam \textit{outdoor} menggunakan aerator terus-menerus. Gejolak aerator merupakan \textbf{BASELINE NORMAL}. Sistem tidak memakai aturan naïf ``ada gerakan = ikan lapar'', melainkan mendeteksi deviasi/perubahan temporal lonjakan riak bibit lele terhadap riak normal aerator.
+    \item \textbf{Evaluasi Lapangan}: Didahului observasi baseline 1 minggu (10--15 menit/jam), diikuti uji lapang 1 bulan membandingkan kolam sistem adaptif dengan kolam pakan manual pada parameter pertumbuhan, kelangsungan hidup (SR), dan FCR.
 \end{enumerate}
 
 \section{Output 1: Analisis Kebiasaan Bibit Lele \& Respon Pakan (Dibatasi vs Loss)}
-Kajian biologis ini disintesis dari 14 literatur ilmiah fisik di folder \texttt{pakannya bibit lele} (Ikeogu et al., 2020; Tiamiyu et al., 2018; Ojelade et al., 2025; Hildebrand et al., 2025; Hossain \& Beveridge, 2001; Khormi et al., 2026; Al-salahy \& Ibrahim, 2018):
+Disintesis dari 14 literatur ilmiah fisik lokal di folder \texttt{pakannya bibit lele} (Ikeogu et al., 2020; Tiamiyu et al., 2018; Ojelade et al., 2025; Hildebrand et al., 2025; Hossain \& Beveridge, 2001; Khormi et al., 2026; Al-salahy \& Ibrahim, 2018):
 
-\subsection{Perilaku Makan Alami \& Respons Sensorik (\textit{Feeding Ethology})}
-\textit{Clarias gariepinus} bersifat nokturnal dan sangat responsif terhadap pakan pada intensitas cahaya rendah (malam/petang) menggunakan sungut (\textit{barbels}) dan sistem gurat sisi untuk mendeteksi gelombang riak pelet (Hossain \& Beveridge, 2001). Saat terangsang pakan di permukaan, bibit lele menyambar serentak ke permukaan air, menghasilkan riak gelombang halus berdurasi singkat \textbf{3--6 frame (0,3--0,6 detik)} pada kamera 10 FPS sebelum kembali menyelam.
-
-\subsection{Dampak Pakan Bebas / Loss (\textit{Ad Libitum / Feeding to Satiation})}
 \begin{itemize}[leftmargin=*,itemsep=1pt,topsep=1pt]
-    \item \textbf{Inefisiensi Konversi Pakan (FCR Buruk)}: Uji empiris \textbf{Ikeogu et al. (2020)} membuktikan bahwa pakan \textit{satiation/loss} menghasilkan FCR \textbf{$1,3 \pm 0,03$}, jauh lebih buruk dibanding pakan terkontrol (5\% biomassa) dengan FCR \textbf{$1,1 \pm 0,01$} ($p < 0,05$). Pakan \textit{loss} memboroskan 18--25\% biaya tanpa menambah laju tumbuh.
-    \item \textbf{Pembusukan Pelet \& Amonia Toksik}: Pelet benih lele berkadar protein sangat tinggi (38--42\% CP). Pelet yang tidak termakan membusuk di dasar kolam, melepaskan amonia bebas ($NH_3$) dan nitrit ($NO_2^-$) yang merusak epitel insang dan memicu mortalitas benih (Tiamiyu et al., 2018; Oboh, 2022).
-    \item \textbf{Distensi Lambung (\textit{Bloating})}: Pakan berlebih menyebabkan lambung bibit lele teregang melebihi kapasitas enzimatis, memicu pelet dikeluarkan kembali (\textit{regurgitation}) sebelum dicerna (Li et al., 2020).
+    \item \textbf{Perilaku Makan Alami (\textit{Feeding Ethology})}: \textit{Clarias gariepinus} bersifat nokturnal dengan efisiensi makan tertinggi pada pencahayaan rendah (petang/malam) menggunakan sungut (\textit{barbels}) dan gurat sisi (Hossain \& Beveridge, 2001). Bibit lele menyambar pakan secara serentak ke permukaan, menimbulkan riak mikro berdurasi singkat \textbf{3--6 frame (0,3--0,6 detik)} pada kamera 10 FPS sebelum kembali menyelam.
+    \item \textbf{Dampak Pakan Bebas / Loss (\textit{Ad Libitum / Satiation})}: Uji empiris \textbf{Ikeogu et al. (2020)} membuktikan bahwa pakan \textit{satiation/loss} menghasilkan FCR \textbf{$1,3 \pm 0,03$}, jauh lebih buruk dibanding pakan terkontrol (5\% biomassa) dengan FCR \textbf{$1,1 \pm 0,01$} ($p < 0,05$). Pakan \textit{loss} memboroskan 18--25\% pakan tanpa menambah laju tumbuh. Sisa pelet berkadar protein tinggi (38--42\% CP) membusuk di dasar kolam, melepaskan amonia ($NH_3$) dan nitrit ($NO_2^-$) toksik yang merusak insang benih dan memicu mortalitas massal (Tiamiyu et al., 2018; Oboh, 2022), serta memicu perut kembung (\textit{bloating}) (Li et al., 2020).
+    \item \textbf{Dampak Pembatasan Terukur (5\% Biomassa/Hari)}: Ikeogu et al. (2020) membuktikan batas pakan 5\% biomassa harian menghasilkan pertambahan bobot ($26,11 \pm 3,65$ g) dan panjang ($6,11 \pm 0,20$ cm) tertinggi dengan SR 100\%. Khormi et al. (2026) membuktikan fenomena \textit{compensatory growth} (peningkatan efisiensi anabolisme saat pakan diberikan pada fase lapar aktif). Sebaliknya, jadwal pakan acak menurunkan nilai hematokrit (PCV) dan memicu kanibalisme (Ojelade et al., 2025).
 \end{itemize}
 
-\subsection{Dampak Pakan Dibatasi (\textit{Restricted / Rationed Feeding})}
-\begin{itemize}[leftmargin=*,itemsep=1pt,topsep=1pt]
-    \item \textbf{Pembatasan Terukur Optimum (5\% Biomassa/Hari)}: Ikeogu et al. (2020) dan Tiamiyu et al. (2018) menemukan bahwa takaran 5\% biomassa harian menghasilkan pertambahan bobot rata-rata ($26,11 \pm 3,65$ g) dan panjang ($6,11 \pm 0,20$ cm) tertinggi dengan kelangsungan hidup 100\%. Khormi et al. (2026) membuktikan adanya fenomena \textit{compensatory growth}, di mana efisiensi anabolisme lele meningkat pesat saat pakan diberikan tepat pada fase lapar aktif.
-    \item \textbf{Bahaya Pembatasan Ekstrem / Pakan Tidak Teratur}: Studi \textbf{Ojelade et al. (2025)} membuktikan bahwa jadwal pakan acak menurunkan nilai hematokrit (PCV) dan hemoglobin lele serta memicu stres kronis dan kanibalisme antarbenih.
-\end{itemize}
+\textbf{Integrasi Biologis}: Petani mengunci kuota harian (5\% biomassa) untuk mencegah amonia dan FCR buruk, sementara sistem visi komputer menyalurkannya secara adaptif saat bibit lele aktif beriak di permukaan.
 
-\textbf{Kesimpulan Integrasi Biologis}: Petani menetapkan batas atas harian (5\% biomassa) untuk mencegah pembusukan amonia dan FCR buruk, sementara sistem visi komputer menyalurkan jatah tersebut secara adaptif saat bibit lele aktif beriak di permukaan.
+\newpage
 
-\section{Output 2: Riset Mendalam Computer Vision \& Ekstraksi 25 Parameter}
-Berikut ekstraksi rigid 25 parameter teknis dari dua paper utama (\textbf{Hu et al., 2026} dan \textbf{Wu et al., 2024}) serta pembandingannya dengan kondisi skripsi mahasiswa:
+\section{Output 2: Riset Mendalam Seluruh 20 Artikel Computer Vision}
+Berikut ekstraksi mendalam seluruh 20 artikel ilmiah visi komputer yang telah dihimpun, memetakan spesifikasi kamera, ketinggian, sudut, resolusi, metode ekstraksi fitur, model machine learning/deep learning, penanganan noise, serta keterbatasannya.
 
-\subsection{Tabel Komparasi 25 Parameter: Literatur Terdahulu vs Skripsi Mahasiswa}
+\subsection{Tabel Master 1: Spesifikasi Fisik Kamera, Sudut, Resolusi, \& Lingkungan Kolam (20 Artikel)}
 {\scriptsize
-\setlength{\tabcolsep}{2.5pt}
-\begin{longtable}{@{}p{0.5cm} p{2.8cm} p{4.0cm} p{4.0cm} p{4.3cm}@{}}
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{@{}p{0.4cm} p{3.2cm} p{2.6cm} p{2.4cm} p{1.8cm} p{1.0cm} p{1.2cm} p{2.0cm} p{2.0cm}@{}}
 \toprule
-\textbf{No} & \textbf{Parameter Ekstraksi} & \textbf{Hu et al. (2026 - Nature Sci Rep)} & \textbf{Wu et al. (2024 - JMSE / Splash)} & \textbf{Kondisi Skripsi Mahasiswa} \\
+\textbf{No} & \textbf{Penulis \& Tahun} & \textbf{Objek \& Fase Ikan} & \textbf{Lingkungan Kolam} & \textbf{Posisi Kamera} & \textbf{Tinggi} & \textbf{Sudut} & \textbf{Resolusi \& FPS} & \textbf{Tipe Kamera} \\
 \midrule
 \endhead
-1 & Objek Ikan & \textit{Micropterus salmoides} (Bass) & \textit{Micropterus salmoides} (Bass) & \textbf{Bibit Ikan Lele (\textit{Clarias sp.})} \\
-2 & Ukuran / Fase Ikan & Dewasa (1.200 ekor teraklimatisasi) & Remaja hingga dewasa & \textbf{Benih / Pendederan (2--7 cm)} \\
-3 & Lingkungan Kolam & RAS Industri Tertutup & Tangki Budidaya Terkontrol & \textbf{Kolam Luar Ruangan (\textit{Outdoor})} \\
-4 & Indoor / Outdoor & Semi-indoor tertutup industri & Indoor / semi-outdoor beratap & \textbf{Outdoor Murni (Sinar Matahari/Angin)} \\
-5 & Jenis Kolam & Tangki bundar $\varnothing$ 4 m, tinggi 1,5 m & Tangki persegi fiberglass & \textbf{Kolam Terpal Bundar/Kotak} \\
-6 & Kondisi Permukaan Air & Bergelombang karena sirkulasi RAS & Tenang sebelum pakan disebar & \textbf{Bergolak konstan akibat aerator} \\
-7 & Penggunaan Aerator & Terintegrasi hidrodinamika RAS & Dimatikan saat perekaman & \textbf{AERATOR MENYALA AKTIF KONSTAN} \\
-8 & Posisi Kamera & \textit{Oblique} (miring di atas tangki) & \textit{Overhead / Top-view} (tegak lurus) & \textbf{\textit{Overhead / Top-View} (Tegak lurus)} \\
-9 & Ketinggian Kamera & Sekitar 70 cm di atas air & 1,2 -- 1,5 meter di atas air & \textbf{0,8 -- 1,2 meter di atas kolam} \\
-10 & Sudut Kamera & Miring $45^\circ\text{--}60^\circ$ dari permukaan & $90^\circ$ vertikal ke bawah (nadir) & \textbf{$90^\circ$ vertikal (tegak lurus kolam)} \\
-11 & Resolusi Video & Resize ke $512 \times 512$ piksel & 1080p dipotong ke \textit{thumbnail} & \textbf{720p / 640$\times$480 piksel (Edge)} \\
-12 & Frame Rate (FPS) & 25--30 FPS (jendela $T=5$ frame) & 30 FPS & \textbf{10 FPS (Event lele 3--6 frame)} \\
-13 & Jenis Kamera & Kamera optik industri HD & Kamera digital RGB industri & \textbf{Raspberry Pi Camera Module} \\
-14 & Durasi Data & Perekaman rutin multi-minggu & Sesi makan terjadwal multi-hari & \textbf{1 mgg observasi + 1 bln evaluasi} \\
-15 & Waktu Pengambilan Data & Sesuai jadwal pakan otomatis & Pagi dan siang hari & \textbf{Pagi (06.00), Siang, Malam (18.00--22.00)} \\
-16 & Cara Anotasi Data & 4 kelas (\textit{None, Weak, Med, Strong}) & 3 kelas (\textit{Weak, Mod, Strong Hungry}) & \textbf{2 kelas (Baseline vs Riak Lele)} \\
-17 & Fitur Visual & Tekstur riak/gelombang air & \textit{Feeding splash thumbnails} & \textbf{Varians \& deviasi energi riak} \\
-18 & Metode Computer Vision & CNN patch + ViT + LSTM & Deformable Attention Transformer & \textbf{Baseline Modeling + Temporal Motion} \\
-19 & Model ML / Deep Learning & HVIT (ResNet18 + ViT + LSTM) & DeformAtt-ViT & \textbf{Model Temporal 1D (LSTM/Rule)} \\
-20 & Input Model & Jendela 5 frame ($512\times 512\times 3$) & Potongan citra cipratan buih & \textbf{Sekuens vektor fitur gerak $T=15$} \\
-21 & Output Model & 4 tingkat intensitas makan & 3 tingkat lapar + sinyal ON/OFF & \textbf{Pemicu Sub-Porsi Pakan (Trigger)} \\
-22 & Pembeda Makan vs Normal & Luas riak dan kecepatan makan & Kerapatan buih cipratan air & \textbf{Lonjakan deviasi energi dari baseline} \\
-23 & Penanganan Noise & Self-attention fokus area riak & Crop lokal mengabaikan pantulan & \textbf{Normalisasi Z-score baseline aerator} \\
-24 & Hasil Eksperimen & Akurasi 95,10\%, Latensi 145 ms & Akurasi 95,50\%, F1 94,13\% & \textbf{Target: Akurasi $\ge 85\%$ di Raspberry Pi} \\
-25 & Keterbatasan Penelitian & Model berat (28,6 M param, butuh GPU) & GAGAL PADA BENIH \& AIR AERATOR & \textbf{Tantangan komputasi edge \& cuaca} \\
+01 & Qian et al. (2025) & Ikan mas (\textit{Crucian carp}) & Kolam luar ruangan (\textit{outdoor}) & \textit{Overhead} & 1,8 m & $90^\circ$ nadir & 1080p, 25--30 FPS & Optik RGB Industri \\
+02 & Hu et al. (2026) & Bass dewasa (1.200 ekor) & Industrial RAS ($\varnothing$ 4 m, d 1,4 m) & \textit{Oblique} miring & 0,7 m & $45^\circ\text{--}60^\circ$ & 512$\times$512 crop, 25 FPS & Digital HD Industri \\
+03 & Alahmad et al. (2025) & Ikan laut (\textit{seabream}) & Keramba jaring apung laut & \textit{Underwater} & d 3,4 m & Horizontal & 1080p, 30 FPS & Bawah air kedap air \\
+04 & Fukae et al. (2023) & Kawanan ikan air tawar & Tangki budidaya indoor & \textit{Overhead} & 1,5 m & $90^\circ$ vertikal & 1080p, 30 FPS & RGB PoE Industri \\
+05 & Zhao et al. (2025) & Nila / Koki (\textit{Carassius}) & Tangki budidaya terkontrol & \textit{Top-view} & 1,2 m & $90^\circ$ nadir & 1080p, 30 FPS & Digital RGB resolusi tinggi \\
+06 & Li et al. (2020) & Multi-spesies akuakultur & Tinjauan multi-kolam & Multi-posisi & Variatif & $0^\circ\text{--}90^\circ$ & Multi-resolusi & Visible, NIR, Stereo, Sonar \\
+07 & Marliza \& Aisuwarya (2021) & \textbf{Ikan Lele (\textit{Clarias sp.})} & Kolam terpal lokal Indonesia & \textit{Top-view} & 0,8--1,0 m & $90^\circ$ vertikal & 480p, 15 FPS & \textbf{Raspberry Pi Camera} \\
+08 & Atoum et al. (2015) & Kawanan ikan densitas tinggi & Tangki tertutup & \textit{Overhead} & 1,0 m & $90^\circ$ nadir & 720p, 30 FPS & Video overhead RGB \\
+09 & Al-Abri et al. (2025) & Multi-spesies akuakultur & Tinjauan kolam \& laut & Overhead/under & Variatif & $0^\circ\text{--}90^\circ$ & Multi-resolusi & Sensor RGB \& Multispektral \\
+10 & Zhou et al. (2018) & Ikan Nila (\textit{O. niloticus}) & Tangki indoor & \textit{Overhead} & 1,2 m & $90^\circ$ nadir & 720p, 25 FPS & \textbf{Near-Infrared (NIR 850 nm)} \\
+11 & Liu et al. (2014) & Salmon Atlantik di RAS & Tangki resirkulasi RAS & \textit{Overhead} & 1,5 m & $90^\circ$ nadir & 768$\times$576, 25 FPS & Kamera CCD Monokrom \\
+12 & Zhao et al. (2017) & Ikan Nila (\textit{O. niloticus}) & Tangki bulat r 100 cm, d 80 cm & \textit{Overhead} & 1,2 m & $90^\circ$ nadir & 1080p, 25 FPS & Digital RGB resolusi tinggi \\
+13 & Zhao et al. (2016) & Ikan mas/nila di tangki & Tangki akuakultur RAS & \textit{Overhead} & 1,2 m & $90^\circ$ nadir & 1080$\times$1920, 25 FPS & Kamera Digital RGB \\
+14 & Dong et al. (2024) & Kerapu (\textit{Epinephelus}) & Tangki pembiakan (372 lux) & \textit{Overhead} & 0,5 m & $90^\circ$ tegak & 480$\times$270, 30 FPS & Controlled PC Camera \\
+15 & Zhang et al. (2024) & Ikan laut liar/budidaya & Bawah air laut dinamis & \textit{Underwater} & Di air & Horizontal & 1080p Full HD, 30 FPS & Kamera bawah air HD \\
+16 & Aris et al. (2023) & Gerakan dinamis umum & Video pengawasan luar ruangan & CCTV outdoor & 2--3 m & Miring $45^\circ$ & 720p, 25 FPS & Kamera CCTV Outdoor \\
+17 & Kamal et al. (2025) & \textbf{Ikan Lele (\textit{C. gariepinus})} & Kolam terpal ber-aerator & Submerged & Di air & Omnidir & Audio 48 kHz & \textbf{Hidrofon Akustik (Non-Cam)} \\
+18 & Yang et al. (2025) & Ikan budidaya komersial & Tinjauan kolam tawar \& laut & Side/overhead & Variatif & $45^\circ\text{--}90^\circ$ & Multi-resolusi & Kamera modern SOTA 2025 \\
+19 & Vijayalakshmi (2025) & Ikan kolam (DePondFi) & Kolam luar ruangan (\textit{aquaponds}) & Overhead/oblique & 1,5--2 m & $60^\circ\text{--}90^\circ$ & High-res (8.150 citra) & Kamera RGB outdoor \\
+20 & Wu et al. (2024) & Bass remaja/dewasa & Tangki budidaya terkontrol & \textit{Overhead} & 1,2--1,5 m & $90^\circ$ nadir & 1080p crop, 30 FPS & Kamera RGB Digital Industri \\
+\midrule
+\textbf{--} & \textbf{Skripsi Mahasiswa} & \textbf{Bibit Lele (\textit{Clarias}, 2--7 cm)} & \textbf{Kolam Terpal Outdoor Ber-aerator} & \textbf{\textit{Overhead} Tegak} & \textbf{0,8--1,2 m} & \textbf{$90^\circ$ nadir} & \textbf{720p/480p, 10 FPS} & \textbf{Raspberry Pi Camera (Edge)} \\
 \bottomrule
 \end{longtable}
 }
 
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=\textbf{Research Gap Kunci Terhadap Wu et al. (2024) \& Hu et al. (2026)}]
-Literatur penelaah mencatat bahwa metode \textit{feeding splash thumbnails} Wu et al. (2024) \textbf{tidak efektif untuk bibit ikan (\textit{fish fry})} karena massa tubuh bibit terlalu kecil untuk memercikkan air hingga menghasilkan buih putih mencolok (\textit{inconspicuous splashing}), serta mengasumsikan permukaan air awal tenang. Di sisi lain, model Hu et al. (2026) memerlukan daya komputasi GPU tinggi ($28,6$ juta parameter) dan belum diuji pada kolam terbuka dengan aerator gelembung mekanis konstan. Hal ini menjadi kebaruan (\textit{novelty}) skripsi ini: \textbf{mendeteksi riak gelombang halus bibit lele di atas baseline turbulensi aerator pada kolam outdoor menggunakan sistem edge efisien}.
+\newpage
+
+\subsection{Tabel Master 2: Metode CV, Model Machine Learning/DL, Hasil, \& Keterbatasan (20 Artikel)}
+{\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{longtable}{@{}p{0.4cm} p{2.8cm} p{2.8cm} p{2.6cm} p{2.4cm} p{2.2cm} p{3.2cm}@{}}
+\toprule
+\textbf{No} & \textbf{Penulis \& Tahun} & \textbf{Metode CV \& Fitur} & \textbf{Model Machine Learning / DL} & \textbf{Input \& Output} & \textbf{Hasil Eksperimen} & \textbf{Keterbatasan Terhadap Skripsi Lele} \\
+\midrule
+\endhead
+01 & Qian et al. (2025) & Bounding box deteksi, PConv & PM-YOLO (Enhancement YOLOv8n) & Input: Citra RGB; Output: Bbox makan & Precision 87.7\%, mAP 83.5\% & Bergantung visual tubuh; gagal di air lele keruh. \\
+02 & Hu et al. (2026) & Patch CNN + ViT + LSTM & HVIT (ResNet18 + ViT + LSTM) & Input: Jendela 5 frame; Output: 4 kelas & Akurasi 95.10\%, Latensi 145 ms & Model berat (28,6 M param); belum uji kolam aerator. \\
+03 & Alahmad et al. (2025) & Underwater tracking + opt flow & YOLOv8 + Optical Flow Tracker & Input: Frame bawah air; Output: Kecepatan & Akurasi deteksi ikan 85\% & Butuh kamera underwater \& air laut jernih. \\
+04 & Fukae et al. (2023) & Dense Optical Flow Farnebäck & Support Vector Machine (SVM) & Input: Matriks optical flow; Output: 3 kelas & Akurasi klasifikasi 88.3\% & Farnebäck berat di RPi (<2 FPS); gagal jika aerator on. \\
+05 & Zhao et al. (2025) & Keypoint pose estimation & Lightweight Two-Stage (Pose+GCN) & Input: Keypoint anatomi; Output: Kenyang & Akurasi rasa kenyang 98.5\% & Menuntut air jernih agar keypoint tulang lele terdeteksi. \\
+06 & Li et al. (2020) & Tinjauan: frame diff, optical flow & Tinjauan: CNN, Fuzzy, SVM, Rule & Tinjauan komparatif arsitektur global & Evaluasi kritis literatur & Belum ada solusi integrasi baseline aerator kontinu. \\
+07 & Marliza \& Aisuwarya (2021) & Grayscale + Thresholding Biner & Rule-Based Bounding Contour & Input: Frame biner; Output: Trigger pakan & Pakan terpicu saat ikan kumpul & Sangat rentan \textit{false alarm} akibat buih aerator \& silau. \\
+08 & Atoum et al. (2015) & Dynamic texture + motion energy & Rule-Based Feedback Control & Input: Tekstur riak; Output: Sinyal pakan & Pakan berhenti saat kenyang & Asumsi kolam tenang tanpa aerator semburan gelembung. \\
+09 & Al-Abri et al. (2025) & Tinjauan: segmentasi, ViT, YOLO & Tinjauan: YOLOv7-v9, Transformer & Tinjauan metodologi visi modern & Review komprehensif SOTA & Trade-off beratnya komputasi DL pada edge device. \\
+10 & Zhou et al. (2018) & NIR 850 nm + binarisasi & Adaptive Neuro-Fuzzy (ANFIS) & Input: Area NIR; Output: Feeding decision & Akurasi feeding decision 98\% & Butuh iluminator NIR khusus; kurang cocok outdoor. \\
+11 & Liu et al. (2014) & Frame difference biner & Computer Vision Index (CVFAI) & Input: Selisih frame; Output: Indeks numerik & Korelasi kuat ($R^2 > 0.90$) & Asumsi air tenang; aerator akan terhitung sbg pakan. \\
+12 & Zhao et al. (2017) & Tracking kecepatan \& turning angle & Modified Social Force + Kinetic & Input: Lintasan renang; Output: Nafsu makan & Akurasi nafsu makan 92.5\% & Butuh tracking ikan individual; bibit lele berkerumun. \\
+13 & Zhao et al. (2016) & BMFS segmentation + PAOF & Kinetic Energy Network Model & Input: Vektor PAOF; Output: Indeks kinetik & Korelasi tinggi agresi makan & Komputasi optical flow piksel berat; tanpa baseline aerator. \\
+14 & Dong et al. (2024) & Three-stream (flow, biner, tekstur) & Three-Stream CNN Network & Input: 3 cabang citra; Output: 4 kelas makan & Akurasi intensitas 99.28\% & Tiga cabang CNN terlalu berat untuk Raspberry Pi. \\
+15 & Zhang et al. (2024) & Adaptive optical flow selection & RUSNet (Underwater Segmentation) & Input: Frame bawah air; Output: Segmentasi & mIoU 92.4\% video buram & Segmentasi bawah air, bukan feeding overhead. \\
+16 & Aris et al. (2023) & GMM background subtraction & Analisis survei algoritma GMM & Input: Video sekuens; Output: Foreground & Analisis adaptasi GMM & GMM gagal pada aerator konstan (muncul \textit{cavity}). \\
+17 & Kamal et al. (2025) & Suara kunyahan hidrofon akustik & Machine Learning (SVM, Random Forest) & Input: Spektrogram suara; Output: Status lapar & Akurasi deteksi lapar 91.2\% & Derau aerator merusak SNR audio; visi lebih unggul. \\
+18 & Yang et al. (2025) & Tinjauan: deteksi riak \& cipratan & Tinjauan: DL, Spatial-Temporal ViT & Tinjauan arsitektur feeding SOTA 2025 & Review komprehensif & Menekankan perlunya pemodelan dependensi waktu. \\
+19 & Vijayalakshmi (2025) & Bounding box deteksi outdoor & AquaYOLO (Enhanced YOLOv8) & Input: Citra kolam outdoor; Output: Bbox & Precision 88.9\%, mAP 90.9\% & Bounding box gagal mendeteksi bibit di bawah buih. \\
+20 & Wu et al. (2024) & \textit{Feeding splash thumbnails} & DeformAtt-ViT (Deformable Attention) & Input: Thumbnail buih; Output: 3 level lapar & Akurasi 95.50\%, F1 94.13\% & GAGAL PADA BENIH (Cipratan mikro tidak berbusa). \\
+\midrule
+\textbf{--} & \textbf{Skripsi Mahasiswa} & \textbf{Baseline Modeling + Motion Index} & \textbf{Model Temporal Ringan (LSTM 1D)} & \textbf{Input: Vektor 1D $T=15$; Output: Trigger} & \textbf{Target: Akurasi $\ge 85\%$ di RPi} & \textbf{Solusi: Normalisasi Z-score aerator \& hemat edge.} \\
+\bottomrule
+\end{longtable}
+}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=\textbf{Sintesis Research Gap Kunci Terhadap Literatur Global}]
+1. \textbf{Keterbatasan Metode Cipratan Wu et al. (2024)}: Metode \textit{feeding splash thumbnails} Wu et al. mengasumsikan permukaan air awal tenang dan ikan berukuran besar yang menghasilkan cipratan buih putih mencolok. Pada \textbf{bibit ikan lele (\textit{fish fry})}, massa tubuh sangat kecil sehingga cipratan tidak berbusa putih (\textit{inconspicuous splashing}), dan kolam menggunakan aerator kontinu.\\
+2. \textbf{Keterbatasan Komputasi Edge Hu et al. (2026) \& Dong et al. (2024)}: Model transformer dan multi-stream memerlukan parameter besar ($>28$ juta parameter) yang membutuhkan workstation GPU, sehingga tidak dapat diterapkan langsung pada perangkat berdaya rendah (\textit{Raspberry Pi}).\\
+3. \textbf{Kebaruan Skripsi Mahasiswa (\textit{Novelty})}: Mengembangkan ekstraksi fitur vektor gerak 1D terkompresi yang digabungkan dengan pemodelan baseline dinamik aerator dan jaringan temporal ringan (LSTM 1D) untuk mendeteksi riak halus bibit lele pada kolam outdoor ber-aerator.
 \end{tcolorbox}
+
+\newpage
 
 \subsection{Karakteristik Metode Computer Vision untuk Kolam Ber-aerator}
 \begin{enumerate}[leftmargin=*,itemsep=1pt]
