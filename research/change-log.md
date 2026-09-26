@@ -2,6 +2,62 @@
 
 ## Log Perubahan Dokumen Riset
 
+### 2026-09-26 (Sesi 11)
+- **Perubahan**:
+  - **Sinkronisasi Hasil Bimbingan Dosen (Bu Ulla)**:
+    - Memperbarui `research/business-logic.md` dan `research/research-requirements.md` sesuai 5 butir utama arahan dosen:
+      1. Penegasan objek spesifik: **BIBIT IKAN LELE** (*fry/fingerlings*, pendederan).
+      2. Perumusan konsep kendali: "Mengamati riak $\to$ menentukan pemberian pakan terkontrol" (bukan *timer* kaku, porsi harian ditentukan petani misal 1 kg/hari lalu dibagi adaptif mengikuti riak lele).
+      3. Penegasan batasan mutlak: **TIDAK berfokus pada kualitas air** (kualitas air adalah ranah terpisah/Varizky atau batasan lingkungan) dan **TIDAK fokus pada diagnosis kesehatan**.
+      4. Perumusan masalah CV utama: Membedakan pergerakan riak normal aerator (*baseline*) dengan riak/cipratan lele.
+      5. Perumusan rancangan evaluasi lapang 1 bulan (didahului 1 minggu observasi baseline riak) dengan pembanding kolam manual tanpa alat, mencakup metrik FCR, bobot, panjang, survival, dan kuota pakan.
+  - **Penyusunan Dua Output Analisis Mendalam**:
+    - Output 1: Analisis kebiasaan bibit lele dan respon biologis jika pakan dibatasi vs *loss* (*ad libitum*) berdasarkan literatur lokal (`pakannya bibit lele/`).
+    - Output 2: Studi literatur mendalam *computer vision* (Hu et al. 2026, Wu et al. 2024, Qian, Fukae, Zhao, Marliza, Kamal) diekstrak secara rigid dalam **25 parameter teknis** serta komparasi metode temporal (LSTM vs model lain).
+- **Alasan**: Permintaan pengguna untuk mengingatkan kembali dan menyelaraskan seluruh alur riset dengan hasil bimbingan dosen pembimbing.
+- **Status**: Selesai (*Completed*)
+
+---
+
+### 2026-09-25 (Sesi 10)
+- **Perubahan**:
+  - **Integrasi & Standardisasi Literatur Pakan Lele**:
+    - Memindahkan dan menstandarkan 8 artikel PDF yang ditambahkan pengguna dari root ke subfolder `articles/artikel bibit lele/pakannya bibit lele/`.
+    - Total koleksi lokal fisik Full-Text PDF pakan lele kini berjumlah **14 berkas PDF otentik** (70% ketercakupan penuh dari `pakannya bibit lele.csv`):
+      1. `[01] - Hildebrand et al. (2025)` (*Fishes*, 832 KB) - *Feeding time management & stress response*.
+      2. `[02] - Ojelade et al. (2022)` (*Frontiers in Vet Sci*, 1,0 MB) - *Environmental enrichment & behavior*.
+      3. `[03] - Ojelade et al. (2025)` (*Scientific African*, 1,2 MB) - *Unpredictable feeding patterns & blood responses*.
+      4. `[05] - Abdel-Aziz et al. (2021)` (*Scientific African*, 670 KB) - *Feeding frequencies, density, & protein*.
+      5. `[08] - Agunbiade-Olu et al. (2022)` (*J. Vet. Biomed. Sci.*, 1,6 MB) - *Intermittent feed deprivation & compensatory growth*.
+      6. `[09] - Oboh (2022)` (*FUDMA J. of Sci.*, 818 KB) - *Feeding frequency on performance indices*.
+      7. `[10] - Ikeogu et al. (2020)` (*Global J. Fish. Sci.*, 385 KB) - *Two feeding rates & 5% body weight*.
+      8. `[13] - Hossain & Beveridge (2001)` (*Aquaculture Research*, 82 KB) - *Night feeding & feed demand*.
+      9. `[14] - Al-salahy & Ibrahim (2018)` (*Acta Ecologica Sinica*, 874 KB) - *Starvation & oxidative stress*.
+      10. `[15] - Abalaka et al. (2025)` (*Nigerian Vet. J.*, 451 KB) - *Starvation & water additives*.
+      11. `[16] - Tiamiyu et al. (2018)` (*Iranian J. Fish. Sci.*, 3,0 MB) - *Feeding rates in static vs flow through*.
+      12. `[18] - Khormi et al. (2026)` (*Frontiers in Physiology*, 689 KB) - *Growth dynamics under fasting-refeeding*.
+      13. `[19] - Li et al. (2020)` (*JWAS*, 536 KB) - *Reducing dietary protein & porcine meat meal*.
+      14. `[20] - Aderolu et al. (2010)` (*African J. of Food Sci.*, 447 KB) - *Feeding frequency 3 times daily*.
+  - **Penyusunan Indeks & Katalog**:
+    - Memperbarui `articles/artikel bibit lele/pakannya bibit lele/README.md` dengan tabel inventaris 14 PDF aktif.
+- **Alasan**: Permintaan pengguna untuk memindahkan artikel yang baru ditambahkan ke folder pakan bibit lele dan menyesuaikan penomoran serta penamaannya secara baku.
+- **Status**: Selesai (*Completed*)
+
+---
+
+### 2026-09-25 (Sesi 9)
+- **Perubahan**:
+  - **Restrukturisasi & Pengelompokan Berkas di Folder `output/`**:
+    - Membuat 3 subdirektori terpisah di dalam `output/` agar berkas PDF dan file bantu kompilasi LaTeX (`.aux`, `.log`, `.out`, `.bbl`, `.toc`) tidak bercampur aduk:
+      1. `output/skripsi-proposal/`: Berisi `main.pdf` (naskah proposal lengkap 25 halaman), `references.bib`, serta berkas *build* terkait.
+      2. `output/studi-literatur/`: Berisi `Laporan_Studi_Literatur_Khoirotun_Nisa.pdf` (laporan telaah literatur 8 bagian) dan berkas *build* terkait.
+      3. `output/standar-bibit-lele/`: Berisi `Standar_Bibit_dan_Pendederan_Lele.pdf` (laporan standar benih dan manajemen pakan lele) dan berkas *build* terkait.
+    - Menambahkan `output/README.md` sebagai katalog navigasi direktori luaran dengan tautan langsung ke masing-masing dokumen PDF.
+- **Alasan**: Permintaan pengguna untuk merapikan berkas luaran ke subfolder khusus agar mudah dibedakan dan dikelola.
+- **Status**: Selesai (*Completed*)
+
+---
+
 ### 2026-09-21 (Sesi 8)
 - **Perubahan**:
   - **Fokus Ketat pada Literatur Terunduh (9 Berkas PDF Fisik)**:

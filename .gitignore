@@ -17,6 +17,11 @@
 # Compiled Output
 output/*
 !output/.gitkeep
+!output/README.md
+!output/*/
+!output/**/*.pdf
+
+
 
 # Temporary Scratch Files
 scratch/*

@@ -4,6 +4,11 @@ Dokumen ini berisi katalog dan inventaris lengkap **9 artikel ilmiah terverifika
 
 Seluruh 9 artikel di bawah ini **telah diunduh berkas fisik Full-Text PDF aslinya secara lokal** dan tersimpan rapi di dalam direktori `articles/artikel bibit lele/`.
 
+> [!NOTE]
+> Koleksi spesifik mengenai **manajemen frekuensi dan takaran pakan lele** dari `pakannya bibit lele.csv` disimpan di subfolder baru:
+> 📁 **[Lihat Koleksi Subfolder `pakannya bibit lele/`](file:///e:/SKRIPSI/sekeripsi/articles/artikel%20bibit%20lele/pakannya%20bibit%20lele/)** (memuat 6 PDF terunduh + katalog lengkap 20 artikel).
+
+
 ---
 
 ## 📋 Tabel Inventaris Berkas PDF Lokal Terunduh (9 Artikel)
