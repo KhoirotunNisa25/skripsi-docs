@@ -154,6 +154,33 @@ Berikut adalah analisis komprehensif terhadap **seluruh 20 artikel ilmiah** bida
 | **20** | Wu et al. (2024) | *Feeding splash thumbnails* (crop buih air) | Deformable Attention ViT (DeformAtt-ViT) | Input: Thumbnail cipratan; Output: 3 tingkat lapar | Thumbnail mengabaikan permukaan air luar | Akurasi 95.50%, F1-Score 94.13% | GAGAL PADA BENIH BIBIT LELE & AIR BER-AERATOR (Cipratan benih tidak berbusa). |
 | **--** | **Skripsi Mahasiswa** | **Baseline Normal Modeling + Temporal Motion Index** | **Model Temporal Ringan (LSTM/Rule 1D)** | **Input: Sekuens vektor gerak 1D; Output: Trigger Sub-Porsi** | **Z-Score Normalization Baseline Aerator + Cooldown** | **Target: Akurasi $\ge 85\%$ pada Raspberry Pi 10 FPS** | **Solusi Spesifik: Mengatasi noise aerator kontinu & komputasi edge bibit lele.** |
 
+---
+
+### C. Sintesis 4 Research Gap Kunci Terhadap Seluruh Literatur Global (20 Artikel)
+
+Sintesis *research gap* tidak hanya didasarkan pada 1 atau 2 paper, melainkan memetakan seluruh keterbatasan dari **20 artikel literatur visi komputer** ke dalam 4 klaster kesenjangan fundamental:
+
+1. **Gap 1: Kegagalan & Oklusi Deteksi Visual Tubuh pada Air Keruh & Benih Mikro**
+   - *Paper Terkait*: **Qian et al. (2025)** [PM-YOLO], **Vijayalakshmi (2025)** [AquaYOLO], **Zhao et al. (2025)** [Pose-GCN], **Alahmad et al. (2025)** [YOLOv8-Tracking].
+   - *Kelemahan*: Seluruh model *bounding box* dan estimasi pose mengasumsikan tubuh ikan terlihat jelas dengan kontras optik tajam di air jernih. Pada budidaya **bibit ikan lele kolam terpal**, air bersifat keruh pekat kehijauan/kecokelatan dan benih berukuran mikro (2–7 cm) bergerak di bawah permukaan air atau tertutup buih, sehingga deteksi visual tubuh mengalami oklusi parah (*heavy occlusion/failure*).
+
+2. **Gap 2: Asumsi Naif Permukaan Air Tenang / Tanpa Pemodelan Aerator Konstan**
+   - *Paper Terkait*: **Fukae et al. (2023)** [Farnebäck SVM], **Liu et al. (2014)** [CVFAI Frame Diff], **Marliza & Aisuwarya (2021)** [RPi Contour], **Atoum et al. (2015)** [Dynamic Texture], **Zhou et al. (2018)** [ANFIS NIR].
+   - *Kelemahan*: Seluruh metode klasik dan *thresholding* ini mengasumsikan permukaan air awal diam/statis (*zero-motion baseline*). Di kolam nyata lele *outdoor*, aerator mekanis aktif berputar terus-menerus menghasilkan semburan gelembung konstan. Tanpa algoritma pemodelan dinamik aerator, gejolak air konstan akan selalu memicu pakan palsu (*infinite false alarm*).
+
+3. **Gap 3: Kegagalan Asumsi Deteksi Cipratan Buih Kasar pada Bibit Lele**
+   - *Paper Terkait*: **Wu et al. (2024)** [DeformAtt-ViT Splash Thumbnails], **Atoum et al. (2015)**.
+   - *Kelemahan*: Metode pemotongan cipratan (*splash thumbnails*) Wu et al. mengasumsikan ikan berukuran besar (ikan dewasa) yang saat menyambar pakan menimbulkan buih putih tebal yang kontras. Pada **bibit lele pendederan (*fish fry*)**, massa tubuh benih sangat kecil sehingga sambaran pelet hanya menimbulkan riak gelombang mikro halus tanpa busa putih (*inconspicuous surface ripples*), yang luput dari detektor buih Wu et al.
+
+4. **Gap 4: Beban Komputasi Workstation GPU vs Kerentanan Derau Akustik**
+   - *Paper Terkait*: **Hu et al. (2026)** [HVIT 28,6M parameter], **Dong et al. (2024)** [Three-Stream CNN], **Kamal et al. (2025)** [Hidrofon Akustik].
+   - *Kelemahan*: Model *deep learning* masif memerlukan *workstation* GPU bernilai puluhan juta rupiah (seperti NVIDIA RTX 3090) dengan konsumsi daya ratusan watt yang tidak realistis untuk petani rakyat. Di sisi lain, sensor akustik bawah air (Kamal et al.) mengalami penurunan drastis *Signal-to-Noise Ratio* (SNR) akibat desis motor aerator yang bising.
+
+> **💡 Posisi & Kebaruan Skripsi Mahasiswa (*Novelty & Thesis Positioning*)**:
+> Skripsi ini menjembatani keempat gap global tersebut dengan mengembangkan metode pengenalan aktivitas pakan yang:
+> - Mengamati **dinamika riak gelombang permukaan air** (bukan visual fisik tubuh benih ataupun buih putih kasar).
+> - Menormalisasi sinyal gerak terhadap **baseline dinamik aerator konstan** ($Z$-Score running statistics) untuk mencegah *false alarm*.
+> - Berjalan secara **hemat komputasi dan mandiri (*standalone*) pada Raspberry Pi** tanpa memerlukan workstation GPU.
 
 ---
 

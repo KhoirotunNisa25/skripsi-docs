@@ -20,9 +20,16 @@
       - Bagaimana model Hu et al. bekerja: ResNet18 + ViT $\to$ sekuens $T=5$ frame $\to$ single-layer LSTM 256 unit. Keterbatasan komputasi: butuh GPU RTX 3090, 28.6 juta parameter.
       - Bagaimana model Dong et al. bekerja: Three-Stream CNN (Optical Flow + Spasial Biner + Tekstur GLCM).
       - Implikasi bagi skripsi: Jika kelak menguji model temporal, masukan bukan raw video melainkan vektor 1D terkompresi ternormalisasi baseline aerator (Z-Score). Model temporal ringan ini ditempatkan sebagai **salah satu hipotesis pembanding** terhadap model *baseline rule-based*, bukan formula final mutlak.
+  - **Perluasan Sintesis 4 Research Gap Kunci Terhadap Seluruh Literatur Global (20 Artikel)**:
+    - Mengoreksi kotak sintesis *research gap* di LaTeX dan Markdown yang sebelumnya terkesan sempit menjadi sintesis 4 klaster kesenjangan fundamental yang memetakan seluruh 20 artikel:
+      1. *Oklusi Deteksi Visual Tubuh di Air Keruh* (Qian et al. 2025, Vijayalakshmi 2025, Zhao et al. 2025, Alahmad et al. 2025).
+      2. *Asumsi Permukaan Air Tenang Tanpa Pemodelan Aerator Konstan* (Fukae et al. 2023, Liu et al. 2014, Marliza & Aisuwarya 2021, Atoum et al. 2015, Zhou et al. 2018).
+      3. *Kegagalan Asumsi Deteksi Cipratan Buih Kasar pada Benih* (Wu et al. 2024, Atoum et al. 2015).
+      4. *Beban Komputasi Workstation GPU vs Kerentanan Derau Akustik* (Hu et al. 2026, Dong et al. 2024, Kamal et al. 2025).
+      5. *Posisi & Kebaruan Solusi Skripsi Mahasiswa* (Riak gerak 1D hemat komputasi ternormalisasi baseline aerator).
   - **Kompilasi Ulang LaTeX**:
     - Kompilasi ulang `latex/laporan-analisis-pakan-dan-cv.tex` menghasilkan `output/analisis-pakan-dan-cv/laporan-analisis-pakan-dan-cv.pdf` tepat 4 halaman tanpa overfull hbox.
-- **Alasan**: Permintaan klarifikasi pengguna terkait spesifikasi merk kamera dan penegasan bahwa LSTM saat ini adalah telaah literatur mendalam, bukan perumusan final skripsi.
+- **Alasan**: Klarifikasi pengguna mengenai cakupan sintesis research gap kunci yang harus merepresentasikan seluruh literatur global, bukan hanya 2 penelitian.
 - **Status**: Selesai (*Completed*)
 
 ---

@@ -155,10 +155,14 @@ Berikut ekstraksi mendalam seluruh 20 artikel ilmiah visi komputer yang telah di
 \end{longtable}
 }
 
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=\textbf{Sintesis Research Gap Kunci Terhadap Literatur Global}]
-1. \textbf{Keterbatasan Metode Cipratan Wu et al. (2024)}: Metode \textit{feeding splash thumbnails} Wu et al. mengasumsikan permukaan air awal tenang dan ikan berukuran besar yang menghasilkan cipratan buih putih mencolok. Pada \textbf{bibit ikan lele (\textit{fish fry})}, massa tubuh sangat kecil sehingga cipratan tidak berbusa putih (\textit{inconspicuous splashing}), dan kolam menggunakan aerator kontinu.\\
-2. \textbf{Keterbatasan Komputasi Edge Hu et al. (2026) \& Dong et al. (2024)}: Model transformer dan multi-stream memerlukan parameter besar ($>28$ juta parameter) yang membutuhkan workstation GPU, sehingga tidak dapat diterapkan langsung pada perangkat berdaya rendah (\textit{Raspberry Pi}).\\
-3. \textbf{Posisi \& Kebaruan Skripsi (\textit{Novelty})}: Mengembangkan ekstraksi fitur vektor gerak 1D terkompresi yang digabungkan dengan pemodelan baseline dinamik aerator untuk mendeteksi riak halus bibit lele pada kolam outdoor ber-aerator secara hemat komputasi.
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=\textbf{Sintesis 4 Research Gap Kunci Terhadap Seluruh Literatur Global (20 Artikel)}]
+{\scriptsize
+\textbf{1. Oklusi Deteksi Visual Tubuh di Air Keruh (Qian 2025; Vijayalakshmi 2025; Zhao 2025; Alahmad 2025)}: Metode bounding box \& pose estimation menuntut kontras optik tubuh di air jernih, sedangkan kolam bibit lele keruh pekat dan benih mikro (2--7 cm) bersembunyi di bawah buih.\\
+\textbf{2. Asumsi Permukaan Air Tenang Tanpa Aerator (Fukae 2023; Liu 2014; Marliza 2021; Atoum 2015; Zhou 2018)}: Seluruh metode klasik mengasumsikan air tenang saat ikan diam; tanpa baseline aerator kontinu, semburan gelembung memicu \textit{false alarm} pakan tiada henti.\\
+\textbf{3. Kegagalan Deteksi Cipratan Buih Kasar pada Benih (Wu et al. 2024)}: Mengasumsikan ikan besar yang memicu buih putih (\textit{splash thumbnails}); benih lele hanya memicu riak mikro halus tanpa buih putih (\textit{inconspicuous ripples}).\\
+\textbf{4. Beban Workstation GPU (Hu 2026; Dong 2024) vs Derau Akustik (Kamal 2025)}: Model transformer/multi-stream masif (>28M param) menuntut GPU mahal (RTX 3090), sedangkan hidrofon akustik terganggu derau semburan gelembung aerator.\\
+\textbf{5. Posisi \& Kebaruan Skripsi (\textit{Novelty})}: Mengembangkan ekstraksi riak gerak 1D hemat komputasi (Raspberry Pi) ternormalisasi terhadap baseline dinamis aerator kontinu khusus bibit lele kolam luar ruangan.
+}
 \end{tcolorbox}
 
 \newpage
