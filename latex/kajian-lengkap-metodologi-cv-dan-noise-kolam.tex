@@ -1,0 +1,381 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[hidelinks,colorlinks=true,linkcolor=navy,citecolor=navy,urlcolor=navy]{hyperref}
+
+% Math text compatibility macro for vanilla LaTeX
+\providecommand{\text}[1]{\mbox{#1}}
+\providecommand{\mathrm}[1]{\textrm{#1}}
+
+% Page Geometry (A4 margins 1.5 cm)
+\setlength{\topmargin}{-1.5cm}
+\setlength{\headheight}{12pt}
+\setlength{\headsep}{12pt}
+\setlength{\textheight}{26.2cm}
+\setlength{\footskip}{18pt}
+\setlength{\oddsidemargin}{-0.8cm}
+\setlength{\evensidemargin}{-0.8cm}
+\setlength{\textwidth}{18.0cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt plus 0.8pt minus 0.5pt}
+
+% Color Definitions
+\definecolor{navy}{rgb}{0.05, 0.20, 0.55}
+\definecolor{teal}{rgb}{0.05, 0.45, 0.45}
+\definecolor{darkred}{rgb}{0.65, 0.10, 0.10}
+\definecolor{grayborder}{rgb}{0.75, 0.75, 0.75}
+\definecolor{boxbg}{rgb}{0.95, 0.97, 1.00}
+\definecolor{alertbg}{rgb}{0.94, 0.98, 0.95}
+
+% Custom Box Command
+\newcommand{\academicbox}[2]{%
+  \begin{center}%
+  \setlength{\fboxsep}{5pt}%
+  \setlength{\fboxrule}{0.8pt}%
+  \fcolorbox{navy}{boxbg}{%
+    \parbox{17.4cm}{%
+      \textbf{\color{navy}#1}\\[2pt]%
+      #2%
+    }%
+  }%
+  \end{center}%
+}
+
+\newcommand{\alertbox}[2]{%
+  \begin{center}%
+  \setlength{\fboxsep}{5pt}%
+  \setlength{\fboxrule}{0.8pt}%
+  \fcolorbox{teal}{alertbg}{%
+    \parbox{17.4cm}{%
+      \textbf{\color{teal}#1}\\[2pt]%
+      #2%
+    }%
+  }%
+  \end{center}%
+}
+
+\begin{document}
+
+% Header Block
+\begin{center}
+    {\Large \textbf{\color{navy}LAPORAN KAJIAN AKADEMIK KOMPREHENSIF DAN METODOLOGI}}\\[2pt]
+    {\large \textbf{\color{navy}Sistem Deteksi Aktivitas Lapar Bibit Lele (\textit{Clarias sp.}) Berbasis Visi Komputer Edge}}\\[2pt]
+    {\normalsize \textbf{Pemisahan Riak Ikan vs. Derau Aerator Kontinu, Reduksi Gangguan Luar Ruangan, Formulasi $FAI$, \& Kendali Servo}}\\[4pt]
+    \rule{\textwidth}{1.0pt}\\[2pt]
+    \footnotesize
+    \begin{tabular}{p{3.2cm} p{5.5cm} p{3.2cm} p{5.5cm}}
+        \textbf{Nama Mahasiswa} & : Khoirotun Nisa' & \textbf{Dosen Pembimbing} & : Dr. Ulla Delfana Rosiani, ST., MT. \\
+        \textbf{NIM} & : 2341720057 & \textbf{Program Studi} & : Sarjana Terapan Teknik Informatika \\
+        \textbf{Institusi} & : Politeknik Negeri Malang & \textbf{Objek Riset} & : Bibit Ikan Lele Fase Pendederan ($2\text{--}7\text{ cm}$) \\
+        \textbf{Kondisi Kolam} & : Terpal Bulat Outdoor + Aerator & \textbf{Arsitektur Edge} & : Raspberry Pi 5 + Logitech Brio 100 + PCA9685 \\
+    \end{tabular}\\[1pt]
+    \rule{\textwidth}{1.0pt}
+\end{center}
+
+\vspace{-0.3cm}
+
+\academicbox{RINGKASAN EKSEKUTIF \& KECUKUPAN LITERATUR ILMIAH}{
+Dokumen ini disusun sebagai panduan akademik dan teknis terlengkap untuk dipelajari, dipahami, dan dicetak sebagai rujukan utama penyusunan proposal dan naskah skripsi Bab 2 (Tinjauan Pustaka) dan Bab 3 (Metodologi Penelitian).
+\begin{itemize}
+    \item \textbf{Status Kecukupan Literatur (Sangat Cukup \& Solid)}: Sebanyak \textbf{20 artikel Computer Vision} internasional (termasuk jurnal bereputasi 2024--2026) dan \textbf{14 artikel nutrisi/etologi bibit lele} yang telah dihimpun sudah \textbf{sangat memadai dan tuntas}. Peneliti \textbf{TIDAK PERLU mencari literatur baru via Consensus} agar tidak terjadi pemborosan fokus (*information overload*).
+    \item \textbf{Kunci Implementasi Nyata}: Fokus skripsi saat ini adalah: (1) pemodelan baseline aerator kontinu tanpa mematikan aerasi, (2) eliminasi derau dinding terpal biru dan pantulan cahaya matahari, (3) kuantisasi skor $FAI$, dan (4) integrasi kuota pakan harian pada servo PCA9685.
+\end{itemize}
+}
+
+\vspace{-0.2cm}
+
+\section*{1. Analisis Visual Setup Aktual Kamera di Atas Permukaan Air}
+
+\begin{minipage}[t]{0.35\textwidth}
+    \vspace{0pt}
+    \centering
+    \includegraphics[width=\textwidth]{figures/kolam-setup.png}\\[3pt]
+    \parbox{\textwidth}{\centering \scriptsize \textbf{Gambar 1}: Setup Kamera Jarak Dekat ($h \approx 30\text{--}50\text{ cm}$) di Atas Kolam Terpal Ber-Aerator.}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.62\textwidth}
+    \vspace{0pt}
+    \textbf{1.1 Karakteristik Optik Berjarak Sangat Dekat (\textit{Close-Range Nadir})}\\[2pt]
+    \small Sebagian besar literatur menempatkan kamera pada tiang tinggi ($h = 1,2\text{--}3,0\text{ m}$, seperti Qian et al., 2025; Hu et al., 2026), di mana riak halus benih lele melebur menjadi blur. Pada setup mahasiswa:
+    \begin{enumerate}\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}
+        \item \textbf{Ketinggian Rendah ($h \approx 30\text{--}50\text{ cm}$)}: Resolusi spasial tinggi; buih aerator ($2\text{--}10\text{ mm}$) dan sambaran benih lele kecil ($2\text{--}7\text{ cm}$) terekam tajam puluhan piksel.
+        \item \textbf{Sudut Nadir Tegak Lurus ($\theta \approx 80^\circ\text{--}90^\circ$)}: Mengeliminasi distorsi perspektif miring (\textit{keystone distortion}).
+        \item \textbf{Pemotongan Bidang Minat (\textit{Static ROI Masking})}: Dinding terpal biru pada $30\%$ bagian atas frame wajib dibuang melalui mask statis agar getaran terpal akibat hembusan angin luar ruangan tidak memicu deteksi palsu.
+    \end{enumerate}
+\end{minipage}
+
+\vspace{0.15cm}
+
+\textbf{1.2 Dekomposisi Fenomena Visual Air Keruh \& Buih Aerator Cabang Y}
+\begin{itemize}\setlength{\itemsep}{0.5pt}\setlength{\parskip}{0pt}
+    \item \textbf{Kekeruhan Pekat (*High Turbidity*)}: Air kolam pendederan lele berwarna hijau kecokelatan pekat dengan kedalaman tembus pandang $\le 3\text{ cm}$. Pendekatan deteksi bentuk fisik tubuh ikan (*fish bounding box*) dipastikan \textbf{gagal total}. Deteksi wajib berfokus pada \textbf{dinamika riak gelombang dan semburan buih sesaat di permukaan air}.
+    \item \textbf{Semburan Gelembung Aerator Kontinu}: Percabangan selang Y melepaskan gelembung udara terus-menerus. Gelembung membentuk bintik putih berkilau (*specular highlights*) yang melayang keluar dan pecah. Gejolak ini merupakan \textbf{baseline pergerakan normal kolam}.
+\end{itemize}
+
+\newpage
+
+\section*{2. Sintesis Kritis 20 Artikel Literatur Global \& Penetapan \textit{Research Gap}}
+
+Tabel 1 menyajikan ekstraksi komparatif terhadap 20 literatur ilmiah visi komputer akuakultur internasional yang telah dihimpun di repositori riset.
+
+\subsection*{Tabel 1: Matriks Komparasi 20 Literatur Terhadap Parameter Skripsi Mahasiswa}
+\vspace{-0.2cm}
+{\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{center}
+\begin{tabular}{|p{0.35cm}|p{2.2cm}|p{2.0cm}|p{1.5cm}|p{2.3cm}|p{2.0cm}|p{1.8cm}|p{4.7cm}|}
+\hline
+\textbf{No} & \textbf{Penulis \& Thn} & \textbf{Objek \& Air} & \textbf{Setup \& Posisi} & \textbf{Metode \& Model} & \textbf{Penanganan Noise} & \textbf{Hasil Evaluasi} & \textbf{Keterbatasan Kritis Terhadap Skripsi Mahasiswa} \\
+\hline
+01 & Qian et al. (2025) & Ikan mas, outdoor & Top, $h=1,8\text{ m}$ & PM-YOLO (YOLOv8n) & PConv clutter filter & Prec 87.7\%, mAP 83.5\% & Mengandalkan kontras fisik tubuh di air jernih; gagal di kolam lele keruh pekat. \\
+\hline
+02 & Hu et al. (2026) & Bass, RAS tank & Miring, $h=0,7\text{ m}$ & HVIT (ResNet+ViT+LSTM) & Self-attention ViT & Akurasi 95.10\%, 145 ms & Model raksasa (28,6M param), butuh GPU RTX 3090; tidak bisa jalan di CPU Raspi. \\
+\hline
+03 & Alahmad et al. (2025) & Seabream, laut & Submersible $3,4\text{ m}$ & YOLOv8 + Optical Flow & Velocity thresholding & Akurasi deteksi 85\% & Menuntut kamera underwater kedap air \& laut jernih; tidak cocok kolam terpal. \\
+\hline
+04 & Fukae et al. (2023) & Ikan air tawar & Top, $h=1,5\text{ m}$ & Farnebäck Optical Flow & Magnitude threshold & Akurasi 88.3\% & Farnebäck dense flow sangat lambat di Raspi (<2 FPS); gagal jika aerator aktif kontinu. \\
+\hline
+05 & Zhao et al. (2025) & Koki, tangki jernih & Top, $h=1,2\text{ m}$ & Keypoint Pose + ST-GCN & Topologi graph anatomi & Akurasi feeding 98.5\% & Menuntut air bening agar sendi ikan terbaca; gagal pada air pendederan keruh. \\
+\hline
+06 & Li et al. (2020) & Multi-spesies & Tinjauan multi & Systematic CV Review & Filter polarisasi optik & Sintesis komparatif & Menegaskan bahwa pemodelan noise buih aerator di kolam outdoor belum terpecahkan. \\
+\hline
+07 & Marliza \& Aisuwarya (2021) & Lele, kolam terpal & Top, $h\approx 1,0\text{ m}$ & Gray + Binary Threshold & Tanpa filter aerator & Pakan saat kumpul & Sangat rentan \textit{false alarm} oleh aerator dan terik matahari; tanpa kuota pakan harian. \\
+\hline
+08 & Atoum et al. (2015) & Kawanan, indoor & Top, $h=1,0\text{ m}$ & Dynamic Texture Energy & Normalisasi kontras & Feeding stops at rest & Mengasumsikan kolam tenang tanpa aerator aktif terus-menerus di area pandang kamera. \\
+\hline
+09 & Al-Abri et al. (2025) & Review akuakultur & Review global & YOLOv7--v9, Transformer & Domain adaptation & Sintesis SOTA & Menyoroti disparitas ekstrem antara kompleksitas model DL dan komputasi edge. \\
+\hline
+10 & Zhou et al. (2018) & Nila, indoor & Top, $h=1,2\text{ m}$ & Near-Infrared + ANFIS & Filter optik NIR & Akurasi feeding 98.0\% & Membutuhkan proyektor inframerah khusus; tidak efektif di bawah sinar terik matahari. \\
+\hline
+11 & Liu et al. (2014) & Salmon, indoor & Top, $h=1,5\text{ m}$ & Frame Difference (CVFAI) & Ambang piksel minimal & Korelasi nafsu $R^2 > 0.90$ & Asumsi dasar air tenang; gelembung aerator akan selalu salah terdeteksi sebagai pakan. \\
+\hline
+12 & Zhao et al. (2017) & Nila, indoor & Top, $h=1,2\text{ m}$ & Trajectory + Kinetic Energy& Tracking filter Kalman & Akurasi feeding 92.5\% & Menuntut pelacakan individu di air bening; bibit lele berenang berkerumun pekat. \\
+\hline
+13 & Zhao et al. (2016) & Ikan mas, terkontrol & Top, $h=1,2\text{ m}$ & BMFS + Partition Flow & Adaptive YCbCr & Korelasi agresi tinggi & Optical flow per-piksel sangat berat di edge; tidak memodelkan letupan aerator periodik. \\
+\hline
+14 & Dong et al. (2024) & Kerapu, terkontrol & Top, $h=0,5\text{ m}$ & Three-Stream CNN & Multi-stream fusion & Akurasi 99.28\% & Tiga cabang CNN simultan mustahil dieksekusi secara real-time pada CPU Raspberry Pi. \\
+\hline
+15 & Zhang et al. (2024) & Bawah laut dinamis & Submersible horisontal & RUSNet Segmentation & Temporal blur selection & mIoU 92.4\% video buram & Khusus segmentasi bawah air laut; tidak relevan untuk kuantifikasi riak pakan overhead. \\
+\hline
+16 & Aris et al. (2023) & Gerak umum & CCTV sudut miring & Gaussian Mixture Model & Multi-Gaussian latar & Subtraction evaluation & GMM standar gagal pada aerator kontinu (terjadi \textit{cavity} \& false foreground berkepanjangan). \\
+\hline
+17 & Kamal et al. (2025) & Lele ber-aerator & Hidrofon akustik & Audio ML (SVM, RF) & Bandpass filter suara & Akurasi kunyah 91.2\% & Bising getaran kompresor aerator merusak SNR audio; metode visi komputer lebih handal. \\
+\hline
+18 & Yang et al. (2025) & Gelombang pakan & Review multi-sudut & Spatio-Temporal Transformer & Attention channel & Analisis tren 2025 & Menegaskan krusialnya pemodelan deret waktu (*temporal*) untuk memisahkan gelombang air. \\
+\hline
+19 & Vijayalakshmi (2025) & Ikan air tawar out. & Top \& Oblique & AquaYOLO (Enhanced v8) & CSP layer feature & mAP 90.9\% & Bounding box gagal saat bibit lele bersembunyi di bawah buih aerator atau air keruh. \\
+\hline
+20 & Wu et al. (2024) & Bass, indoor & Top, $h=1,2\text{ m}$ & DeformAtt-ViT (Splash) & Splash thumbnail crop & Akurasi 95.50\%, F1 94.13\% & \textbf{Gagal pada bibit lele}; cipratan benih halus tidak menghasilkan buih putih masif bass dewasa. \\
+\hline
+-- & \textbf{Skripsi Nisa'} & \textbf{Bibit Lele Outdoor} & \textbf{Top Dekat, $h \approx 40\text{ cm}$} & \textbf{Adaptive Baseline + FAI} & \textbf{$Z$-Score + HSV Filter} & \textbf{Target: Akurasi $\ge 85\%$} & \textbf{SOLUSI TEPAT: Ringan di Raspi, atasi aerator kontinu, air keruh, \& kuota terikat.} \\
+\hline
+\end{tabular}
+\end{center}
+}
+
+\newpage
+
+\subsection*{2.2 Formulasi Empat Kesenjangan Ilmiah Berbasis Bukti (\textit{Research Gaps})}
+\begin{enumerate}
+    \item \textbf{Gap 1: Kegagalan Pengenalan Morfologi Fisik Tubuh pada Air Pendederan Keruh}:
+    Riset modern (Qian et al., 2025; Zhao et al., 2025; Vijayalakshmi, 2025) mengandalkan deteksi siluet tubuh ikan. Pada bibit lele di air keruh, tubuh ikan tidak tampak kecuali saat moncongnya memecah permukaan air. \textbf{Kebaruan}: Menggeser paradigma dari deteksi objek tubuh menjadi \textbf{analisis dinamika fluktuasi riak gelombang permukaan air}.
+    \item \textbf{Gap 2: Asumsi Naif Permukaan Air Tenang Tanpa Gejolak Aerator}:
+    Metode klasik (Liu et al., 2014; Marliza \& Aisuwarya, 2021; Atoum et al., 2015) menganggap kolam berada pada kondisi tenang tanpa gerak sebelum pakan diberikan. Pada kolam pendederan lele nyata, aerator wajib menyala terus-menerus untuk menjaga pasokan oksigen terlarut ($DO > 3\text{ mg/L}$). Tanpa pemodelan baseline, sistem konvensional akan selalu memicu pakan (*false alarm 100\%*). \textbf{Kebaruan}: Memodelkan derau aerator sebagai \textbf{baseline dinamis berbasis statistik berjalan (*running Gaussian*)}, sehingga pakan hanya terpicu jika ada deviasi positif di atas batas varians aerator.
+    \item \textbf{Gap 3: Ketidaksesuaian Asumsi Cipratan Kasar Ikan Dewasa vs. Riak Halus Bibit}:
+    Penelitian Wu et al. (2024) mengandalkan buih putih tebal kibasan ekor bass dewasa (*splash thumbnails*). Benih lele ($2\text{--}7\text{ cm}$) tidak menghasilkan busa putih tebal. \textbf{Kebaruan}: Menempatkan kamera sangat dekat ($30\text{--}50\text{ cm}$) dan memanfaatkan \textbf{Three-Frame Differencing terbobot} untuk menangkap riak mikro halus benih secara presisi tinggi.
+    \item \textbf{Gap 4: Disparitas Kebutuhan Komputasi Deep Learning vs. Daya Edge Device}:
+    Model mutakhir Hu et al. (2026) dan Dong et al. (2024) menuntut workstation GPU puluhan juta rupiah. \textbf{Kebaruan}: Merancang arsitektur komputasi matematika deterministik yang mampu dieksekusi secara efisien pada CPU Raspberry Pi 5 pada kecepatan stabil 10 FPS.
+\end{enumerate}
+
+\section*{3. Metodologi Membedakan Gerakan Bibit Lele vs. Derau Buih Aerator}
+
+\subsection*{3.1 Karakterisasi Spasial dan Temporal Riak Air}
+Tabel 2 memetakan perbedaan tanda fisik (*physical signatures*) antara letupan buih aerator dan sambaran bibit lele.
+
+\begin{table}[h!]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Matriks Perbedaan Karakteristik Fisik: Buih Aerator vs. Riak Makan Bibit Lele}
+\label{tab:karakteristik-gerak}
+\begin{tabular}{|p{3.2cm}|p{6.8cm}|p{6.8cm}|}
+\hline
+\textbf{Parameter Fisik} & \textbf{Derau Buih Aerator (Baseline Normal)} & \textbf{Riak Sambaran Bibit Lele (Sinyal Lapar)} \\
+\hline
+\textbf{Distribusi Spasial} & Terpusat pada titik keluaran selang Y (*point source*), melayang keluar secara laminar. & Tersebar acak di seluruh permukaan kolam (*stochastic multi-point distribution*). \\
+\hline
+\textbf{Karakteristik Temporal} & Kontinu, periodik, osilasi frekuensi relatif konstan ($f \approx 1\text{--}2\text{ Hz}$). & Transien, mendadak (*burst*), berdurasi singkat 3--6 frame ($0,3\text{--}0,6\text{ detik}$ pada 10 FPS). \\
+\hline
+\textbf{Stabilitas Varians Piksel} & Varians intensitas pergerakan rendah dan stabil sepanjang waktu. & Lonjakan tajam energi kinetik yang melampaui rentang varians normal ($Z > 3,5$). \\
+\hline
+\textbf{Morfologi Optik} & Gelembung spekular berbentuk cakram bulat kecil yang meletup ke luar. & Gelombang cincin riak air mikro konsentris yang saling berinterferensi. \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection*{3.2 Algoritma Pemodelan Baseline Berjalan (\textit{Welford Running Gaussian Baseline})}
+Untuk mengisolasi sinyal tanpa mematikan aerator, sistem memperbarui nilai rata-rata ($\mu_{\text{base}}$) dan varians ($\sigma_{\text{base}}^2$) dari pergerakan kolam secara rekursif:
+\begin{equation}
+\mu_{\text{base}}(t) = \alpha \cdot M_t + (1 - \alpha) \cdot \mu_{\text{base}}(t-1)
+\end{equation}
+\begin{equation}
+\sigma_{\text{base}}^2(t) = \alpha \cdot (M_t - \mu_{\text{base}}(t))^2 + (1 - \alpha) \cdot \sigma_{\text{base}}^2(t-1)
+\end{equation}
+Di mana $M_t$ adalah persentase piksel aktif pada frame ke-$t$, dan $\alpha$ adalah laju adaptasi (*learning rate*, $\alpha \approx 0,02\text{--}0,05$) agar lonjakan sesaat akibat pakan tidak merusak model baseline normal aerator.
+
+\subsection*{3.3 Uji Deviasi Baku ($Z$-Score Anomaly Detection) \& Verifikasi Temporal}
+Setiap frame yang masuk dievaluasi tingkat deviasinya terhadap model baseline:
+\begin{equation}
+Z_t = \frac{M_t - \mu_{\text{base}}(t)}{\sigma_{\text{base}}(t)}
+\end{equation}
+Kriteria keputusan ditetapkan sebagai berikut:
+\begin{itemize}
+    \item \textbf{Kondisi Normal Aerator ($Z_t \le 2,0$)}: Fluktuasi gerak berada dalam batas 2 standar deviasi letupan aerator normal $\to$ \textbf{Diabaikan sebagai Noise}.
+    \item \textbf{Kondisi Sambaran Lapar ($Z_t \ge 3,5$)}: Terjadi anomali pergerakan air signifikan $\to$ \textbf{Kandidat Sinyal Pakan}.
+    \item \textbf{Verifikasi Durasi Temporal ($N \ge 3$ Frame)}: Untuk mencegah pemicuan akibat satu gelembung besar aerator yang meletup keras pada satu frame tertentu, sistem mensyaratkan kondisi $Z_t \ge 3,5$ harus bertahan selama \textbf{minimal 3 hingga 5 frame berturut-turut ($0,3\text{--}0,5\text{ detik}$)}.
+\end{itemize}
+
+\newpage
+
+\section*{4. Metodologi Reduksi Derau Lingkungan Luar Ruangan (\textit{Outdoor Noise})}
+
+\subsection*{4.1 Eliminasi Pantulan Kilau Matahari (\textit{Sun Glint \& Specular Reflection})}
+\begin{enumerate}
+    \item \textbf{Transformasi Ruang Warna HSV}: Frame RGB dikonversikan ke ruang warna HSV ($\mathbf{I}_{\text{HSV}} = \{H, S, V\}$). Komponen kecerahan $V$ yang rentan terhadap perubahan cahaya dinormalkan menggunakan CLAHE (*Contrast Limited Adaptive Histogram Equalization*). Operasi selisih frame diprioritaskan pada kanal saturasi $S$, karena pantulan sinar matahari selalu mengalami desaturasi mendekati putih netral ($S \approx 0$).
+    \item \textbf{Pemasangan Filter Polarisasi Sirkular (CPL)}: Sesuai rujukan Li et al. (2020), filter optik polarisasi (CPL) dipasang di depan lensa kamera Logitech Brio 100. Filter ini secara optik memblokir gelombang pantulan air hingga $80\%$, menghilangkan kilau matahari tanpa membebani komputasi CPU Raspberry Pi.
+\end{enumerate}
+
+\subsection*{4.2 Eliminasi Daun Rontok \& Serangga Mengapung}
+Daun rontok bergerak pasif secara lambat ($v < 5\text{ cm/s}$) dan satu arah (*unidirectional drift*) mengikuti hembusan angin atau arus air. Sebaliknya, riak sambaran bibit lele bergerak bolak-balik frekuensi tinggi secara multi-arah (*omnidirectional*). Vektor gerak lambat satu arah difilter keluar.
+
+\subsection*{4.3 Eliminasi Bayangan Burung Melintas atau Petani}
+Bayangan eksternal membentuk satu gumpalan kontur raksasa (*large silhouette blob*) yang menutupi $> 20\%$ area permukaan kolam secara serentak. Sebaliknya, riak bibit lele membentuk klaster riak mikro ($50\text{--}500\text{ piksel}$). Setiap kontur gerak dengan luas $\text{Area} > 0,15 \times \text{Area}_{\text{ROI}}$ otomatis diabaikan sebagai bayangan luar.
+
+\section*{5. Kuantifikasi Perubahan Piksel Menjadi Feeding Activity Index ($FAI$)}
+
+\subsection*{5.1 Three-Frame Differencing (Menghilangkan Efek \textit{Ghosting})}
+Pengurangan dua frame citra standar ($|I_t - I_{t-1}|$) rentan menghasilkan bayangan semu (*ghosting*). Untuk menghasilkan kontur tepi riak yang presisi, diterapkan selisih tiga frame berurutan:
+\begin{equation}
+\Delta_1(x,y) = |I_t(x,y) - I_{t-1}(x,y)|, \quad \Delta_2(x,y) = |I_{t-1}(x,y) - I_{t-2}(x,y)|
+\end{equation}
+\begin{equation}
+D_{\text{motion}}(x,y) = \mathcal{T}_{\text{Otsu}}(\Delta_1(x,y)) \cap \mathcal{T}_{\text{Otsu}}(\Delta_2(x,y))
+\end{equation}
+Operasi logika biner \textit{bitwise AND} ($\cap$) memastikan bahwa piksel aktif yang dipertahankan hanyalah piksel yang benar-benar mengalami pergerakan pada posisi seketika frame ke-$t$.
+
+\subsection*{5.2 Kalkulasi Energi Riak ($M_t$) dan Skor $FAI_t$}
+Total persentase piksel aktif dihitung di dalam wilayah minat air ($\text{ROI}_{\text{air}}$):
+\begin{equation}
+M_t = \frac{\sum_{(x,y) \in \text{ROI}_{\text{air}}} D_{\text{motion}}(x,y)}{\text{Jumlah Total Piksel}(\text{ROI}_{\text{air}})} \times 100\%
+\end{equation}
+\begin{equation}
+FAI_t = \frac{M_t - \mu_{\text{base}}(t)}{\sigma_{\text{base}}(t)}
+\end{equation}
+
+\subsection*{5.3 Skala Tingkat Aktivitas Makan \& Matriks Keputusan}
+\begin{table}[h!]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Matriks Klasifikasi Feeding Activity Index ($FAI$) dan Keputusan Kendali Feeder}
+\label{tab:fai-matrix}
+\begin{tabular}{|c|p{3.2cm}|p{5.5cm}|p{5.2cm}|}
+\hline
+\textbf{Rentang Skor $FAI$} & \textbf{Status Perilaku} & \textbf{Kondisi Visual Kolam} & \textbf{Aksi Sistem Kendali} \\
+\hline
+$FAI < 2,0$ & \textbf{Tenang / Kenyang} (\textit{Quiescent}) & Hanya semburan buih aerator normal. Permukaan air stabil. Bibit di dasar. & \textbf{Aktuator OFF}. Pakan tidak boleh ditebar untuk mencegah pembusukan pelet. \\
+\hline
+$2,0 \le FAI < 4,0$ & \textbf{Aktivitas Moderat} (\textit{Searching}) & Beberapa ekor bibit berenang naik, muncul riak mikro sporadis kecil. & \textbf{Standby Monitoring}. Perekaman intensif, belum memicu aktuator. \\
+\hline
+$FAI \ge 4,0$ & \textbf{Sangat Lapar / Agresif} (\textit{Frenzy}) & Benih serentak memecah permukaan air, riak dan semburan buih meluas masif. & \textbf{TRIGGER SERVO ON!} Dispensi 1 sub-porsi (50--100 g) jika kuota tersedia. \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\section*{6. Desain Sistem Terintegrasi \& Logika Kendali Aktuator Servo (PCA9685)}
+
+\alertbox{LOGIKA FINITE STATE MACHINE (FSM) FEEDER ADAPTIF TERIKAT KUOTA HARIAN}{
+\begin{itemize}
+    \item \textbf{State 1 (Monitoring Pasif)}: Kamera merekam 10 FPS 720p. Nilai $FAI_t$ dievaluasi secara kontinu. Baseline aerator ($\mu_{\text{base}}, \sigma_{\text{base}}$) diperbarui terus-menerus.
+    \item \textbf{State 2 (Verifikasi Kuota Harian)}: Ketika $FAI_t \ge 4,0$ selama $\ge 0,5\text{ detik}$, sistem mengecek sisa kuota:
+    $$\text{Sisa Kuota} = \text{Kuota Harian Petani} - \text{Total Pakan Tersalurkan Hari Ini}$$
+    Jika $\text{Sisa Kuota} \le 0\text{ gram}$, aktuator dikunci rapat dan pakan dibatalkan untuk mencegah keracunan amonia.\\[2pt]
+    Jika $\text{Sisa Kuota} > 0\text{ gram}$, sistem melanjutkan ke \textbf{State 3}.
+    \item \textbf{State 3 (Penggerak Servo PCA9685)}: Raspberry Pi mengirim sinyal I2C ke modul PCA9685 untuk memutar servo dari $0^\circ$ ke $90^\circ$ selama $2,0\text{ detik}$ (menjatuhkan $50\text{ gram}$ pakan pelet benih), lalu menutup kembali ke $0^\circ$. Catatan akumulasi pakan ditambah $+50\text{ gram}$.
+    \item \textbf{State 4 (Jeda Konsumsi / Cooldown)}: Aktuator servo dikunci total selama \textbf{3 hingga 5 menit}. Jeda ini memberi waktu bagi benih lele untuk menghabiskan pakan yang ada dan mencegah cipratan makan memicu dispensi berulang kali.
+\end{itemize}
+}
+
+\subsection*{6.1 Rangkaian Hardware Aktuator Servo PCA9685}
+\begin{itemize}
+    \item \textbf{Antarmuka I2C}: Pin SDA (GPIO 2) dan SCL (GPIO 3) Raspberry Pi 5 terhubung ke driver PCA9685 (alamat I2C \texttt{0x40}).
+    \item \textbf{Isolasi Catu Daya}: Modul logika PCA9685 ditenagai 3.3V dari Raspberry Pi, namun rel daya motor servo ($V+$) disuplai adaptor eksternal $5\text{V } 3\text{A}$ terpisah guna mencegah \textit{voltage sag} yang dapat mereset Raspberry Pi saat servo bergerak.
+    \item \textbf{Sinyal PWM ($50\text{ Hz}$)}: Tutup ($0^\circ$) = pulsa $1,0\text{ ms}$; Buka ($90^\circ$) = pulsa $2,0\text{ ms}$.
+\end{itemize}
+
+\section*{7. Rencana Pengujian Lapangan 1 Bulan \& Metrik Evaluasi Akademik}
+
+Pengujian lapangan membandingkan dua kolam pendederan lele selama \textbf{30 hari kalender}:
+\begin{itemize}
+    \item \textbf{Kolam Perlakuan (Sistem Adaptif Skripsi)}: Pakan ditebar otomatis berbasis deteksi riak $FAI$ Raspberry Pi dan servo PCA9685 dengan batas kuota harian.
+    \item \textbf{Kolam Kontrol (Metode Konvensional Petani)}: Pakan ditebar manual 3 kali sehari (07.00, 13.00, 19.00) dengan porsi tetap tanpa observasi riak.
+\end{itemize}
+
+\subsection*{7.1 Parameter Kinerja Biologis \& Budidaya}
+\begin{enumerate}
+    \item \textbf{Laju Pertumbuhan Bobot Harian (\textit{Average Daily Gain / ADG})}:
+    \begin{equation}
+    ADG = \frac{W_t - W_0}{t} \quad (\text{gram/hari})
+    \end{equation}
+    \item \textbf{Rasio Konversi Pakan (\textit{Feed Conversion Ratio / FCR})}:
+    \begin{equation}
+    FCR = \frac{\text{Total Bobot Pakan Diberikan (g)}}{\text{Pertambahan Total Biomassa Ikan (g)}}
+    \end{equation}
+    \textit{Target}: Kolam perlakuan menghasilkan FCR lebih efisien ($1,0\text{--}1,1$) dibanding kontrol ($1,3\text{--}1,5$).
+    \item \textbf{Tingkat Kelangsungan Hidup (\textit{Survival Rate / SR})}:
+    \begin{equation}
+    SR = \frac{N_t}{N_0} \times 100\% \quad (\text{Target } \ge 85\%)
+    \end{equation}
+    \item \textbf{Efisiensi Penghematan Pakan (\textit{Feed Saving Efficiency})}:
+    \begin{equation}
+    \text{Efisiensi} = \frac{\text{Konsumsi Pakan Kontrol} - \text{Konsumsi Pakan Adaptif}}{\text{Konsumsi Pakan Kontrol}} \times 100\%
+    \end{equation}
+\end{enumerate}
+
+\subsection*{7.2 Parameter Kinerja Visi Komputer Edge Device}
+\begin{itemize}
+    \item \textbf{Akurasi Deteksi Lapar}: Precision, Recall, Accuracy, dan F1-Score terhadap rekaman video teranotasi manual (*ground truth*). Target akurasi $\ge 85\%$.
+    \item \textbf{Tingkat Alarm Palsu (*False Positive Rate / FPR*)}: Target $< 5\%$ terhadap letupan buih aerator normal atau pantulan sinar matahari.
+    \item \textbf{Latensi Pemrosesan Edge}: Waktu eksekusi satu frame pada CPU Raspberry Pi 5 ($< 70\text{ ms}$ untuk memastikan pipeline 10 FPS tanpa frame drop).
+\end{itemize}
+
+\section*{8. Kesimpulan \& Panduan Implementasi Praktik Mahasiswa}
+
+\begin{enumerate}
+    \item \textbf{Kelengkapan Ilmiah}: Dokumen ini telah merumuskan secara tuntas seluruh jawaban teknis dan biologis, siap dikutip dan diadaptasi ke dalam naskah proposal/skripsi Bab 2 dan Bab 3.
+    \item \textbf{Kecukupan Literatur}: Peneliti \textbf{TIDAK PERLU lagi mencari artikel via Consensus}. Literatur 20 artikel CV dan 14 artikel pakan sudah lebih dari cukup dan komprehensif.
+    \item \textbf{Langkah Konkret Selanjutnya}:
+    \begin{itemize}
+        \item Cetak dokumen PDF terlampir sebagai bahan belajar intensif dan diskusi dengan dosen pembimbing.
+        \item Masukkan polygon ROI masking pada kode kamera Raspberry Pi untuk membuang dinding terpal biru kolam.
+        \item Lakukan kalibrasi nilai baseline aerator ($\mu_{\text{base}}, \sigma_{\text{base}}$) pada video riil selama 10 menit.
+        \item Sambungkan modul driver PCA9685 ke Raspberry Pi 5 untuk menguji pergerakan sudut servo katup pakan.
+    \end{itemize}
+\end{enumerate}
+
+\vspace{0.2cm}
+\rule{\textwidth}{0.6pt}
+\begin{center}
+    \footnotesize
+    Dokumen disiapkan khusus untuk Khoirotun Nisa' (NIM: 2341720057) --- D4 Teknik Informatika, Jurusan TI, Politeknik Negeri Malang.\\
+    Dosen Pembimbing: Dr. Ulla Delfana Rosiani, ST., MT. $\bullet$ Tahun Akademik 2026/2027.
+\end{center}
+
+\end{document}

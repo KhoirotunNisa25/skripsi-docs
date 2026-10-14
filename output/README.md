@@ -44,11 +44,28 @@ output/
 ---
 
 ## 📑 4. Laporan Analisis Pakan & Riset Computer Vision 25 Parameter (*Analisis Pakan & CV*)
-- **Jalur Folder**: [`output/analisis-pakan-dan-cv/`](file:///e:/SKRIPSI/sekeripsi/output/analisis-pakan-dan-cv/)
-- **Berkas PDF**: [`output/analisis-pakan-dan-cv/laporan-analisis-pakan-dan-cv.pdf`](file:///e:/SKRIPSI/sekeripsi/output/analisis-pakan-dan-cv/laporan-analisis-pakan-dan-cv.pdf)
-- **Sumber LaTeX**: [`latex/laporan-analisis-pakan-dan-cv.tex`](file:///e:/SKRIPSI/sekeripsi/latex/laporan-analisis-pakan-dan-cv.tex)
+- **Jalur Folder**: [`output/analisis-pakan-dan-cv/`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/analisis-pakan-dan-cv/)
+- **Berkas PDF**: [`output/analisis-pakan-dan-cv/laporan-analisis-pakan-dan-cv.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/analisis-pakan-dan-cv/laporan-analisis-pakan-dan-cv.pdf)
+- **Sumber LaTeX**: [`latex/laporan-analisis-pakan-dan-cv.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/laporan-analisis-pakan-dan-cv.tex)
 - **Deskripsi**: Laporan akademik resmi hasil bimbingan dosen (4 halaman) yang mencakup:
   1. Penegasan konsep skripsi hasil bimbingan (kuota petani terbagi adaptif berbasis riak bibit lele, baseline aerator, evaluasi 1 bulan vs manual, tanpa kualitas air/kesehatan).
   2. Output 1: Analisis kebiasaan bibit lele dan respon pakan (dibatasi 5% vs loss ad libitum, FCR, amonia toksik, compensatory growth).
   3. Output 2: Riset mendalam computer vision dengan tabel komparasi 25 parameter rigid (Hu et al. 2026 vs Wu et al. 2024 vs kondisi skripsi), karakteristik metode visual, dan formulasi teknis model temporal LSTM (input 1D, windowing, target biner, Z-score baseline aerator).
+
+---
+
+## 📑 5. Kajian Lengkap Metodologi CV, Noise Aerator & Kendali Servo Feeder (*Kajian Lengkap CV Lele*)
+- **Jalur Folder**: [`output/kajian-lengkap-cv-lele/`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/kajian-lengkap-cv-lele/)
+- **Berkas PDF Siap Cetak**: [`output/kajian-lengkap-cv-lele/Kajian_Lengkap_CV_Bibit_Lele_dan_Noise_Aerator.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/kajian-lengkap-cv-lele/Kajian_Lengkap_CV_Bibit_Lele_dan_Noise_Aerator.pdf)
+- **Dokumen Sintesis Markdown**: [`research/synthesis/kajian-lengkap-metodologi-cv-dan-noise-kolam.md`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/research/synthesis/kajian-lengkap-metodologi-cv-dan-noise-kolam.md)
+- **Sumber LaTeX**: [`latex/kajian-lengkap-metodologi-cv-dan-noise-kolam.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/kajian-lengkap-metodologi-cv-dan-noise-kolam.tex)
+- **Deskripsi**: Dokumen kajian akademik dan metodologi komprehensif (7 halaman siap cetak) yang mengintegrasikan:
+  1. Analisis visual optik setup riil kamera jarak dekat ($h \approx 30\text{--}50\text{ cm}$) di atas kolam terpal ber-aerator berdasarkan citra aktual `image.png`.
+  2. Sintesis kritis seluruh 20 artikel CV global dengan Tabel Master 20 artikel dan formulasi 4 *research gap* berbasis bukti.
+  3. Formulasi matematis pemisahan riak makan bibit lele vs derau aerator kontinu via *Welford Running Gaussian Baseline* dan deteksi anomali $Z$-score terverifikasi temporal.
+  4. Strategi reduksi derau luar ruangan (pantulan silau matahari via HSV/CLAHE + filter optik polarisasi CPL, daun melayang via arah vektor, bayangan burung via batas luas kontur maksimum).
+  5. Kuantifikasi perubahan piksel (*Three-Frame Differencing*) menjadi skor kuantitatif *Feeding Activity Index* ($FAI$) beserta matriks keputusan.
+  6. Desain sistem kontrol aktuator servo PCA9685 berbasis *Finite State Machine* (FSM) yang taat batasan kuota harian petani (*daily quota budgeting*) dan jeda *cooldown* 3--5 menit.
+  7. Rancangan pengujian lapangan 1 bulan dan parameter evaluasi biologis (ADG, FCR, SR, Feed Saving) serta metrik visi komputer edge.
+
 
