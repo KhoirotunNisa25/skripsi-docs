@@ -2,6 +2,53 @@
 
 ## Log Perubahan Dokumen Riset
 
+### 2026-10-12 (Sesi 14)
+- **Perubahan**:
+  - **Troubleshooting Jaringan & Modem MiFi 4G LTE Lapangan**:
+    - Mendiagnosis kendala modem MiFi portabel Telkomsel yang hanya menyala lampu indikator baterai (modul Wi-Fi masuk mode *power saving / sleep* akibat ketiadaan kuota data seluler dan auto-disconnect klien).
+    - Memandu langkah re-aktivasi (*single click wake-up* dan pengisian daya), memverifikasi integrasi jaringan lokal pada subnet baru `192.168.100.0/24`.
+    - Memindai dan memverifikasi alamat IP lokal Raspberry Pi 5 (`192.168.100.193`) via interface Wi-Fi `wlp0s20f3` laptop.
+  - **Penambahan Mekanisme Auto-Recovery Status Riwayat Rekaman Terputus (`app.py`)**:
+    - Mengidentifikasi anomali entri riwayat rekaman `lele_20261012_090021.mp4` (ukuran 44 byte) yang berstatus `"🔴 Sedang Merekam"` akibat insiden Raspberry Pi mati mendadak saat sesi rekam pagi hari berlangsung.
+    - Menambahkan logika *self-healing recovery* pada fungsi `load_history()` di `/home/raspi5/Nisa/app.py`: jika sistem baru melakukan *booting* dan menemukan entri riwayat lama yang masih berstatus `"Sedang Merekam"`, status otomatis dialihkan menjadi `"⚠️ Terputus (Mati Listrik / Reboot)"`.
+  - **Integrasi Pemantauan Nama Wi-Fi & Parameter Jaringan di Dashboard**:
+    - Menambahkan modul `NetworkManager` di `/home/raspi5/Nisa/app.py` yang secara asinkron mendeteksi nama SSID Wi-Fi aktif dan kekuatan sinyal via `nmcli`, IP lokal via `socket`, serta IP Tailscale.
+    - Menambahkan indikator visual di antarmuka web [`templates/index.html`](file:///home/raspi5/Nisa/templates/index.html):
+      1. Badge status Wi-Fi di *navigation header* atas (`Wi-Fi: <SSID> (<Sinyal>%)`).
+      2. Kartu informasi baru *"Wi-Fi Terhubung"* pada grid status perangkat lengkap dengan informasi IP lokal & Tailscale.
+    - Memverifikasi keberhasilan integrasi langsung pada Raspberry Pi 5 (`nisa-dashboard.service`).
+- **Status**: Selesai (*Completed*)
+
+---
+
+### 2026-10-11 (Sesi 13)
+- **Perubahan**:
+  - **Penyusunan Kajian Komprehensif Berdasarkan Setup Aktual Kamera Dekat (`image.png`)**:
+    - Menganalisis kondisi optik nyata setup lapangan: ketinggian kamera rendah ($h \approx 30\text{--}50\text{ cm}$ nadir $90^\circ$), air kolam keruh kehijauan pendederan lele, percabangan selang aerator Y di dasar dengan letupan buih melayang, serta lipatan dinding terpal biru pada $30\%$ bagian atas frame.
+    - Merumuskan *Static Polygonal ROI Masking* untuk membuang getaran terpal biru akibat angin luar ruangan.
+  - **Sintesis Kritis 20 Literatur Global & Penegasan Kecukupan Literatur**:
+    - Memverifikasi bahwa 20 literatur CV yang ada + 14 literatur pakan lokal sudah **sangat cukup dan tuntas**; tidak memerlukan pencarian baru via Consensus.
+    - Menegaskan 4 *Research Gap*: (1) Oklusi bentuk tubuh di air keruh $\to$ beralih ke analisis riak mikro, (2) Asumsi naif air tenang $\to$ pemodelan baseline aerator kontinu, (3) Asumsi buih tebal ikan dewasa $\to$ setup kamera berjarak dekat menangkap gelombang mikro, (4) Model DL workstation mahal $\to$ algoritma deterministik hemat daya di Raspberry Pi 5.
+  - **Formulasi Matematis Pemisahan Gerakan Lele vs. Derau Aerator**:
+    - Pemodelan *Running Gaussian Baseline* rekursif Welford ($\mu_{\text{base}}, \sigma_{\text{base}}^2$).
+    - Uji anomali deviasi baku $Z$-Score ($Z_t \ge 3,5$) terverifikasi jendela temporal $N \ge 3$ frame berturut-turut ($0,3\text{--}0,5\text{ s}$).
+  - **Metodologi Reduksi Derau Outdoor**:
+    - Eliminasi pantulan kilau matahari (*sun glint*) via konversi ruang warna HSV (normalisasi kanal $V$ via CLAHE, deteksi pada kanal $S$) serta rekomendasi filter optik polarisasi sirkular (CPL).
+    - Eliminasi daun mengapung via filter kecepatan dan koherensi arah vektor (*unidirectional laminar drift*).
+    - Eliminasi bayangan burung/petani via batas ambang luas kontur maksimum ($A_i > 0,15 A_{\text{ROI}}$).
+  - **Kuantifikasi Skor $FAI$ & Logika Kendali Aktuator Servo (PCA9685)**:
+    - *Three-Frame Differencing* biner Otsu + bitwise AND untuk menghapus *ghosting*.
+    - Perumusan indeks aktivitas makan ($FAI_t$) dengan skala keputusan: $FAI < 2,0$ (Quiescent/OFF), $2,0 \le FAI < 4,0$ (Standby), $FAI \ge 4,0$ (Trigger Servo ON).
+    - Arsitektur *Finite State Machine* (FSM) terikat kuota harian petani (*daily quota budgeting*) dengan jeda *cooldown* pasca-pakan 3--5 menit.
+  - **Penerbitan Berkas Luaran Resmi Siap Cetak**:
+    - Dokumen Markdown: `research/synthesis/kajian-lengkap-metodologi-cv-dan-noise-kolam.md`.
+    - Naskah LaTeX: `latex/kajian-lengkap-metodologi-cv-dan-noise-kolam.tex`.
+    - Dokumen PDF Siap Cetak (7 halaman rapi tanpa overfull): `output/kajian-lengkap-cv-lele/Kajian_Lengkap_CV_Bibit_Lele_dan_Noise_Aerator.pdf`.
+- **Alasan**: Permintaan pengguna untuk mendalami 4 poin kunci riset visi komputer bibit lele secara tuntas ("lengkap kap kap") dan siap cetak untuk dipelajari, serta mengintegrasikan foto setup aktual kamera di atas air (`image.png`).
+- **Status**: Selesai (*Completed*)
+
+---
+
 ### 2026-09-26 (Sesi 12)
 - **Perubahan**:
   - **Identifikasi Detail Merk & Spesifikasi Hardware Kamera di Literatur CV**:
@@ -230,6 +277,18 @@
 
 ### 2026-09-21 (Sesi 2)
 - **Perubahan**: Integrasi topik skripsi baru pengguna ("Deteksi Aktivitas Ikan Lele sebagai Indikasi Lapar Berbasis Computer Vision") dari `conteks.md`, penapisan 100 entri `consensus result.csv`, pengunduhan 14 artikel ilmiah teks lengkap (*full-text PDF*) ke `articles/pdf/`.
+- **Status**: Selesai (*Completed*)
+
+---
+
+### 2026-10-11 (Sesi 8)
+- **Perubahan**:
+  - **Pencegahan Kamera Mati / Freeze Akibat Gangguan Kabel USB**:
+    - Menganalisis log kernel `dmesg` pada Raspberry Pi 5 yang mencatat diskoneksi perangkat USB Logitech Brio 100 (`usb disconnect`) dan penyambungan ulang ke port USB lain.
+    - Menemukan kendala pada `_capture_loop` di mana OpenCV `cap.isOpened()` tetap bernilai `True` meski perangkat fisik terlepas, sehingga pembacaan `read()` gagal terus-menerus tanpa memicu re-inisialisasi.
+    - Menambahkan mekanisme *self-healing / auto-reconnect* di `/home/raspi5/Nisa/app.py`: jika terjadi 15 kegagalan pembacaan frame berturut-turut (~1,5 detik), loop akan otomatis melepaskan objek kamera lama dan memindai ulang perangkat video yang aktif via `_init_camera()`.
+    - Merestart dan memverifikasi `nisa-dashboard.service`: aliran video stream `/video_feed` kembali normal dan responsif via Wi-Fi lokal (`192.168.0.106:5000`) maupun Tailscale (`100.126.141.31:5000`).
+- **Alasan**: Pemecahan masalah kamera yang mendadak mati/tidak menampilkan gambar saat kabel USB kamera tersenggol atau dipindah port.
 - **Status**: Selesai (*Completed*)
 
 ---
