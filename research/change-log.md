@@ -2,6 +2,25 @@
 
 ## Log Perubahan Dokumen Riset
 
+### 2026-10-16 (Sesi 15)
+- **Perubahan**:
+  - **Penyesuaian Konteks Riset ke Kolam Tenang Tanpa Aerator**:
+    - Mengakomodasi arahan terbaru bahwa kondisi aktual kolam penelitian adalah **kolam luar ruangan tenang tanpa aerator**.
+    - Mengidentifikasi implikasi metodologis: tantangan pemodelan *moving baseline* gelembung aerator dieliminasi, dan fokus bergeser penuh ke penanganan derau visual lingkungan luar ruangan (*outdoor visual noise*: silau matahari/glare, bayangan angin, daun mengapung, burung liar) serta pembuktian korelasi empiris riak permukaan air tenang dengan rasa lapar lele.
+  - **Penyusunan Matriks Formal RP, RQ, dan RO (Tabel 3 Kolom dengan Merge Kolom 1)**:
+    - Merumuskan Research Problem (RP) terpadu yang mencakup 4 tantangan utama (derau visual outdoor, durasi transien lele 3--6 frame @ 10 FPS, komputasi edge Raspberry Pi, dan validasi empiris).
+    - Merumuskan 4 Research Questions (RQ1: Deteksi Gerak, RQ2: Reduksi Derau Outdoor, RQ3: Validasi Empiris Lapar, RQ4: Logika Pakan Terkendali & Evaluasi Budidaya).
+    - Merumuskan 4 Research Objectives (RO1--RO4) yang berkorespondensi 1-ke-1 secara presisi dengan RQ1--RQ4.
+    - Mengeliminasi seluruh penyebutan kata aerator/aerasi pada naskah rumusan masalah.
+  - **Penerbitan Dokumen PDF Siap Cetak (A4 Landscape 2 Halaman)**:
+    - Berkas LaTeX: `latex/matriks-rp-rq-ro.tex`.
+    - Berkas PDF Resmi: `output/rp-rq-ro/matriks-rp-rq-ro.pdf` dan salinan cepat di root: `matriks-rp-rq-ro-kolam-tenang.pdf`.
+    - Halaman 1 memuat tabel matriks utama dengan Kolom 1 (RP) di-merge vertikal penuh, Halaman 2 memuat pemetaan metodologi, metrik terukur, batasan sistem, dan logika *daily quota budgeting*.
+- **Klasifikasi Perubahan**: *Moderate* (Penyesuaian ruang lingkup lingkungan kolam dan penegasan matriks RP-RQ-RO).
+- **Status**: Selesai (*Completed*)
+
+---
+
 ### 2026-10-12 (Sesi 14)
 - **Perubahan**:
   - **Troubleshooting Jaringan & Modem MiFi 4G LTE Lapangan**:

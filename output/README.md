@@ -13,8 +13,11 @@ output/
 ├── standar-bibit-lele/        <-- Panduan Standar Bibit & Manajemen Pakan
 │   └── Standar_Bibit_dan_Pendederan_Lele.pdf (Standar pendederan benih lele)
 │
-└── analisis-pakan-dan-cv/     <-- Laporan Hasil Bimbingan Dosen Terbaru
-    └── laporan-analisis-pakan-dan-cv.pdf (Analisis Pakan Dibatasi vs Loss & 25 Parameter CV)
+├── analisis-pakan-dan-cv/     <-- Laporan Hasil Bimbingan Dosen Terbaru
+│   └── laporan-analisis-pakan-dan-cv.pdf (Analisis Pakan Dibatasi vs Loss & 25 Parameter CV)
+│
+└── rp-rq-ro/                  <-- Matriks Penelitian RP - RQ - RO Kolam Tenang
+    └── matriks-rp-rq-ro.pdf   (2 halaman landscape, tabel formal tanpa aerator)
 ```
 
 ---
@@ -67,5 +70,15 @@ output/
   5. Kuantifikasi perubahan piksel (*Three-Frame Differencing*) menjadi skor kuantitatif *Feeding Activity Index* ($FAI$) beserta matriks keputusan.
   6. Desain sistem kontrol aktuator servo PCA9685 berbasis *Finite State Machine* (FSM) yang taat batasan kuota harian petani (*daily quota budgeting*) dan jeda *cooldown* 3--5 menit.
   7. Rancangan pengujian lapangan 1 bulan dan parameter evaluasi biologis (ADG, FCR, SR, Feed Saving) serta metrik visi komputer edge.
+
+---
+
+## 📑 6. Matriks Perumusan Penelitian RP, RQ, dan RO Kolam Tenang (*RP-RQ-RO*)
+- **Jalur Folder**: [`output/rp-rq-ro/`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/rp-rq-ro/)
+- **Berkas PDF Siap Cetak**: [`output/rp-rq-ro/matriks-rp-rq-ro.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/rp-rq-ro/matriks-rp-rq-ro.pdf) (salinan di root: [`matriks-rp-rq-ro-kolam-tenang.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/matriks-rp-rq-ro-kolam-tenang.pdf))
+- **Sumber LaTeX**: [`latex/matriks-rp-rq-ro.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/matriks-rp-rq-ro.tex)
+- **Deskripsi**: Dokumen matriks perumusan penelitian skripsi formal (2 halaman A4 landscape siap cetak) untuk konteks **kolam luar ruangan tenang tanpa aerator**:
+  1. **Halaman 1 (Tabel Matriks Formal)**: Kolom 1 Research Problem (RP) di-merge penuh secara vertikal mencakup seluruh baris 4 Research Questions (RQ1–RQ4) dan 4 Research Objectives (RO1–RO4) tanpa menyinggung aerator.
+  2. **Halaman 2 (Konstruk Metodologis & Batasan)**: Pemetaan metodologi dan metrik terukur (Recall, FPR, F1, latensi edge, signifikansi statistik $p < 0,05$, FCR, SR) serta batasan mutlak sistem (*system boundaries*) dan prinsip logika pakan adaptif terkendali kuota petani (*daily quota budgeting*).
 
 

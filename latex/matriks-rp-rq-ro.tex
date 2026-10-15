@@ -1,0 +1,200 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[hidelinks,colorlinks=true,linkcolor=navy,citecolor=navy,urlcolor=navy]{hyperref}
+
+% Compatibility macros for text inside math mode
+\providecommand{\text}[1]{\mbox{#1}}
+\providecommand{\mathrm}[1]{\textrm{#1}}
+
+% Native Landscape Page Dimensions (A4 Landscape: 297mm x 210mm)
+\setlength{\pdfpagewidth}{297mm}
+\setlength{\pdfpageheight}{210mm}
+\setlength{\paperwidth}{297mm}
+\setlength{\paperheight}{210mm}
+\setlength{\textwidth}{267mm}
+\setlength{\textheight}{178mm}
+\setlength{\topmargin}{-1.6cm}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\footskip}{18pt}
+\setlength{\oddsidemargin}{-1.5cm}
+\setlength{\evensidemargin}{-1.5cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+% Color Definitions
+\definecolor{navy}{rgb}{0.05, 0.20, 0.55}
+\definecolor{darkgray}{rgb}{0.20, 0.20, 0.20}
+\definecolor{subtlebg}{rgb}{0.96, 0.98, 1.00}
+
+\begin{document}
+
+% ==================== HALAMAN 1: MATRIKS UTAMA RP - RQ - RO ====================
+
+\begin{center}
+    {\large \textbf{\color{navy}POLITEKNIK NEGERI MALANG --- JURUSAN TEKNOLOGI INFORMASI}}\\[2pt]
+    {\Large \textbf{\color{navy}MATRIKS PERUMUSAN PENELITIAN SKRIPSI: RP, RQ, DAN RO}}\\[2pt]
+    {\normalsize \textbf{Sistem Pemberian Pakan Adaptif Berbasis Deteksi Riak Aktivitas Permukaan Bibit Ikan Lele (\textit{Clarias sp.}) Menggunakan \textit{Computer Vision} pada Kolam Luar Ruangan}}\\[4pt]
+    \rule{\textwidth}{1.2pt}\\[3pt]
+    
+    \footnotesize
+    \begin{tabular}{p{3.2cm} p{5.6cm} p{3.2cm} p{5.6cm} p{3.0cm} p{4.5cm}}
+        \textbf{Nama Mahasiswa} & : Khoirotun Nisa' & \textbf{Dosen Pembimbing} & : Dr. Ulla Delfana Rosiani, ST., MT. & \textbf{Objek Riset} & : Bibit Lele (Pendederan, 2--7 cm) \\
+        \textbf{NIM} & : 2341720057 & \textbf{Program Studi} & : Sarjana Terapan Teknik Informatika & \textbf{Kondisi Kolam} & : Kolam Luar Ruangan Tenang \\
+    \end{tabular}\\[1pt]
+    \rule{\textwidth}{0.6pt}
+\end{center}
+
+\vspace{-0.2cm}
+
+\begin{table}[h!]
+\centering
+\small
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{|p{8.2cm}|p{8.8cm}|p{8.8cm}|}
+\hline
+\multicolumn{1}{|c|}{\textbf{\color{navy}Research Problem (RP)}} & 
+\multicolumn{1}{c|}{\textbf{\color{navy}Research Questions (RQ)}} & 
+\multicolumn{1}{c|}{\textbf{\color{navy}Research Objectives (RO)}} \\
+\hline
+
+% ================= BARIS DATA DENGAN MERGE KOLOM 1 =================
+\multirow{4}{=}{%
+\textbf{Optimalisasi Pakan Bibit Lele via Deteksi Riak Permukaan pada Kolam Tenang:}\\[4pt]
+Pemberian pakan bibit ikan lele (\textit{Clarias sp.}) fase pendederan saat ini masih bertumpu pada jadwal berkala tetap atau pengamatan manual subjektif, yang berisiko memicu \textit{underfeeding} (kanibalisme dan penurunan bobot) atau \textit{overfeeding} (pemborosan biaya pakan dan penurunan kualitas air kolam).\\[4pt]
+Pengamatan visual riak dan cipratan permukaan air kolam tenang luar ruangan (\textit{outdoor}) secara \textit{top-view} menggunakan kamera \textit{overhead} menawarkan solusi non-kontak berbiaya rendah untuk mengestimasi rasa lapar lele. Namun, penerapannya menghadapi 4 tantangan utama:\\[3pt]
+$\bullet$ \textbf{Derau visual luar ruangan:} Fluktuasi cahaya matahari (\textit{sun glare}), bayangan dinamis, dedaunan mengapung, dan burung liar.\\[2pt]
+$\bullet$ \textbf{Durasi respon transien:} Kemunculan bibit lele ke permukaan sangat singkat (3--6 frame / 0,3--0,6 detik pada 10 FPS).\\[2pt]
+$\bullet$ \textbf{Batasan komputasi \textit{edge}:} Algoritma harus beroperasi secara berdaya rendah pada mikrokomputer Raspberry Pi.\\[2pt]
+$\bullet$ \textbf{Validasi korelasi empiris:} Perlunya pembuktian ilmiah hubungan riak permukaan kolam tenang dengan rasa lapar lele.
+}
+& \textbf{RQ1 (Deteksi Gerak \& Resolusi Temporal):}\par
+Bagaimana merancang metode deteksi dan ekstraksi riak aktivitas permukaan bibit lele pada kolam tenang secara otomatis dan berlatensi rendah menggunakan algoritma \textit{computer vision} ringan pada perangkat \textit{edge} (Raspberry Pi)?
+& \textbf{RO1 (Pengembangan Algoritma Deteksi):}\par
+Mengembangkan metode deteksi riak aktivitas permukaan bibit lele berbasis algoritma \textit{computer vision} berdaya rendah (\textit{lightweight motion detection}) yang responsif terhadap event transien singkat (3--6 frame @ 10 FPS) pada perangkat \textit{edge} (Raspberry Pi).\\[10pt] \cline{2-3}
+
+& \textbf{RQ2 (Penyaringan Derau Visual Outdoor):}\par
+Bagaimana mengeliminasi gangguan derau visual lingkungan luar ruangan (pantulan sinar matahari, fluktuasi pencahayaan, bayangan dinamis, dedaunan terapung, dan hewan liar) agar riak aktivitas lele dapat dideteksi secara akurat tanpa memicu \textit{false positive}?
+& \textbf{RO2 (Robustness \& Noise Suppression):}\par
+Merancang dan menguji mekanisme penyaringan derau visual lingkungan luar ruangan adaptif untuk menekan \textit{false positive} deteksi aktivitas akibat perubahan iluminasi alami dan gangguan permukaan air kolam tenang.\\[10pt] \cline{2-3}
+
+& \textbf{RQ3 (Validasi Empiris Korelasi Lapar):}\par
+Apakah terdapat korelasi empiris yang signifikan antara frekuensi dan intensitas riak permukaan kolam tenang dengan kondisi lapar bibit lele (\textit{Clarias sp.}) pada siklus waktu harian (pagi, siang, dan malam)?
+& \textbf{RO3 (Analisis Korelasi Aktivitas vs. Lapar):}\par
+Menganalisis dan membuktikan secara empiris korelasi kuantitatif pola kemunculan riak permukaan dengan kondisi lapar bibit lele berdasarkan observasi multi-sesi harian guna merumuskan indikator kuantitatif aktivitas makan.\\[10pt] \cline{2-3}
+
+& \textbf{RQ4 (Integrasi Sistem Pakan \& Evaluasi Budidaya):}\par
+Bagaimana merancang logika kendali pemberian pakan adaptif (\textit{activity-driven adaptive feeding}) yang memadukan sinyal aktivitas visual dengan batas kuota harian dari petani, serta dampaknya terhadap performa pertumbuhan (FCR, \textit{Survival Rate}, dan bobot)?
+& \textbf{RO4 (Implementasi \& Evaluasi Lapangan):}\par
+Mengimplementasikan sistem pemberian pakan adaptif berbasis sinyal aktivitas visual dengan batasan kuota harian petani, serta mengevaluasi efektivitasnya terhadap efisiensi pakan (FCR), kelangsungan hidup (\textit{Survival Rate}), dan pertumbuhan bibit lele melalui uji komparasi lapangan selama 1 bulan.\\[10pt] \hline
+\end{tabular}
+\end{table}
+
+\vfill
+\begin{center}
+    \scriptsize \textit{Dokumen Matriks Perumusan Penelitian Skripsi --- Sarjana Terapan Teknik Informatika, Politeknik Negeri Malang} \hfill \textit{Halaman 1 dari 2}
+\end{center}
+
+\newpage
+
+% ==================== HALAMAN 2: RINCIAN METODOLOGI & BATASAN SISTEM ====================
+
+\begin{center}
+    {\large \textbf{\color{navy}PENJELASAN KONSTRUK METODOLOGIS DAN BATASAN PENELITIAN SKRIPSI}}\\[2pt]
+    {\normalsize \textbf{Kerangka Alur Logika: Permasalahan (RP) $\rightarrow$ Pertanyaan (RQ) $\rightarrow$ Tujuan (RO) $\rightarrow$ Metrik Evaluasi}}\\[4pt]
+    \rule{\textwidth}{0.8pt}
+\end{center}
+
+\vspace{-0.1cm}
+
+\begin{table}[h!]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|p{1.4cm}|p{6.0cm}|p{6.3cm}|p{6.2cm}|p{5.4cm}|}
+\hline
+\multicolumn{1}{|c|}{\textbf{\color{navy}Fokus}} & 
+\multicolumn{1}{c|}{\textbf{\color{navy}Pertanyaan Penelitian (RQ)}} & 
+\multicolumn{1}{c|}{\textbf{\color{navy}Pendekatan Metodologi}} & 
+\multicolumn{1}{c|}{\textbf{\color{navy}Target Output / Hasil (RO)}} & 
+\multicolumn{1}{c|}{\textbf{\color{navy}Metrik Evaluasi Terukur}} \\
+\hline
+
+\textbf{RQ1 $\rightarrow$ RO1} & 
+Deteksi riak gerak bibit lele pada permukaan air kolam tenang secara berlatensi rendah di Raspberry Pi. & 
+Penerapan diferensiasi temporal antar-frame (\textit{adaptive frame differencing}) atau \textit{sparse optical flow} beresolusi 10 FPS tanpa deteksi bounding box per-ekor. & 
+Algoritma deteksi riak aktivitas berdaya komputasi rendah yang mampu menangkap event transien 3--6 frame (0,3--0,6 detik). & 
+$\bullet$ Latensi komputasi ($< 50\text{ ms/frame}$)\par
+$\bullet$ \textit{Frame rate} stabil $\ge 10\text{ FPS}$\par
+$\bullet$ \textit{Detection Recall} $\ge 85\%$ \\
+\hline
+
+\textbf{RQ2 $\rightarrow$ RO2} & 
+Penyaringan derau visual lingkungan luar ruangan (silau matahari, bayangan angin, daun, burung). & 
+Normalisasi pencahayaan adaptif, filter morfologi spasio-temporal, dan ambang batas varians pergerakan lokal untuk menolak gangguan non-ikan. & 
+Mekanisme penyaringan derau luar ruangan yang tangguh terhadap perubahan iluminasi alami sepanjang hari (pagi, siang, petang, malam). & 
+$\bullet$ \textit{False Positive Rate} (FPR) $< 10\%$\par
+$\bullet$ Presisi deteksi event $\ge 85\%$\par
+$\bullet$ F1-Score deteksi $\ge 85\%$ \\
+\hline
+
+\textbf{RQ3 $\rightarrow$ RO3} & 
+Pembuktian empiris korelasi kuantitatif antara riak permukaan kolam tenang dengan kondisi rasa lapar lele. & 
+Observasi multi-sesi harian (pagi, siang, malam, sebelum dan sesudah jadwal pakan rutin), formulasi indeks aktivitas makan (\textit{Feeding Activity Index} / $FAI$). & 
+Model korelasi kuantitatif dan kurva temporal aktivitas riak yang membedakan kondisi lele lapar vs lele kenyang secara terukur. & 
+$\bullet$ Signifikansi statistik ($p < 0,05$)\par
+$\bullet$ Koefisien korelasi ($R^2 > 0,80$)\par
+$\bullet$ Validasi ground truth per-sesi \\
+\hline
+
+\textbf{RQ4 $\rightarrow$ RO4} & 
+Perancangan logika kendali dispenser adaptif terikat kuota harian petani dan evaluasi performa budidaya. & 
+Sistem pemberian pakan sub-porsi berbasis lonjakan aktivitas ($q_i \approx 50\text{--}100\text{ g}$) dengan batas kuota harian mutlak petani ($\sum q_i \le Q_{\max}$). Uji komparasi 1 bulan. & 
+Prototipe terintegrasi pakan adaptif dan laporan perbandingan budidaya: Kolam Sistem Adaptif vs Kolam Kontrol Pakan Manual. & 
+$\bullet$ Rasio Konversi Pakan (\textit{FCR})\par
+$\bullet$ Kelangsungan Hidup (\textit{Survival Rate})\par
+$\bullet$ Pertumbuhan bobot mutlak ($WG$)\par
+$\bullet$ Efisiensi total pakan terpakai \\
+\hline
+\end{tabular}
+\end{table}
+
+\vspace{-0.1cm}
+
+\begin{table}[h!]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{|p{13.0cm}|p{13.0cm}|}
+\hline
+\multicolumn{1}{|c|}{\textbf{\color{navy}Batasan Mutlak Ruang Lingkup Sistem (\textit{System Boundaries})}} & 
+\multicolumn{1}{c|}{\textbf{\color{navy}Prinsip Kerja Logika Pakan Terkendali (\textit{Adaptive Sub-Rationing})}} \\
+\hline
+$\bullet$ \textbf{Kondisi Permukaan Kolam}: Kolam luar ruangan tenang tanpa gelombang buatan atau turbulensi aerasi mekanis.\par
+$\bullet$ \textbf{Fokus Deteksi}: Deteksi hidrodinamika permukaan air (riak/cipratan), bukan pelacakan visual tubuh lele di bawah air keruh.\par
+$\bullet$ \textbf{Kualitas Air}: Diperlakukan sebagai parameter pendukung lingkungan, bukan variabel independen skripsi ini (domain terpisah).\par
+$\bullet$ \textbf{Otonomi Pakan}: Sistem \textbf{TIDAK} menentukan kuota pakan secara buta; kuota harian total ($Q_{\max}$) mutlak ditentukan oleh petani pembudidaya. & 
+$\bullet$ \textbf{Alokasi Kuota Harian}: Petani menetapkan batas kuota harian (misal: 1 kg/hari sesuai taksiran biomassa 3--5\%).\par
+$\bullet$ \textbf{Dispensasi Adaptif}: Pakan didispensasikan dalam sub-porsi bertahap ($q_i$) hanya ketika skor aktivitas visual $FAI$ melampaui ambang batas lapar.\par
+$\bullet$ \textbf{Pencegahan Overfeeding}: Dispensasi pakan otomatis terkunci jika akumulasi pakan mencapai kuota harian ($\sum q_i \ge Q_{\max}$).\par
+$\bullet$ \textbf{Pencegahan Underfeeding}: Petani tetap menerima notifikasi jika hingga petang lele belum menghabiskan jatah pakan. \\
+\hline
+\end{tabular}
+\end{table}
+
+\vfill
+\begin{center}
+    \scriptsize \textit{Dokumen Matriks Perumusan Penelitian Skripsi --- Sarjana Terapan Teknik Informatika, Politeknik Negeri Malang} \hfill \textit{Halaman 2 dari 2}
+\end{center}
+
+\end{document}
