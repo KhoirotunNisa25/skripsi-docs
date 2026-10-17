@@ -1,0 +1,23 @@
+# M13_Tugas_AI_Ethics_Debat_Kelompok
+
+--- Slide 1 ---
+AI Ethics – Analisis Kasus & Debat Kelompok Tugas Kelompok | Teknik Informatika Polinema
+
+--- Slide 2 ---
+Tujuan Pembelajaran • Memahami isu etika dalam penulisan ilmiah dan penggunaan AI • Menganalisis kasus berdasarkan prinsip AI Ethics • Menghasilkan argumentasi dan counter-argument untuk debat • Menyusun rekomendasi etis untuk penggunaan AI
+
+--- Slide 3 ---
+Deskripsi Tugas Kelompok • Pilih satu kasus etika yang melibatkan AI generatif atau penulisan ilmiah • Analisis berdasarkan fairness, accountability, transparency, privacy, responsible use • Susun laporan 3–5 halaman + PPT presentasi • Siapkan argumen & counter-argument untuk debat antar kelompok
+
+--- Slide 4 ---
+Contoh Kasus yang Dapat Diangkat • ChatGPT menghasilkan referensi palsu dalam artikel ilmiah • Mahasiswa menulis skripsi menggunakan AI tanpa deklarasi • ChatGPT dimasukkan sebagai co-author • Dataset wajah tanpa izin dipublikasikan • Analisis data palsu dari AI (hasil statistik halusinasi)
+
+--- Slide 5 ---
+Format Laporan Kelompok 1. Pendahuluan kasus 2. Analisis etika (5 prinsip AI Ethics) 3. Risiko & dampak 4. Solusi & rekomendasi 5. Deklarasi AI-assisted writing 6. Daftar pustaka
+
+--- Slide 6 ---
+Format Diskusi & Debat Antar Kelompok • Presentasi 7 menit • Ajukan 2 pertanyaan kritis ke kelompok lain • Tanggapi pertanyaan dengan argumen kuat • Sampaikan counter-argument jika perlu • Dosen memberikan refleksi penutup
+
+--- Slide 7 ---
+Rubrik Penilaian (100 Skor) • Analisis etika: 35 • Kekuatan argumen: 20 • Solusi etis: 15 • Keaktifan debat: 15 • Kepatuhan deklarasi AI-assisted: 10 • Visual PPT: 5
+

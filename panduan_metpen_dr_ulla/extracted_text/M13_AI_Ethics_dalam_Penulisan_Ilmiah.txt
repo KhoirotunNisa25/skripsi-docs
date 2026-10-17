@@ -1,0 +1,77 @@
+# M13_AI_Ethics_dalam_Penulisan_Ilmiah
+
+--- Slide 1 ---
+Dr. ULLA DELFANA ROSIANI, ST., MT.  TEACHING TEAM  MATA KULIAH  METODOLOGI PENELITIAN D4 Teknik Informatika  JTI POLINEMA AI Ethics  dalam Penulisan Ilmiah -  Materi Metodologi Penelitian ke  13 -
+
+--- Slide 2 ---
+Tujuan  Pembelajaran Setelah mengikuti perkuliahan ini ,  mahasiswa mampu : Memahami konsep dasar etika dalam pengembangan  dan  penerapan  AI. Menjelaskan isu-isu etis  yang  muncul akibat penggunaan  AI. Menilai implikasi sosial ,  hukum , dan moral  dari teknologi  AI. Merancang sistem  AI  dengan prinsip  responsible AI dan fairness by design. Memahami pentingnya etika dalam penelitian  dan  publikasi  AI. Menjelaskan prinsip etika riset  AI: fairness, transparency, accountability, dan privacy. Menghindari pelanggaran etika seperti plagiarisme ,  data fabrication , dan  bias data . Menulis laporan penelitian  AI  secara bertanggung jawab  dan  beretika .
+
+--- Slide 3 ---
+Apakah  AI  bisa dipercaya ? Siapa  yang  bertanggung jawab jika  AI  membuat kesalahan ? Apakah  AI  akan menggantikan manusia ? AI TELAH MEMPENGARUHI BERBAGAI ASPEK KEHIDUPAN
+
+--- Slide 4 ---
+Apa Itu Etika AI? AI Ethics  =  cabang etika terapan  yang  mempelajari prinsip  moral dan  tanggung jawab manusia dalam merancang ,  membangun , dan  menggunakan sistem  AI. Aspek utama : Transparansi :  sistem  AI  harus dapat dijelaskan . Akuntabilitas :  ada pihak  yang  bertanggung jawab atas keputusan  AI. Privasi  dan  keamanan  data . Keadilan  (Fairness) :  tidak diskriminatif . Kesejahteraan manusia  (Human Well-Being) .
+
+--- Slide 5 ---
+Prinsip Etika AI (UNESCO & EU AI Act) Human- Centered  AI  — AI  harus menghormati martabat  dan  hak asasi manusia . Fairness & Non-Discrimination  —  tidak  bias  terhadap  gender,  ras ,  usia ,  dll . Transparency & Explainability  —  keputusan  AI  harus dapat dijelaskan . Accountability  —  harus ada pihak  yang  bertanggung jawab . Safety & Security  — AI  tidak boleh membahayakan manusia . Privacy Protection  — data  pribadi dijaga sesuai regulasi  (mis. UU PDP No. 27/2022).
+
+--- Slide 6 ---
+Isu-Isu  Etika  dalam  AI Isu Penjelasan Contoh  Kasus Bias Algoritmik Data pelatihan tidak seimbang menyebabkan diskriminasi Rekrutmen AI menolak kandidat perempuan Privasi AI mengumpulkan data tanpa izin Face Recognition di area publik Keamanan Data AI mudah diserang (data poisoning) Deepfake & cyber attack Autonomi Manusia Keputusan penting digantikan AI Mobil otonom menabrak pejalan kaki Tanggung Jawab Hukum Siapa yang disalahkan saat AI salah Diagnosa AI di rumah sakit
+
+--- Slide 7 ---
+Etika AI di Indonesia UU  Nomor  27  Tahun  2022  tentang Perlindungan  Data Pribadi. Strategi Nasional  Kecerdasan Artifisial  (BRIN, 2020)  menekankan  AI yang  Etis , Aman, dan  Inklusif . Tantangan :  regulasi belum seragam ,  kapasitas  SDM AI  masih terbatas .
+
+--- Slide 8 ---
+Mengapa  Etika  Penting dalam Penelitian  AI AI  memproses  data  sensitif  ( gambar wajah ,  suara ,  kesehatan ,  perilaku ). AI  dapat menimbulkan  bias  sosial atau diskriminasi . Penelitian  AI  sering digunakan untuk keputusan otomatis  yang  berdampak  pada  manusia . 🧩 Oleh  karena itu ,  tanggung jawab ilmuwan  AI  tidak hanya teknis ,  tapi  juga moral dan  sosial .
+
+--- Slide 9 ---
+Prinsip  Umum Etika  Penelitian  AI Prinsip Penjelasan Kejujuran Ilmiah Tidak memalsukan data, hasil, atau analisis. Transparansi Metodologi Menjelaskan dataset, parameter, dan model dengan jelas agar dapat direplikasi. Fairness dan Non-Bias Menghindari dataset atau algoritma yang diskriminatif. Akuntabilitas Menyebutkan keterbatasan model dan tanggung jawab hasil. Privasi dan Keamanan Data Melindungi data pribadi dan anonim pengguna.
+
+--- Slide 10 ---
+Etika  dalam Penggunaan  Data Persetujuan  (Consent):  pastikan  data  dikumpulkan secara  legal dan  etis . Anonimitas : hapus  identitas pribadi sebelum pelatihan  model. Dataset Publik :  gunakan  dataset  terbuka  yang  memiliki izin eksplisit . Cite Dataset :  selalu cantumkan sumber  dataset di  bagian  Methodology  atau  Acknowledgment. Contoh : Wajah (Face Recognition):  pastikan  dataset  memiliki izin eksplisit . Teks (Chat log, social media):  hindari  data  pribadi tanpa izin .
+
+--- Slide 11 ---
+Etika dalam Penulisan dan Publikasi Hindari plagiarisme →  gunakan kutipan  &  referensi  yang  benar  (APA/IEEE). Jangan duplikasi publikasi  (self-plagiarism). Hindari data fabrication / falsification . Jelaskan batasan penelitian secara jujur  (mis. dataset  terbatas , bias,  kondisi eksperimen ). Cantumkan kontribusi setiap penulis (authorship contribution). Nyatakan jika ada conflict of interest  (mis.  pendanaan , sponsor).
+
+--- Slide 12 ---
+Bias dan Fairness  dalam Penelitian  AI Bias dapat muncul dari : Dataset ( tidak representatif ) Labeling  ( subjektif ) Algoritma  ( pemilihan fitur atau  loss function) Dampak : Diskriminasi terhadap kelompok tertentu Kesalahan klasifikasi atau keputusan  unfair 💡  Solusi: Gunakan analisis  fairness (mis.  demographic parity, equal opportunity ),  lakukan  balancing data, dan  dokumentasikan prosesnya .
+
+--- Slide 13 ---
+AI Transparency & Explainability  dalam  Artikel  Ilmiah Dalam  laporan penelitian  AI: Jelaskan model,  arsitektur , dan parameter . Gunakan  diagram  alur  ( pipeline diagram )  untuk menunjukkan tahapan  AI. Sediakan kode  / link GitHub jika memungkinkan  (reproducibility). Laporkan metrik evaluasi secara objektif  (Accuracy, F1, MAPE,  dsb ). Jangan manipulasi hasil  (mis.  hanya menampilkan hasil terbaik tanpa konteks ).
+
+--- Slide 14 ---
+Etika Penggunaan AI dalam Penulisan Ilmiah Penggunaan  ChatGPT  atau alat generatif  lain  harus disertai deklarasi (“AI-assisted writing”). Tidak  boleh menggunakan  AI  untuk membuat  data  atau hasil fiktif . AI  boleh digunakan untuk : Grammar improvement Formatting Idea structuring Translation AI  tidak boleh dianggap sebagai penulis  ( sesuai pedoman  IEEE & Elsevier).
+
+--- Slide 15 ---
+1️⃣ Apa  itu  “AI-assisted writing declaration” Deklarasi  “AI-assisted writing”  adalah pernyataan resmi  di  dalam naskah ilmiah bahwa sebagian teks ,  penyusunan  ide,  atau  editing  telah dibantu  oleh  alat kecerdasan buatan generatif  ( seperti  ChatGPT),  namun tanggung jawab penuh tetap  pada  penulis manusia . Tujuannya : menjaga transparansi  dan  kejujuran ilmiah , mencegah  salah  persepsi bahwa  AI  menjadi co-author , menegaskan bahwa penulis telah memeriksa ,  menyunting , dan  bertanggung jawab atas seluruh isi .
+
+--- Slide 16 ---
+2️⃣ Di Mana Deklarasi Diletakkan Bisa  diletakkan  pada salah  satu dari tiga tempat tergantung  format  jurnal : Letak Contoh Penempatan Catatan Bagian Acknowledgment Paling umum digunakan. Cocok untuk artikel ilmiah umum. Bagian Author Contribution / Ethics Statement Jika jurnal menyediakan sub-bagian etika penelitian. Cocok untuk paper berbasis riset eksperimental. Catatan kaki (Footnote) halaman pertama Umum pada jurnal IEEE, MDPI, Springer. Digunakan bila penggunaan AI minimal.
+
+--- Slide 17 ---
+3️⃣  Contoh Deklarasi  yang  Dianjurkan ( berbagai gaya jurnal ) ✳️  Versi  Umum (APA / Elsevier Style) The authors acknowledge that parts of this manuscript were assisted by OpenAI’s ChatGPT for improving grammar, sentence structure, and language clarity. The authors have reviewed and edited the content, and take full responsibility for the final version of the manuscript. ✳️  Versi  IEEE / Springer Style This article includes text that was generated with the assistance of a large language model (ChatGPT, OpenAI). The authors verified and edited the generated text to ensure accuracy and accountability. ✳️  Versi  Bahasa Indonesia ( untuk laporan skripsi  /  artikel nasional  SINTA) Penulis menyatakan bahwa dalam  proses  penyusunan naskah ini ,  penulis menggunakan bantuan alat kecerdasan buatan  (ChatGPT, OpenAI)  untuk perbaikan  tata  bahasa  dan  struktur kalimat .  Seluruh isi ,  analisis , dan  interpretasi  data  merupakan tanggung jawab penulis sepenuhnya .
+
+--- Slide 18 ---
+4️⃣ Hal yang Harus dan Tidak  Boleh Dilakukan ✅  Boleh / Dianjurkan ❌  Tidak Boleh / Pelanggaran Etika Menggunakan ChatGPT untuk memperbaiki grammar, ringkasan, atau struktur kalimat. Menggunakan AI untuk menghasilkan  data palsu, analisis statistik, atau hasil eksperimen . Menggunakan AI untuk membantu menyusun kerangka naskah atau mencari ide riset awal. Menyebut ChatGPT sebagai  penulis (co-author) . Menyatakan penggunaan AI secara terbuka di  Acknowledgment . Tidak  mendeklarasikan penggunaan  AI  padahal digunakan secara signifikan .
+
+--- Slide 19 ---
+5️⃣ Contoh Implementasi di Dokumen Ilmiah 📄  Contoh  di Bagian Acknowledgment (Bahasa Indonesia) Ucapan Terima  Kasih Penulis mengucapkan terima kasih kepada  OpenAI ChatGPT yang  digunakan untuk membantu penyusunan kalimat  dan  penyuntingan  tata  bahasa dalam artikel ini .  Seluruh isi  dan  kesimpulan penelitian merupakan tanggung jawab penulis . 📄  Contoh  di Proposal /  Skripsi Pernyataan  Etika  Penelitian Dalam proses  penyusunan laporan ini ,  penulis menggunakan alat bantu kecerdasan buatan  (ChatGPT, OpenAI)  untuk memperbaiki struktur kalimat  dan  kejelasan bahasa tanpa mengubah substansi ilmiah .  Penulis telah meninjau seluruh hasil  dan  bertanggung jawab penuh atas isi laporan ini .
+
+--- Slide 20 ---
+6️⃣  Rujukan  Internasional Elsevier Policy (2023): AI tools cannot be listed as authors; authors must disclose use of generative AI in the acknowledgments section. Springer Nature Policy (2023): Authors are responsible for content generated by AI and must declare its use transparently. IEEE Author Center (2024): Any use of generative AI must be documented in the manuscript’s Acknowledgment section.
+
+--- Slide 21 ---
+7️⃣ Tips Praktis untuk Mahasiswa / Peneliti Catat  penggunaan  AI  selama  proses  menulis  ( tanggal ,  tujuan ,  versi ). Hindari  copy-paste  langsung dari  output AI  tanpa  review. Gunakan AI-generated text detectors  (mis.  GPTZero )  untuk memverifikasi orisinalitas . Selalu lakukan final proofreading manual  oleh  penulis manusia .
+
+--- Slide 22 ---
+Etika  dalam Publikasi  dan Peer Review Kirim  ke jurnal  yang  bereputasi  (Scopus/SINTA),  hindari  predatory journal. Jangan mengirim artikel ke beberapa jurnal sekaligus  (multiple submission). Hargai  proses peer review dan  umpan balik  reviewer. Jika  ada kesalahan setelah publikasi  →  lakukan  correction / retraction.
+
+--- Slide 23 ---
+Studi Kasus Kasus 1:  Paper AI Retracted (2022) Penulis menggunakan  dataset  wajah tanpa izin  dan  menyembunyikan sumbernya . ➡️  Ditarik dari jurnal karena pelanggaran etika riset  dan  privasi . Kasus 2:  Generative AI-assisted writing Mahasiswa menggunakan  ChatGPT  untuk menulis  proposal  tanpa menyebutkan . ➡️  Pelanggaran etika akademik karena tidak ada deklarasi  AI assistance.
+
+--- Slide 24 ---
+Checklist Etika  untuk Peneliti  AI ✅ Dataset legal &  anonim ✅ Tidak  ada plagiarisme ✅ Tidak  ada hasil palsu ✅  Transparansi metode  dan parameter ✅  Menjelaskan keterbatasan penelitian ✅  Mencantumkan sumber  data & tool ✅  Deklarasi penggunaan  AI tools
+
+--- Slide 25 ---
+Acknowledgment Materi  disusun dengan bantuan  AI  generatif  (ChatGPT, OpenAI)  untuk penyuntingan teks  dan  penyusunan narasi .  Semua isi diverifikasi  oleh  penyusun .
+

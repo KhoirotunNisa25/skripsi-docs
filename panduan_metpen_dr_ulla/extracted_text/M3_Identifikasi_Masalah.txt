@@ -1,0 +1,110 @@
+# M3_Identifikasi_Masalah
+
+--- Slide 1 ---
+Dr. ULLA DELFANA ROSIANI, ST., MT.  TEACHING TEAM  MATA KULIAH  METODOLOGI PENELITIAN D4 Teknik Informatika  JTI POLINEMA IDENTIFIKASI MASALAH -  Materi Metodologi Penelitian ke  3 -
+
+--- Slide 2 ---
+OUTLINE KONSEP IDENTIFIKASI MASALAH CARA MENEMUKAN “MASALAH”  KRITERIA MASALAH PENELITIAN YANG BAIK TEKNIK IDENTIFIKASI MASALAH LANGKAH-LANGKAH PERUMUSAN MASALAH ALUR LOGIS DALAM MERUMUSKAN PENELITIAN
+
+--- Slide 3 ---
+“Problem well-defined is a problem half - solved”
+
+--- Slide 4 ---
+Sumber:  Reproduced, with acknowledgement of origin, from J. Bryant:  Problem management  ( Chichester , West Sussex, Wiley, 1989), p. 11.
+
+--- Slide 5 ---
+1.  Konsep Identifikasi  Masalah Identifikasi masalah adalah  proses  menemukan ,  memahami , dan  mendefinisikan masalah  yang  akan diteliti . Dalam  penelitian ,  identifikasi masalah merupakan titik awal  yang  menentukan arah ,  fokus , dan  hasil penelitian . Masalah penelitian harus  objective  (tidak subjective) , dan  harus dibuktikan secara logis  dan valid  bahwa  masalah itu benar-benar masalah Supaya logis dan valid,  perlu dilakukan objektifikasi masalah ,  dengan cara  me landasi  masalah penelitian dengan  literature  terbaru Mengapa penting ? Karena  tanpa masalah  yang  jelas ,  penelitian bisa menjadi terlalu luas ,  tidak fokus ,  atau bahkan tidak bermanfaat . Kesalahan umum mahasiswa : Menyusun  topik tanpa dasar masalah nyata  ( sekadar  ide  teknologi ). Masalah  terlalu umum ,  misalnya : “ Bagaimana membuat aplikasi  Android?” →  seharusnya : “ Bagaimana membuat aplikasi  Android  untuk memudahkan pemesanan produk  UMKM di Malang?” Masalah  sudah banyak diteliti  dan  tidak menawarkan kebaruan .
+
+--- Slide 6 ---
+Pengertian Identifikasi  Masalah  Menurut  Para Ahli Adapun  definisi identifikasi masalah menurut  para  ahli ,  antara  lain  adalah sebagai berikut ; Suriasumantri Identifikasi masalah ialah tahap permulaan dari penguasaan masalah  di mana  objek dalam suatu jalinan tertentu bisa kita kenali sebagai suatu masalah . Amien Silalahi Identifikasi masalah merupakan usaha untuk mendaftar sebanyak-banyaknya pertanyaan terhadap suatu masalah  yang  sekiranya bisa ditemukan jawabannya .
+
+--- Slide 7 ---
+Identifikasi masalah sebagai bagian dari  proses  penelitian dapat dipahami sebagai upaya untuk mendefinisikan masalah  ( problem ) dan  membuat definisi tersebut bisa diukur  ( measurable )  sebagai langkah awal penelitian . Proses  identifikasi masalah melibatkan pengembangan pernyataan rumusan masalah  yang  jelas  dan  langsung  yang  dapat dihubungkan dengan tujuan  dan  sasaran spesifik  yang  telah diidentifikasi .  Pernyataan masalah diuji  dan  disempurnakan melalui analisis  yang  lebih rinci  yang  dilakukan sebagai bagian dari penilaian masalah  dan  penentuan prioritas . Keterkaitan dengan skripsi  D4 TI: Masalah yang  dipilih harus relevan dengan bidang komputer /IT,  sesuai kompetensi mahasiswa , dan  bisa diselesaikan dalam waktu terbatas  (1 semester) IDENTIFIKASI MASALAH 
+
+--- Slide 8 ---
+2.  Cara menemukan “masalah”  Lingkungan sekitar  (Real Problem) Pengalaman pribadi  /  praktikum  /  magang Literatur dan  penelitian terdahulu Kebijakan  /  regulasi  /  standar Tren  teknologi terbaru
+
+--- Slide 9 ---
+M enemukan “masalah”  >> Lingkungan sekitar  (Real Problem) Masalah  nyata  yang  dihadapi masyarakat ,  instansi ,  atau industri . Contoh : UMKM  kesulitan mencatat stok produk  → ide  membuat sistem inventori berbasis  web. Guru  kesulitan mengelola presensi  online → ide  sistem absensi berbasis  face recognition. Petani  ikan  lele kesulitan menghitung bibit  →  solusi :  sistem penghitung otomatis berbasis  Computer Vision. Keunggulan :  jelas manfaatnya ,  kontekstual dengan kondisi lokal .
+
+--- Slide 10 ---
+M enemukan “masalah”  >>  Pengalaman Pribadi  /  Praktikum  /  Magang Curiosity (rasa  ingin tahu ) Personal Experience ( pengalaman pribadi ) Masalah  ditemukan saat mahasiswa melakukan kegiatan praktik kerja lapangan atau proyek . Contoh :  saat magang  di  perusahaan logistik ,  mahasiswa melihat perhitungan ongkos kirim masih  manual → ide  membuat sistem perhitungan otomatis berbasis  GIS.
+
+--- Slide 11 ---
+M enemukan “masalah”  >>  Literatur Dan Penelitian  Terdahulu Mahasiswa  dapat melanjutkan penelitian  orang lain  dengan mengatasi keterbatasannya . Cara  menemukan :  membaca jurnal ,  prosiding konferensi ,  atau skripsi sebelumnya . Dimana  munculnya  “ masalah ” di  artikel : Abstract Introduction Bentuk kelanjutan penelitian : Perluasan objek  →  jika penelitian sebelumnya hanya  di  satu lokasi ,  bisa diuji  di  lokasi  lain. Pengembangan metode  →  mengganti / meningkatkan algoritma  yang  lebih mutakhir . Integrasi  teknologi  →  menggabungkan metode  lama  dengan teknologi baru .
+
+--- Slide 12 ---
+Review  Literatur Mengetahui kondisi terkini  (state-of-the-art) Laporan  Riset Keterbatasan atau kelemahan Saran  untuk riset kedepan Replikasi/Ulangan dengan data yang berbeda Pengembangan Contoh : Penelitian A menggunakan CNN untuk deteksi wajah. Penelitian B menggunakan YOLOv3 untuk deteksi kendaraan. Mahasiswa bisa melanjutkan dengan metode terbaru (YOLOv8 atau Transformer). penelitian  A  mendeteksi objek  ikan  dengan  YOLOv3. Mahasiswa  bisa mengembangkan dengan  YOLOv8 dan  menambahkan  tracking  untuk akurasi lebih tinggi . M enemukan “masalah”  >>  Literatur Dan Penelitian  Terdahulu
+
+--- Slide 13 ---
+M enemukan “masalah”  >>  Kebijakan  /  regulasi  /  standar Sumber  masalah  juga  bisa dari peraturan pemerintah , SNI,  atau  target  pembangunan . Contoh :  adanya kebijakan digitalisasi  UMKM →  peluang penelitian sistem  e-commerce  sederhana . Pemerintah mendorong Smart  Campus  Mahasiswa bisa meneliti sistem  monitoring  ruang kelas berbasis  IoT.
+
+--- Slide 14 ---
+M enemukan “masalah”  >>  Tren  teknologi terbaru Teknologi baru sering membuka peluang masalah baru  yang  belum banyak dibahas . Contoh :  perkembangan  ChatGPT dan LLM  membuka peluang penelitian  chatbot  akademik  di  Polinema .
+
+--- Slide 15 ---
+3. Kriteria Masalah Penelitian yang Baik Masalah yang  dipilih harus memenuhi beberapa kriteria : Relevan dengan bidang  TI. → Masalah  bisa diselesaikan dengan solusi berbasis teknologi . Signifikan  ( bermanfaat nyata ). → Hasil  penelitian harus membantu pengguna / masyarakat . Feasible ( dapat diteliti ). →  Mahasiswa  punya  akses  data,  sumber daya ,  waktu , dan  kemampuan . Novelty ( ada kebaruan ). → Ada  sesuatu  yang  baru dibanding penelitian sebelumnya  ( metode , data,  konteks ,  integrasi ). Spesifik  dan  terukur . → Tidak  terlalu umum ,  dapat dinyatakan dalam rumusan masalah  yang  jelas .
+
+--- Slide 16 ---
+4. Teknik  Identifikasi  Masalah Beberapa teknik  yang  bisa digunakan mahasiswa : Brainstorming :  curah pendapat dengan teman atau dosen . Studi  literatur :  membaca artikel ilmiah ,  jurnal ,  skripsi sebelumnya . Diskusi dengan dosen / ahli :  meminta arahan apakah masalah layak untuk skripsi . Fishbone diagram :  memetakan penyebab-penyebab masalah . 5W+1H :  menggali dengan pertanyaan What, Why, Who, Where, When, How .
+
+--- Slide 17 ---
+5 .  LANGKAH-LANGKAH PERUMUSAN MASALAH Upaya yang  dapat dilakukan  oleh  peneliti untuk mengidentifikasi masalah penelitian adalah sebagai berikut : Memahami teori ,  fakta ,  dan  ide  dalam bidang  yang  telah dipilih peneliti .  Peneliti harus mengetahui penelitian dalam bidang  yang  dipilih tersebut .  Pengetahuan itu bisa didapatkan melalui  review  literatur . Adanya  keingintahuan peneliti dan karena minat alami peneliti ,  akan memudahkan identifikasi  masalah penelitian . Dapat membaca s ituasi kehidupan ,  dan dapat membangun  hubungan antara  penelitian terkait  &  implikasi progresif karena kemajuan teknologi  sehingga identifikasi masalah menjadi lebih tepat. Perlu selalu meningkatkan p engetahuan baru tentang minat peneliti , yang  bisa diperoleh melalui jurnal ,  majalah ,  dan buku baru , sehingga pemahaman akan masalah menjadi meningkat dan identifikasinya dapat dilakukan lebih tepat. Membuat s urvei  saran  untuk penelitian ini dan se lanjut nya. Saran kedepan ini  diberikan pada akhir laporan penelitian  &  tinjauan proyek penelitian .
+
+--- Slide 18 ---
+CONTOH PERUMUSAN MASALAH  Cara  merumuskan masalah : Dirumuskan dalam bentuk pertanyaan Rumusan hendaknya jelas dan padat Rumusan masalah harus berisi implikasi adanya  data  untuk memecahkan masalah Rumusan masalah dasar dalam membuat hipotesa
+
+--- Slide 19 ---
+CONTOH PERUMUSAN MASALAH #CONTOH 1:  Penerapan  XYZ  untuk  Masalah E pada SVM  untuk Prediksi  Nilai  Tukar  Uang Nilai tukar uang adalah faktor penting pada perekonomian suatu negara .  Nilai tukar uang perlu diprediksi supaya kebijakan perekonomian bisa diambil dengan lebih akurat dan efisien … Metode untuk prediksi nilai tukar  yang  saat ini digunakan adalah regresi  linier, neural network  dan  support vector machine… Regresi  linier  memiliki kelebihan  A  dan kelemahan  B… Neural network  memiliki kelebihan  C  dan kelemahan  D… Support vector machine  memiliki kelebihan bisa mengatasi masalah  B (pada  regresi  linier) dan D (pada neural network)…  tapi memiliki kelemahan  E Sumber: https://romisatriawahono.net/lecture/rm/romi-rm-slr-jun2020.pdf
+
+--- Slide 20 ---
+CONTOH PERUMUSAN MASALAH  #CONTOH 1 Masalah  penelitian  pada  penelitian  di  atas ? Kebijakan perekonomian negara ? Prediksi nilai tukar uang ? Metode apa  yang  sebaiknya dipakai untuk prediksi nilai tukar ? Masalah : Support vector machine  memiliki kelebihan memecahkan masalah  B dan D ( argumentasi dipilih ),  tapi memiliki kelemahan  E Tujuan :  Menerapkan metode  XYZ  untuk memecahkan masalah  E pada support vector machine X Sumber: https://romisatriawahono.net/lecture/rm/romi-rm-slr-jun2020.pdf style.visibility ppt_w ppt_h style.rotation
+
+--- Slide 21 ---
+CONTOH PERUMUSAN MASALAH  #CONTOH 2:  Penerapan  XYZ  untuk  E  pada  Fuzzy Logic  untuk Pengaturan Lampu Lalu  Lintas  Dinamis K emacetan lalu lintas  di  kota besar semakin meningkat Penyebab kemacetan adalah  traffic light  persimpangan jalan Traffic light yang  ada adalah statis  ( tetap waktunya )  sehingga tidak dapat menyelesaikan kondisi kepadatan kendaraan  yang di  berbagai waktu Traffic light  harus didesain dinamis sesuai perubahan berbagai  parameter Metode untuk menentukan waktu  yang  tepat secara dinamis dapat menggunakan  AHP, ANP, Fuzzy Logic,  AHP  memiliki kelebihan  A  dan kelemahan  B… ANP  memiliki kelebihan  C  dan kelemahan  D… Fuzzy logic  memiliki kelebihan bisa mengatasi masalah  B (pada AHP) dan D (pada ANP)…  tapi memiliki kelemahan  E . Sumber: https://romisatriawahono.net/lecture/rm/romi-rm-slr-jun2020.pdf
+
+--- Slide 22 ---
+CONTOH PERUMUSAN MASALAH #CONTOH 2 Masalah  penelitian  pada  penelitian  di  atas ? Bagaimana mengatasi kemacetan lalu lintas ? Bagaimana mendesain  traffic light? Metode apa  yang  sebaiknya dipakai untuk penentuan  traffic light  secara dinamis ? Masalah : Fuzzy logic  memiliki kelebihan memecahkan masalah  B dan D ( argumentasi dipilih ),  tapi memiliki kelemahan  E Tujuan :  Menerapkan metode  XYZ  untuk memecahkan masalah  E pada fuzzy logic  X Sumber: https://romisatriawahono.net/lecture/rm/romi-rm-slr-jun2020.pdf style.visibility ppt_w ppt_h style.rotation
+
+--- Slide 23 ---
+D engan masalah penelitian  (RP) sebagai dasar , P ertanyaan penelitian  (RQ) sebagai panduan , T ujuan penelitian  (RO) sebagai hasil  yang  ingin dicapai 23 6. Alur Logis  dalam Merumuskan Penelitian
+
+--- Slide 24 ---
+Problem → Question → Objective ( alur perumusan penelitian ) Secara umum disebut sebagai Research Framework /  Kerangka  Alur  Penelitian  yang  terdiri dari : Research Problem : Masalah  penelitian adalah pernyataan tentang  area yang  memerlukan perhatian atau perbaikan .  Ini adalah landasan  yang  menjelaskan apa  yang  menjadi fokus utama penelitian ,  sering  kali  berupa kesulitan atau kondisi  yang  ingin diselesaikan atau dipahami Research Question :  Setelah masalah penelitian dirumuskan ,  pertanyaan penelitian merincinya ke dalam bentuk  yang  lebih spesifik .  Pertanyaan ini memberi arah  yang  jelas pada penelitian dan harus fokus pada satu isu  yang  dapat dijawab melalui penelitian Research Objective :  Tujuan penelitian menggambarkan hasil  yang  diharapkan dari penelitian tersebut .  Tujuan ini harus jelas ,  spesifik ,  dan dapat dicapai .  Mereka biasanya menjelaskan apa  yang  ingin ditemukan atau dicapai oleh penelitian
+
+--- Slide 25 ---
+Contoh  Masalah  Penelitian Masalah  Penelitian  ( Research Problem ): Neural network  terbukti memiliki performa bagus untuk menangani  data  besar seperti pada  data  prediksi harga saham ,  akan tetapi memiliki kelemahan pada pemilihan arsitektur jaringannya yang  harus dilakukan secara  trial error ,  sehingga tidak efisien dan mengakibatkan hasil prediksi kurang akurat Rumusan  Masalah ( Research Question ): Bagaimana peningkatan akurasi dan efisiensi neural network  apabila pada pemilihan arsitektur jaringan diotomatisasi menggunakan algoritma genetika ? Tujuan Penelitian  ( Research Objective ): Menerapkan  algoritma genetika untuk mengotomatisasi pemilihan arsitektur jaringan pada neural  nework sehingga lebih efisien dan hasil prediksi lebih akurat Ungu :  Obyek  Data  ( Opsional , Bisa Dataset  Publik ) Oranye :  Topik ( Obyek Metode  yang  Diperbaiki ) Merah : Masalah  Penelitian Hijau :  Metode Perbaikan  yang  Diusulkan Biru :  Pengukuran Penelitian ( Tidak  Harus  Masuk Judul ) Sumber: https://romisatriawahono.net/lecture/rm/romi-rm-slr-jun2020.pdf style.visibility style.visibility style.visibility style.visibility style.visibility style.visibility style.visibility
+
+--- Slide 26 ---
+Contoh Masalah Penelitian Research Problem (RP) : Algoritma  K- Means  merupakan algoritma  clustering  yang populer karena efisien dalam komputasi, akan tetapi memiliki  kelemahan pada sulitnya penentuan K yang optimal  dan komputasi yang  tidak efisien  bila menangani data besar  ( Zhao, 2010 ) Research Question (RQ): Seberapa  efisien algoritma Bee Colony  bila digunakan untuk  menentukan nilai K yang optimal  pada K-Means ? Research Objective (RO): Menerapkan  algoritma  bee colony  untuk menentukan nikai  K yang optimal  pada K-Means sehingga  komputasi lebih efisien Ungu :  Obyek  Data  ( Opsional , Bisa Dataset  Publik ) Oranye :  Topik ( Obyek Metode  yang  Diperbaiki ) Merah : Masalah  Penelitian Hijau :  Metode Perbaikan  yang  Diusulkan Biru :  Pengukuran Penelitian ( Tidak  Harus  Masuk Judul ) Sumber: https://romisatriawahono.net/lecture/rm/romi-rm-slr-jun2020.pdf style.visibility style.visibility style.visibility style.visibility style.visibility style.visibility style.visibility
+
+--- Slide 27 ---
+Contoh Masalah Penelitian Research Problem (RP) : Masalah utama adalah waktu pemrosesan yang lambat selama klasifikasi ikan lele berdasarkan ukuran mereka, terutama ketika ikan tersebut bergerak. Metode saat ini mungkin tidak cukup efisien untuk menangani klasifikasi waktu nyata di lingkungan yang dinamis. Research Question (RQ): Bagaimana cara meningkatkan waktu pemrosesan untuk mengklasifikasikan ikan lele berdasarkan ukuran sambil memperhitungkan gerakan? Research Objective (RO): Tujuannya adalah untuk mengembangkan atau meningkatkan algoritma  yang  dapat mengklasifikasikan ikan lele berdasarkan ukuran dengan lebih efisien secara  real-time  saat mereka bergerak ,  memastikan akurasi dan kecepatan pemrosesan  yang  lebih cepat . K asus alat penghitung bibit ikan lele berdasarkan kelompok ukurannya punya masalah pada waktu prosesnya, dimana waktunya sangat lama sekali sehingga alat ini belum bisa digunakan sebagai alat ukur yang real time style.visibility style.visibility style.visibility style.visibility style.visibility style.visibility
+
+--- Slide 28 ---
+Info RP-RQ-RO berikutnya akan digunakan didalam penyusunan bab Pendahuluan  Menjadi bagian dari paragraf di latar belakang (RP-RQ-RO) Menjadi kalimat di Rumusan Masalah (RQ) Menjadi kalimat di Tujuan Penelitian (RO)
+
+--- Slide 29 ---
+7 .  HIPOTESIS PENELITIAN  Hipotesa adalah pernyataan spesifik yang bersifat prediksi dari hubungan antara dua atau lebih variabel Mendeskripsikan secara kongkrit apa yang ingin dicapai/diharapkan terjadi dalam penelitian
+
+--- Slide 30 ---
+A pakah semua penelitian ilmiah perlu membuat hipotesa?	 YA  Jika berkenaan dengan verifikasi suatu teori atau masalah TIDAK  Jika penelitian masih bersifat exploratif dan deskriptif
+
+--- Slide 31 ---
+KEGUNAAN HIPOTESA Memberikan batasan serta memperkecil jangkauan penelitian dan kerja penelitian Sebagai panduan dalam pengujian serta penyesuaian dengan fakta dan antar fakta
+
+--- Slide 32 ---
+Contoh Hipotesa  pada  Penelitian skripsi  D4TI Tujuan  Penelitian  mengukur ,  menguji hubungan variabel ,  mencari pola statistik .  Contoh :  Menguji apakah algoritma  A  lebih cepat  20%  dibanding algoritma  B. Data yang  Digunakan  data numerik ,  terstruktur  ( angka ,  ukuran waktu ,  akurasi ,  persentase  error,  jumlah klik ). Contoh : Dataset  citra untuk mengukur akurasi  CNN; log  aktivitas pengguna aplikasi . Hipotesis  jelas sejak awal  (H0, H1) dan  diuji dengan statistik . Contoh : H1 =  “Ada  pengaruh penggunaan metode  YOLOv8  terhadap peningkatan akurasi deteksi  ikan  lele .” Metode  Analisis  statistik , machine learning metrics, uji  hipotesis . Contoh : Uji t-test, ANOVA, confusion matrix, ROC curve. Output  Penelitian  generalisasi ,  angka hasil  uji, model  terukur . Contoh : “Model CNN  mencapai akurasi  92,5% pada dataset  citra lele .”
+
+--- Slide 33 ---
+Tentukan kasus yang akan diteliti dalam rencana penelitian skripsi,  bisa mengacu dari studi literatur yg sudah dilakukan atau menggunakan cara  lain  untuk mendapatkan masalah Susun RP-RQ-RO dari kasus tersebut  ( beserta literatur ), s eperti contoh berikut ini . Pengumpulan tugas dilakukan saat  Quis 1 Tugas  :   I dentifikasi RP-RQ-RO dari rencana riset skripsi
+
+--- Slide 34 ---
+Contoh:  Research Problem  dan Landasan {5940675A-B579-460E-94D1-54222C63F5DA} Masalah  Penelitian Landasan Literatur Data set  pada prediksi cacat  software  berdimensi tinggi ,  memiliki atribut  yang  bersifat  noisy ,  dan classnya bersifat tidak seimbang ,  menyebabkan penurunan akurasi pada prediksi cacat  software There are  noisy data points  in the software defect data sets that can not be confidently assumed to be erroneous using such simple method  (Gray, Bowes, Davey, & Christianson, 2011) The performances of software defect prediction improved when  irrelevant and redundant attributes  are removed  (Wang,  Khoshgoftaar , & Napolitano, 2010) The software defect prediction performance decreases significantly because the  dataset contains noisy attr ibutes  (Kim, Zhang, Wu, & Gong, 2011) Software defect datasets have an  imbalanced nature  with very few defective modules compared to defect-free ones  ( Tosun ,  Bener ,  Turhan , &  Menzies , 2010) Imbalance  can lead to a model that is not practical in software defect prediction, because most instances will be predicted as non-defect prone  ( Khoshgoftaar , Van  Hulse , & Napolitano, 2011) Software fault prediction data sets are often  highly imbalanced  (Zhang & Zhang, 2007) 34
+
+--- Slide 35 ---
+{5940675A-B579-460E-94D1-54222C63F5DA} Research Problem (RP) Research Question (RQ) Research Objective (RO) RP1. Data set  pada prediksi cacat  software  berdimensi tinggi ,  memiliki atribut  yang  bersifat  noisy ,  dan classnya bersifat tidak seimbang ,  menyebabkan penurunan akurasi pada prediksi cacat  software RQ1.  Algoritma pemilihan fitur apa  yang  performanya terbaik untuk meyelesaikan masalah atribut  yang noisy pada  prediksi cacat  software? RO1.  Mengidentifikasi algoritma pemilihan fitur apa  yang  memiliki performa terbaik apabila digunakan untuk menyelesaikan masalah atribut  yang noisy pada  prediksi cacat  software RQ2.  Algoritma meta learning  apa  yang  performanya terbaik untuk menyelesaikan masalah  class imbalance pada  prediksi cacat  software? RO2.  Mengidentifikasi algoritma  meta learning  apa  yang  memiliki performa terbaik apabila digunakan untuk menyelesaikan masalah  class imbalance pada  prediksi cacat  software RQ3.  Bagaimana pengaruh penggabungan algoritma pemilihan fitur dan metode  meta learning  terbaik pada peningkatan akurasi prediksi cacat  software? RO3.  Mengembangkan algoritma baru  yang  menggabungkan algoritma pemilihan fitur dan  meta learning  terbaik untuk meningkatkan akurasi pada prediksi cacat  software Contoh : R P-RQ-RO
+
+--- Slide 36 ---
+DAFTAR PUSTAKA https://penelitianilmiah.com/identifikasi-masalah/ https://dosenpintar.com/identifikasi-masalah/ https://romisatriawahono.net/lecture/rm/romi-rm-slr-jun2020.pdf
+

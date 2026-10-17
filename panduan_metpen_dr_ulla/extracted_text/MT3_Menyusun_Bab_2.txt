@@ -1,0 +1,20 @@
+# MT3_Menyusun_Bab_2
+
+--- Slide 1 ---
+Dr. ULLA DELFANA ROSIANI, ST., MT.  TEACHING TEAM  MATA KULIAH  METODOLOGI PENELITIAN D4 Teknik Informatika  JTI POLINEMA PANDUAN PENULISAN  BAB 2-LANDASAN TEORI -  Materi  Tambahan Metodologi Penelitian -
+
+--- Slide 2 ---
+Tujuan Bab 2 Menjelaskan dasar teori  yang  mendukung  dan  menjelaskan konsep penelitian . Menunjukkan pemahaman terhadap metode  yang  dipilih  ( teori ,  algoritma , dan  prinsip ilmiah ). Menunjukkan posisi penelitian ini  di  antara penelitian  lain (SOTA/ penelitian terdahulu ) . Menjadi dasar logis untuk perancangan sistem  dan  metodologi  di Bab III .
+
+--- Slide 3 ---
+Susunan  Bab 2  Landasan  Teori Proposal  Skripsi 2.1 Dasar Teori Umum 2.2  Penelitian Terdahulu  / State of the Art (SOTA)
+
+--- Slide 4 ---
+1. Dasar Teori Umum dan  Khusus Berisi teori  yang  mendasari bidang penelitian . Tulis dalam urutan dari  umum → khusus , misalnya: Sub- bagian ini harus langsung mendukung metode  yang  akan digunakan  di  penelitian  Anda Tips: Gunakan  minimal 2–3  buku teks atau jurnal  review (Goodfellow et al., 2016; Gonzalez & Woods, 2018). Tulis  dengan gaya penjelasan ,  bukan  daftar  pengertian . Tips: Cantumkan algoritma ,  arsitektur , formula  utama , dan  prinsip kerja singkat . Gunakan kutipan dari  paper  resmi : Redmon et al. (2016)  untuk  YOLO, Howard et al. (2018)  untuk  MobileNetV2, Bewley et al. (2016)  untuk  SORT/ DeepSORT . Hindari terlalu teknis  ( kode , parameter,  atau hasil  uji  coba ditulis  di Bab III/V).
+
+--- Slide 5 ---
+2.  Penelitian Terdahulu  / State of the Art (SOTA) Bagian  ini menunjukkan posisi penelitian  Anda di  antara penelitian sebelumnya Format yang  disarankan : Paragraf naratif  (2–3  paragraf ) untuk menjelaskan tren umum . Tabel  perbandingan penelitian seperti berikut : Tips: Cantumkan minimal 5  penelitian  (3  internasional  + 2  nasional ). Akhiri dengan kalimat “gap  penelitian ” ,  misalnya : {ED083AE6-46FA-4A59-8FB0-9F97EB10719F} No Peneliti (Tahun) Metode Obyek Hasil Kelemahan 1 Kurniawan et al. (2022) Blob Detection Ikan nila Akurasi 82% Tidak real-time 2 Rahmadani et al. (2023) YOLOv5 Ikan lele Akurasi 91% Belum  klasifikasi ukuran 3 Saleh et al. (2023) CNN + IoT Akuakultur umum Sistem monitoring efisien Tidak fokus pada deteksi individu 4 Penelitian ini YOLOv8 + MobileNetV2 Benih ikan lele Diharapkan akurasi > 90% -
+
+--- Slide 6 ---
+TIPS UMUM PENYUSUNAN BAB II {0660B408-B3CF-4A94-85FC-2B1E0A45F4A2} Aspek Panduan Jumlah halaman ± 10–15 halaman proposal (tergantung topik) Jumlah referensi minimal ≥ 10 sumber ilmiah (80% jurnal/prosiding, 20% buku/standar) Format kutipan APA 7th (nama belakang, tahun) Bahasa Formal, deskriptif, bukan opini Konsistensi Semua teori harus terkait langsung dengan metode yang digunakan di Bab III Hindari Copy-paste teori umum dari internet tanpa sitasi; daftar definisi tanpa penjelasan; pembahasan metode yang tidak digunakan Gunakan transisi logis “Selain  itu ”, “Di  sisi  lain”, “Metode  ini memiliki keunggulan …”, “ Berdasarkan teori tersebut …”
+

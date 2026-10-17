@@ -1,0 +1,74 @@
+# M9_PEMODELAN_SISTEM
+
+--- Slide 1 ---
+Dr. ULLA DELFANA ROSIANI, ST., MT.  TEACHING TEAM  MATA KULIAH  METODOLOGI PENELITIAN D4 Teknik Informatika  JTI POLINEMA MODEL SISTEM -  Materi Metodologi Penelitian ke  9 -
+
+--- Slide 2 ---
+Topik bahasan Pengertian Model Sistem Model Pengembangan Software-SDLC Model Proses Bisnis Pengembangan Software Arsitektur  Sistem
+
+--- Slide 3 ---
+sis.tem  / sistém / bentuk tidak baku :  sistim ⇢  Tesaurus n  perangkat unsur  yang  secara teratur saling berkaitan sehingga membentuk suatu totalitas :  --  pencernaan makanan ,  pernapasan ,  dan peredaran darah dalam tubuh ; --  telekomunikasi n  susunan  yang  teratur dari pandangan ,  teori ,  asas ,  dan sebagainya :  --  pemerintahan negara  ( demokrasi ,  totaliter ,  parlementer ,  dan sebagainya ) n  metode :  --  pendidikan  ( klasikal , individual,  dan sebagainya );  kita bekerja dengan  -- yang  baik ; --  dan pola permainan kesebelasan itu banyak mengalami perubahan mo.del 1  / modèl / ⇢  Tesaurus n  pola  ( contoh ,  acuan , ragam, dan  sebagainya )  dari sesuatu  yang  akan dibuat atau dihasilkan : rumahnya dibuat seperti  --  rumah adat n  orang yang  dipakai sebagai contoh untuk dilukis  ( difoto ): pernah aku menjadi  --  lukisan n  orang yang ( pekerjaannya )  memperagakan contoh pakaian  yang  akan dipasarkan :  gadis -- yang  cantik-cantik itu memperagakan pakaian dari bahan  batik n  barang tiruan  yang  kecil dengan bentuk  ( rupa )  persis seperti  yang  ditiru :  --  pesawat terbang PENGERTIAN MENURUT KBBI
+
+--- Slide 4 ---
+MODEL SISTEM (Pengertian dari berbagai sumber) Model adalah rencana ,  representasi ,  atau deskripsi  yang  menjelaskan suatu objek ,  sistem ,  atau konsep , yang  seringkali berupa penyederhanaan atau idealisasi .  Bentuknya dapat berupa  model  fisik  ( maket ,  bentuk prototipe ), model  citra  ( gambar rancangan ,  citra komputer ),  atau rumusan matematis . Sedangkan Sistem adalah suatu kesatuan  yang  terdiri komponen atau elemen  yang dihubungkan bersama untuk memudahkan aliran informasi ,  materi atau energi .  Pemodelan Sistem adalah suatu bentuk penyederhanaan dari sebuah elemen dan komponen  yang  sangat komplek untuk memudahkan pemahaman dari informasi  yang dibutuhkan .
+
+--- Slide 5 ---
+Pemodelan Sistem Prinsip pemodelan sistem tidak terlalu menitik beratkan kepada bentuk  model  apa  dalam  merancang sebuah si s tem .  B entuk  model  ini bebas :  bisa menggunakan bentuk apa saja sesuai dengan keinginan kita . C ontohnya bisa berupa narasi , prototype,  maupun gambar .  Y ang terpenting adalah harus mampu merepresentasikan visualisasi bentuk sistem  yang  diinginkan oleh  user . K arena  sistem akhir yang  dibuat bagi  user  akan diturunkan dari hasil  model  tersebut
+
+--- Slide 6 ---
+FUNGSI MODEL Pembantu untuk berfikir Pembantu untuk berkomunikasi Alat dan latihan Alat prediksi Pembantu dalam percobaan
+
+--- Slide 7 ---
+Model Pengembangan Software System Development Life Cycle  -  SDLC
+
+--- Slide 8 ---
+SDLC Software Development Life Cycle ,  merupakan  proses yang  terdiri dari serangkaian kegiatan  yang  direncanakan untuk mengembangkan atau mengubah Produk Perangkat Lunak . Biasa disebut  juga  dengan Software Development Process SDLC  adalah  proses yang  digunakan  oleh  industri perangkat lunak untuk merancang ,  mengembangkan , dan  menguji perangkat lunak berkualitas tinggi . ISO/IEC 12207  adalah standar internasional untuk  proses  siklus hidup perangkat lunak .
+
+--- Slide 9 ---
+SDLC SDLC  bertujuan untuk menghasilkan perangkat lunak berkualitas tinggi  yang  memenuhi atau melampaui harapan pelanggan ,  mencapai penyelesaian dalam batas waktu  dan  sesuai dengan perkiraan biaya . SDLC  adalah  proses yang  diikuti untuk pengembangan perangkat lunak ,  dalam organisasi perangkat lunak .  Berisikan rencana rinci  yang  menjelaskan bagaimana mengembangkan ,  memelihara ,  mengganti  dan  mengubah atau meningkatkan perangkat lunak tertentu .  Siklus hidup mendefinisikan metodologi untuk meningkatkan kualitas perangkat lunak  dan proses  pengembangan secara keseluruhan .
+
+--- Slide 10 ---
+Model-model SDLC Waterfall Iterative Prototype R apid  Application Development (RAD) Agile Fountain (Air  Mancur ) V- Shapped Spiral  SDLC Big Bang Tugas 1  ( kelompok ) : J elaskan tentang  model-model  tersebut S ebutkan kelebihan dan kelemahan J elaskan cara kerjanya dengan memberikan contoh kasus  yang  sama
+
+--- Slide 11 ---
+Model Proses Bisnis Pengembangan Software
+
+--- Slide 12 ---
+Business Process Modelling  (BPM) Business Process Modelling (BPM) adalah representasi dari fungsi-fungsi yang berkaitan dengan kegiatan bisnis seperti input, control, output, resource. Business process modeling dimanfaatkan untuk mengidentifikasi bagian-bagian mana saja yang masih perlu diperbaiki dari proses bisnis tersebut BPM  biasanya dilakukan  oleh  analis bisnis , yang  memberikan keahlian dalam disiplin pemodelan ; oleh  ahli materi pelajaran , yang  memiliki pengetahuan khusus tentang  proses yang  dimodelkan ;  atau lebih umum  oleh  tim  yang  terdiri dari keduanya .  Atau , model proses  dapat diturunkan langsung dari  log  peristiwa menggunakan alat penambangan  proses.
+
+--- Slide 13 ---
+Diagram Business Process Dalam memvisualisasikan sebuah  proses  bisnis dari perusahaan dapat dilakukan dengan menggunakan  2  jenis  diagram,  yaitu : Business Process Modelling and Notation (BPMN) Cross-Functional Flowchart
+
+--- Slide 14 ---
+Contoh BPMN https://en.wikipedia.org/wiki/Business_process_modeling#/media/File:BPMN-AProcessWithNormalFlow.svg
+
+--- Slide 15 ---
+Contoh  Cross-Functional Flowchart
+
+--- Slide 16 ---
+Contoh Cross Functional Flowchart https://online.visual-paradigm.com/knowledge/flowchart/what-is-cross-functional-flowchart/
+
+--- Slide 17 ---
+Jenis Utama Model Bisnis 17 Terdapat  2  jenis utama dari  Model Proses  Bisnis ,  yaitu : Model  awal  ( situasi saat ini ) Model  situasi baru  yang  memiliki tujuan dan harapan kedepan
+
+--- Slide 18 ---
+Jenis Proses Bisnis Ada 3 jenis proses bisnis, yakni: Proses manajemen, ialah proses yang mengendalikan operasional dari sistem. Proses operasional, ialah proses yang meliputi bisnis inti dan menciptakan aliran tujuan utama. Proses pendukung, ialah mendukung proses inti, namun harus ada sebuah proses pendukung. 18
+
+--- Slide 19 ---
+Macam Macam  Diagram  Dalam  Menggambarkan  Business Process Modeling Business Process Modeling Notation (BPMN) UML Diagrams Flowchart Data Flow Diagrams Role Activity Diagrams Role Interaction Diagrams Gantt Chart Colored Petri Nets Workflow Tugas 2  ( kelompok  dan  individu ) : J elaskan tentang macam-macam diagram disamping  dengan menunjukkan gambarnya dan beri  contoh kasus  dan  Pilih  Buat rencana Skripsi
+
+--- Slide 20 ---
+Arsitektur Sistem
+
+--- Slide 21 ---
+Desain Arsitektur Sistem Fokus utamanya adalah untuk  Memahami bagaimana sistem seharusnya ditata. Mendesain keseluruhan struktur dari sistem. Output dari desain arsitektur: Model arsitektur yang menggambarkan bagaimana sistem ditata sebagai beberapa komponen yang saling terkait/ berkomunikasi. Tugas 3: Gambarkan Desain Arsitektur sistem untuk topik skripsi  masing-masing
+
+--- Slide 22 ---
+Perspektif Arsitektur Sebuah model arsitektur tidak mungkin dapat merepresentasikan seluruh informasi terkait dengan arsitektur sistem. Setiap model hanya dapat merepresentasikan satu perspektif sistem. Sebuah model dapat menunjukkan bagaimana sistem dibagi menjadi beberapa modul, bagaimana interaksi antar proses run-time, atau bagaimana komponen sistem didistribusikan dijaringan. Masing-masing memiliki kegunaan pada saat yang berbeda, sehingga baik untuk desain dan dokumentasi, perlu dibuat beberapa model arsitektur yang merepresentasikan berbagai perspektif dari sistem.
+
+--- Slide 23 ---
+TUGAS Semua tugas kelompok dikumpulkan minggu depan  ( presentasi kelompok  @ 5 orang) Untuk yang terkait skripsi, digunakan untuk menyusun Bab 3, pengumpulan di minggu lainnya (tunggu pengumuman)
+
+--- Slide 24 ---
+Terima kasih Selamat belajar  dan  semoga sukses
+

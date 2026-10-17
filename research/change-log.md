@@ -2,6 +2,47 @@
 
 ## Log Perubahan Dokumen Riset
 
+### 2026-10-17 (Sesi 16)
+- **Perubahan**:
+  - **Ingesti & Ekstraksi Materi Perkuliahan Metodologi Penelitian 2025 (Google Drive Bu Ulla)**:
+    - Mengakses dan mengunduh 17 file presentasi (.pptx) dari Google Drive resmi Bu Ulla Delfana Rosiani (`PPT Metpen 2025`) ke dalam repositori lokal pada folder `panduan_metpen_dr_ulla/`.
+    - Mengekstrak teks lengkap dari ke-17 modul: `MT1_Penentuan_Kalimat_Judul`, `MT2_Menyusun_Bab_1`, `MT3_Menyusun_Bab_2`, `MT4_Menyusun_Bab_3`, `M1` s.d. `M14`.
+  - **Penyusunan Buku Panduan Resmi Penulisan Proposal Skripsi Polinema**:
+    - Menerbitkan dokumen master: [`research/panduan-penulisan-proposal-skripsi.md`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/research/panduan-penulisan-proposal-skripsi.md) dan salinan di `panduan_metpen_dr_ulla/PANDUAN_TATA_CARA_PENULISAN_PROPOSAL_SKRIPSI_POLINEMA.md`.
+    - Menyusun sintesis komprehensif seluruh kaidah baku:
+      1. Penentuan kalimat judul (3 unsur: objek, tujuan, metode; $<20$ kata; tanpa tools sekunder).
+      2. Struktur Bab 1 (pola alur narasi OMKKMasaSolTu Romi Satrio Wahono; penegasan RP eksplisit di akhir Latar Belakang; korespondensi 1-ke-1 RP $\to$ RQ $\to$ RO; minimal 8+ sitasi APA 7th 5 tahun terakhir).
+      3. Struktur Bab 2 (teori umum ke khusus; tabel matriks SOTA 6 kolom; perumusan Research Gap, Novelty, dan *Method Improvement*).
+      4. Struktur Bab 3 (sub-bab 3.1 s.d. 3.7; flowchart alur metodologi; kriteria keberhasilan kuantitatif; tabel hardware & software).
+      5. Etika penulisan (7 bentuk pelanggaran LIPI, teknik parafrase Knowles 2007) dan etika AI generatif (format deklarasi *AI-assisted writing* bahasa Indonesia).
+  - **Penyusunan & Kompilasi Draf Bab 1 (Pendahuluan) & Daftar Pustaka Standar Polinema**:
+    - Menyusun naskah lengkap Bab 1 pada `latex/sections/01-introduction.tex` dan dokumen mandiri `latex/proposal-bab1.tex` mengikuti kaidah narasi OMKKMasaSolTu (Romi Satrio Wahono / Dr. Ulla Delfana Rosiani):
+      1. Objek: Nilai strategis lele nasional, data KKP 2023--2024 (1,14--1,16 juta ton/tahun), kebutuhan benih 12--14 miliar ekor/tahun, krisis mortalitas 30--50% pada fase pendederan lele, regulasi SNI 01-6484.2-2000.
+      2. Metode Eksisting: Penjadwalan waktu tetap (*fixed timer*) & manual (risiko *overfeeding* amonia vs *underfeeding* kanibalisme lele).
+      3. Kelebihan & Keterbatasan Metode SOTA: *Deep learning* (YOLO, Optical Flow, CNN, ViT) menghadapi keterbatasan pada air keruh ($\le 3$ cm), gerak transien sub-detik (0,3--0,6 detik), derau luar ruangan, dan komputasi *edge* CPU Raspberry Pi.
+      4. Pernyataan Masalah Penelitian (*Research Problem*): Ditegaskan secara eksplisit di akhir Sub-bab 1.1 Latar Belakang.
+      5. Solusi Usulan: *Adaptive Three-Frame Differencing* (TFD) + *bitwise AND* + HSV *S-channel* + filter CPL + FAI + FSM servo.
+      6. Rumusan Masalah (1--4) & Tujuan Penelitian (1--4): Berkorespondensi 1-ke-1 tanpa label RQ/RO.
+      7. Batasan Masalah (1--6): Kolam tenang siang hari tanpa aerator, kamera nadir 30--50 cm, objek benih lele pendederan, kuota harian maks 5% biomassa.
+      8. Manfaat Penelitian: Dikelompokkan menjadi manfaat teoretis dan manfaat praktis.
+  - **Penyesuaian Ruang Lingkup Objek Riset hingga Pendederan IV (2--12 cm)**:
+    - Memperluas cakupan benih ikan lele (*Clarias sp.*) dari sebelumnya terbatas pada Pendederan II (2--7 cm) menjadi mencakup seluruh fase pendederan: **Pendederan I hingga Pendederan IV (rentang ukuran panjang tubuh 2 sampai 12 cm)** sesuai siklus pendederan budidaya nasional dan SNI 01-6484.2-2000.
+    - Menyelaraskan seluruh dokumen terkait (`01-introduction.tex`, `proposal-bab1.tex`, `matriks-rp-rq-ro.tex`, dan berkas aturan panduan).
+  - **Penerapan Preferensi Tipografi & Format Sitasi Khusus**:
+    - Mengatur tata letak standar Polinema (margin kiri 4 cm, atas 3 cm, kanan 3 cm, bawah 3 cm, spasi 1.5, Times New Roman 12 pt) menggunakan perintah primitif TeX yang kompatibel dengan instalasi minimal TeX Live lokal.
+    - Meniadakan seluruh penekanan tebal (*bold*) pada batang tubuh paragraf naratif.
+    - Menghilangkan tanda pisah ganda (`--` / `---`) pada narasi, digantikan dengan tanda koma atau kata 'sampai'.
+    - Mengubah format daftar rincian (*enumerate*) agar subjudul diikuti baris baru (enter), bukan format sebaris (*inline bold*).
+    - Menerapkan format sitasi pengarang-tahun (*author-year*) pada teks, dan membuat *BibTeX style* khusus `latex/apalike-doi.bst` untuk menghasilkan Daftar Pustaka bergaya APA 7th lengkap dengan URL/DOI aktif.
+    - Menghilangkan halaman sampul (*cover page*) sehingga naskah langsung diawali dengan judul BAB I PENDAHULUAN pada Halaman 1 sebagai draf laporan kemajuan bimbingan.
+  - **Penerbitan Berkas PDF Siap Bimbingan**:
+    - Berkas draf Bab 1: [`Proposal_Bab1_Khoirotun_Nisa.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/Proposal_Bab1_Khoirotun_Nisa.pdf) (10 halaman, Bab 1 + Daftar Pustaka APA 7th lengkap).
+    - Berkas matriks RP-RQ-RO: [`matriks-rp-rq-ro-kolam-tenang.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/matriks-rp-rq-ro-kolam-tenang.pdf) (2 halaman landscape, objek Pendederan I--IV).
+- **Klasifikasi Perubahan**: *Major* (Penyusunan naskah draf Bab 1, perluasan cakupan Pendederan I--IV, penyesuaian sitasi APA 7th ber-DOI, dan penerbitan berkas PDF bimbingan).
+- **Status**: Selesai (*Completed*)
+
+---
+
 ### 2026-10-16 (Sesi 15)
 - **Perubahan**:
   - **Penyesuaian Konteks Riset ke Kolam Tenang Tanpa Aerator**:

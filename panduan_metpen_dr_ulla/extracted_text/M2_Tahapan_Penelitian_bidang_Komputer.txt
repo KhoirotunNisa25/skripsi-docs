@@ -1,0 +1,62 @@
+# M2_Tahapan_Penelitian_bidang_Komputer
+
+--- Slide 1 ---
+Dr. ULLA DELFANA ROSIANI, ST., MT.  TEACHING TEAM  MATA KULIAH  METODOLOGI PENELITIAN D4 Teknik Informatika  JTI POLINEMA TAHAPAN PENELITIAN              BIDANG KOMPUTER/IT -  Materi Metodologi Penelitian ke 2-
+
+--- Slide 2 ---
+Perbedaan Skripsi  D4 dan S1  Bidang Komputer /IT Aspek Skripsi D4 (Vokasi/Politeknik) Skripsi  S1 (Universitas/ Teoritis ) Fokus  Utama Rancang bangun & implementasi  aplikasi, sistem, atau perangkat IT. Analisis, pengembangan model, atau teori  baru dalam bidang IT. Ciri Penelitian Lebih ke  problem solving  praktis: membuat sistem yang bisa langsung dipakai (prototype, produk). Lebih ke  knowledge contribution : memperluas teori, membuat metode baru, atau membandingkan algoritma secara mendalam. Contoh Pendekatan -  Membangun aplikasi  web/mobile  sesuai kebutuhan industri . -  Mengintegrasikan  IoT  untuk  monitoring (ESP32, sensor). -  Implementasi  AI/ML  untuk kasus spesifik  (YOLO  untuk deteksi  ikan, CNN  untuk penyakit tanaman ). - Membandingkan performa berbagai algoritma AI/ML pada dataset besar. - Mengusulkan modifikasi arsitektur deep learning. - Menganalisis keamanan protokol jaringan dengan model matematis. Contoh Judul - “ Rancang Bangun Sistem Informasi  Akademik  Berbasis  Web  untuk Politeknik  X.” - “ Implementasi  YOLOv8  untuk Deteksi Kualitas Bibit  Ikan Lele.” - “IoT Monitoring  Suhu  &  Kelembaban Ruangan  Server  dengan  ESP32.” - “ Analisis Perbandingan Algoritma  CNN,  ResNet , dan  EfficientNet untuk Klasifikasi  Citra  Medis .” - “ Pengembangan  Model Deep Learning  untuk Optimasi Sistem Rekomendasi .” - “ Evaluasi Keamanan Jaringan  5G  dengan Simulasi  NS-3.” Hasil/Output Produk nyata (aplikasi, sistem, IoT device, integrasi AI sederhana) yang bisa langsung digunakan. Model konseptual, teori baru, hasil analisis mendalam, publikasi akademik. Kedalaman Teori Cukup, sebatas mendukung implementasi (misalnya teori CNN sekilas, lalu lebih fokus ke coding & implementasi). Lebih dalam, membahas teori, arsitektur, algoritma, rumus, dan kompleksitas. Target Manfaat Industri, UMKM, masyarakat, dunia kerja (langsung bisa dipakai). Dunia akademik, pengembangan ilmu, dan komunitas riset.
+
+--- Slide 3 ---
+TAHAPAN PENELITIAN BIDANG KOMPUTER/TI *https://www.site.uottawa.ca/~bochmann/dsrg/how-to-do-good-research/ *http://romisatriawahono.net/2013/01/23/tahapan-memulai-penelitian-untuk-mahasiswa-galau/ LITERATUR REVIEW/ STUDI PUSTAKA DI SEMUA TAHAPAN:
+
+--- Slide 4 ---
+Ingat kembali seluruh mata kuliah  yang  sudah kita terima di  perkuliahan Bidang penelitian di  disiplin  computing: Tentukan berdasarkan passion!  Contoh :  Saya memilih bidang Computer Vision-Micro Expression Recognition 1. Penentuan  Bidang Penelitian {073A0DAA-6AF3-43AB-8588-CEC1D06C72B9} Software Engineering Data Mining Image Processing Computer Vision Networking Human Computer Interaction Soft Computing Information Retrieval Bioinformatics dsb
+
+--- Slide 5 ---
+Laboratorium  Riset  JTI  Polinema
+
+--- Slide 6 ---
+Searching  di  ScienceDirect.Com ,  Springerlink , IEEE Explore, Google (Scholar): Search: “ trends challenge  topic on  ` NAMA BIDANG ’” Lanjutkan penentuan  topik  penelitian dengan menemukan  suvey / review paper , karena  survey/ review paper  yang  masuk jurnal terindeks pasti  membahas satu topik penelitia n 2. Penentuan  Topik Penelitian style.visibility style.visibility style.visibility
+
+--- Slide 7 ---
+Pilih topik bukan karena pekerjaan kita sekarang ,  tapi karena topiknya menarik  ( ada  passion) dan  secara penelitian dapat kita lakukan  ( tidak  mission impossible) Usahakan cari penelitian  yang  membuat kita bisa konsentrasi penuh ke  method improvement ,  tidak harus pontang -panting  menjelaskan tentang obyek organisasi ,  mencari  dataset,  dsb Pilih topik  yang  dataset  sudah tersedia secara  public ,  jadi tidak perlu kita  repot  mencari  dataset  untuk eksperimen kita Pilih topik  yang  mudah secara pengukuran penelitian dan  bila memungkinkan pengukuran cukup dengan komputer Penelitian requirement engineering,  termasuk  yang  rumit pengukuran penelitiannya ,  melibatkan manusia  dan  organisasi sebagai obyek Pilih topik sesuai kapasitas  dan  kapabilitas Kita  tidak mungkin penelitian tentang  software process improvement  apabila tidak tersedia organisasi sebagai  testbed  yang  menerapkan metodologi  yang  kita kembangkan Pilih topik  yang  memungkinkan kita lakukan dengan  laptop  kita  yang  kita miliki sekarang ,  kecuali kita mendapatkan  grant research  besar  yang  memungkinkan pembelian infrastruktur penelitian Penelitian  global software engineering, software outsourcing, product line, relative  agak perlu biaya lebih besar  dan  kompleks Kiat Memilih Topik Penelitian
+
+--- Slide 8 ---
+Searching di  google ,  google scholar ,  ScienceDirect.Com : Survey review on NAMA  TOPIK Research problem challenge  on NAMA TOPIK  Dari “survey paper” yang  ditemukan ,  kejar sampai dapat semua  “technical paper” yang  ada  di  daftar referensinya Dari  puluhan / ratusan / ribuan  paper yang  didapat lakukan scanning ,  pilih  paper journal yang  terindeks  SCOPUS/ISI ,  3  tahun terakhir ,  dan peta kan masalah penelitian  yang  ada  di paper-paper  itu Gunakan Mendeley /zotero untuk mempermudah pekerjaan kita Pilih satu atau dua masalah penelitian yang  kita anggap menarik dan menantang ,  dan jadikan itu masalah penelitian kita 3. Penentuan  Masalah Penelitian
+
+--- Slide 9 ---
+Susun Research Problem  dan Landasan {5940675A-B579-460E-94D1-54222C63F5DA} Masalah Penelitian Landasan Literatur Data set  pada prediksi cacat  software  berdimensi tinggi ,  memiliki atribut  yang  bersifat  noisy ,  dan classnya bersifat tidak seimbang ,  menyebabkan penurunan akurasi pada prediksi cacat  software There are  noisy data points  in the software defect data sets that can not be confidently assumed to be erroneous using such simple method  (Gray, Bowes, Davey, & Christianson, 2011) The performances of software defect prediction improved when  irrelevant and redundant attributes  are removed  (Wang,  Khoshgoftaar , & Napolitano, 2010) The software defect prediction performance decreases significantly because the  dataset contains noisy attr ibutes  (Kim, Zhang, Wu, & Gong, 2011) Software defect datasets have an  imbalanced nature  with very few defective modules compared to defect-free ones  ( Tosun ,  Bener ,  Turhan , &  Menzies , 2010) Imbalance  can lead to a model that is not practical in software defect prediction, because most instances will be predicted as non-defect prone  ( Khoshgoftaar , Van  Hulse , & Napolitano, 2011) Software fault prediction data sets are often  highly imbalanced  (Zhang & Zhang, 2007) 9
+
+--- Slide 10 ---
+Pahami semua  paper  penelitian yang tujuannya  memecahkan masalah yang sama  dengan yang kita  pilih Pahami  metode/algoritma  terkini yang mereka gunakan untuk memecahkan masalah penelitian mereka. Ini yang  di sebut dengan  state-of-the-art method Dalam bidang  computing , metode biasanya berupa  algoritma yang secara sistematis , logis dan matematis menyelesaikan masalah 4.  Perangkuman Metode  Yang Ada
+
+--- Slide 11 ---
+Menzies Framework  (Menzies et al. 2007) {073A0DAA-6AF3-43AB-8588-CEC1D06C72B9} Framework Dataset Data Preprocessor Feature  Selectors Meta-learning Classifiers Parameter Selectors Validation Methods Evaluation  Methods (Menzies  et al. 2007) NASA MDP Log Filtering Info  Gain - 3 algorithm s ( DT, 1R, NB) - 10-Fold X  Validation ROC  Curve ( AUC) Contoh  Perangkuman Metode  Yang Ada
+
+--- Slide 12 ---
+Lessmann Framework  (Lessmann et al. 2008)  {073A0DAA-6AF3-43AB-8588-CEC1D06C72B9} Framework Dataset Data Preprocessor Feature  Selectors Meta-learning Classifiers Parameter Selectors Validation Methods Evaluation  Methods (Lessman et al. 2008) NASA MDP - - - 22  algorithm s - 10-Fold X  Validation ROC Curve (AUC) Contoh  Perangkuman Metode  Yang Ada
+
+--- Slide 13 ---
+Song Framework  (Song et al. 2011)  {073A0DAA-6AF3-43AB-8588-CEC1D06C72B9} Framework Dataset Data Preprocessor Feature  Selectors Meta-learning Classifiers Parameter Selectors Validation Methods Evaluation  Methods (Song et al. 2011) NASA MDP Log Filtering FS,  BE - 3 algorithm s  ( DT, 1R, NB) - 10-Fold X  Validation ROC Curve (AUC) Contoh  Perangkuman Metode  Yang Ada
+
+--- Slide 14 ---
+PROPOSED FRAMEWOR K {073A0DAA-6AF3-43AB-8588-CEC1D06C72B9} Framework Dataset Data Preprocessor Feature  Selectors Meta-Learning Classifiers Parameter Selectors Validation Methods Evaluation  Methods (Menzies  et al. 2007) NASA MDP Log Filtering Info  Gain 3 algorithm ( DT, 1R, NB) - 10-Fold X  Validation ROC  Curve ( AUC) (Lessman et al. 2008) NASA MDP - - 22  algorithm - 10-Fold X  Validation ROC Curve (AUC) (Song et al. 2011) NASA MDP Log Filtering FS,  BE 3 algorithm  ( DT, 1R, NB) - 10-Fold X  Validation ROC Curve (AUC) Proposed  Framework NASA MDP - PSO,  GA Bagging 1 0  algorithms GA 10-Fold X  Validation ROC Curve (AUC)
+
+--- Slide 15 ---
+Kita  harus  membangun dan mengusulkan  suatu metod e  ( proposed method ) ,  yg lebih baik   bila dibandingkan dengan metode-metode yang ada saat ini K eunggulan  metode  yang  kita usulkan harus dilandasi  ( reference ),  dibuktikan secara matematis dan empiris  lewat hasil eksperimen dan perbandingan dengan metode yang ada Metode yang kita usulkan itu bisa saja dari  state-of-the-art methods ,  kita kemudian  “menambahkan” sesuatu  (algoritma, koefisien, formula,  dsb ), yang akhirnya ketika kita bandingkan dengan metode  original , metode kita lebih baik ( lebih cepat ,  lebih akurat ,  lebih konsisten ,  dsb ).  “Penambahan”  yang kita lakukan dan akhirnya membuat pemecahan masalah menjadi lebih baik itulah yang disebut dengan  kontribusi ke pengetahuan ( contribution to knowledge ) (Dawson, 2009) 5. Penentuan  Metode  Yang  Diusulkan
+
+--- Slide 16 ---
+Metode  yang  diusulkan harus divalidasi dan dievaluasi dengan metode pengukuran  standard  dan disepakati  para  peneliti  di  bidang penelitian  yang  kita lakukan Pengukuran metode disesuaikan dengan masalah dan tujuan penelitian : Masalahnya rendahnya akurasi  pengukurannya akurasi Masalah rendahnya efisiensi  pengukurannya waktu 6.  Evaluasi Metode  Yang  Diusulkan 16
+
+--- Slide 17 ---
+Estimation : Error : Root Mean Square Error (RMSE), MSE, MAPE, etc Prediction/Forecasting (Prediksi/Peramalan): Error : Root Mean Square Error (RMSE) , MSE, MAPE, etc Classification : Confusion Matrix :  Accuracy ROC  Curve :  Area  Under Curve  (AUC)  Clustering : Internal  Evaluation :  Davies – Bouldin index ,  Dunn index ,  External  Evaluation :   Rand measure ,  F-measure ,  Jaccard index ,  Fowlkes – Mallows index ,  Confusion matrix Association: Lift  Charts : Lift  Ratio Precision and Recall ( F-measure ) Contoh  Evaluasi pada Penelitian  Data Mining
+
+--- Slide 18 ---
+Lakukan pendataan  journal-journal yang  ada  di  bidang kita ,  urutkan berdasarkan rangking SJR  atau  JIF Pilih target journal  untuk tempat publikasi hasil penelitian kita Publikasikan  hasil penelitian ke journal yang  sesuai dengan kualitas kontribusi penelitian yang  kita lakukan A paper is an organized description of hypotheses, data and conclusions, intended to instruct the reader.  If your research does not generate papers, it might just as well not have been done ( Whitesides  2004)  7. Penulisan  Ilmiah  dan  Publikasi  Hasil  Penelitian
+
+--- Slide 19 ---
+Referensi https://romisatriawahono.net/lecture/rm/romi-rm-slr-jun2020.pdf
+
+--- Slide 20 ---
+TUGAS  PERTEMUAN 2 Tentukan bidang riset dan topik riset yang akan dilakukan Kumpulkan 3 artikel “a survey of....”, “ a review of...” tahun >202 3 Sebutkan  Tren dan  Tantangan terbaru  pada  topik riset pilihan  an Cari  permasalahan  yang  bisa diangkat  yang  didapatkan dari artikel penelitian  orang lain : Dari  dari bagian  “ Tantangan  yang  dihadapi ”/” Challenge”  dari artikel tersebut Dari  bagian akhir dari  “ Kesimpulan ”  atau  ” Conclusion ” Susun  RP dan  Landasan  Teori dari permasalahan yang akan diangkat Kerjakan  Per individu dengan rencana topik skripsi
+

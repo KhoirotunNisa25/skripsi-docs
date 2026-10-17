@@ -1,44 +1,80 @@
-\section{PENDAHULUAN}
-\label{sec:pendahuluan}
-
 \subsection{Latar Belakang}
-Sektor akuakultur air tawar di Indonesia memegang peranan strategis dalam ketahanan pangan nasional dan pemberdayaan ekonomi masyarakat, dengan ikan lele (\textit{Clarias sp.}) sebagai salah satu komoditas unggulan utama. Namun, efisiensi operasional budidaya lele intensif sangat dibatasi oleh tingginya porsi biaya pakan yang mencapai 60\% hingga 70\% dari keseluruhan biaya produksi~\cite{Li2020}. Hingga saat ini, sebagian besar pembudidaya masih mengandalkan metode pemberian pakan konvensional berbasis jadwal waktu tetap (\textit{fixed-time scheduling}) atau estimasi visual manual secara subjektif.
+Sektor perikanan budidaya air tawar di Indonesia memegang peranan sangat strategis dalam menopang ketahanan pangan nasional, penyediaan sumber protein hewani masyarakat, serta penggerak ekonomi kerakyatan. Berdasarkan data resmi Kementerian Kelautan dan Perikanan (KKP), volume produksi perikanan budidaya nasional untuk komoditas ikan lele (\textit{Clarias sp.}) konsisten melampaui angka satu juta ton per tahun, dengan capaian produksi mencapai 1,14 juta ton pada tahun 2023 dan meningkat hingga 1,16 juta ton pada tahun 2024 \cite{KKP2023}. Skala produksi pembesaran yang masif tersebut, dengan asumsi bobot panen konsumsi rata-rata 8 sampai 10 ekor per kilogram, membutuhkan pasokan benih lele dalam jumlah yang sangat besar, yakni ditaksir mencapai lebih dari 12 hingga 14 miliar ekor benih per tahun di seluruh Indonesia. Namun demikian, mata rantai budidaya yang paling rentan dan menjadi titik kritis (\textit{critical bottleneck}) dalam menopang kebutuhan nasional tersebut berada pada fase pembenihan dan pendederan (\textit{nursery phase}), khususnya pada benih ukuran 2 sampai 12 cm yang mencakup siklus pemeliharaan Pendederan I hingga Pendederan IV \cite{kurdowi2025technique}. Pada fase pendederan ini, tingkat mortalitas benih di tingkat pembudidaya lokal kerap mencapai 30\% hingga 50\%, bahkan dapat melampaui 60\% apabila manajemen pemeliharaan dan pakan tidak terkontrol secara optimal \cite{gisbert2021development,pelu2025pengaruh}. Berdasarkan Standar Nasional Indonesia SNI 01-6484.2-2000, benih lele kelas benih sebar dipersyaratkan memiliki tingkat keseragaman ukuran minimal 80\% serta tingkat kelangsungan hidup (\textit{Survival Rate}/SR) yang tinggi untuk menjamin kelayakan budidaya pembesaran lanjutan \cite{BSN2000}.
 
-Metode konvensional tersebut memicu dua permasalahan kritis:
+Tingginya angka mortalitas benih pada fase pendederan tersebut berakar langsung pada keterbatasan metode pemberian pakan konvensional yang hingga kini masih diandalkan oleh mayoritas pembudidaya, yaitu metode penjadwalan waktu tetap (\textit{fixed-time scheduling}) menggunakan timer otomatis atau estimasi visual manual yang bersifat subjektif. Metode konvensional ini tidak mampu beradaptasi terhadap dinamika nafsu makan benih yang sangat fluktuatif akibat pengaruh suhu lingkungan, kadar oksigen, dan ritme biologis harian. Ketidakmampuan adaptasi tersebut memicu dua permasalahan kritis:
 \begin{enumerate}
-    \item \textbf{Pemberian Pakan Berlebih (\textit{Overfeeding})}: Pelet pakan yang tidak terkonsumsi akan tenggelam dan mengalami dekomposisi organik di dasar kolam. Proses pembusukan ini meningkatkan konsentrasi amonia terlarut ($NH_3$) dan menurunkan kadar oksigen terlarut (\textit{Dissolved Oxygen}), sehingga memicu mortalitas massal dan memperburuk rasio konversi pakan (\textit{Feed Conversion Ratio} / FCR)~\cite{Zhou2018}.
-    \item \textbf{Kekurangan Pakan (\textit{Underfeeding})}: Ikan lele memiliki sifat biologis kanibalistik yang sangat agresif ketika mengalami defisit energi atau kelaparan (\textit{starvation-stress})~\cite{Marliza2021}. Keterlambatan pemberian pakan secara langsung memicu agresi sesama ikan, menyebabkan penurunan biomassa panen secara signifikan.
+    \item Kelebihan pakan (\textit{overfeeding})
+    
+    Pakan benih lele berupa pelet mikro atau \textit{crumble} diformulasikan dengan kandungan protein sangat tinggi, berkisar antara 35\% hingga 42\% \cite{afia2020growth,jibrin2024effect}. Akumulasi pelet pakan yang tidak terkonsumsi akan tenggelam dan mengalami dekomposisi organik secara anaerobik di dasar kolam pendederan yang dangkal. Proses pembusukan ini memicu lonjakan konsentrasi amonia bebas ($NH_3$) yang sangat beracun dan deplesi oksigen terlarut (\textit{Dissolved Oxygen} / $\text{DO} < 3\text{ mg/L}$), yang secara langsung memicu kematian massal benih secara mendadak \cite{pelu2025pengaruh,Zhou2018}. Di samping itu, inefisiensi pakan ini sangat merugikan finansial pembudidaya mengingat porsi biaya pakan menyerap 60\% hingga 70\% dari total biaya operasional budidaya \cite{Li2020}.
+    
+    \item Kekurangan pakan (\textit{underfeeding})
+    
+    Ikan lele secara ontogenetik memiliki sifat biologis karnivora agresif dengan tingkat kanibalisme oportunistik yang sangat tinggi saat kelaparan (\textit{starvation-induced cannibalism}) \cite{gisbert2021development}. Keterlambatan pemberian pakan selama beberapa jam saja akan memicu benih yang memiliki ukuran sedikit lebih besar untuk memangsa benih sesamanya yang lebih kecil (\textit{type I and type II cannibalism}), yang berakibat pada penurunan populasi benih kolam secara drastis dalam waktu singkat \cite{Marliza2021,kurdowi2025technique}.
 \end{enumerate}
 
-Untuk mewujudkan otomasi pemberian pakan adaptif (\textit{demand-feeding system}), teknologi visi komputer (\textit{computer vision}) non-kontak menjadi solusi yang sangat potensial untuk memantau respons nafsu makan ikan secara langsung tanpa menimbulkan stres fisik~\cite{Al-Abri2025,Yang2025}. Kendati demikian, implementasi visi komputer pada kolam budidaya lele luar ruangan (\textit{outdoor}) menghadapi sejumlah kendala teknis ekstrem:
+Untuk mengatasi dilema tersebut, teknologi visi komputer (\textit{computer vision}) non-kontak menjadi paradigma mutakhir yang sangat menjanjikan untuk mewujudkan sistem pemberian pakan adaptif (\textit{demand-feeding system}) berbasis pemantauan respons nafsu makan ikan secara objektif tanpa menimbulkan stres fisik \cite{Al-Abri2025,Yang2025}. Sejumlah penelitian terdahulu telah mengusulkan berbagai metode analisis citra dan kecerdasan buatan, seperti segmentasi \textit{deep learning} (YOLOv8, Mask R-CNN), estimasi aliran optik (\textit{optical flow}), hingga jaringan saraf konvolusi tiga aliran (\textit{three-stream CNN}) dan \textit{Vision Transformer} untuk mengklasifikasikan intensitas makan ikan \cite{Qian2025,Dong2024,Wu2024,Zhang2024,Fukae2023}. Metode-metode berbasis \textit{deep learning} tersebut terbukti mencapai akurasi klasifikasi yang tinggi pada lingkungan laboratorium terkontrol atau tangki budidaya bersirkulasi tertutup (\textit{Recirculating Aquaculture System} / RAS) dengan kondisi air jernih dan pencahayaan lampu buatan yang seragam. Namun demikian, pendekatan-pendekatan mutakhir tersebut menghadapi kegagalan mendasar ketika diimplementasikan pada kondisi riil kolam pendederan lele luar ruangan (\textit{outdoor}):
 \begin{enumerate}
-    \item \textbf{Keberadaan Aerator Kontinu}: Berbeda dengan tangki laboratorium tertutup, kolam lele komersial dilengkapi aerator mekanis (kincir atau gelembung udara) yang beroperasi secara kontinu selama 24 jam untuk menjaga pasokan oksigen. Turbulensi dan riak air konstan ini menyebabkan metode deteksi gerak konvensional mendeteksi pergerakan palsu secara terus-menerus. Dengan demikian, prinsip dasar yang harus ditegakkan adalah: \textit{pergerakan permukaan air kolam tidak sama dengan indikasi ikan lapar}.
-    \item \textbf{Karakteristik Temporal Kemunculan Sub-Detik}: Air kolam lele bersifat keruh (berwarna hijau pekat atau cokelat akibat alga dan lumpur), sehingga tubuh ikan tidak terdeteksi saat berada di kedalaman air. Ikan lele hanya muncul ke permukaan air ketika terstimulasi lapar, menyambar pakan, dan segera kembali menyelam ke dasar kolam. Kemunculan ini berlangsung dalam jendela waktu transien yang sangat singkat, berkisar antara 3 hingga 6 frame pada kecepatan rekam 10 FPS (durasi total hanya 0,3 hingga 0,6 detik).
-    \item \textbf{Keterbatasan Komputasi Perangkat Tertanam (\textit{Edge Computing})}: Sistem pemantau harus diimplementasikan langsung di tepi kolam menggunakan perangkat berdaya rendah seperti Raspberry Pi 4B/5 tanpa dukungan kartu grafis (GPU) diskrit. Model deep learning konvensional yang memerlukan miliaran operasi komputasi tidak dapat berjalan secara stabil pada frekuensi $\ge 10$ FPS.
-    \item \textbf{Keterbatasan Bandwidth Komunikasi}: Jaringan komunikasi di tambak rakyat umumnya memiliki keterbatasan kuota dan stabilitas sinyal. Sistem dituntut untuk memproses komputasi secara lokal di \textit{edge} dan hanya mentransmisikan telemetri metrik numerik ringkas (indeks deviasi gerak dan status lapar) melalui protokol IoT seperti MQTT, bukan mentransmisikan aliran video mentah (\textit{raw video streaming}).
+    \item Kondisi air kolam yang keruh
+    
+    Pada budidaya lele komersial, air kolam sengaja dikondisikan keruh kehijauan (\textit{green water} dengan kedalaman Secchi $\le 3\text{ cm}$) melalui pemupukan alga dan probiotik untuk menekan penetrasi cahaya dan meredam stres kanibalisme antarbenih. Akibat kekeruhan ekstrem ini, tubuh dan kontur individu benih lele di bawah permukaan air sama sekali tidak terlihat oleh kamera. Metode deteksi objek berbasis pembatas kotak (\textit{bounding box}) seperti YOLO maupun pelacakan individu tubuh ikan (\textit{multi-object tracking}) menjadi tidak berfungsi \cite{Alahmad2025,Vijayalakshmi2025}.
+    
+    \item Karakteristik kemunculan lele yang sangat cepat
+    
+    Benih lele hanya muncul ke permukaan air pada saat terstimulasi lapar, menyambar butiran pakan, dan seketika menyelam kembali ke dasar kolam. Semburan aktivitas makan di permukaan air ini berlangsung sangat cepat dalam rentang waktu sub-detik, yakni hanya berkisar 3 sampai 6 frame pada kecepatan rekam 10 FPS (durasi total 0,3 sampai 0,6 detik).
+    
+    \item Interferensi derau visual lingkungan luar ruangan
+    
+    Pada kolam luar ruangan tanpa atap tertutup, permukaan air tenang terpapar langsung oleh interferensi visual alami yang dinamis, seperti pantulan kilau sinar matahari langsung (\textit{sun glint/glare}), riak gelombang halus akibat hembusan angin, dedaunan kering yang mengapung terbawa arus, serta bayangan dinamis burung liar atau dedaunan pohon di atas kolam.
+    
+    \item Keterbatasan komputasi perangkat tepi (\textit{edge computing})
+    
+    Penerapan sistem pemantau di tambak rakyat menuntut penggunaan mikrokomputer berdaya rendah dan berbiaya murah, seperti Raspberry Pi 5 tanpa kartu grafis (GPU) diskrit. Model \textit{deep learning} kompleks yang memerlukan miliaran operasi titik-kambang (\textit{FLOPs}) tidak dapat berjalan secara stabil pada kecepatan $\ge 10$ FPS dengan latensi sub-detik, serta rentan mengalami peningkatan suhu berlebih (\textit{thermal throttling}) \cite{Al-Abri2025}.
 \end{enumerate}
 
-Berdasarkan latar belakang tersebut, penelitian ini bertujuan mengembangkan metode deteksi aktivitas gerak ikan lele berbasis visi komputer yang ringan, adaptif terhadap derau aerator, dan mampu mengekstraksi event kemunculan sub-detik secara real-time pada perangkat Raspberry Pi.
+Berdasarkan analisis kritis terhadap kesenjangan penelitian di atas, masalah penelitian (\textit{Research Problem}) yang mendasari penelitian ini adalah belum adanya metode deteksi nafsu makan ikan yang andal, deterministik, dan berbobot komputasi ringan untuk bibit ikan lele pada air kolam luar ruangan yang keruh dan dinamis, yang mampu membedakan riak pergerakan makan transien lele (durasi 0,3 sampai 0,6 detik) dari derau visual lingkungan luar ruangan (silau matahari, riak angin, dedaunan mengapung, dan bayangan dinamis) secara real-time pada mikrokomputer \textit{edge} berdaya rendah tanpa bergantung pada arsitektur \textit{deep learning} berbobot besar.
 
-\subsection{Perumusan Masalah}
-Berdasarkan latar belakang dan batasan lingkungan yang telah diuraikan, rumusan masalah dalam penelitian ini dirumuskan sebagai berikut:
+Guna memecahkan masalah penelitian tersebut, penelitian ini mengusulkan pengembangan sistem pemberian pakan adaptif berbasis deteksi riak pergerakan permukaan air menggunakan metode \textit{Adaptive Three-Frame Differencing} (TFD). Dibandingkan metode pengurangan dua frame konvensional yang rentan menghasilkan bayangan semu (\textit{ghosting}), metode TFD dengan operasi logika biner \textit{bitwise AND} mampu mengekstraksi wilayah gerak riak murni secara presisi pada interval frame berurutan \cite{Atoum2015}. Sistem ini dipadukan dengan rangkaian pra-pemrosesan penapis derau lingkungan luar ruangan: transformasi ruang warna HSV (kanal saturasi $S$) dan filter polarisasi sirkular (\textit{Circular Polarizer Lens}/CPL) untuk meredam pantulan kilau matahari, serta operasi morfologi penapisan kontur untuk menolak bayangan luar dan serpihan daun terapung. Dinamika riak pergerakan permukaan selanjutnya dikuantifikasi menjadi indeks aktivitas makan (\textit{Feeding Activity Index} / $FAI$) yang diintegrasikan ke dalam mesin logika \textit{Finite State Machine} (FSM) untuk mengendalikan aktuator motor servo dispenser pelet secara adaptif. Keseluruhan proses komputasi dioptimasi agar mampu berjalan stabil pada perangkat tepi Raspberry Pi 5 dengan anggaran pakan harian terkontrol maksimal 5\% biomassa sesuai kaidah pendederan lele.
+
+\subsection{Rumusan Masalah}
+Berdasarkan latar belakang dan identifikasi masalah penelitian yang telah diuraikan, rumusan masalah dalam penelitian ini dirumuskan sebagai berikut:
 \begin{enumerate}
-    \item Bagaimana memodelkan dan mengompensasi derau gerak permukaan air yang ditimbulkan oleh aerator kontinu pada kolam luar ruangan agar tidak memicu deteksi positif palsu (\textit{false positive})?
-    \item Bagaimana merancang algoritma deteksi gerakan spasio-temporal yang memiliki kompleksitas komputasi rendah sehingga mampu mengeksekusi analisis citra secara real-time ($\ge 10$ FPS) pada perangkat Raspberry Pi untuk menangkap event kemunculan lele berdurasi 3--6 frame?
-    \item Bagaimana memetakan deviasi gerak permukaan air menjadi indeks kuantitatif aktivitas makan dan menghasilkan keputusan status lapar (\textit{hungry} vs. \textit{satiated}) yang akurat?
+    \item Bagaimana merancang dan mengimplementasikan algoritma \textit{three-frame differencing} biner adaptif dengan operasi logika \textit{bitwise AND} yang ringan agar mampu mendeteksi riak pergerakan makan bibit lele berdurasi singkat (3 sampai 6 frame) secara real-time ($\ge 10$ FPS) pada perangkat mikrokomputer \textit{edge} Raspberry Pi?
+    \item Bagaimana mereduksi interferensi derau visual lingkungan kolam luar ruangan (pantulan sinar matahari, riak angin halus, dedaunan mengapung, dan bayangan dinamis) pada citra permukaan air menggunakan penapisan saturasi HSV dan operasi morfologi tanpa membebani komputasi CPU perangkat tepi?
+    \item Bagaimana membuktikan korelasi empiris antara dinamika nilai indeks aktivitas riak permukaan (\textit{Feeding Activity Index} / $FAI$) dengan tingkat nafsu makan nyata bibit ikan lele pada kondisi kolam luar ruangan tenang?
+    \item Bagaimana mengintegrasikan kuantifikasi $FAI$ ke dalam logika \textit{Finite State Machine} (FSM) kendali motor servo dispenser pakan dan menguji efektivitas pencegahan pemborosan pakan (\textit{feed wastage}) dalam batasan kuota biomassa harian?
+\end{enumerate}
+
+\subsection{Batasan Masalah}
+Agar penelitian ini terarah, terfokus, dan terukur sesuai batasan waktu serta sumber daya yang tersedia, ruang lingkup penelitian dibatasi sebagai berikut:
+\begin{enumerate}
+    \item Objek penelitian adalah bibit ikan lele mutiara atau sangkuriang (\textit{Clarias sp.}) pada fase pendederan dengan rentang ukuran panjang tubuh 2 sampai 12 cm (Pendederan I hingga Pendederan IV).
+    \item Lingkungan pengujian difokuskan pada kolam terpal luar ruangan (\textit{outdoor}) kondisi air tenang tanpa operasional aerator mekanis pada siang hari (rentang waktu pukul 07.00 hingga 16.00 WIB).
+    \item Perekaman video dilakukan menggunakan kamera digital dengan sudut pandang tegak lurus (\textit{nadir} $90^\circ$) pada jarak dekat berkisar antara 30 sampai 50 cm tepat di atas zona pemberian pakan (\textit{feeding zone}) kolam.
+    \item Pemrosesan citra dibatasi pada analisis pergerakan riak permukaan air kolam menggunakan algoritma \textit{adaptive three-frame differencing}, konversi ruang warna HSV, dan operasi morfologi; sistem tidak melakukan segmentasi kontur individu tubuh ikan di bawah air dan tidak menggunakan model \textit{deep learning} berbobot besar.
+    \item Komputasi visi dan algoritma pengendali diimplementasikan secara mandiri pada perangkat \textit{edge computing} mikrokomputer Raspberry Pi 5 (RAM 8 GB) tanpa bantuan kartu grafis eksternal.
+    \item Mekanisme pemberian pakan menggunakan dispenser berbasis katup putar atau ayun yang digerakkan motor servo, dengan kuota pemberian pakan harian maksimal dibatasi sebesar 5\% dari total biomassa ikan kolam untuk mencegah kelebihan pakan kumulatif.
 \end{enumerate}
 
 \subsection{Tujuan Penelitian}
-Tujuan yang hendak dicapai dalam penelitian ini adalah:
+Berdasarkan rumusan masalah yang telah ditetapkan, tujuan penelitian yang hendak dicapai adalah:
 \begin{enumerate}
-    \item Mengembangkan mekanisme pemodelan \textit{baseline} dinamis untuk mengeliminasi komponen derau gerak aerator pada citra kolam luar ruangan.
-    \item Merancang dan mengimplementasikan algoritma deteksi gerak hibrida berbasis varians temporal dan perbedaan citra yang ringan untuk mengekstraksi lonjakan aktivitas makan sub-detik pada Raspberry Pi.
-    \item Menghasilkan metrik kuantitatif indeks aktivitas makan ikan lele yang dapat ditransmisikan secara efisien melalui jaringan IoT sebagai acuan otomasi pakan.
+    \item Mengembangkan dan mengimplementasikan algoritma \textit{adaptive three-frame differencing} dengan operasi \textit{bitwise AND} pada Raspberry Pi untuk mendeteksi event riak aktivitas makan bibit lele berdurasi sub-detik secara real-time dengan kecepatan pemrosesan $\ge 10$ FPS.
+    \item Merancang metode pra-pemrosesan berbasis penapisan saturasi ruang warna HSV (kanal $S$), filter polarisasi optik (CPL), dan operasi morfologi untuk memisahkan komponen derau visual lingkungan luar ruangan dari riak aktivitas lele.
+    \item Melakukan pengujian eksperimental guna membuktikan korelasi empiris antara dinamika nilai \textit{Feeding Activity Index} ($FAI$) dengan tingkat respons konsumsi pakan aktual bibit lele pada kondisi kolam luar ruangan tenang.
+    \item Membangun sistem pemberian pakan otomatis adaptif berbasis \textit{Finite State Machine} (FSM) yang dikendalikan oleh skor $FAI$, serta mengevaluasi performa akurasi keputusan pakan dan efisiensi pencegahan sisa pakan.
 \end{enumerate}
 
+\newpage
 \subsection{Manfaat Penelitian}
-Penelitian ini diharapkan memberikan kontribusi ganda:
-\begin{itemize}
-    \item \textbf{Manfaat Akademis}: Memberikan kontribusi teoritis dalam pemodelan latar belakang dinamis (\textit{dynamic background subtraction}) pada fluida bergolak dan ekstraksi event spasio-temporal transien berdaya rendah di bidang visi komputer terapan akuakultur.
-    \item \textbf{Manfaat Praktis}: Menyediakan solusi teknologi tepat guna berbiaya rendah (\textit{low-cost edge AI}) bagi peternak lele lokal untuk mencegah pemborosan pakan, menjaga kualitas air kolam, dan menekan angka kanibalisme ikan.
-\end{itemize}
+Hasil penelitian ini diharapkan memberikan kontribusi sebagai berikut:
+\begin{enumerate}
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+    \item Manfaat teoretis
+    
+    Memberikan sumbangan keilmuan di bidang visi komputer terapan (\textit{Applied Computer Vision}) dan \textit{Edge AI} dalam pemodelan deteksi gerakan fluida transien sub-detik berdaya rendah, serta membuktikan bahwa algoritma deterministik ringan mampu mengatasi kendala air keruh tanpa ketergantungan pada model \textit{deep learning} yang membutuhkan komputasi besar.
+    
+    \item Manfaat praktis
+    
+    Menghasilkan solusi teknologi tepat guna yang terjangkau bagi peternak lele lokal untuk mengotomasi pemberian pakan secara presisi, menekan angka kematian bibit akibat kanibalisme dan polusi amonia, meningkatkan efisiensi rasio konversi pakan (FCR), serta menurunkan beban kerja operasional harian.
+\end{enumerate}

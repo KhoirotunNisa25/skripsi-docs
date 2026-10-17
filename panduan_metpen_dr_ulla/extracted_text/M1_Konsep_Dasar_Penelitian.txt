@@ -1,0 +1,56 @@
+# M1_Konsep_Dasar_Penelitian
+
+--- Slide 1 ---
+Dr. ULLA DELFANA ROSIANI, ST., MT.  TEACHING TEAM  MATA KULIAH  METODOLOGI PENELITIAN D4 Teknik Informatika  JTI POLINEMA KONSEP DASAR PENELITIAN -  Materi Metodologi Penelitian ke 1-
+
+--- Slide 2 ---
+KONTRAK PERKULIAHAN EVALUASI
+
+--- Slide 3 ---
+Pengantar  Mata  Kuliah Tujuan:  Membekali mahasiswa memahami ,  merancang , dan  melaksanakan penelitian ilmiah . Kompetensi : Memahami hakikat penelitian ilmiah Membedakan jenis penelitian Merumuskan masalah penelitian Menyusun proposal  penelitian Mengaplikasikan metodologi penelitian untuk tugas akhir / publikasi
+
+--- Slide 4 ---
+Definisi Penelitian Secara etimologis ,  penelitian berasal dari  kata  research  ( bahasa Inggris ) yang  berarti “ pencarian kembali ”.  Artinya ,  penelitian merupakan usaha untuk menemukan kembali pengetahuan melalui  proses yang  sistematis . Beberapa definisi menurut ahli : Kerlinger (2006): Penelitian adalah  proses  sistematis  yang  bertujuan untuk menemukan atau mengembangkan pengetahuan  yang  dapat dipercaya . Sugiyono  (2019): Penelitian adalah cara ilmiah untuk mendapatkan  data  dengan tujuan tertentu . Polinema  (2023): Penelitian adalah upaya ilmiah untuk menjawab permasalahan  di  bidang teknologi terapan dengan metode  yang  dapat diuji  dan  dipertanggungjawabkan . Ciri- ciri penelitian ilmiah : Objektif  →  berdasarkan  data,  bukan opini pribadi . Sistematis  →  ada langkah-langkah jelas  ( metodologi ). Empiris  →  menggunakan fakta dari lapangan /data  nyata . Logis  →  sesuai dengan kaidah penalaran . Replikatif  →  dapat diuji ulang  oleh  peneliti  lain.
+
+--- Slide 5 ---
+Tujuan  Penelitian Eksploratif  →  mencari pengetahuan baru Deskriptif  →  menggambarkan fenomena Eksplanatif  →  menjelaskan hubungan variabel Prediktif  →  meramalkan kejadian Aplikatif  →  mencari solusi praktis 👉  Contoh  di  bidang teknik informatika : Eksploratif  mencari metode baru dalam klasifikasi citra . Deskriptif    memetakan pola penggunaan  internet  mahasiswa . Eksplanatif    menjelaskan hubungan antara  jam  belajar  dan  prestasi akademik . Prediktif    meramalkan kelulusan mahasiswa berdasarkan nilai sebelumnya . Aplikatif    membuat aplikasi  mobile  untuk  monitoring  kesehatan  ikan  lele .
+
+--- Slide 6 ---
+Jenis-Jenis  Penelitian {5C22544A-7EE6-4342-B048-85BDC9FD1C3A} Berdasarkan  Tujuan Berdasarkan Pendekatan Berdasarkan  Sifat Dasar  (Basic Research): bertujuan mengembangkan teori tanpa langsung memikirkan penerapan praktis . Terapan (Applied Research): bertujuan memecahkan masalah nyata  di  lapangan . Kuantitatif menggunakan  data  berupa angka ,  analisis statistik . Kualitatif menggunakan  data  deskriptif  ( narasi ,  wawancara ,  observasi ). Mixed Method gabungan kuantitatif  dan  kualitatif . Deskriptif : menggambarkan fenomena tertentu . Korelasional : mencari hubungan antar variabel . Eksperimental : menguji pengaruh suatu perlakuan . Tindakan (Action Research): memperbaiki suatu  proses  melalui siklus tindakan . Studi Kasus: meneliti secara mendalam satu kasus tertentu .
+
+--- Slide 7 ---
+Unsur Penting Penelitian Masalah penelitian : akar permasalahan  yang  harus dipecahkan . Rumusan masalah : bentuk pertanyaan penelitian . Tujuan  penelitian : hasil  yang  ingin dicapai . Manfaat  penelitian : kontribusi teoritis  &  praktis . Kerangka teori : landasan konseptual penelitian . Metodologi penelitian : cara  yang  digunakan  ( pendekatan ,  teknik pengumpulan  data,  teknik analisis ). 👉  Tanpa unsur-unsur tersebut ,  penelitian tidak akan terarah  dan  sulit dipertanggungjawabkan .
+
+--- Slide 8 ---
+Siklus Penelitian Tahapan penelitian dapat digambarkan sebagai berikut : Identifikasi masalah  →  Menemukan isu  yang  layak diteliti . Studi  literatur  →  Membaca teori ,  jurnal , dan  penelitian sebelumnya . Rumusan masalah  → Menyusun  pertanyaan penelitian . Tujuan  penelitian  →  Menentukan hasil  yang  ingin dicapai . Metode  penelitian  →  Menentukan pendekatan ,  instrumen , dan  teknik analisis . Pengumpulan  data  →  Observasi ,  wawancara ,  eksperimen , survey. Analisis  data  →  Statistik , coding data,  interpretasi hasil . Kesimpulan  →  Menjawab pertanyaan penelitian . Publikasi hasil  →  Laporan , seminar,  jurnal ,  atau prosiding .
+
+--- Slide 9 ---
+Siklus Penelitian
+
+--- Slide 10 ---
+Berfikir logis Dalam  melakukan penelitian ,  diperlukan kemampuan dalam berfikir secara logis .  Berpikir logis adalah kemampuan menggunakan akal secara runtut ,  sistematis , dan  konsisten dalam memahami masalah ,  mencari solusi ,  serta menarik kesimpulan . Dalam  penelitian ,  berpikir logis  sangat  penting karena : Menjamin objektivitas  –  peneliti tidak hanya mengandalkan intuisi atau perasaan ,  tetapi menggunakan nalar . Membantu menyusun kerangka penelitian  –  mulai dari perumusan masalah ,  landasan teori ,  metodologi ,  hingga analisis  data. Menghasilkan kesimpulan  yang valid  –  logika menjaga  agar proses  penalaran tidak melompat-lompat  dan  tetap dapat dipertanggungjawabkan . Memudahkan komunikasi ilmiah  –  hasil penelitian dapat dipahami  dan  diuji  oleh  peneliti  lain  karena didasarkan  pada  alur pikir  yang  jelas .
+
+--- Slide 11 ---
+Berfikir logis Proses  berpikir  yang  terjadi  pada  saat menarik kesimpulan dari pernyataan-pernyataan  yang  diketahui benar atau dianggap benar biasanya disebut dengan penalaran atau ( reasoning ) Penalaran  juga  berguna untuk menentukan secara logis  dan  objektif apakah suatu pernyataan  valid  ( benar atau  salah)  sehingga pantas untuk diyakini atau dianut Struktur penalaran itu sendiri terdiri atas masukan  (input), proses (process) dan  keluaran  (output) .
+
+--- Slide 12 ---
+Jenis- jenis penalaran Jenis  Penalaran Pengertian Contoh Kegunaan dalam Penelitian Deduktif Menarik kesimpulan dari hal umum  →  khusus Semua ikan lele bernapas dengan insang → maka objek penelitian (lele) juga bernapas dengan insang Menguji teori ,  menyusun hipotesis Induktif Menarik kesimpulan dari  data  khusus  →  umum Dari 100  sampel lele ,  semua berlendir  →  semua lele memiliki lendir Menemukan pola, membangun teori baru Abduktif Menyusun dugaan terbaik (penjelasan paling mungkin) dari fakta Banyak  lele mati  →  kemungkinan karena kadar oksigen rendah Membuat hipotesis awal, eksplorasi masalah Analogis Menyimpulkan berdasarkan kesamaan dengan hal lain Metode  deteksi citra  pada  tanaman  →  bisa diterapkan untuk deteksi ukuran benih  ikan Adaptasi metode, pengembangan solusi Kausal Menarik hubungan sebab-akibat antar variabel Tingginya kadar amonia  →  pertumbuhan lele terhambat Menentukan hubungan antar variabel ,  analisis eksperimen
+
+--- Slide 13 ---
+METODE PENELITIAN Vs METODOLOGI PENELITIAN
+
+--- Slide 14 ---
+METODE ILMIAH Metode ialah kerangka kerja untuk melakukan suatu tindakan ,  atau suatu kerangka berpikir untuk menyusun suatu gagasan  yang  terarah  dan  terkait dengan maksud  dan  tujuan . Metode ilmiah atau proses  ilmiah merupakan  proses  keilmuan untuk memperoleh pengetahuan secara sistematis berdasarkan bukti fisis  (mengarah kepada bukti nyata yang tampak dan bukan khayalan belaka) . Metode penelitian  yang  tepat  dan  benar semakin dirasakan urgensinya bagi keberhasilan suatu penelitian .
+
+--- Slide 15 ---
+Metodologi merupakan suatu  formula  dalam penerapan penelitian dimana dalam melakukan penelitian tersebut terdapat langkah-langkah  dan juga  hasil penelitian Metodologi Penelitian dalam ilmu komputer /system  informasi / teknologi informasi merupakan  “ langkah-langkah / tahapan perencanaan dengan bantuan beberapa metode ,  teknik ,  alat  (tools) dan  dokumentasi dengan tujuan untuk membantu peneliti dalam meminimalkan resiko kegagalan  dan  menekankan  pada proses/ sasaran penelitian  di  bidang  CS/IS/IT” METODOLOGI PENELITIAN
+
+--- Slide 16 ---
+MANFAAT PENGGUNAAN METODOLOGI
+
+--- Slide 17 ---
+Peran  Penelitian  di  Politeknik Dasar  penyusunan Tugas  Akhir / skripsi Pengembangan ilmu terapan Pemecahan masalah nyata  (PPM/PKM) Publikasi ilmiah  (seminar,  jurnal ,  prosiding )
+
+--- Slide 18 ---
+Tugas Pertemuan  1 Cari 3  judul skripsi  (3  tahun terakhir )  dari ruang baca  JTI/ Perpus  Pusat  sesuai minat riset masing-masing .  foto covernya Tentukan bidang riset dari judul tersebut Analisis singkat : Apakah M asalah dalam skripsi tersebut ? Apakah Tujuan  yang  ingin diselesaikan ? Bagaimana cara penyelesaian masalah diatas ? ( Metode yang  digunakan , Gambaran  singkatnya ). Bagaimana hasil penelitian tersebut ?   kesimpulan Sebutkan Jenis  penelitian -nya ,  jelaskan alasannya . Tugas dikerjakan perorangan ,  dicetak  di  kertas  dan  dikumpulkan sesuai  jam  perkuliahan minggu ke  2 ID Nama Lab Riset JTI AI Applied Informatics DT Data Technologies IVSS Intelligent Vision and Smart System NCS Network and Cyber Security MMT Mobile dan Multimedia Tech
+

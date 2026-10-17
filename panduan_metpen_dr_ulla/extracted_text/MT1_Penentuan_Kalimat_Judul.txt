@@ -1,0 +1,23 @@
+# MT1_Penentuan_Kalimat_Judul
+
+--- Slide 1 ---
+Dr. ULLA DELFANA ROSIANI, ST., MT.  TEACHING TEAM  MATA KULIAH  METODOLOGI PENELITIAN D4 Teknik Informatika  JTI POLINEMA PENULISAN KALIMAT JUDUL -  Materi  Tambahan Metodologi Penelitian -
+
+--- Slide 2 ---
+Langkah-Langkah Menyusun KALIMAT JUDUL  Penelitian Tentukan  3  unsur utama dalam judul Gunakan pola struktur kalimat judul Pastikan konsisten dengan  RP, RQ, dan RO Hindari kesalahan umum
+
+--- Slide 3 ---
+1️⃣  Tentukan  3  unsur utama dalam judul Judul penelitian  yang  baik  di  bidang Informatika biasanya mengandung  3  komponen utama : Obyek Penelitian Tujuan  Penelitian Metode/ Teknologi  yang  digunakan {5C22544A-7EE6-4342-B048-85BDC9FD1C3A} Unsur Pertanyaan panduan Contoh Objek penelitian (domain) Apa yang menjadi fokus utama penelitian? Benih ikan lele Tujuan penelitian (tujuan/output) Apa yang  ingin dicapai ? Sistem penghitung otomatis Metode/teknologi yang digunakan Teknologi/metode apa yang digunakan untuk mencapai tujuan? YOLOv8, MobileNetV2,  OpenMV  Cam H7 Plus
+
+--- Slide 4 ---
+2️⃣  Gunakan pola struktur kalimat judul Beberapa pola  yang  umum digunakan  di  Polinema  dan  jurnal  Sinta/IEEE: {5C22544A-7EE6-4342-B048-85BDC9FD1C3A} Pola Format Contoh Pola 1 Pengembangan Sistem ... Menggunakan Metode ... Pengembangan Sistem Penghitung Benih Ikan Lele Otomatis Menggunakan Metode YOLOv8 dan MobileNetV2 Pola 2 Perancangan dan Implementasi ... Berbasis ... Perancangan dan Implementasi Sistem Deteksi dan Klasifikasi Ukuran Benih Ikan Lele Berbasis Deep Learning Pola 3 Analisis dan Perbandingan Metode ... Analisis dan Perbandingan Metode YOLOv8 dan Blob Detection untuk Deteksi Benih Ikan Lele Pola 4 Sistem ... dengan Fitur ... Sistem Penghitung Benih Ikan Lele dengan Fitur Klasifikasi Ukuran Otomatis Menggunakan MobileNetV2 Pola 5 Optimasi ... untuk ... Optimasi  Model YOLOv8  untuk Pendeteksian  dan  Penghitungan Benih  Ikan Lele  secara  Real-time
+
+--- Slide 5 ---
+3️⃣  Pastikan konsisten dengan  RP, RQ, dan RO Judul harus menjawab  garis  besar : RP ( masalah ): perhitungan  dan  klasifikasi  manual  tidak efisien RQ ( pertanyaan ): bagaimana mendeteksi ,  menghitung , dan  mengklasifikasi  ikan  secara otomatis RO ( tujuan ): mengembangkan sistem  AI  untuk menghitung  dan  mengelompokkan ukuran  ikan Maka  judul  yang  baik harus mencerminkan apa ,  bagaimana , dan  dengan apa .
+
+--- Slide 6 ---
+4️⃣  Hindari kesalahan umum 🚫  Jangan : Terlalu panjang  (>20 kata) Menyebutkan alat pendukung  yang  tidak utama  (mis. “ berbasis  Python OpenCV  Tkinter ”) Menggunakan istilah umum tanpa fokus  ( misal : “ berbasis  AI”  saja tanpa menyebut metode utama ) ✅  Sebaiknya : Gunakan istilah spesifik  dan  terukur  (YOLOv8, MobileNetV2) Awali dengan  kata  kerja penelitian  ( Pengembangan ,  Perancangan ,  Implementasi ,  Analisis )
+
+--- Slide 7 ---
+Contoh Judul  Final  Berdasarkan Kombinasi  RP–RQ–RO {5C22544A-7EE6-4342-B048-85BDC9FD1C3A} Tujuan Penelitian Contoh Judul yang Cocok Mengembangkan sistem otomatis penghitung dan pengelompok ikan Pengembangan Sistem Penghitung Benih Ikan Lele Otomatis Menggunakan YOLOv8 dan MobileNetV2 Meneliti performa deteksi dan klasifikasi ukuran ikan Analisis Kinerja YOLOv8 dan MobileNetV2 untuk Deteksi dan Klasifikasi Ukuran Benih Ikan Lele Membuat aplikasi real-time berbasis hardware Implementasi Sistem Penghitung Benih Ikan Lele Real-Time Berbasis OpenMV Cam H7 Plus dan YOLOv8 Mengoptimalkan proses perhitungan ikan Optimasi  Proses  Deteksi  dan  Penghitungan Benih  Ikan Lele  Berbasis  YOLOv8 dan MobileNetV2
+

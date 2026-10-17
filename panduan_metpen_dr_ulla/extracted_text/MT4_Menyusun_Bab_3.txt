@@ -1,0 +1,35 @@
+# MT4_Menyusun_Bab_3
+
+--- Slide 1 ---
+Dr. ULLA DELFANA ROSIANI, ST., MT.  TEACHING TEAM  MATA KULIAH  METODOLOGI PENELITIAN D4 Teknik Informatika  JTI POLINEMA PANDUAN PENULISAN  BAB 3-METODOLOGI PENELITIAN -  Materi  Tambahan Metodologi Penelitian -
+
+--- Slide 2 ---
+Tujuan Bab III Menjelaskan bagaimana penelitian dilakukan untuk mencapai tujuan  (RO) dan  menjawab rumusan masalah  (RQ). Bab  ini harus menjelaskan langkah-langkah secara ilmiah ,  terstruktur , dan  dapat direplikasi .
+
+--- Slide 3 ---
+Susunan  Bab 3  Metodologi Penelitian  Proposal  Skripsi 3.1  Waktu dan  Tempat Penelitian 3.2 Data dan  Sumber  Data 3.3  Tahapan Penelitian  / Alur  Metodologi 3.4 Metode  Pengumpulan  Data 3.5  Metode Pengolahan Data / Implementasi Sistem 3.6 Metode  Pengujian  dan  Evaluasi 3.7  Perangkat  dan Tools  Penelitian
+
+--- Slide 4 ---
+1.  Waktu dan  Tempat Penelitian Tulis  waktu pelaksanaan  dan  lokasi penelitian  ( bisa laboratorium atau lapangan ).  Contoh : Penelitian dilaksanakan selama bulan  Maret–Juli 2026 di  Laboratorium  Intelligent Vision and Smart Systems (IVSS),  Jurusan Teknologi Informasi ,  Politeknik  Negeri Malang ,  serta  di  kolam pembenihan  ikan  lele  Mitra Desa  Ngantang untuk pengambilan  data video.
+
+--- Slide 5 ---
+2.  Data dan  Sumber  Data Menjelaskan jenis ,  bentuk , dan  sumber  data: Jenis data: video,  citra , data  hasil klasifikasi . Sumber :  hasil rekaman langsung , dataset  publik ,  atau hasil labeling . Contoh : Data yang  digunakan berupa video  benih  ikan  lele berukuran kecil ,  sedang , dan  besar  yang  direkam menggunakan kamera OpenMV  Cam H7 Plus  dan  webcam  resolusi  1080p .  Setiap  video  berdurasi  10–30  detik dengan kondisi pencahayaan berbeda . Selain  itu , data juga  diperoleh dari hasil labeling  manual  menggunakan perangkat lunak LabelImg .
+
+--- Slide 6 ---
+3.  Tahapan Penelitian  / Alur  Metodologi Sub- bab ini adalah  inti  dari  Bab III. Tampilkan diagram  alur penelitian  (flowchart),  kemudian jelaskan tiap tahap dalam  1–2  paragraf .
+
+--- Slide 7 ---
+4.  Metode  Pengumpulan  Data Jelaskan teknik  yang  digunakan untuk mengumpulkan  data. Contoh teknik :  observasi langsung ,  pengambilan gambar /video,  dokumentasi , dataset  sekunder .
+
+--- Slide 8 ---
+5.  Metode Pengolahan Data / Implementasi Sistem Rinci setiap tahapan teknis berdasarkan metode  yang  digunakan . Contoh  sub- struktur : Preprocessing Data Pelatihan  Model YOLOv8 Klasifikasi dengan  MobileNetV2 Integrasi  Deteksi – Klasifikasi Implementasi  pada  Sistem  Real-Time
+
+--- Slide 9 ---
+6.  Metode  Pengujian  dan  Evaluasi Sub- bab ini menjelaskan cara menilai kinerja sistem . Parameter yang  umum digunakan : Akurasi  (Accuracy) Presisi  (Precision) Recall F1-Score FPS (Frame per Second) Waktu Proses
+
+--- Slide 10 ---
+7.  Perangkat  dan Tools  Penelitian Sebutkan semua perangkat keras  dan  lunak  yang  digunakan . Contoh tabel : {E8B1032C-EA38-4F05-BA0D-38AFFFC7BED3} Jenis Spesifikasi Hardware Laptop Intel i7, RAM 16 GB, GPU RTX 3060, OpenMV Cam H7 Plus Software Python 3.10, OpenCV, TensorFlow, Ultralytics YOLOv8, LabelImg Dataset Tools Roboflow, Google Colab OS Windows 11 & Linux Ubuntu 22.04
+
+--- Slide 11 ---
+TIPS PRAKTIS PENYUSUNAN BAB III {E8B1032C-EA38-4F05-BA0D-38AFFFC7BED3} Aspek Pedoman Panjang ideal ± 10–15 halaman Bahasa Naratif-deskriptif, sistematis, hindari bahasa teknis berlebihan Gambar Gunakan flowchart dan diagram arsitektur sistem Konsistensi Semua tahapan harus menjawab Rumusan Masalah (Bab I) dan sesuai teori (Bab II) Referensi Cantumkan sumber setiap metode atau rumus yang diambil dari literatur Evaluasi akhir Tambahkan kriteria keberhasilan ,  misalnya : “ Sistem dinyatakan berhasil jika akurasi deteksi  ≥90% dan FPS ≥25.”
+

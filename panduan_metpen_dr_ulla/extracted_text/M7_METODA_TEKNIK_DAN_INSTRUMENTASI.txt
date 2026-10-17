@@ -1,0 +1,194 @@
+# M7_METODA_TEKNIK_DAN_INSTRUMENTASI
+
+--- Slide 1 ---
+Dr. ULLA DELFANA ROSIANI, ST., MT.  TEACHING TEAM  MATA KULIAH  METODOLOGI PENELITIAN D4 Teknik Informatika  JTI POLINEMA METODE, TEKNIK, INSTRUMEN -  Materi Metodologi Penelitian ke  7 -
+
+--- Slide 2 ---
+TUJUAN PEMBELAJARAN Setelah mengikuti pertemuan ini ,  mahasiswa mampu : Menjelaskan perbedaan antara metode ,  teknik , dan  instrumen penelitian . Menentukan metode penelitian  yang  tepat sesuai tujuan  dan  jenis datanya . Memilih teknik pengumpulan serta analisis  data  yang  relevan . Menentukan  dan  merancang instrumen penelitian ( alat ukur , tools, software, sensor,  dsb .).
+
+--- Slide 3 ---
+PENGANTAR UMUM Dalam  penelitian ,  tujuan  dan  hasil tidak akan tercapai tanpa cara  ( metode ),  langkah  ( teknik ), dan  alat  ( instrumen )  yang tepat . Banyak  mahasiswa sudah  punya  judul skripsi tapi belum tahu bagaimana cara menyelesaikannya . Di  sinilah pentingnya memahami tiga komponen utama penelitian : Metode →  arah  dan  pendekatan penelitian Teknik →  langkah praktis  yang  dilakukan Instrumen  →  alat bantu pengumpulan  data
+
+--- Slide 4 ---
+PENGERTIAN DASAR Strategi  umum atau pendekatan  yang  digunakan  untuk  mencapai tujuan penelitian . Ini  mencakup keseluruhan rencana penelitian . Contoh : Metode  eksperimen  untuk  menguji  model  deteksi objek  YOLOv8. METODE PENELITIAN Cara atau prosedur pelaksanaan metode penelitian.  Teknik  lebih fokus  pada  pelaksanaan  dan  merupakan langkah-langkah praktis dalam menerapkan metode . Contoh : Teknik  pengumpulan  data  menggunakan  dataset  publik  (COCO, ImageNet)  atau observasi langsung . TEKNIK PENELITIAN Alat  bantu  yang  digunakan  untuk  mengumpulkan  data. Ini  dapat berupa kuesioner ,  lembar observasi ,  atau perangkat  lain yang  membantu dalam pengumpulan  data. Contoh : Kamera  OpenMV  H7, sensor TDS,  kuisioner , form  observasi ,  atau  software Python-OpenCV. INSTRUMEN PENELITIAN Secara singkat ,  metode adalah pendekatan umum ,  teknik adalah cara spesifik dalam metode , dan  instrumen adalah alat  yang  digunakan untuk mengumpulkan  data
+
+--- Slide 5 ---
+Analogi Sederhana {073A0DAA-6AF3-43AB-8588-CEC1D06C72B9} Komponen Analogi Dalam  penelitian Metode (strategi umum) Memilih  cara perjalanan : naik kereta, pesawat, atau mobil. Menentukan pendekatan: kualitatif, kuantitatif, eksperimen, dll. Teknik (langkah praktis) Menentukan  rute dan aktivitas:  beli tiket, naik kendaraan, berhenti di stasiun tertentu. Langkah-langkah pelaksanaan seperti observasi, wawancara, pengujian model. Instrumen (alat bantu) Alat yang dipakai: tiket, GPS, koper. Alat ukur: kamera, sensor, kuesioner, perangkat lunak. Analogi mudah : Metode  adalah  “ strategi  perang ”,  teknik adalah  “ taktik  di  lapangan ”, dan  instrumen adalah  “ senjata ”.
+
+--- Slide 6 ---
+ILUSTRASI KONSEP SEDERHANA Contoh Informatika : Penelitian :  Sistem Deteksi  Wajah  Otomatis Metode: Eksperimen kuantitatif Teknik: Observasi citra wajah  dan uji model CNN Instrumen :  Kamera, Python OpenCV, dataset  wajah Analogi mudah : Metode  adalah  “ strategi  perang ”,  teknik adalah  “ taktik  di  lapangan ”, dan  instrumen adalah  “ senjata ”.
+
+--- Slide 7 ---
+Mengapa Harus Memahami Metode, Teknik, dan Instrumen? Metode,  teknik , dan  instrumen merupakan fondasi utama penelitian ilmiah  di  bidang apa  pun —  baik akademik ,  industri ,  maupun pengembangan sistem . Pemahaman  yang  tepat membantu peneliti : Menentukan pendekatan ilmiah  yang  sesuai dengan tujuan riset . Menyusun strategi  pengumpulan  dan  analisis  data yang valid dan  efisien . Memilih alat ukur atau perangkat  uji yang  reliabel sesuai konteks penelitian . Dengan memahami ketiga komponen ini : Proses  penelitian menjadi lebih sistematis ,  terukur , dan  dapat direplikasi . Hasil  penelitian memiliki kredibilitas ilmiah  dan  nilai aplikatif  yang  tinggi . Tim  peneliti dapat berkolaborasi dengan arah metodologis  yang  seragam .
+
+--- Slide 8 ---
+METODE PENELITIAN
+
+--- Slide 9 ---
+Metode Dalam  Penelitian adalah strategi  umum atau pendekatan ilmiah  yang  digunakan peneliti  untuk  mencapai tujuan penelitian melalui  proses yang  rasional ,  empiris , dan  sistematis ,  mencakup langkah-langkah dalam pengumpulan ,  analisis , dan  interpretasi  data. Dengan  kata lain: Strategi  umum  →  menjelaskan arah  dan  jenis pendekatan  ( misal :  kualitatif ,  kuantitatif ,  eksperimen , R&D,  survei ). Cara  ilmiah  →  menjelaskan bagaimana  strategi  itu dijalankan sesuai prinsip keilmuan  ( rasional ,  empiris ,  sistematis ). Jadi,  metode penelitian adalah “ cara ilmiah secara strategis  untuk  sampai ke tujuan penelitian .”
+
+--- Slide 10 ---
+Jenis Metode  Penelitian
+
+--- Slide 11 ---
+1️⃣  Berdasarkan  Tujuan  Penelitian Fokus:  “Untuk apa penelitian ini dilakukan?” {00A15C55-8517-42AA-B614-E9B94910E393} Jenis Tujuan Utama Penjelasan Singkat Contoh Bidang  IT Eksploratif (Explorative Research) Menemukan pengetahuan baru atau ide awal Belum ada teori yang kuat; bersifat penjajakan Studi awal tentang perilaku pengguna AI Chatbot di kampus Pengembangan (Development / R&D) Mengembangkan sistem , model,  atau alat baru Menghasilkan prototipe yang bisa diuji dan diperbaiki Membangun sistem deteksi ikan otomatis berbasis YOLOv8 Verifikatif (Verificative / Eksperimen) Menguji teori atau hubungan sebab-akibat Ada hipotesis yang diuji dengan data terukur Menguji pengaruh parameter training terhadap akurasi CNN Deskriptif (Descriptive) Mendeskripsikan kondisi atau fenomena saat ini Tidak ada manipulasi variabel Mendeskripsikan perilaku login pengguna e-learning Polinema Historis (Historical) Menggambarkan peristiwa atau perkembangan masa lalu Analisis dokumen, arsip, catatan historis Studi  evolusi  framework deep learning  sejak  2015
+
+--- Slide 12 ---
+2️⃣  Berdasarkan Pendekatan  Data Fokus :  “Jenis data  apa  yang  digunakan ?” {00A15C55-8517-42AA-B614-E9B94910E393} Jenis Ciri Utama Contoh Kuantitatif Data berupa angka, dapat diukur dan dianalisis statistik Mengukur akurasi model klasifikasi wajah menggunakan confusion matrix Kualitatif Data berupa narasi, deskripsi, wawancara, observasi Menganalisis persepsi pengguna terhadap UI aplikasi e-learning Mixed Method (Campuran) Menggabungkan  data  numerik  dan  deskriptif  untuk  hasil  yang  lebih komprehensif Menguji kinerja sistem  AI ( kuantitatif ) dan  menilai kemudahan penggunaannya  ( kualitatif )
+
+--- Slide 13 ---
+3️⃣  Berdasarkan Prosedur Pelaksanaan Fokus :  “ Bagaimana langkah penelitiannya dilakukan ?” {00A15C55-8517-42AA-B614-E9B94910E393} Jenis Ciri-Ciri Contoh Eksperimen Ada perlakuan, variabel dikontrol Menguji akurasi YOLOv8 vs Blob Detection Survey Mengumpulkan data dari banyak responden Survei kepuasan pengguna aplikasi akademik Observasi Mengamati fenomena secara langsung Merekam pergerakan ikan lele dalam video Studi Kasus Meneliti secara mendalam pada satu objek Analisis performa sistem presensi wajah di Polinema Action Research (Penelitian Tindakan) Dilakukan secara kolaboratif  untuk  memperbaiki  proses Meningkatkan efisiensi pembelajaran  IoT  melalui  uji  coba modul  digital
+
+--- Slide 14 ---
+4️⃣  Berdasarkan  Waktu  Pelaksanaan Fokus :  “Kapan data  dikumpulkan ?” {00A15C55-8517-42AA-B614-E9B94910E393} Jenis Keterangan Contoh Cross-sectional Data dikumpulkan sekali pada satu waktu tertentu Pengujian performa YOLOv8 pada dataset video 1 kali uji Longitudinal Data dikumpulkan berulang dalam jangka waktu tertentu Pemantauan  sensor IoT air  tambak selama  3  bulan
+
+--- Slide 15 ---
+5️⃣ Berdasarkan Lingkungan Penelitian Fokus:  “Dilakukan di mana?” {00A15C55-8517-42AA-B614-E9B94910E393} Jenis Deskripsi Contoh Laboratorium (Lab Research) Dilakukan dalam kondisi terkendali Uji performa model CNN di komputer GPU Lapangan (Field Research) Dilakukan di lingkungan nyata Pengujian alat penghitung  ikan di  kolam lele langsung
+
+--- Slide 16 ---
+Jenis Metode  Penelitian dalam Bidang Informatika {073A0DAA-6AF3-43AB-8588-CEC1D06C72B9} Jenis Metode Tujuan Ciri-ciri Contoh Kasus Metode  Eksperimen Menguji hubungan sebab-akibat antara variabel. Ada perlakuan dan kontrol variabel. Menguji akurasi model YOLOv8 dibanding Blob Detection pada deteksi benih ikan lele. Metode  Deskriptif Mendeskripsikan fenomena atau sistem yang ada. Tidak ada manipulasi variabel. Mendeskripsikan pola pergerakan ikan lele berdasarkan hasil tracking video. Metode  Kualitatif Memahami makna, persepsi, dan konteks. Data berupa narasi, observasi, wawancara. Wawancara petani lele  untuk  mengetahui kebutuhan sistem  IoT monitoring air. Metode  Kuantitatif Menguji hipotesis dengan data numerik. Data terukur dan dapat diolah statistik. Menghitung akurasi, precision, recall model klasifikasi gambar. Metode Research and Development (R&D) Menghasilkan produk atau prototipe. Melalui tahapan analisis, desain, implementasi, uji coba. Mengembangkan alat penghitung benih  ikan  otomatis berbasis kamera .
+
+--- Slide 17 ---
+Menentukan  Metode  Penelitian  yang  Tepat Gunakan 3  langkah logis berikut : Lihat dari tujuan penelitian Jika  ingin menjelaskan fenomena  →  Deskriptif Jika  ingin menguji hubungan sebab akibat  →  Eksperimen Jika  ingin mengembangkan produk / sistem  → R&D Lihat dari jenis  data Data  angka  →  Kuantitatif Data  naratif / observasi  →  Kualitatif Kombinasi keduanya  → Mixed Method Lihat dari pendekatan teknis Apakah berbasis algoritma ,  eksperimen laboratorium ,  atau survei ?
+
+--- Slide 18 ---
+Apakah bedanya dengan Metodologi Penelitian? Metodologi adalah studi tentang pendekatan atau  strategi  penelitian secara keseluruhan ,  mencakup pemilihan metode  yang  tepat  dan  rasional untuk menjawab pertanyaan penelitian .  Metodologi menjelaskan mengapa metode tertentu dipilih dan bagaimana metode tersebut sesuai dengan kerangka kerja teori dan tujuan penelitian .  Sebagai contoh ,  dalam penelitian kualitatif ,  metodologi  yang  sering digunakan adalah fenomenologi atau etnografi , yang  menjelaskan alasan dan konteks dalam memilih wawancara mendalam sebagai metode pengumpulan  data. Perbedaannya ,  metode adalah langkah praktis atau teknik  yang  digunakan ,  sedangkan metodologi lebih luas ,  mencakup pemikiran dan alasan  di  balik pemilihan metode tersebut .
+
+--- Slide 19 ---
+Contoh Metodologi Penelitian: Metode Kuantitatif Pengertian :  Metode kuantitatif adalah pendekatan penelitian  yang  mengutamakan pengumpulan dan analisis  data  numerik .  Peneliti menggunakan statistik untuk menganalisis  data  dan menguji hipotesis . Contoh Kasus :  Sebuah penelitian untuk mengetahui pengaruh metode pembelajaran baru terhadap hasil belajar siswa .  Peneliti dapat membagi siswa menjadi dua kelompok :  satu kelompok menggunakan metode baru dan kelompok lainnya menggunakan metode tradisional .  Setelah  proses  pembelajaran ,  peneliti membandingkan hasil ujian kedua kelompok secara statistik . Langkah-langkah  metodologi penelitian yang dilakukan : Perumusan Masalah :  Menentukan pertanyaan penelitian  yang  jelas dan terukur . Pengumpulan  Data :  Menggunakan instrumen seperti kuesioner untuk mengumpulkan  data  dari responden .  Misalnya ,  survei untuk mengetahui kepuasan pelanggan . Analisis  Data :  Menggunakan  software  statistik  ( seperti  SPSS  atau  R)  untuk menganalisis  data yang  telah dikumpulkan . Interpretasi Hasil :  Menginterpretasikan hasil analisis untuk menarik kesimpulan dan merekomendasikan tindakan . Metode kuantitatif memungkinkan peneliti untuk menggeneralisasi temuan dari sampel ke populasi  yang  lebih luas ,  sehingga memberikan bukti  yang  kuat tentang hubungan antara variabel .
+
+--- Slide 20 ---
+Contoh Metodologi Penelitian: Metode Eksperimen Metode eksperimen adalah salah satu pendekatan dalam penelitian  yang  digunakan untuk mengetahui pengaruh suatu variabel terhadap variabel  lain  dengan cara melakukan manipulasi atau perlakuan tertentu .  Contoh kasus:  Pengaruh Penggunaan Aplikasi Pembelajaran Terhadap Hasil Belajar Siswa :  Penelitian ini melibatkan dua kelompok siswa .  Satu kelompok menggunakan aplikasi pembelajaran  digital,  sedangkan kelompok lainnya mengikuti pembelajaran tradisional .  Peneliti membandingkan hasil ujian kedua kelompok untuk menentukan apakah aplikasi pembelajaran lebih efektif dalam meningkatkan hasil belajar langkah-langkah dalam metodologi penelitian eksperimen : Identifikasi Masalah :  Menentukan masalah penelitian  yang  ingin diteliti dan merumuskan hipotesis .  Misalnya , " Apakah penggunaan metode pengajaran berbasis teknologi memengaruhi hasil belajar siswa ?" Desain Eksperimen :  Merancang eksperimen dengan membagi subjek ke dalam kelompok eksperimen  (yang  menerima perlakuan )  dan kelompok kontrol  (yang  tidak menerima perlakuan ).  Ini memastikan bahwa perbedaan hasil dapat diatribusikan pada perlakuan  yang  diberikan . Pengumpulan  Data :  Melaksanakan eksperimen dan mengumpulkan  data  melalui observasi atau alat ukur  yang  telah ditentukan sebelumnya .  Contohnya ,  mengukur nilai ujian siswa sebelum dan setelah perlakuan . Analisis  Data :  Menganalisis  data yang  telah dikumpulkan menggunakan teknik statistik untuk menguji hipotesis dan melihat apakah ada perbedaan signifikan antara kelompok eksperimen dan kontrol . Kesimpulan :  Menarik kesimpulan berdasarkan analisis  data  dan menjawab pertanyaan penelitian .  Menjelaskan apakah hipotesis diterima atau ditolak dan membahas implikasi dari hasil penelitian . Metode eksperimen memungkinkan peneliti untuk mengontrol variabel dan mendapatkan  data yang  lebih akurat mengenai hubungan sebab-akibat antara variabel  yang  diteliti
+
+--- Slide 21 ---
+TEKNIK PENELITIAN
+
+--- Slide 22 ---
+Pengertian Menurut P andangan  Dari Para Ahli Teknik  penelitian merupakan cara spesifik atau langkah-langkah  yang  diambil  oleh  peneliti untuk mengumpulkan  dan  menganalisis  data  dalam rangka menjawab pertanyaan penelitian . Teknik  penelitian lebih fokus  pada  langkah-langkah praktis dalam pelaksanaan metode yang  telah ditetapkan John W. Creswell:  Ia mengklasifikasikan teknik penelitian menjadi kuantitatif ,  kualitatif ,  dan campuran  (mixed methods).  Masing-masing teknik memiliki karakteristik ,  tujuan ,  dan  proses yang  berbeda , di mana  kuantitatif lebih mengedepankan angka dan statistik ,  sedangkan kualitatif lebih pada pemahaman mendalam tentang fenomena . Sugiyono :  Dalam bukunya ,  ia menyatakan bahwa teknik penelitian dapat dibedakan menjadi teknik pengumpulan  data,  analisis  data,  dan interpretasi  data.  Teknik ini penting untuk menjamin integritas dan kredibilitas penelitian . Umar  Sholeh :  Ia mengemukakan bahwa pemilihan teknik penelitian seharusnya disesuaikan dengan tujuan penelitian dan jenis  data yang  ingin diperoleh ,  baik itu  data primer  maupun sekunder .
+
+--- Slide 23 ---
+
+
+--- Slide 24 ---
+Menentukan  Teknik  Pengumpulan  Data {073A0DAA-6AF3-43AB-8588-CEC1D06C72B9} Jenis Teknik Penjelasan Contoh Implementasi Observasi langsung Mengamati objek di lapangan. Merekam pergerakan ikan dengan kamera underwater. Eksperimen laboratorium Melakukan percobaan dengan kontrol tertentu. Menguji kecepatan deteksi model YOLOv8 di PC dan Raspberry Pi. Dokumentasi/dataset sekunder Mengambil data dari dataset publik. Menggunakan  dataset ImageNet untuk training CNN. Wawancara/Kuisioner Mengumpulkan data persepsi pengguna. Menanyakan tingkat kemudahan sistem  IoT  melalui kuesioner .
+
+--- Slide 25 ---
+Langkah-Langkah  Menentukan  Teknik  Pengumpulan  Data {00A15C55-8517-42AA-B614-E9B94910E393} Langkah Pertanyaan Panduan Penjelasan  /  Contoh 1️⃣ Tentukan jenis data Apakah data yang dibutuhkan berupa angka, citra, teks, atau opini? - Angka → kuantitatif (uji akurasi, hasil sensor) - Narasi → kualitatif (pendapat, pengalaman) - Citra/video → visual (pengolahan citra, AI) 2️⃣ Sesuaikan dengan metode penelitian Apakah penelitian Anda bersifat eksperimen, survei, kualitatif, atau R&D? - Eksperimen → observasi & pengukuran hasil uji - Survei → kuesioner / wawancara - Kualitatif → wawancara mendalam / observasi lapangan - R&D → kombinasi observasi, uji coba, dokumentasi 3️⃣ Tentukan sumber data Dari mana data diperoleh? - Lapangan / laboratorium - Dataset publik (COCO, Kaggle) - Dokumen instansi - Responden (pengguna sistem) 4️⃣ Pilih teknik paling efektif dan valid Teknik mana yang paling sesuai untuk memperoleh data akurat, efisien, dan dapat diulang? Pilih teknik yang: - Bisa diukur dengan jelas (kuantitatif) - Dapat diverifikasi oleh peneliti lain (empiris) 5️⃣ Tentukan instrumen pendukungnya Alat apa yang diperlukan untuk teknik tersebut? - Kamera, sensor, software Python (untuk  observasi  visual) -  Kuesioner  Google Form (untuk  survei ) - Dataset & tools  analisis  (untuk  eksperimen  AI)
+
+--- Slide 26 ---
+Jenis-Jenis Teknik Pengumpulan Data (dan Kapan Digunakan) {00A15C55-8517-42AA-B614-E9B94910E393} Teknik Deskripsi Singkat Cocok untuk Penelitian Contoh Implementasi di Bidang IT 1. Observasi Langsung Mengamati objek, perilaku, atau fenomena secara langsung. Eksperimen, R&D, sistem real-time. Merekam pergerakan ikan dengan kamera underwater untuk deteksi YOLOv8. 2. Eksperimen Laboratorium Melakukan uji coba dengan variabel yang dikontrol. Penelitian AI, Machine Learning, IoT. Menguji performa model CNN dengan variasi epoch dan batch size. 3. Dokumentasi / Dataset Sekunder Menggunakan data yang sudah tersedia. AI, Data Mining, Prediksi, Text Mining. Menggunakan dataset ImageNet atau COCO untuk pelatihan model. 4. Wawancara Menggali pendapat, pengalaman, atau persepsi individu. Kualitatif, evaluasi sistem, usability. Wawancara pengguna untuk menilai kemudahan sistem e-learning. 5. Kuesioner / Survei Mengumpulkan data dari banyak responden dengan pertanyaan terstruktur. Evaluasi sistem, kepuasan pengguna, HCI. Menggunakan kuesioner SUS (System Usability Scale) untuk mengukur user experience. 6. Studi Pustaka (Literature Review) Mengumpulkan teori, konsep, dan hasil penelitian terdahulu. Tahapan awal semua penelitian. Mempelajari penelitian  YOLOv8 dan MobileNetV2  sebagai dasar perancangan sistem .
+
+--- Slide 27 ---
+Tips Menentukan Teknik yang Tepat Sesuaikan teknik dengan jenis  data dan  tujuan penelitian . Gunakan lebih dari satu teknik bila perlu  ( misal observasi  +  dokumentasi ). Pastikan teknik  yang  digunakan menghasilkan  data  yang valid,  reliabel , dan  relevan . Jika  penelitian berbasis sistem ,  sertakan bukti seperti log data,  hasil  uji, screenshot,  atau  output program.
+
+--- Slide 28 ---
+INSTRUMEN PENELITIAN
+
+--- Slide 29 ---
+Pengertian Instrumen Penelitian Menurut  Para Ahli Instrumen dalam penelitian  Adalah  Alat  bantu  yang  digunakan  untuk  mengumpulkan  data. Berfungsi untuk  menjelaskan dengan apa  data  dikumpulkan .  Suharsimi Arikunto Instrumen adalah alat  bantu yang  digunakan oleh peneliti ketika mengumpulkan  data.  Tujuannya  agar  penelitian sistematis dan mudah . Ibnu  Hajar instrumen penelitian merupakan alat ukur  yang  dipakai untuk mendapatkan informasi kuantitatif  yang  berisi variabel berkarakter dan objektif .  N otoatmodjo Pengertian instrumen penelitian berikutnya adala alat-alat  yang  digunakan untuk mendapatkan atau mengumpulkan  data.  Caranya bisa dengan menggunakan kuesioner ,  formulir observasi ,  formulir  lain yang  berkaitan dengan pencatatan  data,  dan  lain-lain.  Kesimpulan  analogi : →  Teknik adalah cara melakukannya ,  sedangkan instrumen adalah alat  untuk  melakukannya .
+
+--- Slide 30 ---
+I nstrumen Penelitian Kuantitatif & I nstrumen Penelitian Kualitatif Instrumen  penelitian kualitatif Kualitatif berfokus pada  pengumpulan data deskriptif dan pemahaman mendalam . Instrumennya fleksibel dan sering digunakan untuk mengeksplorasi fenomena sosial secara mendalam. Contoh instrumen: wawancara mendalam (in-depth interview), observasi partisipatif, dan dokumen atau arsip. Penggunaan: Seorang peneliti yang ingin memahami pengalaman seseorang dapat menggunakan  wawancara mendalam , di mana peneliti  mengajukan pertanyaan terbuka dan membiarkan responden bercerita Instrumen  penelitian kuantitatif ,  Kuantitatif berfokus pada data yang  dapat diukur atau dihitung secara numerik . Instrumen ini bersifat lebih terstruktur dan sering berupa alat ukur yang menghasilkan data statistik. Contoh instrumen: kuesioner tertutup, tes terstandar, atau skala Likert. Penggunaan: Dalam survei untuk mengukur kepuasan pelanggan, peneliti bisa menggunakan  kuesioner dengan pertanyaan pilihan ganda  yang kemudian dianalisis secara statistik
+
+--- Slide 31 ---
+Instrumen Penelitian Eksperimen Instrumen penelitian dalam penelitian eksperimen adalah alat atau metode  yang  digunakan untuk mengumpulkan  data  dan mengukur variabel  yang  diuji .  Beberapa instrumen umum  yang  digunakan dalam penelitian eksperimen antara  lain: Kuesioner dan angket :  Digunakan untuk mengumpulkan  data  dari partisipan melalui pertanyaan tertulis . Observasi :  Mengamati secara langsung perilaku atau kondisi  yang  diuji . Tes atau pengujian :  Digunakan untuk mengukur perubahan atau hasil pada variabel  yang  diuji ,  misalnya tes kinerja atau pengetahuan . Alat ukur elektronik :  Dalam penelitian eksperimental  yang  lebih teknis ,  instrumen seperti  sensor,  detektor ,  atau alat pengukur lainnya juga digunakan untuk mendapatkan  data  kuantitatif Instrumen  yang  dipilih harus memiliki validitas  ( kemampuan untuk mengukur apa  yang  dimaksudkan )  dan reliabilitas  ( konsistensi hasil pengukuran )  untuk memastikan kualitas  data yang  dikumpulkan
+
+--- Slide 32 ---
+Jenis-jenis Instrumen Penelitian Kuesioner Wawancara Observasi Diskusi Kelompok Terfokus  ( Focus Group Discussion ) Eksperimen atau Percobaan
+
+--- Slide 33 ---
+Kuesioner  Dan  Wawancara Merupakan teknik  yang  banyak dipakai dalam pengujian validitas penelitian / skripsi  yang  bersifat kualitatif Merupakan teknik penting untuk pengambilan  data Kualitas  data  ditentukan  oleh daftar  pertanyaan  yang  dibuat Biasanya dipakai untuk menguji kebutuhan  non- fungsional
+
+--- Slide 34 ---
+Kuesioner  vs Interview {073A0DAA-6AF3-43AB-8588-CEC1D06C72B9} Aspek Kuesioner Wawancara Interaksi Tidak lagnsung Langsung Informasi  yang  didapat Sesuai dengan  daftar  pertanyaan Bisa diperluas Jumlah peserta Tidak terbatas Terbatas Jumlah pertanyaan Tidak terbatas Tergantung alokasi waktu Sifat pertanyaan Umumnya bersifat  close-ended question Umumnya bersifat  open-ended question Perhitungan skor obyektif Subyektif
+
+--- Slide 35 ---
+Daftar P ertanyaan Menentukan kualitas  data Tidak bisa dibuat sembarangan Untuk bidang  RPL,  biasanya berkaitan dengan kebutuhan  non- fungsional Setiap pertanyaan harus memiliki dasar Contoh  “ dasar ”  pertanyaan  yang  dibuat  : Pertanyaan berdasarkan aspek kebergunaan  software  untuk menguji kualitas  software Apakah  software yang  dibuat sudah memiliki semua fitur  yang  dibutuhkan untuk pekerjaan anda ? Apakah  software yang  dibuat terasa lambat saat digunakan ?
+
+--- Slide 36 ---
+Open vs Closed Question Ada  dua macam pertanyaan  pada  kuesioner  dan interview Open :  pertanyaan bersifat terbuka ,  biasanya untuk menjaring pendapat Closed :  pertanyaan tertutup ,  jawabannya merupakan pilihan  yang  disediakan penanya atau ya  dan  tidak {073A0DAA-6AF3-43AB-8588-CEC1D06C72B9} Aspek Pertanyaan  Terbuka Pertanyaan tertutup Responden Sedikit /  hanya  stakeholder Banyak/ umum Bentuk pertanyaan Essay/ pendapat Pilihan ganda , yes no question instrumen Biasanya  interview Biasanya kuesioner Kelebihan Insight  lebih dalam ,  pengetahuan  yang  didapat lebih luas Mudah dikuantifikasi  dan  direkap ,  responden lebih banyak ,  mengurangi  noise Kelemahan Susah  direkap ,  responden lebih sedikit ,  banyak  noise Bias  tergantung pertanyan ,  penentuan pertanyaan harus  extra  hati-hati
+
+--- Slide 37 ---
+Kuesioner /interview tips  dan trik Pilih responden  yang  sesuai Awali dengan salam  dan  perkenalan Sebutkan  TUJUAN KUESIONER Jamin kerahasiaan responden Berikan pertanyaan  pada  waktu  yang  tepat Gunakan  tool  sesuai kapasitas responden
+
+--- Slide 38 ---
+Kuesioner /interview tips dan  trik Hindari menanyakan hal  yang  bersifat pribadi Hal- hal seperti  :  jumlah pendapatan , status, dsb Hindari penggunaan istilah  yang  tidak umum Apakah aplikasi berjalan dengan baik saat dibuka  di  Android ? ->  Apakah aplikasi berjalan dengan baik saat dibuka  di handphone? Apakah UI software  sudah cukup menarik ? ->  Apakah tampilan  program  sudah cukup menarik ? Gunakan kalimat baku dengan tetap memperhatikan sopan santun Apakah anda dapat melakukan  login? ->  apakah fitur  login  sudah dapat berjalan dengan baik ?
+
+--- Slide 39 ---
+Kuesioner /Interview  Bias Bias->  tidak  fair Kuesioner /interview bias : proses  kuesioner /interview yang  tidak  fair yang  hasilnya diarahkan ke tujuan tertentu Contoh  :  kuesioner skripsi  yang  respondennya teman angkatan sendiri Kuesioner dosen sebelum nilai perkuliahan keluar Merupakan faktor  valid  tidaknya penelitian
+
+--- Slide 40 ---
+Kuesioner /Interview  Bias Cara  menghindari Pilih responden  yang  obyektif Buat pertanyaan  yang  singkat  dan  jelas Tanyakan kuesioner /interview pada  responden  yang  banyak  dan  dari berbagai kalangan  yang  cakupannya sesuai penelitian Jangan memberikan insentif  yang  terlalu siknifikan  pada  responden
+
+--- Slide 41 ---
+Menentukan  dan  Merancang Instrumen Penelitian Instrumen harus : Relevan dengan variabel penelitian . Terukur  ( memiliki indikator kuantitatif / kualitatif ). Teruji reliabilitas  dan  validitasnya . {073A0DAA-6AF3-43AB-8588-CEC1D06C72B9} Jenis Instrumen Bentuk Contoh di Penelitian Informatika Instrumen Fisik Alat ukur/sensor Kamera OpenMV, sensor suhu DS18B20, Raspberry Pi. Instrumen Digital Software, tool, framework Python + OpenCV, TensorFlow, LabelImg. Instrumen Kuesioner Daftar pertanyaan terstruktur Kuesioner kepuasan pengguna sistem. Instrumen Observasi Lembar pencatatan aktivitas Catatan waktu  dan  frekuensi  ikan  terdeteksi .
+
+--- Slide 42 ---
+Contoh {793D81CF-94F2-401A-BA57-92F5A7B2D0C5} No Bidang Penelitian Judul Penelitian Metode Penelitian Teknik Penelitian Instrumen Penelitian 1 AI / Computer Vision Sistem Penghitung Benih  Ikan Lele  Otomatis berbasis  YOLOv8 dan MobileNetV2 Eksperimen Kuantitatif Observasi video & uji model AI Kamera OpenMV H7 Plus, Python (OpenCV & YOLOv8), Laptop GPU, Form hasil uji akurasi 2 IoT (Internet of Things) Sistem Pemantauan Kualitas Air Kolam Lele Berbasis IoT Research and Development (R&D) Eksperimen laboratorium & pengambilan data sensor Sensor pH, sensor suhu DS18B20, ESP32, Platform Blynk/ThingSpeak, Laptop 3 Machine Learning / Data Mining Penerapan Algoritma  Random Forest untuk  Prediksi Kelulusan Mahasiswa Eksperimen Kuantitatif Pengolahan data sekunder & uji model klasifikasi Dataset akademik, Python (Scikit-learn, Pandas), Confusion Matrix Evaluator 4 Sistem Informasi / HCI Evaluasi  Usability  Aplikasi  E-Learning  Menggunakan  Metode SUS (System Usability Scale) Deskriptif Kuantitatif Survei pengguna melalui kuesioner SUS online Google Form, Ku
+
+--- Slide 43 ---
+Contoh Kasus
+
+--- Slide 44 ---
+Permasalahan  Umum  Mahasiswa Judul / topik sudah ada ,  tapi belum tahu bagaimana cara menyelesaikannya .  Metode  penelitian belum ditentukan .  Belum  tahu alat / instrumen apa  yang  diperlukan . Contoh :  Sistem penghitung  ikan  lele otomatis berbasis  AI,  tapi belum tahu pakai  YOLO, CNN,  atau lainnya .
+
+--- Slide 45 ---
+Konsep  Dasar: Metode, Teknik,  Instrumen M e tode :  Pendekatan ilmiah untuk memecahkan masalah . Teknik: Cara  atau langkah operasional dalam menerapkan metode . Instrumen : Alat  atau sarana untuk mengumpulkan  data. Contoh :  Metode  eksperimen  →  teknik observasi  video →  instrumen kamera OpenMV .
+
+--- Slide 46 ---
+Mengapa Pemilihan  Metode  Penting ? Metode yang  tepat menentukan validitas hasil penelitian . Contoh : Salah  metode  →  hasil tidak akurat . Tepat metode  →  hasil objektif  dan  terukur .
+
+--- Slide 47 ---
+Langkah 1:  Analisis Fokus Masalah Contoh Judul :  Sistem Penghitung Benih  Ikan Lele  Otomatis berbasis  AI. Lihat kata kunci utama dan tentukan  apa inti permasalahannya . Kata  kunci :  Penghitung ,  Otomatis , AI. Fokus masalah : Menghitung jumlah  ikan (counting) Otomatis  ( tanpa campur tangan manusia ) Menggunakan Artificial Intelligence ➡️  Artinya :  permasalahan  inti  adalah pendeteksian objek bergerak  (ikan)  dan  penghitungan otomatis .
+
+--- Slide 48 ---
+Langkah 2: Tentukan Tujuan Penelitian Tuliskan secara eksplisit ,  karena tujuan menentukan metode  (RO) Contoh  Tujuan: Mendeteksi keberadaan  ikan pada video. Menghitung jumlah  ikan yang  melewati  area  tertentu . Mengklasifikasikan  ikan  berdasarkan ukuran . ➡️ Dari  sini kita tahu penelitian melibatkan deteksi ,  tracking ,  counting  dan  klasifikasi .
+
+--- Slide 49 ---
+Langkah 3:  Identifikasi  Jenis Data Kenali  bentuk  data  yang  digunakan karena jenis  data  menentukan metode  yang  cocok . {6E25E649-3F16-4E02-A733-19D2CDBF48F0} Jenis Data Contoh Metode AI yang  Cocok Data Gambar Citra ikan dari kamera CNN, YOLO, ResNet Data Video Video pergerakan ikan YOLO + SORT/DeepSORT Data Sensor Nilai suhu, pH, TDS Decision Tree, Random Forest Data Teks Deskripsi kualitas  ikan NLP, Text Classification ➡️  Karena  datanya gambar /video ,  maka Metode AI yang  cocok →  gunakan CNN, YOLO,  ResNet atau Yolo+SORT / DeepSORT .
+
+--- Slide 50 ---
+Langkah 4:  Tentukan  Output yang  Diharapkan Apa  hasil akhir  yang  diinginkan dari sistem ? {793D81CF-94F2-401A-BA57-92F5A7B2D0C5} Tujuan Output Contoh Metode AI Mendeteksi posisi objek YOLO, Faster R-CNN, SSD Menghitung jumlah objek YOLO + Tracking (SORT/DeepSORT) Mengelompokkan ukuran ikan MobileNetV2, ResNet50 Memprediksi waktu panen LSTM, Regression Model ➡️  Jika  fokusnya menghitung sesuai kelompok ukuran  ikan ,  maka Contoh kombinasi metode : YOLOv8 ( deteksi ) +  DeepSORT  (tracking) + MobileNetV2 ( klasifikasi ukuran )
+
+--- Slide 51 ---
+Langkah 5:  Pilih Pendekatan Penelitian Berdasarkan tujuan  dan data,  pilih pendekatan umum penelitian : {793D81CF-94F2-401A-BA57-92F5A7B2D0C5} Pendekatan Kapan digunakan Contoh Penerapan Eksperimen Kuantitatif Jika ingin menguji performa model (akurasi, kecepatan) Uji akurasi YOLOv8 vs Blob Detection R&D (Research & Development) Jika ingin membuat alat/sistem baru Membangun prototipe sistem penghitung ikan berbasis kamera Deskriptif Jika hanya ingin menggambarkan fenomena atau hasil pengujian Analisis perilaku pergerakan  ikan pada  kolam tertentu ➡️  Untuk  judul  “ Sistem Penghitung  ...  Otomatis ”,  pendekatan  yang  tepat adalah R&D dengan tahap eksperimen kuantitatif .
+
+--- Slide 52 ---
+Langkah 6: Teknik  Analisis  Data Analisis  data  menyesuaikan dengan hasil keluaran sistem . {073A0DAA-6AF3-43AB-8588-CEC1D06C72B9} Jenis Analisis Contoh Variabel Indikator Analisis performa model Akurasi, Precision, Recall, F1-score Seberapa baik sistem mendeteksi ikan Analisis waktu proses Frame per second (FPS), waktu inferensi Seberapa cepat sistem bekerja Analisis efisiensi alat Rasio biaya/kecepatan vs metode manual Efektivitas alat otomatis dibanding  manual
+
+--- Slide 53 ---
+Langkah 7:  Rancang Instrumen Penelitian Instrumen  yang  digunakan disesuaikan dengan metode  yang  dipilih . {073A0DAA-6AF3-43AB-8588-CEC1D06C72B9} Jenis Instrumen Fungsi Contoh Kamera / Sensor Pengambilan data OpenMV H7, Webcam, Raspberry Pi Software Pengolahan data Python, OpenCV, Ultralytics YOLO Dataset Data pelatihan dan uji Dataset benih ikan lokal atau COCO custom Lembar uji Validasi hasil Form  hasil  uji  akurasi tiap metode
+
+--- Slide 54 ---
+Langkah 8:  Validasi  dan Uji Coba Lakukan pelatihan  (training) dan  pengujian  (testing) model. Bandingkan hasil antar-metode  ( misal  YOLOv8 vs Blob). Pilih metode terbaik berdasarkan kriteria : Akurasi tertinggi Waktu  deteksi tercepat Stabilitas deteksi objek bergerak
+
+--- Slide 55 ---
+Contoh Aplikasi  Langkah-Langkah di Atas {073A0DAA-6AF3-43AB-8588-CEC1D06C72B9} Tahapan Implementasi pada Topik Fokus masalah Penghitungan ikan otomatis Tujuan Mendeteksi dan menghitung benih ikan Data Video benih ikan dari kolam Pendekatan R&D dengan uji eksperimen Metode AI YOLOv8 (deteksi) + DeepSORT (tracking) Teknik Pengumpulan Observasi video, dataset hasil rekaman Instrumen Kamera OpenMV H7, Python YOLOv8 Analisis Akurasi, FPS, precision, recall Hasil Sistem penghitung  ikan  otomatis dengan akurasi  90%
+
+--- Slide 56 ---
+Contoh  lain  :  Deteksi  Wajah  Otomatis Data:  citra wajah . Metode: CNN, MTCNN. Instrumen : Webcam, OpenCV. Analisis :  akurasi deteksi wajah ,  kecepatan .
+
+--- Slide 57 ---
+Contoh :  Klasifikasi Sampah Otomatis Data:  gambar sampah organik  dan  anorganik . Metode: MobileNetV2. Analisis :  akurasi  dan loss model.
+
+--- Slide 58 ---
+Contoh :  Prediksi Cuaca Berbasis  IoT Data:  suhu ,  kelembapan ,  tekanan . Metode: LSTM. Analisis : MSE, RMSE, R².
+
+--- Slide 59 ---
+Contoh Teknik Penelitian dan Instrumen Penelitian >> Studi Kasus Penerapan Algoritma  Machine Learning  dalam Prediksi Penjualan Dalam studi kasus penerapan algoritma  machine learning  untuk prediksi penjualan ,  teknik dan instrumen penelitian  yang  dapat digunakan meliputi : Teknik Penelitian : Studi Pustaka :  Mengumpulkan informasi dari berbagai sumber seperti buku ,  artikel ,  dan penelitian sebelumnya mengenai algoritma  machine learning  dan teknik prediksi penjualan  [1]. Eksperimen :  Menerapkan algoritma  machine learning  tertentu  ( seperti  Naïve Bayes, K-Nearest Neighbors)  untuk melihat seberapa akurat  model  dalam memprediksi penjualan berdasarkan  data  historis  [3]. Instrumen Penelitian : Kuesioner :  Digunakan untuk mengumpulkan  data  dari responden ,  misalnya ,  mengidentifikasi faktor-faktor  yang  mempengaruhi pembelian . Data  Historis Penjualan :  Menggunakan  data  penjualan  yang  sudah ada untuk melatih  model machine learning [2]. Alat Pemrograman  ( seperti  Python):  Menggunakan bahasa pemrograman dan pustaka seperti Scikit -learn  untuk implementasi algoritma  machine learning  dan analisis  data [4]. Dengan pendekatan ini ,  penelitian dapat mengevaluasi efektivitas berbagai algoritma dalam memprediksi penjualan secara akurat .
+
+--- Slide 60 ---
+Tips untuk  Mahasiswa Jangan langsung pilih metode  yang  populer  ( misal  YOLO  atau  CNN),  tetapi pahami dulu jenis  data dan  tujuannya . Gunakan literatur sebelumnya  untuk  melihat metode apa  yang  sering digunakan  pada  kasus sejenis . Jika  memungkinkan ,  bandingkan  dua  metode  agar  ada nilai analisis  dan novelty. Pastikan metode dapat diimplementasikan  dan  diuji secara realistis sesuai kemampuan alat /lab.
+
+--- Slide 61 ---
+Kesimpulan Metode  penelitian ditentukan  oleh: Tujuan  penelitian .  Jenis data. Bentuk  output. Langkah:  Analisis masalah  →  Tentukan metode  →  Siapkan instrumen  → Uji dan  validasi .
+
+--- Slide 62 ---
+Contoh Penentuan  Metode – Teknik –  Instrumen {073A0DAA-6AF3-43AB-8588-CEC1D06C72B9} Komponen Contoh Penelitian Judul Penelitian Sistem Penghitung Benih Ikan Lele Otomatis Berbasis YOLOv8 dan MobileNetV2 Metode Penelitian Eksperimen Kuantitatif (uji performa model AI) Teknik Pengumpulan Data Observasi video real-time, pengujian model menggunakan dataset lele Instrumen Penelitian Kamera OpenMV Cam H7 Plus, laptop dengan GPU, software Python (OpenCV, Ultralytics YOLO), form hasil uji (akurasi, waktu deteksi) Analisis Data Menghitung akurasi , precision, recall, F1-score, dan  waktu inferensi  per frame
+
+--- Slide 63 ---
+Tugas Mandiri Mahasiswa Gunakan topik penelitian  masing-masing. Tentukan : a. Metode  penelitian  yang  digunakan b. Teknik  pengumpulan  data c.  Instrumen penelitian Tulis  dalam  format  tabel  dan  jelaskan alasan pemilihannya  (1  halaman ).
+
+--- Slide 64 ---
+R eferensi https://penerbitdeepublish.com/pengertian-metode-penelitian/ https://www.gurupendidikan.co.id/metodologi-penelitian/ https://akupintar.id/info-pintar/-/blogs/metode-penelitian-kualitatif-dan-kuantitatif-mengenal-penelitian-ilmiah https://ranahresearch.com/metode-penelitian-dan-jenis-metode-penelitian/ https://elibrary.unikom.ac.id/id/eprint/2075/9/UNIKOM_41815118_NIZHA%20MAULIDHINA_BAB%20III.pdf
+
