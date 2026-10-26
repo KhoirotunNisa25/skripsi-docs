@@ -81,4 +81,24 @@ output/
   1. **Halaman 1 (Tabel Matriks Formal)**: Kolom 1 Research Problem (RP) di-merge penuh secara vertikal mencakup seluruh baris 4 Research Questions (RQ1–RQ4) dan 4 Research Objectives (RO1–RO4) tanpa menyinggung aerator.
   2. **Halaman 2 (Konstruk Metodologis & Batasan)**: Pemetaan metodologi dan metrik terukur (Recall, FPR, F1, latensi edge, signifikansi statistik $p < 0,05$, FCR, SR) serta batasan mutlak sistem (*system boundaries*) dan prinsip logika pakan adaptif terkendali kuota petani (*daily quota budgeting*).
 
+---
+
+## 📑 7. Rancangan Metodologi Komparasi CV Konvensional vs. Lightweight Deep Learning (*Komparasi CV & DL*)
+- **Jalur Folder**: [`output/komparasi-cv-dan-dl/`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/komparasi-cv-dan-dl/)
+- **Berkas PDF Siap Cetak**: [`output/komparasi-cv-dan-dl/Rancangan_Komparasi_CV_dan_Deep_Learning.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/komparasi-cv-dan-dl/Rancangan_Komparasi_CV_dan_Deep_Learning.pdf)
+- **Dokumen Sintesis Markdown**: [`research/rancangan-komparasi-metode-cv-dan-dl.md`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/research/rancangan-komparasi-metode-cv-dan-dl.md)
+- **Sumber LaTeX**: [`latex/rancangan-komparasi-metode-cv-dan-dl.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/rancangan-komparasi-metode-cv-dan-dl.tex)
+- **Deskripsi**: Cetak biru akademik komprehensif (7 halaman A4 portrait) yang merumuskan studi komparasi *head-to-head*:
+  1. **Prinsip Fisika Air Keruh (Anti-Overclaim)**: Menolak deteksi morfologi tubuh lele di bawah air keruh ($\le 3$ cm); fokus mutlak pada riak cipratan transien sub-detik (0,3--0,6 detik) di permukaan air.
+  2. **Metode 1 (Konvensional)**: CPL Lens + HSV $S$-channel + *Adaptive Three-Frame Differencing* (TFD) *bitwise AND* + *Welford Running Gaussian ($Z$-Score)* + FSM servo kuota 5% biomassa.
+  3. **Metode 2 (Lightweight Deep Learning)**:
+     - Sub-metode 2A: YOLOv8-nano murni (deteksi box riak air).
+     - Sub-metode 2B: Hibrida Spatio-Temporal YOLOv8n + LSTM (ekstraksi 5 dimensi vektor fisik gerak permukaan $\to$ Bi-LSTM 2 layer window 10 frame / 1 detik $\to$ 3 kelas nafsu makan: Lapar, Sedang, Kenyang).
+     - Sub-metode 2C: Baseline video classification MobileNetV3-Small + LSTM.
+  4. **Dataset Pipeline & Anotasi Ground Truth**: Protokol sampling 3 kondisi cahaya dan 3 kondisi perilaku; anotasi 1.500 box riak via CVAT/Roboflow dan 600 klip video 10-frame terverifikasi Cohen's Kappa $\kappa \ge 0{,}85$.
+  5. **Edge AI Acceleration Raspberry Pi 5**: TFLite INT8 Quantization (hemat 50%), runtime XNNPACK ARM Neon SIMD, dan *asynchronous decoupled threading*.
+  6. **Matriks Evaluasi Komparatif 4 Dimensi**: Tabel perbandingan kuantitatif rigid mencakup akurasi (Confusion Matrix, Precision, Recall, F1), ketahanan derau (*false positive rate* glint matahari, angin, aerator), performa komputasi *edge* (FPS, latensi ms, CPU %, suhu prosesor °C, ukuran model), dan rekayasa data.
+  7. **Pemetaan Literatur SOTA & Sitasi APA 7th**: Mengaitkan seluruh rancangan ke 8 jurnal global bereputasi dengan DOI aktif.
+
+
 

@@ -58,3 +58,25 @@ Prinsip kerja sistem dirancang bukan berdasarkan jadwal buta (*timer* kaku "tiap
    - Rasio Konversi Pakan (*Feed Conversion Ratio* / FCR).
    - Frekuensi dan efisiensi waktu pemberian pakan.
 
+---
+
+## 4. Dimensi Studi Komparasi Algoritma: Konvensional vs. Lightweight Deep Learning
+
+Untuk memberikan kontribusi ilmiah yang kuat dan menjawab pertanyaan dewan penguji mengenai keunggulan model modern, penelitian ini merancang dan membandingkan dua paradigma pemrosesan citra secara *head-to-head*:
+
+1. **Metode Konvensional (Baseline Deterministik)**:
+   - *Adaptive Three-Frame Differencing* (TFD) + operasi logika *bitwise AND*.
+   - Filter optik polarisasi CPL dan transformasi ruang warna HSV (kanal saturasi $S$) untuk reduksi kilau matahari (*sun glint*).
+   - *Welford Running Gaussian Baseline* ($Z$-score anomaly) untuk mengisolasi deviasi riak lele dari buih aerator kontinu.
+   - Formulasi *Feeding Activity Index* ($FAI$) yang diintegrasikan ke *Finite State Machine* (FSM).
+2. **Metode Lightweight Deep Learning (Probabilistik Spatio-Temporal)**:
+   - **YOLOv8-nano Murni**: Deteksi *bounding box* cipratan riak air (`ripple_splash`) per-frame.
+   - **Hibrida YOLOv8-nano + LSTM**: YOLO mengekstrak vektor fitur gerak permukaan ($N_{\text{splash}}$, luas rata-rata, varians luas, confidence, dispersi spasial), lalu diteruskan ke jaringan Bi-LSTM 2 layer untuk memodelkan dinamika deret waktu 10-frame (1 detik) menjadi klasifikasi 3 tingkat nafsu makan (*Lapar, Sedang, Kenyang*).
+   - **MobileNetV3-Small + LSTM**: Model pembanding *end-to-end video action recognition*.
+3. **Parameter Komparasi Algoritma Terukur**:
+   - Akurasi klasifikasi (Accuracy, Precision, Recall, F1-Score, Confusion Matrix 3x3).
+   - Ketahanan derau lingkungan (*False Positive Rate* akibat silau matahari, angin, dan aerator).
+   - Efisiensi komputasi pada Raspberry Pi 5 (Throughput FPS, Latensi ms, CPU Usage %, Suhu CPU °C, Memory Footprint MB).
+   - Efisiensi data latih (*Data Engineering Feasibility*).
+
+

@@ -1,0 +1,427 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{apalike}
+\usepackage[hidelinks,colorlinks=true,linkcolor=navy,citecolor=navy,urlcolor=navy]{hyperref}
+
+% Math text compatibility macro for vanilla LaTeX
+\providecommand{\text}[1]{\mbox{#1}}
+\providecommand{\mathrm}[1]{\textrm{#1}}
+\providecommand{\mathbb}[1]{\mathbf{#1}}
+
+% Page Geometry (A4 margins 1.5 cm)
+\setlength{\topmargin}{-1.5cm}
+\setlength{\headheight}{12pt}
+\setlength{\headsep}{12pt}
+\setlength{\textheight}{26.2cm}
+\setlength{\footskip}{18pt}
+\setlength{\oddsidemargin}{-0.8cm}
+\setlength{\evensidemargin}{-0.8cm}
+\setlength{\textwidth}{18.0cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt plus 0.8pt minus 0.5pt}
+
+% Color Definitions
+\definecolor{navy}{rgb}{0.05, 0.20, 0.55}
+\definecolor{teal}{rgb}{0.05, 0.45, 0.45}
+\definecolor{darkred}{rgb}{0.65, 0.10, 0.10}
+\definecolor{grayborder}{rgb}{0.75, 0.75, 0.75}
+\definecolor{boxbg}{rgb}{0.95, 0.97, 1.00}
+\definecolor{alertbg}{rgb}{0.94, 0.98, 0.95}
+
+% Custom Box Commands
+\newcommand{\academicbox}[2]{%
+  \begin{center}%
+  \setlength{\fboxsep}{5pt}%
+  \setlength{\fboxrule}{0.8pt}%
+  \fcolorbox{navy}{boxbg}{%
+    \parbox{17.4cm}{%
+      \textbf{\color{navy}#1}\\[2pt]%
+      #2%
+    }%
+  }%
+  \end{center}%
+}
+
+\newcommand{\alertbox}[2]{%
+  \begin{center}%
+  \setlength{\fboxsep}{5pt}%
+  \setlength{\fboxrule}{0.8pt}%
+  \fcolorbox{teal}{alertbg}{%
+    \parbox{17.4cm}{%
+      \textbf{\color{teal}#1}\\[2pt]%
+      #2%
+    }%
+  }%
+  \end{center}%
+}
+
+\begin{document}
+
+% ==============================================================================
+% HALAMAN 1: IDENTITAS, PRINSIP LOGIKA FISIKA, & ARSITEKTUR SIKLUS TERTUTUP
+% ==============================================================================
+
+% Header Block
+\begin{center}
+    {\Large \textbf{\color{navy}DOKUMEN RANCANGAN METODOLOGI KOMPARASI ILMIAH}}\\[2pt]
+    {\large \textbf{\color{navy}Computer Vision Konvensional vs. Lightweight Deep Learning}}\\[2pt]
+    {\normalsize \textbf{Deteksi Riak Aktivitas Permukaan Nafsu Makan Bibit Ikan Lele (\textit{Clarias sp.}) pada Perangkat Edge Raspberry Pi 5}}\\[4pt]
+    \rule{\textwidth}{1.0pt}\\[2pt]
+    \footnotesize
+    \begin{tabular}{p{3.2cm} p{5.5cm} p{3.2cm} p{5.5cm}}
+        \textbf{Nama Mahasiswa} & : Khoirotun Nisa' & \textbf{Dosen Pembimbing} & : Dr. Ulla Delfana Rosiani, ST., MT. \\
+        \textbf{NIM} & : 2341720057 & \textbf{Program Studi} & : Sarjana Terapan Teknik Informatika \\
+        \textbf{Institusi} & : Politeknik Negeri Malang & \textbf{Objek Riset} & : Bibit Lele (Pendederan I--IV, 2--12 cm) \\
+        \textbf{Kondisi Kolam} & : Terpal Luar Ruangan (\textit{Outdoor}) & \textbf{Arsitektur Edge} & : Raspberry Pi 5 + Kamera Nadir Overhead \\
+    \end{tabular}\\[1pt]
+    \rule{\textwidth}{1.0pt}
+\end{center}
+
+\vspace{-0.3cm}
+
+\academicbox{RINGKASAN EKSEKUTIF \& PRINSIP ANTI-OVERCLAIM}{
+Dokumen ini merumuskan secara komprehensif rancangan studi komparasi \textit{head-to-head} antara metode deterministik konvensional (\textit{Adaptive Three-Frame Differencing}) melawan arsitektur \textit{Lightweight Edge Deep Learning} (YOLOv8-nano murni, Hibrida Spatio-Temporal YOLOv8n + LSTM, dan MobileNetV3-LSTM).
+\begin{itemize}
+    \item \textbf{Prinsip Fisika Kolam Keruh}: Air kolam pendederan lele berwarna hijau keruh pekat (\textit{green water}, kedalaman Secchi $\le 3\text{ cm}$). Tubuh lele di bawah air \textbf{mustahil terlihat oleh kamera}. Maka, kedua pendekatan \textbf{TIDAK mendeteksi tubuh ikan}, melainkan mendeteksi \textbf{manifestasi riak cipratan air permukaan (\textit{surface feeding ripples/splashes})} saat lele menyambar pelet.
+    \item \textbf{Tujuan Komparasi}: Membuktikan secara empiris pada dataset kolam riil yang sama, metode mana yang menghasilkan akurasi klasifikasi nafsu makan tertinggi, paling tahan terhadap derau luar ruangan (silau matahari, riak angin, buih aerator), serta paling efisien dari sisi beban komputasi mikrokomputer Raspberry Pi 5.
+\end{itemize}
+}
+
+\vspace{-0.1cm}
+
+\begin{center}
+    \includegraphics[width=0.98\textwidth]{figures/flowchart-closed-loop-fsm.png}\\
+    \vspace{2pt}
+    {\footnotesize \textbf{Gambar 1}: Diagram Alur Sistem Pakan Adaptif Siklus Tertutup (\textit{Closed-Loop Demand-Feeding FSM Architecture}) Berbasis Analisis Riak Permukaan Citra.}
+\end{center}
+
+\vspace{-0.2cm}
+
+\alertbox{MEKANISME PENGENDALIAN PAKAN SIKLUS TERTUTUP (CLOSED-LOOP FEEDBACK)}{
+Sistem pakan adaptif bekerja secara siklus tertutup (\textit{closed-loop}) mengikuti ritme biologis bibit lele:
+\begin{enumerate}\setlength{\itemsep}{1pt}
+    \item \textbf{Deteksi Kebutuhan Pakan (Vision Trigger)}: Kamera overhead 10 FPS menangkap kondisi permukaan air. Jika aktivitas riak melebihi ambang batas makan (\textit{Hungry}), sistem memicu aktuasi pakan.
+    \item \textbf{Batas Kuota Petani (Safety Ceiling)}: Sistem memeriksa sisa kuota pakan harian (maksimal $5\%$ biomassa ikan sesuai SNI 01-6484.2-2000). Jika kuota harian habis, pemberian pakan otomatis disetop guna mencegah pembusukan amonia.
+    \item \textbf{Pemberian Porsi Terbagi (\textit{Sub-rationing})}: Motor servo mengayun $90^\circ$ mendispensasikan satu sub-porsi pelet ($50\text{--}100\text{ gram}$).
+    \item \textbf{Cooldown \& Evaluasi Respon}: Sistem mengunci servo selama $3\text{--}5\text{ menit}$ seraya memantau apakah pakan disambar habis atau diabaikan (\textit{Satiated}).
+\end{enumerate}
+}
+
+\newpage
+
+% ==============================================================================
+% HALAMAN 2: METODE 1 (KONVENSIONAL DETERMINISTIK) & FLOWCHART PIPELINE
+% ==============================================================================
+
+\section*{1. Metode 1: Pendekatan Deterministik Konvensional (Baseline)}
+
+Metode konvensional dirancang sebagai sistem berbobot komputasi sangat ringan yang bekerja secara deterministik tanpa ketergantungan pada proses pelatihan (\textit{training}) maupun anotasi ribuan label manual.
+
+\begin{enumerate}
+    \item \textbf{Reduksi Derau Optik \& Spasial:}
+    \begin{itemize}
+        \item \textbf{Filter Polarisasi Optik (CPL)}: Terpasang pada lensa kamera untuk memblokir pantulan gelombang cahaya terpolarisasi permukaan air hingga $80\%$ secara pasif tanpa membebani CPU mikrokomputer \cite{Li2020}.
+        \item \textbf{Pemotongan Bidang Minat (\textit{Static ROI Masking})}: Memotong $30\%$ bagian atas citra yang memuat dinding terpal biru agar getaran terpal akibat hembusan angin luar ruangan tidak memicu alarm palsu.
+        \item \textbf{Transformasi Ruang Warna HSV (Kanal Saturasi $S$)}: Kilau pantulan sinar matahari langsung (\textit{sun glint}) bersifat \textit{specular highlight} netral dengan desaturasi tinggi mendekati putih ($S \approx 0$). Deteksi riak air diprioritaskan pada kanal saturasi $S$ untuk mengeliminasi gangguan silau cahaya.
+    \end{itemize}
+
+    \item \textbf{Adaptive Three-Frame Differencing (TFD) + Operasi Logika Bitwise AND:}
+    Mengekstraksi pergerakan riak air murni secara dinamis dari tiga frame berurutan ($I_{t-1}, I_t, I_{t+1}$):
+    \begin{equation}
+        \Delta I_1(x,y) = |I_t(x,y) - I_{t-1}(x,y)|, \quad \Delta I_2(x,y) = |I_{t+1}(x,y) - I_t(x,y)|
+    \end{equation}
+    \begin{equation}
+        B_1(x,y) = \left\{ \begin{array}{ll} 1, & \Delta I_1(x,y) > T_{\text{diff}} \\ 0, & \text{lainnya} \end{array} \right., \quad 
+        B_2(x,y) = \left\{ \begin{array}{ll} 1, & \Delta I_2(x,y) > T_{\text{diff}} \\ 0, & \text{lainnya} \end{array} \right.
+    \end{equation}
+    \begin{equation}
+        M(x,y,t) = B_1(x,y,t) \land B_2(x,y,t)
+    \end{equation}
+    Operasi logika biner \textit{bitwise AND} ($\land$) menjamin penghapusan bayangan semu (\textit{ghosting}) dan mengisolasi wilayah riak aktif pada frame ke-$t$ \cite{Atoum2015}.
+
+    \item \textbf{Pemodelan Baseline Berjalan (\textit{Welford Running Gaussian Baseline}):}
+    Kondisi riak normal permukaan (hembusan angin halus atau letupan gelembung aerator) dimodelkan secara statistik rekursif:
+    \begin{equation}
+        \mu_{\text{base}}(t) = \alpha \cdot A_t + (1 - \alpha) \cdot \mu_{\text{base}}(t-1)
+    \end{equation}
+    \begin{equation}
+        \sigma_{\text{base}}^2(t) = \alpha \cdot (A_t - \mu_{\text{base}}(t))^2 + (1 - \alpha) \cdot \sigma_{\text{base}}^2(t-1)
+    \end{equation}
+    \begin{equation}
+        Z_t = \frac{A_t - \mu_{\text{base}}(t)}{\sigma_{\text{base}}(t)}
+    \end{equation}
+    Di mana $A_t = \sum_{(x,y) \in \text{ROI}} M(x,y,t)$ adalah akumulasi piksel gerak aktif pada frame $t$, dan $\alpha \approx 0{,}03$ adalah laju pembaruan adaptif. Jika nilai $Z_t \ge 3{,}5$ bertahan selama $\ge 3$ frame berturut-turut ($0{,}3\text{--}0{,}5\text{ detik}$ pada 10 FPS), sistem menetapkan event sebagai \textbf{Sinyal Sambaran Makan Nyata}.
+
+    \item \textbf{Kuantifikasi Feeding Activity Index ($FAI$):}
+    \begin{equation}
+        FAI_{\text{conv}}(t) = \frac{\sum_{(x,y) \in \text{ROI}} M(x,y,t)}{N_{\text{ROI}}} \times 100\%
+    \end{equation}
+    Nilai $FAI$ diumpankan ke mesin logika FSM lima status untuk menentukan tindakan pemutaran motor servo dispenser pelet.
+\end{enumerate}
+
+\vspace{-0.1cm}
+
+\begin{center}
+    \includegraphics[width=0.98\textwidth]{figures/flowchart-konvensional.png}\\
+    \vspace{2pt}
+    {\footnotesize \textbf{Gambar 2}: Pipeline Pemrosesan Citra Deterministik Konvensional (\textit{Adaptive TFD + HSV S-Channel + Running Gaussian Baseline}).}
+\end{center}
+
+\newpage
+
+% ==============================================================================
+% HALAMAN 3: METODE 2 (TIGA ARSITEKTUR LIGHTWEIGHT DEEP LEARNING)
+% ==============================================================================
+
+\section*{2. Metode 2: Pendekatan Lightweight Edge Deep Learning}
+
+\subsection*{2.1 Sub-Metode 2A: YOLOv8-nano Murni (Deteksi Objek Riak Spasial)}
+\begin{itemize}
+    \item \textbf{Arsitektur Model}: YOLOv8n (Backbone CSPDarknet53, C2f layer, Decoupled Detection Head, parameter $\sim 3{,}2$ juta, ukuran bobot model $\sim 3{,}2\text{ MB}$ INT8).
+    \item \textbf{Kelas Target}: 1 kelas tunggal: \texttt{ripple\_splash} (kotak batas cipratan air).
+    \item \textbf{Logika Penentuan Lapar}: Pada setiap jendela waktu observasi 1 detik (10 frame):
+    \begin{equation}
+        N_{\text{splash}} = \sum_{f=1}^{10} \sum_{i=1}^{K_f} \mathbf{I}(\text{conf}_i \ge 0{,}45 \land \text{IoU} \le 0{,}5)
+    \end{equation}
+    Tingkat nafsu makan diklasifikasikan berdasarkan ambang batas frekuensi kotak riak:
+    \begin{itemize}
+        \item $N_{\text{splash}} \ge 5\text{ box/detik} \to$ \textbf{Status Lapar / Agresif (\textit{Hungry})}
+        \item $2 \le N_{\text{splash}} < 5\text{ box/detik} \to$ \textbf{Status Makan Sedang (\textit{Moderate})}
+        \item $N_{\text{splash}} < 2\text{ box/detik} \to$ \textbf{Status Kenyang / Tenang (\textit{Satiated})}
+    \end{itemize}
+\end{itemize}
+
+\subsection*{2.2 Sub-Metode 2B: Arsitektur Hibrida Spatio-Temporal: YOLOv8n + LSTM}
+\begin{itemize}
+    \item \textbf{Rasional Ilmiah}: Riak cipratan bibit lele merupakan fenomena dinamis transien berdurasi sangat singkat ($0{,}3\text{--}0{,}6\text{ detik}$). Letupan satu gelembung aerator besar pada satu frame statis berpotensi memiliki kemiripan tekstur visual dengan riak lele. Namun demikian, letupan aerator bersifat stasioner dan terisolasi, sedangkan cipratan lele lapar memiliki korelasi temporal yang intens dan menyebar. Integrasi jaringan saraf rekuren LSTM di atas deteksi YOLO bertujuan memodelkan \textbf{dinamika deret waktu pergerakan permukaan}.
+    
+    \item \textbf{Tahap 1 (Ekstraksi Vektor Fitur Spasial via YOLOv8n)}:
+    Pada setiap frame ke-$t$, model YOLO mengekstrak vektor fitur gerak permukaan 5 dimensi $v_t \in \mathbf{R}^5$:
+    \begin{equation}
+        v_t = \Big[ N_t,\, \bar{A}_t,\, \sigma_A^2(t),\, \bar{C}_t,\, D_t \Big]
+    \end{equation}
+    Di mana $N_t$ adalah jumlah box terdeteksi, $\bar{A}_t$ adalah rata-rata luas area bounding box ($\text{piksel}^2$), $\sigma_A^2(t)$ adalah varians luas box (tingkat turbulensi), $\bar{C}_t$ adalah rata-rata nilai \textit{confidence score}, dan $D_t$ adalah tingkat dispersi spasial (jarak rata-rata antarpusat box riak terhadap titik pusat tebar pakan).
+
+    \item \textbf{Tahap 2 (Pemodelan Deret Waktu via Bidirectional LSTM)}:
+    Matriks input dibentuk dari jendela waktu geser (\textit{sliding window}) $W = 10\text{ frame}$ (durasi 1 detik pada 10 FPS):
+    \begin{equation}
+        \mathbf{X}_t = \big[ v_{t-9},\, v_{t-8},\, \dots,\, v_t \big] \in \mathbf{R}^{10 \times 5}
+    \end{equation}
+    Arsitektur jaringan LSTM terdiri atas:
+    \begin{enumerate}
+        \item Layer 1: Bidirectional LSTM (32 hidden units, output $10 \times 64$, Dropout 0.2).
+        \item Layer 2: Unidirectional LSTM (32 hidden units, output 32, Dropout 0.2).
+        \item Fully Connected (Dense): 16 units dengan aktivasi ReLU.
+        \item Output Layer: 3 units dengan aktivasi Softmax.
+    \end{enumerate}
+    Output probabilitas akhir:
+    \begin{equation}
+        \mathbf{y}_t = \text{Softmax}(\mathbf{W}_o \mathbf{h}_t + \mathbf{b}_o) = \big[ P(\text{Tenang}),\, P(\text{Sedang}),\, P(\text{Lapar}) \big]
+    \end{equation}
+\end{itemize}
+
+\newpage
+
+\subsection*{2.3 Sub-Metode 2C: Arsitektur End-to-End Spatio-Temporal: MobileNetV3-Small + LSTM}
+Model MobileNetV3-Small + LSTM dirancang sebagai arsitektur pembanding \textit{end-to-end action recognition} berbasis fitur visual laten tanpa memerlukan tahapan anotasi \textit{bounding box} manual yang memakan waktu:
+\begin{itemize}
+    \item \textbf{Rasional \& Keunggulan Rekayasa}:
+    Berbeda dengan YOLO yang menuntut pelabelan koordinat kotak riak per-frame, MobileNetV3-Small memproses citra permukaan air secara holistik. Model ini belajar membedakan tekstur turbulensi air lapar vs pantulan sinar matahari langsung dari representasi fitur konvolusional tanpa terikat batasan geometri kotak.
+    
+    \item \textbf{Tahap 1 (Ekstraksi Fitur Spasial via MobileNetV3-Small)}:
+    Setiap frame $I_t$ diubah ukurannya ke dimensi $224 \times 224 \times 3$. Backbone MobileNetV3-Small (menggunakan \textit{Depthwise Separable Convolution}, aktivasi \textit{Hard-Swish}, dan modul \textit{Squeeze-and-Excitation}) memetakan citra menjadi vektor representasi fitur spasial 1D berdimensi 1024 melalui operasi \textit{Global Average Pooling} (GAP):
+    \begin{equation}
+        \mathbf{f}_t = \phi_{\text{MobileNet}}(I_t) \in \mathbf{R}^{1024}
+    \end{equation}
+    Dengan total parameter backbone hanya $\sim 1{,}53$ juta, MobileNetV3-Small merupakan salah satu arsitektur konvolusi paling hemat daya untuk mikrokomputer \textit{edge}.
+
+    \item \textbf{Tahap 2 (Pemodelan Urutan Temporal via LSTM Cell)}:
+    Rangkaian 10 vektor fitur spasial berurutan dihimpun membentuk matriks deret waktu $\mathbf{F}_t = [\mathbf{f}_{t-9}, \mathbf{f}_{t-8}, \dots, \mathbf{f}_t] \in \mathbf{R}^{10 \times 1024}$. Jaringan LSTM memproses dinamika temporal melalui persamaan gate formal:
+    \begin{equation}
+        \mathbf{i}_\tau = \sigma(\mathbf{W}_{ii} \mathbf{f}_\tau + \mathbf{b}_{ii} + \mathbf{W}_{hi} \mathbf{h}_{\tau-1} + \mathbf{b}_{hi}) \quad \text{(Input Gate)}
+    \end{equation}
+    \begin{equation}
+        \mathbf{f}_\tau = \sigma(\mathbf{W}_{if} \mathbf{f}_\tau + \mathbf{b}_{if} + \mathbf{W}_{hf} \mathbf{h}_{\tau-1} + \mathbf{b}_{hf}) \quad \text{(Forget Gate)}
+    \end{equation}
+    \begin{equation}
+        \mathbf{c}_\tau = \mathbf{f}_\tau \odot \mathbf{c}_{\tau-1} + \mathbf{i}_\tau \odot \tanh(\mathbf{W}_{ig} \mathbf{f}_\tau + \mathbf{b}_{ig} + \mathbf{W}_{hg} \mathbf{h}_{\tau-1} + \mathbf{b}_{hg}) \quad \text{(Cell State)}
+    \end{equation}
+    \begin{equation}
+        \mathbf{h}_\tau = \sigma(\mathbf{W}_{io} \mathbf{f}_\tau + \mathbf{b}_{io} + \mathbf{W}_{ho} \mathbf{h}_{\tau-1} + \mathbf{b}_{ho}) \odot \tanh(\mathbf{c}_\tau) \quad \text{(Hidden State)}
+    \end{equation}
+    Di mana hidden state terakhir $\mathbf{h}_t \in \mathbf{R}^{64}$ diteruskan ke layer Dense (32 units, ReLU) dengan Dropout 0.3 dan layer klasifikasi Softmax untuk menghasilkan prediksi status nafsu makan lele.
+    
+    \item \textbf{Karakteristik Komputasi Edge}:
+    Ukuran file model MobileNetV3-LSTM terkuantisasi INT8 hanya berkisar $\approx 2{,}1\text{ MB}$ (lebih ringkas dibandingkan YOLOv8n yang mencapai $\approx 3{,}2\text{ MB}$), dengan estimasi latensi inferensi sub-detik pada Raspberry Pi 5.
+\end{itemize}
+
+\vspace{0.2cm}
+
+\academicbox{KOMPARASI PARADIGMA: DETEKSI KOTAK SPASIAL (YOLO) VS. FITUR LATEN END-TO-END (MOBILENETV3)}{
+\begin{itemize}\setlength{\itemsep}{1pt}
+    \item \textbf{Paradigma Deteksi Kotak (YOLOv8n)}: Menuntut biaya rekayasa data tinggi ($1.500$ anotasi \textit{bounding box} manual). Keunggulannya adalah interpretabilitas tinggi karena posisi fisik riak cipratan air dapat divisualisasikan secara spasial pada frame.
+    \item \textbf{Paradigma Fitur Laten End-to-End (MobileNetV3)}: Tidak memerlukan pelabelan kotak riak (cukup label kategori klip video). Lebih hemat memori ($\approx 2{,}1\text{ MB}$ vs $\approx 3{,}2\text{ MB}$), namun representasi fitur bersifat \textit{black-box} berbasis distribusi tekstur global air kolam.
+    \item \textbf{Urgensi Pengujian Ilmiah}: Menyertakan kedua paradigma ini membuktikan secara ilmiah kepada dewan penguji apakah lokalisasi kotak riak eksplisit benar-benar diperlukan untuk mengendalikan pakan bibit lele secara adaptif.
+\end{itemize}
+}
+
+\newpage
+
+% ==============================================================================
+% HALAMAN 4: DIAGRAM ARSITEKTUR DL & PIPELINE DATASET
+% ==============================================================================
+
+\begin{center}
+    \includegraphics[width=0.98\textwidth]{figures/flowchart-deep-learning.png}\\
+    \vspace{2pt}
+    {\footnotesize \textbf{Gambar 3}: Diagram Arsitektur Tiga Pendekatan Komparasi Lightweight Deep Learning (YOLOv8n Murni, YOLOv8n + Bi-LSTM, dan MobileNetV3 + LSTM).}
+\end{center}
+
+\vspace{-0.2cm}
+
+\section*{3. Pipeline Dataset, Protokol Anotasi, dan Optimasi Edge}
+
+\begin{minipage}[t]{0.48\textwidth}
+    \vspace{0pt}
+    \textbf{3.1 Sampling Dataset Video Riil Kolam}\\[2pt]
+    Data diambil dari rekaman kamera overhead Raspberry Pi kolam terpal mitra ($1280 \times 720$, 10 FPS) mencakup 3 kondisi pencahayaan dan 3 kondisi perilaku:
+    \begin{itemize}\setlength{\itemsep}{1pt}
+        \item \textbf{Cahaya}: Pagi teduh (07.00--09.30), Siang terik glint (11.00--13.30), Sore berangin (15.00--16.30).
+        \item \textbf{Perilaku}: \textit{Pre-feeding} (lapar), \textit{Active feeding} (respons puncak), \textit{Post-feeding} (kenyang/tenang).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \vspace{0pt}
+    \textbf{3.2 Standar Anotasi Ground Truth}\\[2pt]
+    \begin{itemize}\setlength{\itemsep}{1pt}
+        \item \textbf{Dataset YOLO}: 1.500 frame terpilih dianotasi bounding box \texttt{ripple\_splash} via CVAT/Roboflow (Split 70\% Train, 15\% Val, 15\% Test).
+        \item \textbf{Dataset LSTM}: 600 klip video 1 detik (10 frame) diklasifikasikan ke dalam 3 kelas: Lapar, Sedang, Kenyang oleh 3 observer independen (Uji reliabilitas Cohen's Kappa $\kappa \ge 0{,}85$).
+    \end{itemize}
+\end{minipage}
+
+\vspace{0.2cm}
+
+\alertbox{SPESIFIKASI DEPLOYMENT \& AKSELERASI EDGE RASPBERRY PI 5}{
+\begin{itemize}\setlength{\itemsep}{1pt}
+    \item \textbf{Training Environment}: Workstation GPU / Google Colab (PyTorch, Ultralytics YOLOv8, CUDA 12).
+    \item \textbf{Kuantisasi Model Edge}: Model PyTorch dikonversi ke format ONNX dan TensorFlow Lite (TFLite) INT8 Quantization. Ukuran model menyusut dari $\approx 6{,}3\text{ MB}$ menjadi $\approx 3{,}2\text{ MB}$ (hemat $50\%$).
+    \item \textbf{Akselerasi CPU Hardware}: Eksekusi inferensi menggunakan runtime XNNPACK yang memanfaatkan instruksi vektor ARM Neon SIMD Quad-Core Cortex-A76 2.4 GHz Raspberry Pi 5.
+    \item \textbf{Arsitektur Multithreading}: Pipeline dirancang \textit{decoupled} (Thread 1: Video Capture 10 FPS; Thread 2: Inference Engine; Thread 3: FSM Servo Controller \& Cloud Logging).
+\end{itemize}
+}
+
+\newpage
+
+% ==============================================================================
+% HALAMAN 5: PROTOKOL EVALUASI KOMPARATIF & TABEL MATRIKS EVALUASI
+% ==============================================================================
+
+\section*{4. Protokol Pengujian Komparasi \& Matriks Evaluasi Ilmiah}
+
+Pengujian dilakukan secara berdampingan (\textit{head-to-head}) memproses \textbf{dataset uji video yang sama persis} (15 klip video pengujian durasi 3 menit = 45 menit / 27.000 frame) guna menjamin validitas ilmiah komparasi.
+
+\vspace{-0.1cm}
+
+\begin{center}
+    \includegraphics[width=0.98\textwidth]{figures/flowchart-head-to-head-eval.png}\\
+    \vspace{2pt}
+    {\footnotesize \textbf{Gambar 4}: Protokol Evaluasi Komparatif Head-to-Head 4 Dimensi pada Raspberry Pi 5 Menggunakan 27.000 Frame Uji Riil.}
+\end{center}
+
+\vspace{-0.2cm}
+
+\subsection*{Tabel 1: Matriks Evaluasi Komparatif Konvensional vs. Lightweight Deep Learning}
+\vspace{-0.2cm}
+{\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{center}
+\begin{tabular}{|p{3.8cm}|p{4.2cm}|p{2.6cm}|p{2.4cm}|p{2.4cm}|p{2.4cm}|}
+\hline
+\textbf{Dimensi Pengujian} & \textbf{Metrik / Parameter Uji} & \textbf{Konvensional (Adaptive TFD+HSV)} & \textbf{Deep Learning 1 (YOLOv8n Murni)} & \textbf{Deep Learning 2 (YOLOv8n+LSTM)} & \textbf{Deep Learning 3 (MobileNet+LSTM)} \\
+\hline
+\multirow{4}{*}{\textbf{1. Akurasi Deteksi Lapar}} 
+ & Akurasi Keseluruhan (\%) & Diuji pada Test Set & Diuji pada Test Set & Diuji pada Test Set & Diuji pada Test Set \\
+ & Presisi (\textit{Precision}, \%) & Diuji & Diuji & Diuji & Diuji \\
+ & Sensitivitas (\textit{Recall}, \%) & Diuji & Diuji & Diuji & Diuji \\
+ & Skor F1 (\textit{F1-Score}, \%) & Diuji & Diuji & Diuji & Diuji \\
+ & Matriks Kesalahan & Confusion 3x3 & Confusion 3x3 & Confusion 3x3 & Confusion 3x3 \\
+\hline
+\multirow{3}{*}{\textbf{2. Ketahanan Derau}} 
+ & FPR pada Terik Matahari (\textit{Glint}) & Dievaluasi & Dievaluasi & Dievaluasi & Dievaluasi \\
+ & FPR pada Hembusan Angin Luar & Dievaluasi & Dievaluasi & Dievaluasi & Dievaluasi \\
+ & FPR pada Letupan Buih Aerator & Dievaluasi & Dievaluasi & Dievaluasi & Dievaluasi \\
+\hline
+\multirow{5}{*}{\textbf{3. Resource Edge (Raspi 5)}} 
+ & Kecepatan (\textit{Throughput}, FPS) & Target: $\ge 25\text{ FPS}$ & Target: $\ge 12\text{ FPS}$ & Target: $\ge 10\text{ FPS}$ & Target: $\ge 12\text{ FPS}$ \\
+ & Latensi Inferensi (milidetik) & Target: $< 40\text{ ms}$ & Target: $< 85\text{ ms}$ & Target: $< 95\text{ ms}$ & Target: $< 80\text{ ms}$ \\
+ & Utilisasi Rata-rata CPU (\%) & Target: $< 30\%$ & Target: $< 65\%$ & Target: $< 75\%$ & Target: $< 70\%$ \\
+ & Peningkatan Suhu CPU ($^\circ\text{C}$) & Target: $\le 55^\circ\text{C}$ & Target: $\le 68^\circ\text{C}$ & Target: $\le 72^\circ\text{C}$ & Target: $\le 70^\circ\text{C}$ \\
+ & Ukuran Memori / Bobot Model & $0\text{ MB}$ (Algoritmik) & $\approx 3{,}2\text{ MB}$ (INT8) & $\approx 3{,}8\text{ MB}$ (INT8) & $\approx 3{,}5\text{ MB}$ (INT8) \\
+\hline
+\multirow{2}{*}{\textbf{4. Rekayasa Data}} 
+ & Kebutuhan Dataset Berlabel & \textbf{Nol} (\textit{Unsupervised}) & 1.500 Box Anotasi & 1.500 Box + Klip & 600 Klip Anotasi \\
+ & Kompleksitas Pemeliharaan & Kalibrasi Threshold & Retraining Model & Retraining Model & Retraining Model \\
+\hline
+\end{tabular}
+\end{center}
+}
+
+\newpage
+
+% ==============================================================================
+% HALAMAN 6: PEMETAAN LITERATUR SOTA & DAFTAR PUSTAKA BIBTEX
+% ==============================================================================
+
+\section*{5. Pemetaan Landasan Literatur Ilmiah Bereputasi}
+
+Seluruh rancangan metodologi di atas berakar kuat pada 8 jurnal ilmiah internasional bereputasi yang telah tersimpan di repositori riset mahasiswa:
+
+\subsection*{Tabel 2: Pemetaan Komponen Riset Terhadap Literatur Ilmiah SOTA}
+\vspace{-0.2cm}
+{\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{center}
+\begin{tabular}{|p{0.5cm}|p{3.2cm}|p{2.8cm}|p{4.2cm}|p{5.5cm}|}
+\hline
+\textbf{No} & \textbf{Rujukan Literatur} & \textbf{Jurnal / Publisher} & \textbf{Fokus Penelitian Terdahulu} & \textbf{Relevansi Spesifik untuk Skripsi Mahasiswa} \\
+\hline
+1 & Qian et al. (2025) \cite{Qian2025} & \textit{Discover Appl. Sci.} (Springer) & PM-YOLO (YOLOv8n) feeding behavior & Menjadi acuan arsitektur deteksi objek YOLOv8n untuk pemantauan pakan secara real-time. \\
+\hline
+2 & Hu et al. (2026) \cite{Hu2026} & \textit{Scientific Reports} (Nature) & ResNet + ViT + LSTM video framework & Menjadi acuan ilmiah pentingnya perancangan modul temporal LSTM untuk merangkum intensitas makan. \\
+\hline
+3 & Dong et al. (2024) \cite{Dong2024} & \textit{PLOS ONE} & Three-stream CNN feeding intensity & Menjadi landasan kategorisasi 3 tingkat nafsu makan ikan: \textit{None / Satiated}, \textit{Moderate}, dan \textit{Aggressive}. \\
+\hline
+4 & Zhao et al. (2025) \cite{Zhao2025} & \textit{Scientific Reports} (Nature) & Lightweight two-stage satiety network & Menjadi rujukan desain eksperimen verifikasi tingkat kekenyangan ikan (\textit{satiety experiments}). \\
+\hline
+5 & Al-Abri et al. (2025) \cite{Al-Abri2025} & \textit{Artif. Intell. Rev.} (Springer) & Review CV fish monitoring & Menjadi rujukan utama disparitas beban komputasi model Deep Learning terhadap mikrokomputer \textit{edge}. \\
+\hline
+6 & Atoum et al. (2015) \cite{Atoum2015} & \textit{IEEE Signal Process. Lett.} & Three-frame differencing aquaculture & Menjadi formula matematika dasar pengurangan tiga-frame deterministik dan bitwise AND. \\
+\hline
+7 & Li et al. (2020) \cite{Li2020} & \textit{Aquaculture} (Elsevier) & Systematic review CV feeding & Menjadi acuan pemasangan filter polarisasi CPL dan kanal HSV untuk meredam pantulan kilau air kolam. \\
+\hline
+8 & Gisbert et al. (2021) \cite{gisbert2021development} & \textit{Aquaculture Review} & Cannibalism in African catfish & Menjadi landasan biologis urgensi pencegahan \textit{underfeeding} untuk menekan kanibalisme benih lele. \\
+\hline
+\end{tabular}
+\end{center}
+}
+
+\vspace{0.2cm}
+\renewcommand{\refname}{\large \textbf{\color{navy}Daftar Pustaka Rujukan Utama}}
+\bibliographystyle{apalike-doi}
+\bibliography{references}
+
+\vspace{0.3cm}
+\begin{center}
+    \rule{0.6\textwidth}{0.8pt}\\[3pt]
+    \footnotesize \textit{Dokumen ini diterbitkan sebagai cetak biru resmi metodologi penelitian proposal skripsi D4 Teknik Informatika JTI Polinema 2026.}
+\end{center}
+
+\end{document}

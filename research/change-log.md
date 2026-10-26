@@ -2,6 +2,25 @@
 
 ## Log Perubahan Dokumen Riset
 
+### 2026-10-26 (Sesi 17)
+- **Perubahan**:
+  - **Perancangan Detail Metodologi Komparasi Ilmiah: Computer Vision Konvensional vs. Lightweight Deep Learning**:
+    - Merumuskan rancangan studi komparasi *head-to-head* antara metode konvensional (*Adaptive Three-Frame Differencing* + *Welford Running Gaussian* + HSV *S-channel*) melawan model *Lightweight Deep Learning* untuk membuktikan metode mana yang paling efektif dan efisien mendeteksi nafsu makan bibit lele pada perangkat *edge* Raspberry Pi 5.
+    - Menetapkan 2 sub-arsitektur Deep Learning utama:
+      1. **YOLOv8-nano Murni**: Deteksi *bounding box* riak/cipratan makan (`ripple_splash`) per-frame (rujukan: Qian et al., 2025; Vijayalakshmi, 2025).
+      2. **Hibrida Spatio-Temporal YOLOv8n + LSTM**: YOLOv8n mengekstrak 5 vektor fitur spasial per-frame ($N_{\text{splash}}$, luas rata-rata, varians luas, confidence, dispersi spasial) yang kemudian dirangkum oleh jaringan Bi-LSTM 2 layer sepanjang jendela 10-frame (1 detik) menjadi probabilitas 3 kelas nafsu makan (*Lapar, Sedang, Kenyang*) (rujukan: Hu et al., 2026; Dong et al., 2024).
+      3. **Baseline Pembanding: MobileNetV3-Small + LSTM**: Model *end-to-end video classification*.
+    - Menerbitkan dokumen rancangan master: [`research/rancangan-komparasi-metode-cv-dan-dl.md`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/research/rancangan-komparasi-metode-cv-dan-dl.md).
+    - Memutakhirkan [`research/business-logic.md`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/research/business-logic.md) pada Bagian 4 dengan menambahkan dimensi studi komparasi algoritma.
+  - **Penyusunan Protokol Evaluasi & Benchmark Raspberry Pi 5**:
+    - Merancang matriks komparasi 4 dimensi: (1) Akurasi & F1-Score 3 kelas, (2) Ketahanan derau (*false alarm rate* akibat silau matahari, angin, aerator), (3) Beban komputasi *edge* (FPS, latensi ms, CPU %, RAM MB, suhu prosesor °C), dan (4) Kebutuhan rekayasa data latih.
+  - **Penyusunan Prompt Pencarian Akademik Terstruktur untuk Consensus.app**:
+    - Menyusun 5 set prompt bahasa Inggris berstandar akademik tinggi untuk penelusuran bukti empiris spesifik jika diperlukan tambahan verifikasi literatur.
+- **Klasifikasi Perubahan**: *Moderate* (Penambahan dimensi studi komparasi algoritma dan arsitektur Deep Learning hibrida YOLO+LSTM tanpa mengubah objek dan batasan fisik kolam lele).
+- **Status**: Selesai (*Completed*)
+
+---
+
 ### 2026-10-17 (Sesi 16)
 - **Perubahan**:
   - **Ingesti & Ekstraksi Materi Perkuliahan Metodologi Penelitian 2025 (Google Drive Bu Ulla)**:
@@ -349,6 +368,24 @@
     - Menambahkan mekanisme *self-healing / auto-reconnect* di `/home/raspi5/Nisa/app.py`: jika terjadi 15 kegagalan pembacaan frame berturut-turut (~1,5 detik), loop akan otomatis melepaskan objek kamera lama dan memindai ulang perangkat video yang aktif via `_init_camera()`.
     - Merestart dan memverifikasi `nisa-dashboard.service`: aliran video stream `/video_feed` kembali normal dan responsif via Wi-Fi lokal (`192.168.0.106:5000`) maupun Tailscale (`100.126.141.31:5000`).
 - **Alasan**: Pemecahan masalah kamera yang mendadak mati/tidak menampilkan gambar saat kabel USB kamera tersenggol atau dipindah port.
+- **Status**: Selesai (*Completed*)
+
+---
+
+### 2026-10-26 (Sesi 9)
+- **Perubahan**:
+  - **Penonaktifan Kompresi FFMPEG pada Raspberry Pi 5 Kolam**:
+    - Menambahkan toggle `ENABLE_COMPRESSION = False` pada [`scratch/app.py`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/scratch/app.py) dan menyinkronkannya ke `/home/raspi5/Nisa/app.py`.
+    - Merestart layanan `nisa-dashboard.service` via Tailscale secara terjadwal setelah sesi rekaman jam 11.00 selesai, memastikan video mentah OpenCV (~600–700 MB) diunggah utuh tanpa penurunan kualitas encoding ke Google Drive.
+  - **Integrasi 4 Diagram Alur (Flowchart) ke Dokumen PDF Metodologi Komparasi**:
+    - Membuat generator grafik publikasi resolusi tinggi (`scratch/generate_all_flowcharts.py`):
+      - **Gambar 1**: Diagram Alur Sistem Pakan Adaptif Siklus Tertutup (*Closed-Loop Demand-Feeding FSM Architecture*).
+      - **Gambar 2**: Pipeline Pemrosesan Citra Konvensional (*Adaptive TFD + HSV S-Channel + Running Gaussian Baseline*).
+      - **Gambar 3**: Arsitektur Tiga Model Komparasi Deep Learning (*YOLOv8n Murni, YOLOv8n + Bi-LSTM, MobileNetV3 + LSTM*).
+      - **Gambar 4**: Protokol Evaluasi Komparatif *Head-to-Head* pada Raspberry Pi 5 (27.000 frame uji riil).
+    - Memperbarui naskah LaTeX [`latex/rancangan-komparasi-metode-cv-dan-dl.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/rancangan-komparasi-metode-cv-dan-dl.tex) menjadi 7 halaman terstruktur rapi.
+    - Mengompilasi dan menerbitkan berkas PDF resmi ke [`output/komparasi-cv-dan-dl/Rancangan_Komparasi_CV_dan_Deep_Learning.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/komparasi-cv-dan-dl/Rancangan_Komparasi_CV_dan_Deep_Learning.pdf) beserta pratinjau gambar per-halaman.
+- **Alasan**: Memenuhi permintaan pengguna untuk memvisualisasikan alur detail algoritma pakan adaptif ke dalam naskah proposal ilmiah agar mudah dipahami oleh dosen pembimbing dan penguji sidang.
 - **Status**: Selesai (*Completed*)
 
 ---
