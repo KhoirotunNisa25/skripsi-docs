@@ -2,6 +2,21 @@
 
 ## Log Perubahan Dokumen Riset
 
+### 2026-11-01 (Sesi 24)
+- **Perubahan**:
+  - **Penyusunan Evaluasi Komprehensif Kinerja Ilmiah Metode Konvensional Computer Vision**:
+    - Membuat skrip evaluasi otomatis [`scripts/evaluate_conventional_method.py`](file:///run/media/nisaak/New%20Volume/SKRIPSI/skripsi-engine/scripts/evaluate_conventional_method.py) yang menghitung metrik kuantitatif dari data riil 165 video dan *ground-truth* pengamatan manual 354 event.
+    - Menghasilkan dokumen laporan resmi di [`results/LAPORAN_EVALUASI_METODE_KONVENSIONAL.md`](file:///run/media/nisaak/New%20Volume/SKRIPSI/skripsi-engine/results/LAPORAN_EVALUASI_METODE_KONVENSIONAL.md) (dan disalin ke [`research/LAPORAN_EVALUASI_METODE_KONVENSIONAL.md`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/research/LAPORAN_EVALUASI_METODE_KONVENSIONAL.md)):
+      1. **Akurasi, Presisi, Sensitivitas, dan Skor F1**: Akurasi deteksi riak lele mencapai **98,85%**, Presisi **86,67%**, Sensitivitas (*Recall*) **88,14%**, dan Skor F1 **0,8740**.
+      2. **Matriks Kesalahan (*Confusion Matrix*)**: Disusun dalam 2 tingkatan ilmiah: level deteksi event riak air ($TP=312, FP=48, TN=7450, FN=42$) dan level validasi respon pakan lele terhadap jadwal reguler peternak ($TP=10, FP=124, TN=28, FN=3$).
+      3. **Ketahanan Derau (*Noise Robustness*)**: Terbukti meredam **98,20%** waktu pengamatan sebagai kondisi normal aerator bioflok melalui *Adaptive Running Median Baseline* ($\mu + 1,8\sigma$), serta menolak derau iluminasi matahari dan bayangan awan melalui *Temporal Windowing Filter (3–15 Frame)*.
+      4. **Profil Komputasi Tepi (*Edge Resource Profile Raspberry Pi 5*)**: Konsumsi RAM sangat efisien (**~48,6 MB** vs Deep Learning >400 MB), utilisasi prosesor **24,5%–28,2%**, temperatur termal stabil di **63,8°C–68,2°C**, dan latensi inferensi super cepat **~9,6 ms per frame** (*headroom* >90 ms pada 10 FPS).
+      5. **Dokumentasi 5 Pilar Rekayasa Data**: *Spatial Downscaling* ($1280 \times 720 \rightarrow 640 \times 360$), *Temporal Differencing & Gaussian Blur 5x5*, *Statistical Warm-Up Baseline*, *Temporal Windowing 3–15 frame*, dan *Multi-Scale Intensity Quantization*.
+- **Klasifikasi Perubahan**: *Major* (Evaluasi performa ilmiah lengkap untuk naskah skripsi Bab 3 dan Bab 4, pembuktian keunggulan resource edge, dan justifikasi biologis kebutuhan smart feeder).
+- **Status**: Selesai (*Completed*)
+
+---
+
 ### 2026-11-01 (Sesi 23)
 - **Perubahan**:
   - **Penyelesaian Ekstraksi 100% Seluruh Dataset 1 Minggu (165 Video / 985.386 Frame / 27,5 Jam Rekaman)**:
