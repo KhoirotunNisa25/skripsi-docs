@@ -14,13 +14,28 @@ Repositori ini memuat seluruh naskah akademik (LaTeX), tinjauan pustaka terstruk
 
 ```text
 skripsi-docs/
-├── latex/                               # Berkas sumber naskah LaTeX standar Polinema
-│   ├── proposal-bab1.tex                # Entry point kompilasi Draf Bab 1 & Daftar Pustaka
-│   ├── matriks-rp-rq-ro.tex             # Matriks formal RP-RQ-RO standar Bu Ulla (Landscape)
-│   ├── rancangan-komparasi-metode-cv-dan-dl.tex # Naskah komparasi CV vs Lightweight DL
-│   ├── sections/                        # Sub-bab narasi (01-introduction, dll.)
-│   ├── figures/                         # Diagram alur sistem & montase visual resmi
-│   └── references.bib                   # Pustaka BibTeX tervalidasi APA 7th lengkap DOI
+├── latex/                               # Berkas sumber naskah LaTeX (terstruktur per subfolder):
+│   ├── skripsi-proposal/                # Naskah utama proposal skripsi Polinema (main.tex, proposal-bab1.tex, sections/)
+│   ├── studi-literatur/                 # Laporan telaah 19 artikel ilmiah (laporan-tugas-bu-ulla.tex)
+│   ├── standar-bibit-lele/              # Standar biologi & pendederan benih lele (laporan-standar-bibit-dan-pendederan.tex)
+│   ├── analisis-pakan-dan-cv/           # Analisis pakan dibatasi & riset 25 parameter CV (laporan-analisis-pakan-dan-cv.tex)
+│   ├── rp-rq-ro/                        # Matriks perumusan penelitian formal (matriks-rp-rq-ro.tex)
+│   ├── kajian-lengkap-cv-lele/          # Kajian lengkap metodologi CV & noise aerator (kajian-lengkap-metodologi-cv-dan-noise-kolam.tex)
+│   ├── komparasi-cv-dan-dl/             # Cetak biru komparasi CV konvensional vs Deep Learning (rancangan-komparasi-metode-cv-dan-dl.tex)
+│   ├── evaluasi-metode-dan-temuan/      # Laporan evaluasi kuantitatif CV & temuan riset 1 pekan (laporan-hasil-evaluasi-metode-cv-dan-temuan-riset.tex)
+│   ├── figures/                         # Diagram alur sistem, montase visual, & grafik riset bersama
+│   ├── assets/                          # Logo resmi Polinema
+│   ├── styles/                          # Paket gaya LaTeX bersama (.sty & .bst)
+│   └── bib/                             # Basis data sitasi BibTeX bersama (references.bib)
+├── output/                              # Berkas PDF hasil kompilasi LaTeX siap cetak/bimbingan:
+│   ├── skripsi-proposal/main.pdf
+│   ├── studi-literatur/Laporan_Studi_Literatur_Khoirotun_Nisa.pdf
+│   ├── standar-bibit-lele/Standar_Bibit_dan_Pendederan_Lele.pdf
+│   ├── analisis-pakan-dan-cv/laporan-analisis-pakan-dan-cv.pdf
+│   ├── rp-rq-ro/matriks-rp-rq-ro.pdf
+│   ├── kajian-lengkap-cv-lele/Kajian_Lengkap_CV_Bibit_Lele_dan_Noise_Aerator.pdf
+│   ├── komparasi-cv-dan-dl/Rancangan_Komparasi_CV_dan_Deep_Learning.pdf
+│   └── evaluasi-metode-dan-temuan/laporan-hasil-evaluasi-metode-cv-dan-temuan-riset.pdf
 ├── research/                            # Sumber kebenaran (Source of Truth) riset
 │   ├── panduan-penulisan-proposal-skripsi.md # Buku panduan resmi penulisan proposal Polinema
 │   ├── business-logic.md                # Logika riset, batasan kolam, & kendali kuota pakan
@@ -31,9 +46,6 @@ skripsi-docs/
 │   ├── artikel computer vision/         # 20 PDF artikel visi komputer & perilaku makan ikan
 │   ├── artikel bibit lele/              # 14 PDF artikel standar pendederan lele & pakan
 │   └── searches/                        # CSV hasil pencarian Consensus & literatur
-├── output/                              # Berkas PDF hasil kompilasi LaTeX siap cetak/bimbingan
-├── Proposal_Bab1_Khoirotun_Nisa.pdf     # Berkas PDF Draf Bab 1 siap bimbingan (10 Halaman)
-└── matriks-rp-rq-ro-kolam-tenang.pdf    # Berkas PDF Matriks RP-RQ-RO siap bimbingan (2 Halaman)
 ```
 
 ---

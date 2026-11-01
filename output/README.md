@@ -1,104 +1,102 @@
-# 📂 Direktori Berkas Luaran (*Output Directory*)
+# 📂 Direktori Berkas Luaran (*Output Directory*) & Pemetaan Dokumen LaTeX
 
-Dokumen ini memetakan seluruh berkas luaran PDF dan file pembantu hasil kompilasi LaTeX yang telah dikelompokkan secara rapi ke dalam subdirektori masing-masing:
+Repositori ini memisahkan secara tegas antara **Kode Sumber LaTeX** (`latex/`) dan **Berkas Luaran PDF Hasil Kompilasi** (`output/`). Setiap dokumen akademik dikelompokkan ke dalam subdirektori tematik yang saling berpasangan:
 
-```
-output/
-├── skripsi-proposal/          <-- Naskah Utama Proposal Skripsi
-│   └── main.pdf               (25 halaman, format resmi Polinema)
+```text
+sekeripsi/
+├── latex/                                  <-- KODE SUMBER DOKUMEN LATEX (TERSTRUKTUR PER SUBFOLDER)
+│   ├── skripsi-proposal/                   # Naskah utama proposal skripsi Polinema
+│   │   ├── main.tex, proposal-bab1.tex
+│   │   ├── sections/ (01-pendahuluan, 02-tinjauan-pustaka, dll.)
+│   │   ├── tables/ & config/
+│   ├── studi-literatur/                    # Laporan telaah 19 artikel ilmiah
+│   │   └── laporan-tugas-bu-ulla.tex
+│   ├── standar-bibit-lele/                 # Standar biologi & pendederan bibit lele
+│   │   └── laporan-standar-bibit-dan-pendederan.tex
+│   ├── analisis-pakan-dan-cv/              # Analisis pakan dibatasi & riset 25 parameter CV
+│   │   └── laporan-analisis-pakan-dan-cv.tex
+│   ├── rp-rq-ro/                           # Matriks perumusan penelitian formal
+│   │   └── matriks-rp-rq-ro.tex
+│   ├── kajian-lengkap-cv-lele/             # Kajian lengkap metodologi CV & noise aerator
+│   │   └── kajian-lengkap-metodologi-cv-dan-noise-kolam.tex
+│   ├── komparasi-cv-dan-dl/                # Cetak biru komparasi CV konvensional vs Deep Learning
+│   │   └── rancangan-komparasi-metode-cv-dan-dl.tex
+│   ├── evaluasi-metode-dan-temuan/         # Laporan evaluasi kuantitatif CV & temuan riset 1 pekan
+│   │   └── laporan-hasil-evaluasi-metode-cv-dan-temuan-riset.tex
+│   ├── figures/                            # Direktori bersama gambar & diagram alur (flowchart)
+│   ├── assets/                             # Logo resmi Polinema
+│   ├── styles/                             # Paket gaya LaTeX bersama (.sty & .bst)
+│   └── bib/                                # Basis data sitasi BibTeX bersama (.bib)
 │
-├── studi-literatur/           <-- Dokumen Laporan Studi Literatur
-│   └── Laporan_Studi_Literatur_Khoirotun_Nisa.pdf (Laporan penugasan Bu Ulla)
-│
-├── standar-bibit-lele/        <-- Panduan Standar Bibit & Manajemen Pakan
-│   └── Standar_Bibit_dan_Pendederan_Lele.pdf (Standar pendederan benih lele)
-│
-├── analisis-pakan-dan-cv/     <-- Laporan Hasil Bimbingan Dosen Terbaru
-│   └── laporan-analisis-pakan-dan-cv.pdf (Analisis Pakan Dibatasi vs Loss & 25 Parameter CV)
-│
-└── rp-rq-ro/                  <-- Matriks Penelitian RP - RQ - RO Kolam Tenang
-    └── matriks-rp-rq-ro.pdf   (2 halaman landscape, tabel formal tanpa aerator)
+└── output/                                 <-- BERKAS LUARAN HASIL KOMPILASI PDF
+    ├── skripsi-proposal/main.pdf
+    ├── studi-literatur/Laporan_Studi_Literatur_Khoirotun_Nisa.pdf
+    ├── standar-bibit-lele/Standar_Bibit_dan_Pendederan_Lele.pdf
+    ├── analisis-pakan-dan-cv/laporan-analisis-pakan-dan-cv.pdf
+    ├── rp-rq-ro/matriks-rp-rq-ro.pdf
+    ├── kajian-lengkap-cv-lele/Kajian_Lengkap_CV_Bibit_Lele_dan_Noise_Aerator.pdf
+    ├── komparasi-cv-dan-dl/Rancangan_Komparasi_CV_dan_Deep_Learning.pdf
+    └── evaluasi-metode-dan-temuan/laporan-hasil-evaluasi-metode-cv-dan-temuan-riset.pdf
 ```
 
 ---
 
 ## 📑 1. Proposal Skripsi Utama (*Skripsi Proposal*)
-- **Jalur Folder**: [`output/skripsi-proposal/`](file:///e:/SKRIPSI/sekeripsi/output/skripsi-proposal/)
-- **Berkas PDF**: [`output/skripsi-proposal/main.pdf`](file:///e:/SKRIPSI/sekeripsi/output/skripsi-proposal/main.pdf)
-- **Sumber LaTeX**: [`latex/main.tex`](file:///e:/SKRIPSI/sekeripsi/latex/main.tex)
-- **Deskripsi**: Naskah lengkap proposal skripsi *"Deteksi Aktivitas Ikan Lele sebagai Indikasi Lapar Berbasis Computer Vision pada Kolam Luar Ruangan Ber-aerator"* (Bab 1 s.d. Bab 7, tabel perbandingan 19 artikel, perbandingan 4 metode deteksi gerakan, formulasi 3 research gap, dan positioning penelitian).
+- **Sumber LaTeX**: [`latex/skripsi-proposal/main.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/skripsi-proposal/main.tex)
+- **Berkas PDF**: [`output/skripsi-proposal/main.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/skripsi-proposal/main.pdf)
+- **Deskripsi**: Naskah lengkap proposal skripsi *"Deteksi Aktivitas Ikan Lele sebagai Indikasi Lapar Berbasis Computer Vision pada Kolam Luar Ruangan Ber-aerator"* (format resmi Polinema, Bab 1 s.d. Bab 7).
 
 ---
 
 ## 📑 2. Laporan Studi Literatur (*Studi Literatur*)
-- **Jalur Folder**: [`output/studi-literatur/`](file:///e:/SKRIPSI/sekeripsi/output/studi-literatur/)
-- **Berkas PDF**: [`output/studi-literatur/Laporan_Studi_Literatur_Khoirotun_Nisa.pdf`](file:///e:/SKRIPSI/sekeripsi/output/studi-literatur/Laporan_Studi_Literatur_Khoirotun_Nisa.pdf)
-- **Sumber LaTeX**: [`latex/laporan-tugas-bu-ulla.tex`](file:///e:/SKRIPSI/sekeripsi/latex/laporan-tugas-bu-ulla.tex)
+- **Sumber LaTeX**: [`latex/studi-literatur/laporan-tugas-bu-ulla.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/studi-literatur/laporan-tugas-bu-ulla.tex)
+- **Berkas PDF**: [`output/studi-literatur/Laporan_Studi_Literatur_Khoirotun_Nisa.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/studi-literatur/Laporan_Studi_Literatur_Khoirotun_Nisa.pdf)
 - **Deskripsi**: Laporan terstruktur 8 bagian yang merangkum telaah literatur 19 artikel ilmiah terverifikasi untuk diserahkan/dikonsultasikan kepada dosen pembimbing (Dr. Ulla Delfana Rosiani, ST., MT.).
 
 ---
 
 ## 📑 3. Standar Bibit & Pendederan Lele (*Standar Bibit Lele*)
-- **Jalur Folder**: [`output/standar-bibit-lele/`](file:///e:/SKRIPSI/sekeripsi/output/standar-bibit-lele/)
-- **Berkas PDF**: [`output/standar-bibit-lele/Standar_Bibit_dan_Pendederan_Lele.pdf`](file:///e:/SKRIPSI/sekeripsi/output/standar-bibit-lele/Standar_Bibit_dan_Pendederan_Lele.pdf)
-- **Sumber LaTeX**: [`latex/laporan-standar-bibit-dan-pendederan.tex`](file:///e:/SKRIPSI/sekeripsi/latex/laporan-standar-bibit-dan-pendederan.tex)
-- **Deskripsi**: Laporan standar biologi perkembangan benih lele (*Clarias gariepinus*), parameter kualitas air pendederan (BBI Teun), kebutuhan pakan alami vs pelet mikro protein tinggi, dan takaran pakan harian berdasarkan 9 literatur fisik lokal.
+- **Sumber LaTeX**: [`latex/standar-bibit-lele/laporan-standar-bibit-dan-pendederan.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/standar-bibit-lele/laporan-standar-bibit-dan-pendederan.tex)
+- **Berkas PDF**: [`output/standar-bibit-lele/Standar_Bibit_dan_Pendederan_Lele.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/standar-bibit-lele/Standar_Bibit_dan_Pendederan_Lele.pdf)
+- **Deskripsi**: Laporan standar biologi benih lele (*Clarias gariepinus*), parameter kualitas air pendederan (BBI Teun), kebutuhan pakan alami vs pelet mikro, dan takaran pakan harian berdasarkan 9 literatur fisik lokal.
 
 ---
 
 ## 📑 4. Laporan Analisis Pakan & Riset Computer Vision 25 Parameter (*Analisis Pakan & CV*)
-- **Jalur Folder**: [`output/analisis-pakan-dan-cv/`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/analisis-pakan-dan-cv/)
+- **Sumber LaTeX**: [`latex/analisis-pakan-dan-cv/laporan-analisis-pakan-dan-cv.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/analisis-pakan-dan-cv/laporan-analisis-pakan-dan-cv.tex)
 - **Berkas PDF**: [`output/analisis-pakan-dan-cv/laporan-analisis-pakan-dan-cv.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/analisis-pakan-dan-cv/laporan-analisis-pakan-dan-cv.pdf)
-- **Sumber LaTeX**: [`latex/laporan-analisis-pakan-dan-cv.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/laporan-analisis-pakan-dan-cv.tex)
-- **Deskripsi**: Laporan akademik resmi hasil bimbingan dosen (4 halaman) yang mencakup:
-  1. Penegasan konsep skripsi hasil bimbingan (kuota petani terbagi adaptif berbasis riak bibit lele, baseline aerator, evaluasi 1 bulan vs manual, tanpa kualitas air/kesehatan).
-  2. Output 1: Analisis kebiasaan bibit lele dan respon pakan (dibatasi 5% vs loss ad libitum, FCR, amonia toksik, compensatory growth).
-  3. Output 2: Riset mendalam computer vision dengan tabel komparasi 25 parameter rigid (Hu et al. 2026 vs Wu et al. 2024 vs kondisi skripsi), karakteristik metode visual, dan formulasi teknis model temporal LSTM (input 1D, windowing, target biner, Z-score baseline aerator).
+- **Deskripsi**: Laporan akademik resmi hasil bimbingan dosen mencakup analisis respon pakan (dibatasi 5% vs loss ad libitum, FCR, amonia toksik) dan riset 25 parameter CV.
 
 ---
 
-## 📑 5. Kajian Lengkap Metodologi CV, Noise Aerator & Kendali Servo Feeder (*Kajian Lengkap CV Lele*)
-- **Jalur Folder**: [`output/kajian-lengkap-cv-lele/`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/kajian-lengkap-cv-lele/)
-- **Berkas PDF Siap Cetak**: [`output/kajian-lengkap-cv-lele/Kajian_Lengkap_CV_Bibit_Lele_dan_Noise_Aerator.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/kajian-lengkap-cv-lele/Kajian_Lengkap_CV_Bibit_Lele_dan_Noise_Aerator.pdf)
-- **Dokumen Sintesis Markdown**: [`research/synthesis/kajian-lengkap-metodologi-cv-dan-noise-kolam.md`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/research/synthesis/kajian-lengkap-metodologi-cv-dan-noise-kolam.md)
-- **Sumber LaTeX**: [`latex/kajian-lengkap-metodologi-cv-dan-noise-kolam.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/kajian-lengkap-metodologi-cv-dan-noise-kolam.tex)
-- **Deskripsi**: Dokumen kajian akademik dan metodologi komprehensif (7 halaman siap cetak) yang mengintegrasikan:
-  1. Analisis visual optik setup riil kamera jarak dekat ($h \approx 30\text{--}50\text{ cm}$) di atas kolam terpal ber-aerator berdasarkan citra aktual `image.png`.
-  2. Sintesis kritis seluruh 20 artikel CV global dengan Tabel Master 20 artikel dan formulasi 4 *research gap* berbasis bukti.
-  3. Formulasi matematis pemisahan riak makan bibit lele vs derau aerator kontinu via *Welford Running Gaussian Baseline* dan deteksi anomali $Z$-score terverifikasi temporal.
-  4. Strategi reduksi derau luar ruangan (pantulan silau matahari via HSV/CLAHE + filter optik polarisasi CPL, daun melayang via arah vektor, bayangan burung via batas luas kontur maksimum).
-  5. Kuantifikasi perubahan piksel (*Three-Frame Differencing*) menjadi skor kuantitatif *Feeding Activity Index* ($FAI$) beserta matriks keputusan.
-  6. Desain sistem kontrol aktuator servo PCA9685 berbasis *Finite State Machine* (FSM) yang taat batasan kuota harian petani (*daily quota budgeting*) dan jeda *cooldown* 3--5 menit.
-  7. Rancangan pengujian lapangan 1 bulan dan parameter evaluasi biologis (ADG, FCR, SR, Feed Saving) serta metrik visi komputer edge.
+## 📑 5. Matriks Perumusan Penelitian RP, RQ, dan RO Kolam Tenang (*RP-RQ-RO*)
+- **Sumber LaTeX**: [`latex/rp-rq-ro/matriks-rp-rq-ro.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/rp-rq-ro/matriks-rp-rq-ro.tex)
+- **Berkas PDF**: [`output/rp-rq-ro/matriks-rp-rq-ro.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/rp-rq-ro/matriks-rp-rq-ro.pdf)
+- **Deskripsi**: Dokumen matriks perumusan penelitian formal (2 halaman A4 landscape siap cetak) mencakup 4 Research Questions dan 4 Research Objectives terukur.
 
 ---
 
-## 📑 6. Matriks Perumusan Penelitian RP, RQ, dan RO Kolam Tenang (*RP-RQ-RO*)
-- **Jalur Folder**: [`output/rp-rq-ro/`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/rp-rq-ro/)
-- **Berkas PDF Siap Cetak**: [`output/rp-rq-ro/matriks-rp-rq-ro.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/rp-rq-ro/matriks-rp-rq-ro.pdf) (salinan di root: [`matriks-rp-rq-ro-kolam-tenang.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/matriks-rp-rq-ro-kolam-tenang.pdf))
-- **Sumber LaTeX**: [`latex/matriks-rp-rq-ro.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/matriks-rp-rq-ro.tex)
-- **Deskripsi**: Dokumen matriks perumusan penelitian skripsi formal (2 halaman A4 landscape siap cetak) untuk konteks **kolam luar ruangan tenang tanpa aerator**:
-  1. **Halaman 1 (Tabel Matriks Formal)**: Kolom 1 Research Problem (RP) di-merge penuh secara vertikal mencakup seluruh baris 4 Research Questions (RQ1–RQ4) dan 4 Research Objectives (RO1–RO4) tanpa menyinggung aerator.
-  2. **Halaman 2 (Konstruk Metodologis & Batasan)**: Pemetaan metodologi dan metrik terukur (Recall, FPR, F1, latensi edge, signifikansi statistik $p < 0,05$, FCR, SR) serta batasan mutlak sistem (*system boundaries*) dan prinsip logika pakan adaptif terkendali kuota petani (*daily quota budgeting*).
+## 📑 6. Kajian Lengkap Metodologi CV, Noise Aerator & Kendali Servo Feeder (*Kajian Lengkap CV Lele*)
+- **Sumber LaTeX**: [`latex/kajian-lengkap-cv-lele/kajian-lengkap-metodologi-cv-dan-noise-kolam.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/kajian-lengkap-cv-lele/kajian-lengkap-metodologi-cv-dan-noise-kolam.tex)
+- **Berkas PDF**: [`output/kajian-lengkap-cv-lele/Kajian_Lengkap_CV_Bibit_Lele_dan_Noise_Aerator.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/kajian-lengkap-cv-lele/Kajian_Lengkap_CV_Bibit_Lele_dan_Noise_Aerator.pdf)
+- **Deskripsi**: Kajian akademik dan metodologi komprehensif (7 halaman) mencakup formulasi running baseline aerator, reduksi glint matahari via kanal S, dan FSM pengendali servo kuota harian.
 
 ---
 
 ## 📑 7. Rancangan Metodologi Komparasi CV Konvensional vs. Lightweight Deep Learning (*Komparasi CV & DL*)
-- **Jalur Folder**: [`output/komparasi-cv-dan-dl/`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/komparasi-cv-dan-dl/)
-- **Berkas PDF Siap Cetak**: [`output/komparasi-cv-dan-dl/Rancangan_Komparasi_CV_dan_Deep_Learning.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/komparasi-cv-dan-dl/Rancangan_Komparasi_CV_dan_Deep_Learning.pdf)
-- **Dokumen Sintesis Markdown**: [`research/rancangan-komparasi-metode-cv-dan-dl.md`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/research/rancangan-komparasi-metode-cv-dan-dl.md)
-- **Sumber LaTeX**: [`latex/rancangan-komparasi-metode-cv-dan-dl.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/rancangan-komparasi-metode-cv-dan-dl.tex)
-- **Deskripsi**: Cetak biru akademik komprehensif (7 halaman A4 portrait) yang merumuskan studi komparasi *head-to-head*:
-  1. **Prinsip Fisika Air Keruh (Anti-Overclaim)**: Menolak deteksi morfologi tubuh lele di bawah air keruh ($\le 3$ cm); fokus mutlak pada riak cipratan transien sub-detik (0,3--0,6 detik) di permukaan air.
-  2. **Metode 1 (Konvensional)**: CPL Lens + HSV $S$-channel + *Adaptive Three-Frame Differencing* (TFD) *bitwise AND* + *Welford Running Gaussian ($Z$-Score)* + FSM servo kuota 5% biomassa.
-  3. **Metode 2 (Lightweight Deep Learning)**:
-     - Sub-metode 2A: YOLOv8-nano murni (deteksi box riak air).
-     - Sub-metode 2B: Hibrida Spatio-Temporal YOLOv8n + LSTM (ekstraksi 5 dimensi vektor fisik gerak permukaan $\to$ Bi-LSTM 2 layer window 10 frame / 1 detik $\to$ 3 kelas nafsu makan: Lapar, Sedang, Kenyang).
-     - Sub-metode 2C: Baseline video classification MobileNetV3-Small + LSTM.
-  4. **Dataset Pipeline & Anotasi Ground Truth**: Protokol sampling 3 kondisi cahaya dan 3 kondisi perilaku; anotasi 1.500 box riak via CVAT/Roboflow dan 600 klip video 10-frame terverifikasi Cohen's Kappa $\kappa \ge 0{,}85$.
-  5. **Edge AI Acceleration Raspberry Pi 5**: TFLite INT8 Quantization (hemat 50%), runtime XNNPACK ARM Neon SIMD, dan *asynchronous decoupled threading*.
-  6. **Matriks Evaluasi Komparatif 4 Dimensi**: Tabel perbandingan kuantitatif rigid mencakup akurasi (Confusion Matrix, Precision, Recall, F1), ketahanan derau (*false positive rate* glint matahari, angin, aerator), performa komputasi *edge* (FPS, latensi ms, CPU %, suhu prosesor °C, ukuran model), dan rekayasa data.
-  7. **Pemetaan Literatur SOTA & Sitasi APA 7th**: Mengaitkan seluruh rancangan ke 8 jurnal global bereputasi dengan DOI aktif.
+- **Sumber LaTeX**: [`latex/komparasi-cv-dan-dl/rancangan-komparasi-metode-cv-dan-dl.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/komparasi-cv-dan-dl/rancangan-komparasi-metode-cv-dan-dl.tex)
+- **Berkas PDF**: [`output/komparasi-cv-dan-dl/Rancangan_Komparasi_CV_dan_Deep_Learning.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/komparasi-cv-dan-dl/Rancangan_Komparasi_CV_dan_Deep_Learning.pdf)
+- **Deskripsi**: Cetak biru akademik (7 halaman A4 portrait) merumuskan studi komparasi *head-to-head*: CV Konvensional vs YOLOv8-nano murni vs YOLOv8n + Bi-LSTM vs MobileNetV3-Small.
 
+---
 
-
+## 📑 8. Laporan Hasil Evaluasi Metode CV & Temuan Riset 1 Pekan (*Evaluasi Metode & Temuan*)
+- **Sumber LaTeX**: [`latex/evaluasi-metode-dan-temuan/laporan-hasil-evaluasi-metode-cv-dan-temuan-riset.tex`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/evaluasi-metode-dan-temuan/laporan-hasil-evaluasi-metode-cv-dan-temuan-riset.tex)
+- **Berkas PDF Siap Cetak Bimbingan**: [`output/evaluasi-metode-dan-temuan/laporan-hasil-evaluasi-metode-cv-dan-temuan-riset.pdf`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/output/evaluasi-metode-dan-temuan/laporan-hasil-evaluasi-metode-cv-dan-temuan-riset.pdf)
+- **Deskripsi**: Laporan akademik komprehensif (6 halaman A4 portrait siap bimbingan Bu Ulla) mencakup:
+  1. Identitas riset & alur pipeline 6 tahap OpenCV konvensional.
+  2. Hasil ekstraksi 100% dari 165 video MP4 kontinu (27,37 jam / 985.386 frame / 3.059 event riak lele).
+  3. Matriks evaluasi kuantitatif (Akurasi 98,85%, Presisi 86,67%, Recall 88,14%, Skor F1 0,8740).
+  4. Penegasan istilah etika akademik arahan Bu Ulla: "Kandidat Aktivitas" & "Kandidat Keresahan" (tanpa overclaim deteksi lapar langsung).
+  5. Pengujian hardware edge Raspberry Pi 5 (RAM 48,6 MB, CPU 24,5%--28,2%, Suhu 63,8°C--68,2°C, Latensi 9,6 ms / Throughput 104,2 FPS).
+  6. Justifikasi ilmiah research gap berbasis kebiasaan nokturnal lele (puncak aktif 21.00--04.00 vs pasif siang hari).
