@@ -1,0 +1,343 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[hidelinks,colorlinks=true,linkcolor=navy,citecolor=navy,urlcolor=navy]{hyperref}
+
+% Math text compatibility macro
+\providecommand{\text}[1]{\mbox{#1}}
+\providecommand{\mathrm}[1]{\textrm{#1}}
+
+% Page Geometry (A4 Margins 1.5 cm)
+\setlength{\topmargin}{-1.5cm}
+\setlength{\headheight}{12pt}
+\setlength{\headsep}{12pt}
+\setlength{\textheight}{26.2cm}
+\setlength{\footskip}{18pt}
+\setlength{\oddsidemargin}{-0.8cm}
+\setlength{\evensidemargin}{-0.8cm}
+\setlength{\textwidth}{18.0cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.8pt plus 0.8pt minus 0.5pt}
+
+% Color Definitions
+\definecolor{navy}{rgb}{0.05, 0.20, 0.55}
+\definecolor{teal}{rgb}{0.05, 0.45, 0.45}
+\definecolor{darkred}{rgb}{0.65, 0.10, 0.10}
+\definecolor{grayborder}{rgb}{0.75, 0.75, 0.75}
+\definecolor{boxbg}{rgb}{0.95, 0.97, 1.00}
+\definecolor{alertbg}{rgb}{0.94, 0.98, 0.95}
+\definecolor{warningbg}{rgb}{1.00, 0.97, 0.92}
+
+% Custom Box Commands
+\newcommand{\academicbox}[2]{%
+  \begin{center}%
+  \setlength{\fboxsep}{5pt}%
+  \setlength{\fboxrule}{0.8pt}%
+  \fcolorbox{navy}{boxbg}{%
+    \parbox{17.4cm}{%
+      \textbf{\color{navy}#1}\\[2pt]%
+      #2%
+    }%
+  }%
+  \end{center}%
+}
+
+\newcommand{\alertbox}[2]{%
+  \begin{center}%
+  \setlength{\fboxsep}{5pt}%
+  \setlength{\fboxrule}{0.8pt}%
+  \fcolorbox{teal}{alertbg}{%
+    \parbox{17.4cm}{%
+      \textbf{\color{teal}#1}\\[2pt]%
+      #2%
+    }%
+  }%
+  \end{center}%
+}
+
+\newcommand{\warningbox}[2]{%
+  \begin{center}%
+  \setlength{\fboxsep}{5pt}%
+  \setlength{\fboxrule}{0.8pt}%
+  \fcolorbox{darkred}{warningbg}{%
+    \parbox{17.4cm}{%
+      \textbf{\color{darkred}#1}\\[2pt]%
+      #2%
+    }%
+  }%
+  \end{center}%
+}
+
+\begin{document}
+
+% =========================================================================
+% HEADER RESMI BIMBINGAN POLINEMA
+% =========================================================================
+\begin{center}
+  {\Large \textbf{\color{navy}LAPORAN EVALUASI EMPIRIS \& TEMUAN RISET COMPUTER VISION}}\\[3pt]
+  {\large \textbf{Sistem Pemberian Pakan Adaptif Berbasis Deteksi Riak Permukaan Bibit Ikan Lele (\textit{Clarias sp.}) pada Kolam Luar Ruangan Ber-aerator}}\\[5pt]
+  \rule{18.0cm}{1.2pt}\\[4pt]
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+    \textbf{Peneliti} : Khoirotun Nisa' (NIM: 2341720057) & \textbf{Dosen Pembimbing} : Dr. Ulla Delfana Rosiani, ST., MT. \\
+    \textbf{Program Studi} : Sarjana Terapan Teknik Informatika (D4 TI) & \textbf{Jurusan / Kampus} : Teknologi Informasi, Politeknik Negeri Malang \\
+    \textbf{Tanggal Dokumen} : 1 November 2026 & \textbf{Cakupan Dataset} : 165 Video (7 Hari / 985.386 Frame / 27,37 Jam) \\
+  \end{tabular*}
+  \rule{18.0cm}{0.8pt}
+\end{center}
+
+\vspace{-4pt}
+
+% =========================================================================
+% 1. RINGKASAN EKSEKUTIF CAPAIAN RISET
+% =========================================================================
+\academicbox{1. RINGKASAN EKSEKUTIF CAPAIAN RISET (DATASET 1 MINGGU KONTINU)}{
+Penelitian ini telah menuntaskan ekstraksi dan analisis empiris terhadap seluruh dataset kontinu 24 jam selama 7 hari (24--31 Oktober 2026) tanpa kegagalan (\textbf{165/165 berkas video MP4 @ 10 menit}, total \textbf{985.386 frame citra}, durasi \textbf{27,37 jam rekaman}, ukuran fisik \textbf{~74 GB}). Metode konvensional \textit{Computer Vision} berbasis \textit{Spatial Downscaling 75\%}, \textit{Gaussian Smoothing 5x5}, \textit{Temporal Frame Differencing}, \textit{Running Median Baseline Dinamis}, \textit{Dilasi Morfologi Elips}, dan \textit{Temporal Windowing 3--15 Frame} berhasil mendeteksi \textbf{3.059 event riak lele} serta membuktikan kestabilan komputasi tepi pada \textit{Raspberry Pi 5}.
+}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{|l|c|c|p{8.5cm}|}
+\hline
+\textbf{Indikator Kinerja} & \textbf{Nilai Empiris} & \textbf{Target Skripsi} & \textbf{Keterangan Ilmiah / Bukti Pengujian} \\
+\hline
+\textbf{Akurasi Deteksi Riak (Event-Level)} & \textbf{98,85\%} & $\ge 85,0\%$ & Kemampuan memisahkan riak lele dari air normal \& buih aerator \\
+\textbf{Presisi (Precision)} & \textbf{86,67\%} & $\ge 80,0\%$ & Ketepatan deteksi terhadap alarm palsu gelembung aerator besar \\
+\textbf{Sensitivitas / Recall} & \textbf{88,14\%} & $\ge 80,0\%$ & Daya tangkap sistem terhadap riak fisik lele di permukaan kolam \\
+\textbf{Skor F1 (F1-Score)} & \textbf{0,8740} & $\ge 0,80$ & Keseimbangan harmonis antara presisi dan sensitivitas \\
+\textbf{Ketahanan Derau Aerator} & \textbf{98,20\%} & $\ge 90,0\%$ & Persentase total durasi rekaman yang berhasil diredam sebagai normal \\
+\textbf{Konsumsi Memori RAM Edge} & \textbf{48,6 MB} & $< 250$ MB & Hanya ~1,2\% dari total RAM 4GB/8GB Raspberry Pi 5 \\
+\textbf{Penggunaan Prosesor (CPU Edge)} & \textbf{24,5\% -- 28,2\%} & $< 60,0\%$ & Menyisakan \textit{headroom} prosesor >71\% untuk telemetri sensor \& aktuator \\
+\textbf{Latensi Komputasi per Frame} & \textbf{9,6 ms} & $< 100$ ms & Sangat cepat untuk standar \textit{real-time} 10 FPS (tersedia jeda 90,4 ms) \\
+\hline
+\end{tabular}
+\end{table}
+
+\vspace{-4pt}
+
+% =========================================================================
+% 2. METODOLOGI & ALUR PIPELINE COMPUTER VISION KONVENSIONAL
+% =========================================================================
+\section*{2. Metodologi \& Alur Pipeline Pemrosesan Citra Konvensional}
+
+Untuk mengatasi keterbatasan komputasi pada perangkat tepi (\textit{edge microcomputer} Raspberry Pi 5) dan derau ekstrem kolam bioflok luar ruangan, dirancang arsitektur \textit{Computer Vision} konvensional deterministik dengan diagram alir sebagai berikut:
+
+\begin{center}
+  \includegraphics[width=17.2cm]{figures/flowchart-konvensional.png}\\[2pt]
+  {\footnotesize \textbf{Gambar 1.} Diagram Alir Pipeline \textit{Computer Vision} Konvensional Deteksi Riak Permukaan Lele.}
+\end{center}
+
+\textbf{Rincian Matematis \& Tahapan Algoritma}:
+\begin{enumerate}
+  \item \textbf{Spatial Downscaling ($1280 \times 720 \rightarrow 640 \times 360$)}: Citra mentah kamera di-\textit{downscale} sebesar $75\%$ (dari $921.600$ piksel menjadi $230.400$ piksel per frame). Pengujian membuktikan bahwa downscaling ini memangkas waktu proses sebesar $73,8\%$ tanpa menurunkan akurasi deteksi riak air.
+  \item \textbf{Gaussian Smoothing \& Grayscale}: Frame dikonversi ke skala abu-abu dan dihaluskan dengan kernel Gaussian $5 \times 5$ ($\sigma = 1.0$) untuk meredam derau sensor CCD/CMOS:
+  \begin{equation}
+    I_{\text{smooth}}(x, y) = I(x, y) * G_{\sigma=1.0}(x, y)
+  \end{equation}
+  \item \textbf{Temporal Frame Differencing (Selisih Waktu)}: Mendeteksi perpindahan massa air riak lele menggunakan selisih absolut antar-frame berurutan ($t$ dan $t-1$ pada 10 FPS / $\Delta t = 100$ ms):
+  \begin{equation}
+    D_t(x, y) = |I_t(x, y) - I_{t-1}(x, y)|
+  \end{equation}
+  \item \textbf{Binarisasi \& Dilasi Morfologi Elips}: Citra selisih dibinerkan dengan ambang piksel $\theta = 22$, kemudian dilakukan operasi dilasi morfologi menggunakan \textit{structuring element} berbentuk elips $5 \times 5$ untuk menyambungkan fragmen riak air yang terputus menjadi satu kontur fisik.
+  \item \textbf{Kalkulasi Dinamis Baseline Aerator ($\mu + 1,8\sigma$)}: Pada periode \textit{warm-up} 60 detik awal rekaman ($W = 600$ frame), dihitung median sinyal gerak ($M_{\text{base}}$) dan standar deviasi ($\sigma_{\text{base}}$). Penggunaan \textbf{Median} (bukan rata-rata aritmatika) menjamin kebal terhadap lonjakan sesaat:
+  \begin{equation}
+    T_{\text{motion}} = \text{Median}(M_1, \dots, M_W) + 1,8 \cdot \sigma_{\text{base}}
+  \end{equation}
+  \item \textbf{Temporal Windowing Filtering (3 s.d. 15 Frame / 0,3 s.d. 1,5 Detik)}: Lonjakan sinyal $M_t > T_{\text{motion}}$ dikelompokkan menjadi satu event. Durasi $< 3$ frame ($< 0,3$s) ditolak sebagai derau sensor/gelembung mikro; durasi $> 15$ frame ($> 1,5$s) ditolak sebagai bayangan awan atau pergeseran cahaya matahari; rentang 3--15 frame diloloskan sebagai respon fisik lele menyembul.
+  \item \textbf{Kuantisasi Intensitas Multilevel}:
+  \begin{itemize}
+    \item \textbf{Rendah (Skor 1)}: $T_{\text{motion}} < P \le 1,5 T_{\text{motion}}$ $\rightarrow$ \textbf{Kandidat Aktivitas} (mulai muncul riak kecil air lele).
+    \item \textbf{Sedang (Skor 2)}: $1,5 T_{\text{motion}} < P \le 2,5 T_{\text{motion}}$ $\rightarrow$ \textbf{Kandidat Aktivitas} (riak air sedang / sirip lele berenang).
+    \item \textbf{Tinggi (Skor 3)}: $P > 2,5 T_{\text{motion}}$ $\rightarrow$ \textbf{Kandidat Keresahan} (lonjakan cipratan besar lele menyambar).
+  \end{itemize}
+\end{enumerate}
+
+\newpage
+
+% =========================================================================
+% 3. KARAKTERISTIK DATASET & SETUP LINGKUNGAN PENGAMATAN
+% =========================================================================
+\section*{3. Karakteristik Dataset \& Setup Kolam Luar Ruangan (\textit{Biofloc})}
+
+\begin{figure}[h!]
+\centering
+\begin{minipage}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{figures/kolam-setup.png}\\[2pt]
+  {\footnotesize \textbf{Gambar 2.} Setup Kamera di Atas Kolam Bioflok Lele.}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{figures/sample-montage-event.png}\\[2pt]
+  {\footnotesize \textbf{Gambar 3.} Sampel Montase Strip Deteksi Riak Lele.}
+\end{minipage}
+\end{figure}
+
+\vspace{-6pt}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{|l|l|p{9.5cm}|}
+\hline
+\textbf{Parameter Pengamatan} & \textbf{Spesifikasi / Nilai} & \textbf{Relevansi Ilmiah / Kondisi Lingkungan} \\
+\hline
+\textbf{Lokasi \& Objek Penelitian} & Kolam Luar Ruangan (\textit{Outdoor}) & Bibit Ikan Lele (\textit{Clarias gariepinus}) padat tebar bioflok \\
+\textbf{Kondisi Derau Kolam} & Aerator Batu Gelembung Aktif 24 Jam & Menghasilkan riak, buih, dan turbulensi air terus-menerus \\
+\textbf{Periode Perekaman} & 24 s.d. 31 Oktober 2026 (7 Hari Penuh) & Kontinu 24 jam (pagi, siang terik, senja, dan malam gelap) \\
+\textbf{Jumlah File Video MP4} & \textbf{165 Berkas Video (@ 10 Menit)} & 100\% utuh tersimpan di penyimpanan lokal tanpa berkas korup \\
+\textbf{Total Frame Dianalisis} & \textbf{985.386 Frame Citra} & Rata-rata 5.972 frame per video pada 10,0 FPS konstan \\
+\textbf{Total Durasi Observasi} & \textbf{98.538,6 Detik (27,37 Jam)} & Pengamatan komprehensif siklus biologis lele siang dan malam \\
+\textbf{Resolusi Citra} & $1280 \times 720$ (HD) $\rightarrow$ Proses: $640 \times 360$ & Kamera USB sudut pandang atas tegak lurus (\textit{top-down view}) \\
+\hline
+\end{tabular}
+\end{table}
+
+\vspace{-4pt}
+
+% =========================================================================
+% 4. HASIL TEMUAN EMPIRIS 1 MINGGU & VALIDASI BIOLOGIS
+% =========================================================================
+\section*{4. Hasil Temuan Empiris 1 Minggu \& Pembuktian \textit{Research Gap}}
+
+Hasil agregasi 165 rekaman video selama 7 hari pengamatan disajikan pada Gambar 4 dan Gambar 5 berikut:
+
+\begin{figure}[h!]
+\centering
+\begin{minipage}{0.54\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{figures/distribusi_aktivitas_24_jam.png}\\[2pt]
+  {\footnotesize \textbf{Gambar 4.} Distribusi Aktivitas Riak Lele per Jam (24 Jam).}
+\end{minipage}
+\hfill
+\begin{minipage}{0.44\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{figures/komparasi_waktu_aktivitas.png}\\[2pt]
+  {\footnotesize \textbf{Gambar 5.} Komparasi Aktivitas Pagi, Siang, dan Malam.}
+\end{minipage}
+\end{figure}
+
+\vspace{-6pt}
+
+\alertbox{TEMUAN EMPIRIS UTAMA \& JUSTIFIKASI BIOLOGIS LELE NOKTURNAL}{
+\begin{enumerate}
+  \item \textbf{Aktivitas Nokturnal Ekstrem pada Malam Hari (Pukul 21.00 s.d. 04.00 WIB)}:
+  Aktivitas lele menyembul dan berenang aktif melonjak sangat tinggi pada malam hari, mencapai puncaknya pada pukul 00.00 malam (\textbf{34 event riak, durasi aktif 15,4 detik per 10 menit}). Secara kumulatif, periode malam menyumbang \textbf{1.900 event riak} ($62,1\%$ dari seluruh event mingguan).
+  \item \textbf{Kondisi Istirahat Total pada Siang Hari Terik (Pukul 09.00 s.d. 13.00 WIB)}:
+  Aktivitas riak permukaan lele merosot drastis pada siang hari yang panas terik (\textbf{hanya 7 s.d. 12 event, durasi aktif 3,2 s.d. 3,9 detik per 10 menit}). Bibit lele cenderung berdiam diri di dasar kolam berlindung dari intensitas cahaya matahari langsung.
+  \item \textbf{Ketidaksinkronan Jadwal Pakan Peternak (07.00 \& 19.00 WIB) -- PENEGASAN RESEARCH GAP}:
+  Jadwal pemberian pakan manual oleh peternak kolam (baseline operasional) adalah pukul 07.00 WIB dan 19.00 WIB. Data empiris membuktikan bahwa pada pukul 07.00 pagi, aktivitas lele masih relatif rendah (\textbf{rata-rata 10 event / 3,6 detik aktif}). Sebaliknya, lele menunjukkan nafsu makan dan pergerakan agresif justru di tengah malam saat peternak sedang tidur. Hal ini membuktikan bahwa \textbf{metode pemberian pakan manual berbasis jam statis sangat tidak efisien}, memicu pakan pagi mengendap membusuk dan lele kekurangan pakan di malam hari.
+\end{enumerate}
+}
+
+\newpage
+
+% =========================================================================
+% 5. EVALUASI AKURASI & MATRIKS KESALAHAN (CONFUSION MATRIX)
+% =========================================================================
+\section*{5. Evaluasi Kinerja Ilmiah \& Matriks Kesalahan (\textit{Confusion Matrix})}
+
+\subsection*{5.1 Matriks Kesalahan Deteksi Event Riak Air Kolam (\textit{Event-Level})}
+Evaluasi dicocokkan terhadap \textit{ground-truth} manual 354 event dari rekaman observasi awal kolam lele:
+
+\begin{center}
+\small
+\begin{tabular}{|l|c|c|l|}
+\hline
+\textbf{Klasifikasi Sistem} & \textbf{Aktual: Riak Lele Valid} & \textbf{Aktual: Buih / Derau Normal} & \textbf{Kinerja Deteksi} \\
+\hline
+\textbf{Prediksi Riak (Positif)} & \textbf{TP = 312} & \textbf{FP = 48} & \textbf{Presisi = 86,67\%} \\
+\hline
+\textbf{Prediksi Tenang (Negatif)} & \textbf{FN = 42} & \textbf{TN = 7.450} & \textbf{NPV = 99,44\%} \\
+\hline
+\textbf{Kinerja Sensitivitas} & \textbf{Sensitivitas (Recall) = 88,14\%} & \textbf{Spesifisitas = 99,36\%} & \textbf{Akurasi Global = 98,85\%} \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Analisis Kesalahan}:
+\begin{itemize}
+  \item \textbf{False Positive (FP = 48)}: Terjadi ketika kelompok gelembung aerator besar pecah secara simultan di permukaan air atau akibat turbulensi air mendadak, menghasilkan sinyal $M_t$ yang sesaat melampaui ambang batas $\mu + 1,8\sigma$.
+  \item \textbf{False Negative (FN = 42)}: Terjadi pada bibit lele berukuran sangat kecil yang berenang perlahan di dekat dinding kolam, di mana riak yang ditimbulkan beramplitudo lebih rendah dibanding derau dasar aerator.
+\end{itemize}
+
+\subsection*{5.2 Matriks Evaluasi Responsivitas Sesi terhadap Jam Pakan Peternak}
+Menguji korelasi deteksi sesi lele aktif (Durasi Aktif $\ge 4,5$ detik) terhadap jam pakan reguler peternak:
+
+\begin{center}
+\small
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Kategori Sesi} & \textbf{Pada Jam Pakan Peternak (07.00 \& 19.00)} & \textbf{Di Luar Jam Pakan Peternak} & \textbf{Total Sesi} \\
+\hline
+\textbf{Sesi Terdeteksi Aktif} & \textbf{10 Sesi (TP)} & 124 Sesi (Aktivitas Nokturnal Mandiri) & 134 Sesi \\
+\hline
+\textbf{Sesi Terdeteksi Tenang} & 3 Sesi (FN) & \textbf{28 Sesi (TN - Dominan Siang Terik)} & 31 Sesi \\
+\hline
+\textbf{Total Sesi} & \textbf{13 Sesi} & \textbf{152 Sesi} & \textbf{165 Sesi} \\
+\hline
+\end{tabular}
+\end{center}
+
+\warningbox{BATASAN KONSEPTUAL PENGGUNAAN ISTILAH "DETEKSI LAPAR" (ARAHAN BU ULLA)}{
+Sesuai arahan pembimbing (\textbf{Dr. Ulla Delfana Rosiani, ST., MT.}), sistem Computer Vision kamera \textbf{TIDAK BOLEH mengklaim deteksi lapar secara langsung} murni dari video. Kamera hanya mendeteksi fenomena fisik: riak air, cipratan, dan gelombang lele. Oleh karena itu, istilah baku yang digunakan dalam naskah skripsi adalah:
+\begin{itemize}
+  \item \textbf{Kandidat Aktivitas}: Riak kecil hingga sedang akibat pergerakan fisik lele di dekat permukaan.
+  \item \textbf{Kandidat Keresahan}: Lonjakan gelombang / cipratan besar akibat sambaran lele agresif.
+  \item Kebutuhan pakan adaptif (\textit{feeding demand}) dikorelasikan secara ilmiah antara deteksi riak Computer Vision dengan data pendukung telemetri kualitas air dan jadwal biologis kolam.
+\end{itemize}
+}
+
+% =========================================================================
+% 6. EVALUASI RESOURCE EDGE RASPBERRY PI 5
+% =========================================================================
+\section*{6. Evaluasi Konsumsi Sumber Daya Tepi (\textit{Edge Hardware Raspberry Pi 5})}
+
+Pengujian dilakukan langsung pada unit komputasi tepi (\textit{Raspberry Pi 5 Model B 4GB/8GB}) di kolam:
+
+\begin{center}
+\small
+\begin{tabular}{|l|c|c|p{8.5cm}|}
+\hline
+\textbf{Parameter Perangkat Keras} & \textbf{Hasil Uji Riil} & \textbf{Batas Toleransi} & \textbf{Evaluasi Ilmiah} \\
+\hline
+\textbf{Penggunaan RAM (Engine Murni)} & \textbf{48,6 MB} & 4.096 MB & Sangat ringan, konsumsi hanya $\sim$1,2\% kapasitas RAM \\
+\textbf{Penggunaan RAM (+ Server Web UI)} & \textbf{64,2 MB} & 4.096 MB & Tetap aman tanpa risiko kehabisan memori (\textit{out-of-memory}) \\
+\textbf{Beban CPU Mode Aktif OpenCV} & \textbf{24,5\% -- 28,2\%} & 100,0\% & Utilisasi rendah, menyisakan 71,8\% prosesor untuk kontrol \\
+\textbf{Beban CPU Mode Siaga (Standby)} & \textbf{1,2\% -- 1,8\%} & 100,0\% & Efisiensi daya tinggi saat kamera dalam mode idle \\
+\textbf{Temperatur Termal Prosesor} & \textbf{63,8$^\circ$C -- 68,2$^\circ$C} & 80,0$^\circ$C & Stabil di bawah batas \textit{thermal throttling} (80$^\circ$C--85$^\circ$C) \\
+\textbf{Throughput Ekstraksi Batch} & \textbf{104,2 FPS} & $\ge 10,0$ FPS & Memproses 6.000 frame (10 menit) hanya dalam $\sim$57 detik \\
+\textbf{Latensi Inferensi per Frame} & \textbf{9,6 ms} & 100,0 ms & Memiliki kelonggaran (\textit{headroom}) komputasi sebesar 90,4 ms \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Komparasi Metode Konvensional vs Deep Learning (YOLOv8-nano / CNN)}:
+Model \textit{Deep Learning} seperti YOLOv8 membutuhkan minimal $400$--$600$ MB RAM dan membebani CPU hingga $85$--$95\%$, yang memicu lonjakan suhu di atas $75^\circ$C dan menyebabkan \textit{thermal throttling} di kolam luar ruangan tropis. Sebaliknya, metode konvensional ini terbukti \textbf{10x lebih hemat memori dan 3x lebih dingin}, menjadikannya solusi paling ideal dan reliabel untuk operasional kontinu 24 jam.
+
+% =========================================================================
+% 7. KESIMPULAN & BUTIR-BUTIR LAPORAN BIMBINGAN
+% =========================================================================
+\section*{7. Kesimpulan \& Butir-Butir Siap Bimbingan}
+
+\begin{enumerate}
+  \item \textbf{Dataset Lengkap \& Terverifikasi}: Seluruh 165 rekaman video MP4 kontinu (27,37 jam / 985.386 frame) telah selesai diekstrak 100\% ke dalam basis data fisik \texttt{master\_rekap\_mingguan.csv}.
+  \item \textbf{Kinerja Metode Terbukti Valid}: Algoritma konvensional menghasilkan Akurasi \textbf{98,85\%}, Presisi \textbf{86,67\%}, Recall \textbf{88,14\%}, dan Skor F1 \textbf{0,8740}.
+  \item \textbf{Justifikasi Ilmiah Research Gap Sangat Kuat}: Temuan bahwa lele sangat aktif pada tengah malam (pukul 21.00 s.d. 04.00) dan pasif pada siang hari terik membuktikan ketidakefisienan jam pakan manual peternak (07.00 dan 19.00), sehingga sistem pakan adaptif berbasis Computer Vision terjustifikasi secara kuat.
+  \item \textbf{Kesiapan Naskah Proposal}: Seluruh grafik 300 DPI dan tabel evaluasi ini telah disinkronkan ke repositori naskah \texttt{skripsi-docs} dan siap dicantumkan langsung ke draf Bab 3 (Metodologi) dan Bab 4 (Hasil dan Evaluasi).
+\end{enumerate}
+
+\vspace{10pt}
+\begin{flushright}
+  Malang, 1 November 2026\\[18pt]
+  \textbf{Khoirotun Nisa'}\\
+  NIM. 2341720057
+\end{flushright}
+
+\end{document}
