@@ -2,6 +2,25 @@
 
 ## Log Perubahan Dokumen Riset
 
+### 2026-11-01 (Sesi 23)
+- **Perubahan**:
+  - **Penyelesaian Ekstraksi 100% Seluruh Dataset 1 Minggu (165 Video / 985.386 Frame / 27,5 Jam Rekaman)**:
+    - Seluruh antrean 165 rekaman video MP4 kontinu (24–31 Oktober 2026) berhasil diekstrak secara otomatis tanpa kegagalan ke dalam basis data [`results/summary/master_rekap_mingguan.csv`](file:///run/media/nisaak/New%20Volume/SKRIPSI/skripsi-engine/results/summary/master_rekap_mingguan.csv).
+    - Terdeteksi total **3.059 event riak lele**, dengan durasi aktivitas kumulatif 1.323,3 detik (1,34% dari total waktu pengamatan) dan dominasi kondisi normal derau aerator sebesar 98,2% (97.215,3 detik).
+    - Memperbarui laporan komprehensif mingguan di [`results/LAPORAN_ANALISIS_1_MINGGU.md`](file:///run/media/nisaak/New%20Volume/SKRIPSI/skripsi-engine/results/LAPORAN_ANALISIS_1_MINGGU.md) dan menghasilkan grafik publikasi ilmiah 300 DPI (`distribusi_aktivitas_24_jam.png` dan `komparasi_waktu_aktivitas.png`) yang disinkronkan langsung ke direktori naskah LaTeX [`latex/figures/`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/latex/figures/).
+  - **Pengembangan Antarmuka Interaktif Sinyal Gerakan 24 Jam (*Full-Day Daily Signal & Activity Timeline*)**:
+    - Menambahkan tab navigasi di Web Viewer (`http://localhost:5050`): **`📹 Inspektur Sesi (10 Menit)`** dan **`📈 Sinyal 24 Jam (Harian)`**.
+    - Mengimplementasikan endpoint API backend `/api/daily_dates` dan `/api/daily_signal/<date>` di [`src/viewer/app.py`](file:///run/media/nisaak/New%20Volume/SKRIPSI/skripsi-engine/src/viewer/app.py).
+    - Menyediakan fitur filter interaktif:
+      - **Pilihan Tanggal Harian**: Dropdown 8 hari pengamatan lengkap (24–31 Oktober 2026).
+      - **Filter Kategori Waktu**: Tombol *Semua (24 Jam)*, *Pagi (05–11)*, *Siang (12–17)*, dan *Malam (18–04)*.
+      - **Pilihan Mode Visual**: *Mode 1 (Profil Aktivitas & Durasi Per Jam)* dengan penandaan warna oranye khusus pada jam pakan rutin peternak (07.00 & 19.00 WIB) serta garis tren jumlah event riak; dan *Mode 2 (Sinyal Gerak Kontinu Mt 24 Jam)* dengan kurva densitas gerak temporal differencing, baseline aerator, dan threshold lonjakan lele.
+      - **Tabel Rincian 24 Jam**: Tabel per jam lengkap dengan metrik durasi, jumlah event, baseline derau aerator, serta tombol aksi **`[🔍 Buka di Inspektur]`** yang langsung memuat video rekaman dan frame asli pada jam tersebut.
+- **Klasifikasi Perubahan**: *Major* (Tuntasnya pengolahan seluruh dataset 1 minggu, sinkronisasi grafik ilmiah naskah skripsi, dan penyelesaian modul visualisasi sinyal 24 jam interaktif).
+- **Status**: Selesai (*Completed*)
+
+---
+
 ### 2026-11-01 (Sesi 22)
 - **Perubahan**:
   - **Penyusunan Dokumentasi Komprehensif & Transparansi Arsitektur di `skripsi-engine`**:
