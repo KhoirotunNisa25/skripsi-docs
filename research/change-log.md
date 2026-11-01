@@ -2,6 +2,22 @@
 
 ## Log Perubahan Dokumen Riset
 
+### 2026-11-01 (Sesi 22)
+- **Perubahan**:
+  - **Penyusunan Dokumentasi Komprehensif & Transparansi Arsitektur di `skripsi-engine`**:
+    - Menyusun berkas dokumentasi arsitektur dan algoritma Computer Vision di [`docs/ARSITEKTUR_DAN_PIPELINE.md`](file:///run/media/nisaak/New%20Volume/SKRIPSI/skripsi-engine/docs/ARSITEKTUR_DAN_PIPELINE.md): diagram alir (*flowchart*), matematika *temporal frame differencing* ($|I_t - I_{t-1}|$), kalkulasi baseline dinamis aerator ($\text{Median} + 1.8\sigma$), jendela event lele (3–15 frame), dan pemetaan intensitas gerak menjadi status ilmiah (*Kandidat Aktivitas* dan *Kandidat Keresahan*) sesuai standar bimbingan Dr. Ulla Delfana Rosiani, ST., MT.
+    - Menyusun panduan eksekusi CLI dan Web di [`docs/PANDUAN_EKSEKUSI_CLI_DAN_WEB.md`](file:///run/media/nisaak/New%20Volume/SKRIPSI/skripsi-engine/docs/PANDUAN_EKSEKUSI_CLI_DAN_WEB.md): instruksi eksekusi baris perintah terminal (`python scripts/run_batch_extraction.py` dengan parameter `--date`, `--category`, `--limit`, `--overwrite`), pengoperasian dashboard Web Inspector, serta skrip generator laporan dan grafik.
+    - Mendokumentasikan struktur berkas dan skema kolom data di [`docs/STRUKTUR_DATA_DAN_HASIL.md`](file:///run/media/nisaak/New%20Volume/SKRIPSI/skripsi-engine/docs/STRUKTUR_DATA_DAN_HASIL.md) untuk tabel master rekap mingguan, CSV log event, CSV rekap sesi, sinyal JSON, dan strip montase gambar.
+  - **Peningkatan Transparansi Web UI & Integrasi Live Terminal Console**:
+    - Menghilangkan frasa konfirmasi yang membingungkan pengguna ("berjalan di latar belakang") pada antarmuka web, menegaskan bahwa seluruh proses adalah eksekusi modul Python lokal yang menulis hasil langsung ke direktori fisik `results/`.
+    - Menambahkan jendela *Live Log Terminal Console* pada antarmuka Web Viewer (`http://localhost:5050`) untuk memantau *stdout* pemrosesan video dan frame secara nyata (*real-time*).
+  - **Verifikasi Ekstraksi CLI Transparan & Pembaruan Master Rekap**:
+    - Menguji eksekusi batch via CLI terminal pada sesi `2026-10-24_130001` (terdeteksi 22 event lele aktif dengan durasi kumulatif 8,2 detik, baseline median 3275,50). Berkas CSV resmi, JSON sinyal, montase gambar, dan baris data master rekap berhasil dibuat dan diverifikasi secara langsung.
+- **Klasifikasi Perubahan**: *Major* (Dokumentasi sistematis arsitektur, panduan reproduksi ilmiah, transparansi pipeline eksekusi, dan verifikasi logging fisik).
+- **Status**: Selesai (*Completed*)
+
+---
+
 ### 2026-11-01 (Sesi 21)
 - **Perubahan**:
   - **Penyelesaian Unduhan Dataset Kontinu 1 Minggu (165 Video @ 10 Menit, ~74 GB)**:
