@@ -1,0 +1,19 @@
+Template Analisis Aktivitas Video Ikan Lele (berbasis ID Sesi)
+
+Kenapa berbasis ID Sesi?
+"Karena jam mulai rekam tidak selalu sama persis (kadang 18:02, bukan 19:00) dan jumlah frame yang diambil tiap sesi juga tidak tetap (masih uji coba), setiap sesi rekam dicatat dulu sebagai satu baris di sheet 'Rekap Sesi' dengan ID unik. Event-event di sheet 'Log Event' tinggal menempel ke ID itu, jadi jam mulai & total frame boleh beda-beda tiap sesi, semua tetap terhitung otomatis."
+
+Cara pakai (urutannya penting):
+"1. Setiap kali selesai ambil satu sesi video, buka sheet 'Rekap Sesi' dulu. Isi satu baris baru: ID Sesi (buat kode unik sendiri, mis. S1, S2, atau 17-09_1802), Tanggal, Waktu Mulai aktual, Kategori Jam, FPS (biasanya 10), dan Total Frame Diambil untuk sesi itu."
+"2. Baru buka sheet 'Log Event'. Tonton video sesi tsb, catat SETIAP kali ada perubahan aktivitas dari kondisi normal — satu baris per kejadian. Isi ID Sesi (harus SAMA PERSIS dengan yang dibuat di langkah 1), Frame Mulai & Frame Selesai (nomor frame relatif terhadap sesi itu), Aktivitas, Intensitas, Status, Keterangan."
+"3. Kolom Tanggal, Jam Mulai, dan Durasi (detik) di Log Event terisi OTOMATIS berdasarkan ID Sesi yang ditulis — jangan diedit manual."
+4. Bagian di luar event yang dicatat otomatis dianggap 'Normal'. HANYA mencatat baris untuk event (Kandidat Aktivitas / Kandidat Keresahan). Durasi Normal di 'Rekap Sesi' dihitung otomatis: Total Durasi Sesi − total durasi event yang tercatat.
+
+
+Definisi kolom Status (JANGAN pakai label 'lapar' dulu — masih tahap kandidat indikator):
+"• Normal — kondisi sama seperti baseline (aerator jalan, tidak ada lonjakan gerakan/ikan permukaan)."
+• Kandidat Aktivitas — ada perubahan dari baseline (mis. ikan mulai muncul) tapi belum tentu terkait pakan.
+"• Kandidat Keresahan — perubahan yang lebih jelas/berulang, kandidat kuat terkait pola lapar. Masih perlu diverifikasi, belum kesimpulan final."
+
+Rumus durasi: Durasi (detik) = (Frame Selesai − Frame Mulai) / FPS sesi terkait
+Rumus Total Durasi Sesi (detik) = Total Frame Diambil / FPS

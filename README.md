@@ -1,119 +1,60 @@
-# Academic Literature Review Research Workspace
+# 📚 Skripsi Docs: Dokumentasi Akademik & Naskah Proposal/Skripsi
 
-Repositori ini adalah ruang kerja riset studi literatur terstruktur untuk penyusunan skripsi akademik. Repositori ini dirancang untuk mencari, mengumpulkan, memverifikasi, menganalisis, membandingkan, dan menyintesis artikel ilmiah secara sistematis.
+Repositori ini memuat seluruh naskah akademik (LaTeX), tinjauan pustaka terstruktur, sintesis matriks SOTA, analisis *research gap*, dan dokumentasi bimbingan penelitian skripsi:
 
-[![Folder Bibit Lele](https://img.shields.io/badge/Folder%20Artikel-Bibit%20Lele-059669?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](articles/artikel%20bibit%20lele/)
-[![Folder Computer Vision](https://img.shields.io/badge/Folder%20Artikel-Computer%20Vision-2563EB?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](articles/artikel%20computer%20vision/)
-
-> [!TIP]
-> ### 📚 Repositori Berkas Artikel Ilmiah Terkelompok
-> Kumpulan naskah lengkap artikel ilmiah yang digunakan dalam penelitian dikelompokkan dalam 2 folder:
-> 
-> * 🐟 **Folder Artikel Bibit Lele & Standar Pakan**: [**Buka `articles/artikel bibit lele/`**](articles/artikel%20bibit%20lele/) (Dilengkapi dokumen panduan: [`STANDAR_BIBIT_DAN_PAKAN_LELE.md`](articles/artikel%20bibit%20lele/STANDAR_BIBIT_DAN_PAKAN_LELE.md)).
-> * 👁️ **Folder Artikel Computer Vision & Motion**: [**Buka `articles/artikel computer vision/`**](articles/artikel%20computer%20vision/).
-> * 📋 **Indeks Pusat**: [**Buka `articles/README.md`**](articles/README.md).
+> **"Sistem Pemberian Pakan Adaptif Berbasis Deteksi Riak Aktivitas Permukaan Bibit Ikan Lele (*Clarias sp.*) Menggunakan *Computer Vision* pada Kolam Luar Ruangan Ber-aerator"**  
+> **Peneliti**: Khoirotun Nisa' (NIM: 2341720057)  
+> **Dosen Pembimbing**: Dr. Ulla Delfana Rosiani, ST., MT.  
+> **Program Studi**: Sarjana Terapan Teknik Informatika, Politeknik Negeri Malang  
+> **Repositori Source Code & Engine**: [github.com/KhoirotunNisa25/skripsi-engine](https://github.com/KhoirotunNisa25/skripsi-engine)
 
 ---
 
-## 1. Prinsip Arsitektur: Sumber Kebenaran (*Source of Truth*)
-
-Prinsip dasar yang mengatur ruang kerja penelitian ini adalah:
+## 🏗️ Struktur Ruang Kerja (*Workspace Structure*)
 
 ```text
-research/*.md = SOURCE OF TRUTH (Data & Analisis Riset)
-latex/*.tex   = PRESENTATION / FINAL DOCUMENT (Naskah Publikasi/Laporan)
-```
-
-- **Riset Terlebih Dahulu**: Seluruh temuan, metadata artikel, ekstraksi, analisis, tema sintesis, dan evaluasi *research gap* **WAJIB** dicatat dalam format Markdown di bawah direktori `research/` sebelum dituangkan ke dalam naskah LaTeX.
-- **LaTeX Hanya Sebagai Media Presentasi**: Jangan jadikan naskah LaTeX sebagai basis data utama. Saat ada perubahan informasi riset, perbarui file Markdown terkait terlebih dahulu, kemudian sinkronkan ke seksi naskah LaTeX.
-
----
-
-## 2. Struktur Ruang Kerja (*Workspace Structure*)
-
-```text
-sekeripsi/
-│
-├── articles/                    # Repositori & katalog naskah lengkap artikel ilmiah
-│   └── pdf/                     # Berkas PDF artikel & README.md katalog
-│
-├── research/                    # Basis data analisis riset & sintesis literatur
-│   ├── papers/                  # Folder analisis per paper (misal: 01-nama-paper/)
-│   │   ├── _template/           # Template standar paper baru (metadata, source, analysis)
-│   │   └── .gitkeep
-│   │
-│   ├── synthesis/               # Sintesis komparatif lintas literatur
-│   │   ├── comparison.md        # Matriks perbandingan artikel
-│   │   ├── themes.md            # Sintesis tematik
-│   │   ├── research-gap.md      # Celah penelitian berbasis bukti
-│   │   └── thesis-positioning.md# Pemosisian penelitian skripsi
-│   │
-│   ├── business-logic.md        # Logika penelitian & konsep skripsi
-│   ├── research-requirements.md # Kebutuhan penelitian, RQ, & metrik evaluasi
-│   ├── research-status.md       # Status & progres studi literatur
-│   ├── search-log.md            # Log sesi pencarian & kueri literatur
-│   └── change-log.md            # Riwayat perubahan konsep & dokumen riset
-│
-├── latex/                       # Naskah dokumen skripsi dalam format LaTeX
-│   ├── main.tex                 # Entry point utama naskah skripsi
-│   ├── references.bib           # Sitasi BibTeX tervalidasi
-│   │
-│   ├── assets/                  # Logo dan aset visual resmi
-│   │   └── polinema-logo.png
-│   │
-│   ├── config/                  # Pengaturan layout & paket LaTeX
-│   │   ├── packages.tex
-│   │   ├── formatting.tex
-│   │   └── commands.tex
-│   │
-│   ├── sections/                # Bab-bab naskah skripsi
-│   │   ├── 01-introduction.tex
-│   │   ├── 02-background.tex
-│   │   ├── 03-literature-review.tex
-│   │   ├── 04-comparison.tex
-│   │   ├── 05-research-gap.tex
-│   │   ├── 06-positioning.tex
-│   │   └── 07-conclusion.tex
-│   │
-│   ├── tables/                  # Definisi tabel LaTeX (article-comparison.tex)
-│   └── figures/                 # Diagram, arsitektur, dan grafik
-│
-├── output/                      # Berkas PDF hasil kompilasi LaTeX (main.pdf)
-├── scratch/                     # Skrip pembantu & pengolahan data sementara
-├── README.md                    # Panduan repositori
-└── .gitignore                   # Konfigurasi pengabaian berkas Git
+skripsi-docs/
+├── latex/                               # Berkas sumber naskah LaTeX standar Polinema
+│   ├── proposal-bab1.tex                # Entry point kompilasi Draf Bab 1 & Daftar Pustaka
+│   ├── matriks-rp-rq-ro.tex             # Matriks formal RP-RQ-RO standar Bu Ulla (Landscape)
+│   ├── rancangan-komparasi-metode-cv-dan-dl.tex # Naskah komparasi CV vs Lightweight DL
+│   ├── sections/                        # Sub-bab narasi (01-introduction, dll.)
+│   ├── figures/                         # Diagram alur sistem & montase visual resmi
+│   └── references.bib                   # Pustaka BibTeX tervalidasi APA 7th lengkap DOI
+├── research/                            # Sumber kebenaran (Source of Truth) riset
+│   ├── panduan-penulisan-proposal-skripsi.md # Buku panduan resmi penulisan proposal Polinema
+│   ├── business-logic.md                # Logika riset, batasan kolam, & kendali kuota pakan
+│   ├── rancangan-komparasi-metode-cv-dan-dl.md # Desain eksperimen TFD vs Lightweight DL
+│   ├── observasi_awal/                  # Ground truth manual 151 event observasi awal 3 hari
+│   └── change-log.md                    # Catatan perubahan berkala setiap sesi riset
+├── articles/                            # Katalog naskah lengkap artikel ilmiah bereputasi
+│   ├── artikel computer vision/         # 20 PDF artikel visi komputer & perilaku makan ikan
+│   ├── artikel bibit lele/              # 14 PDF artikel standar pendederan lele & pakan
+│   └── searches/                        # CSV hasil pencarian Consensus & literatur
+├── output/                              # Berkas PDF hasil kompilasi LaTeX siap cetak/bimbingan
+├── Proposal_Bab1_Khoirotun_Nisa.pdf     # Berkas PDF Draf Bab 1 siap bimbingan (10 Halaman)
+└── matriks-rp-rq-ro-kolam-tenang.pdf    # Berkas PDF Matriks RP-RQ-RO siap bimbingan (2 Halaman)
 ```
 
 ---
 
-## 3. Kompilasi Dokumen LaTeX
+## 🔗 Hubungan Antar-Repositori
 
-Untuk mengompilasi naskah `latex/main.tex` menjadi `output/main.pdf`:
+| Repositori | URL GitHub | Peran & Isi Utama |
+| :--- | :--- | :--- |
+| **`skripsi-docs`** (Repo ini) | [github.com/KhoirotunNisa25/skripsi-docs](https://github.com/KhoirotunNisa25/skripsi-docs) | Naskah LaTeX Bab 1–5, sintesis artikel ilmiah, panduan Bu Ulla, dan berkas PDF bimbingan. |
+| **`skripsi-engine`** | [github.com/KhoirotunNisa25/skripsi-engine](https://github.com/KhoirotunNisa25/skripsi-engine) | Source code deteksi riak, batch extractor 165 video, server Flask Raspberry Pi 5, dan hasil CSV/grafik. |
 
-```powershell
+---
+
+## 🛠️ Kompilasi Naskah LaTeX
+
+Kompilasi naskah proposal Bab 1:
+```bash
 cd latex
-pdflatex -interaction=nonstopmode -output-directory=../output main.tex
-bibtex ../output/main
-pdflatex -interaction=nonstopmode -output-directory=../output main.tex
-pdflatex -interaction=nonstopmode -output-directory=../output main.tex
+pdflatex proposal-bab1.tex
+bibtex proposal-bab1
+pdflatex proposal-bab1.tex
+pdflatex proposal-bab1.tex
 ```
-
-Atau menggunakan `latexmk`:
-
-```powershell
-cd latex
-latexmk -pdf -outdir=../output main.tex
-```
-
-Hasil PDF akan otomatis berada pada `output/main.pdf`.
-
----
-
-## 4. Langkah Selanjutnya
-
-1. Tentukan topik spesifik, rumusan masalah, dan tujuan skripsi Anda di [research/business-logic.md](research/business-logic.md).
-2. Tentukan pertanyaan penelitian (*Research Questions*) di [research/research-requirements.md](research/research-requirements.md).
-3. Mulai pencarian artikel ilmiah dan catat kueri di [research/search-log.md](research/search-log.md).
-4. Masukkan berkas PDF artikel ke [articles/pdf/](articles/pdf/) dan buat analisisnya di [research/papers/](research/papers/).
-5. Lakukan sintesis tematik, matriks perbandingan, dan rumuskan *research gap*.
-6. Tuliskan naskah akhir pada bab-bab LaTeX di [latex/sections/](latex/sections/).
+Hasil kompilasi akan menghasilkan PDF bersih siap bimbingan di direktori `output/`.

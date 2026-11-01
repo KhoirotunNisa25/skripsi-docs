@@ -2,6 +2,60 @@
 
 ## Log Perubahan Dokumen Riset
 
+### 2026-11-01 (Sesi 21)
+- **Perubahan**:
+  - **Penyelesaian Unduhan Dataset Kontinu 1 Minggu (165 Video @ 10 Menit, ~74 GB)**:
+    - Seluruh berkas video rekaman 24 jam kontinu selama 7 hari (24–31 Oktober 2026) berhasil diunduh 100% tanpa kegagalan (165/165 file) ke penyimpanan lokal laptop pada pukul 05:27 WIB.
+  - **Restrukturisasi Arsitektur Proyek Menjadi Dua Repositori Terpisah**:
+    - **Pemisahan Repositori Naskah & Riset (`skripsi-docs`)**:
+      - Mengarahkan *remote* origin ke `git@github.com:KhoirotunNisa25/skripsi-docs.git`.
+      - Merapikan struktur ruang kerja: memindahkan CSV pencarian dan PDF literatur ke `articles/searches/`, memindahkan berkas observasi awal 3 hari ke `research/observasi_awal/`, serta membersihkan file temporer di direktori *root*.
+      - Memperbarui dokumentasi `README.md` dengan penegasan peran repositori sebagai *source of truth* akademik dan naskah LaTeX Polinema.
+    - **Inisialisasi & Setup Repositori Source Code & Engine (`skripsi-engine`)**:
+      - Menginisialisasi repositori Git baru di `https://github.com/KhoirotunNisa25/skripsi-engine.git`.
+      - Membangun struktur modular: `configs/`, `src/core/` (MotionDetector MOG2 & baseline), `src/dataset/` (ManifestLoader), `src/extraction/` (VideoEventExtractor), `src/edge/` (server Flask `app.py` & web UI Raspberry Pi 5), `scripts/` (`run_batch_extraction.py`, `run_single_extraction.py`, `generate_visualizations.py`, `deploy_to_raspi.sh`), dan `results/` (`events/`, `summary/`, `figures/`, `montages/`).
+      - Memverifikasi keberhasilan pipeline ekstraksi otomatis: uji coba batch pada video sesi `2026-10-24_120014` berhasil mendeteksi 5 event riak lele dan langsung mengekspor CSV Log Event, Rekap Sesi, serta montase visual frame.
+- **Klasifikasi Perubahan**: *Major* (Restrukturisasi arsitektur repositori, pemisahan kode dan naskah, serta verifikasi operasional pipeline ekstraksi video).
+- **Status**: Selesai (*Completed*)
+
+---
+
+### 2026-10-31 (Sesi 20)
+- **Perubahan**:
+  - **Penegasan Domain Siklus Pakan Eksisting Peternak (07.00 & 19.00 WIB) & Rasional Pemrosesan Kontinu 24 Jam**:
+    - Mengklarifikasi bahwa jadwal pemberian pakan default oleh peternak kolam (*baseline operasional*) adalah 2 kali sehari: pukul **07.00 WIB (pagi)** dan **19.00 WIB (malam)**.
+    - Menetapkan rasional ilmiah bahwa sistem tidak dapat berasumsi lele hanya lapar pada jam default tersebut. Sistem pakan adaptif (*smart feeder*) berbasis *computer vision* harus mampu mendeteksi nafsu makan aktual (*real feeding demand*) yang dapat bergeser akibat dinamika suhu, cuaca, atau kondisi air.
+    - Menetapkan keputusan metodologis untuk memproses dan menganalisis **seluruh data video rekaman kontinu 24 jam selama 1 minggu (165 berkas video @ 10 menit)** guna memetakan profil fluktuasi derau aerator, dinamika riak lele di luar jam makan, serta korelasi telemetri sensor kualitas air secara menyeluruh.
+  - **Re-inisialisasi Background Downloader Dataset (Low-Memory Serial Worker)**:
+    - Menangani insiden penghentian paksa oleh kernel Linux (*systemd-oomd*) dengan merestrukturisasi eksekusi downloader menjadi mode serial tunggal (*1 worker*, konsumsi RAM ~45 MB) agar proses unduh 165 video (~107 GB) berjalan stabil di latar belakang tanpa memicu *memory exhaustion*.
+- **Klasifikasi Perubahan**: *Major* (Penegasan batasan logika domain biologis lele, kebutuhan analisis dataset 24 jam penuh, dan optimasi arsitektur data ingestion).
+- **Status**: Selesai (*Completed*)
+
+---
+
+### 2026-10-26 (Sesi 19)
+- **Perubahan**:
+  - **Implementasi Fitur Thermal Cooldown, Power Control (Reboot/Shutdown), & Optimasi CPU Kamera**:
+    - Menambahkan tombol **Mode Cooldown** pada antarmuka web [`scratch/index.html`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/scratch/index.html) dan endpoint API `/api/system/cooldown` di [`scratch/app.py`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/scratch/app.py) untuk mengistirahatkan prosesor dan sensor kamera saat suhu Raspberry Pi 5 melonjak tinggi (>70°C).
+    - Menambahkan tombol kontrol daya **Reboot** (`/api/system/reboot`) dan **Matikan / Shutdown** (`/api/system/shutdown`) dengan modal peringatan konfirmasi aman.
+    - Menambahkan overlay *Standby Cooldown* interaktif pada kartu video dengan pemantauan temperatur waktu nyata (*real-time*).
+    - Mengoptimalkan *capture loop* kamera secara pasif: encoding JPEG preview hanya aktif saat ada klien web yang melihat aliran video (menghemat penggunaan CPU dari 25% menjadi ~1% saat idle).
+    - Menyinkronkan dan memverifikasi perubahan langsung pada unit Raspberry Pi 5 (`100.126.141.31`). Suhu CPU berhasil diturunkan dari 76,0°C ke 68,8°C dan terus menurun.
+- **Klasifikasi Perubahan**: *Minor* (Fitur manajemen termal, kestabilan perangkat keras edge node, dan optimasi siklus daya).
+- **Status**: Selesai (*Completed*)
+
+---
+
+### 2026-10-26 (Sesi 18)
+- **Perubahan**:
+  - **Penyesuaian Timeout Unggah Google Drive & Sinkronisasi Ulang Rekaman Siang Hari**:
+    - Menaikkan batas waktu *timeout* `rclone` pada [`scratch/app.py`](file:///run/media/nisaak/New%20Volume/SKRIPSI/sekeripsi/scratch/app.py#L786) dan `/home/raspi5/Nisa/app.py` dari 60 menit (`3600s`) menjadi **120 menit (`7200s`)** guna mengakomodasi proses transfer video mentah tanpa kompresi (~550–630 MB) melalui jaringan modem seluler 4G kolam saat jam sibuk.
+    - Memicu antrean unggah ulang via API `/api/sync_pending` untuk berkas tertunda jam 13.00 (`lele_20261026_130004.mp4` - 560,1 MB) dan jam 14.00 (`lele_20261026_140004.mp4` - 548,88 MB).
+- **Klasifikasi Perubahan**: *Minor* (Konfigurasi kestabilan pipeline data capture & cloud storage di edge node Raspberry Pi 5).
+- **Status**: Selesai (*Completed*)
+
+---
+
 ### 2026-10-26 (Sesi 17)
 - **Perubahan**:
   - **Perancangan Detail Metodologi Komparasi Ilmiah: Computer Vision Konvensional vs. Lightweight Deep Learning**:

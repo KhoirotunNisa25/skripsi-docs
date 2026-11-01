@@ -1,0 +1,355 @@
+No,ID Sesi,Tanggal (auto),Jam Mulai Sesi (auto),Frame Mulai,Frame Selesai,Durasi (detik),Intensitas,Status,Skor Intensitas,Aktivitas yang Teramati
+1,1,9/15/2026,18:02,9,11,"0,2",Sedang,Kandidat Aktivitas,2,mulai muncul riak kecil air akibat ikan
+2,1,9/15/2026,18:02,22,24,"0,2",Sedang,Kandidat Aktivitas,2,mulai muncul riak kecil air akibat ikan
+3,1,9/15/2026,18:02,37,41,"0,4",Sedang,Kandidat Aktivitas,2,mulai muncul riak kecil air akibat ikan
+4,1,9/15/2026,18:02,65,69,"0,4",Sedang,Kandidat Aktivitas,2,mulai muncul riak kecil air akibat ikan
+5,2,9/16/2026,5:33:00 AM,126,132,"0,6",Sedang,Kandidat Aktivitas,2,mulai muncul riak kecil air akibat ikan
+6,2,9/16/2026,5:33:00 AM,170,176,"0,6",Sedang,Kandidat Keresahan,2,muncul 2 gelombang sedang
+7,2,9/16/2026,5:33:00 AM,187,191,"0,4",Sedang,Kandidat Aktivitas,2,mulai muncul riak kecil air akibat ikan
+8,2,9/16/2026,5:33:00 AM,231,236,"0,5",Sedang,Kandidat Aktivitas,2,muncul riak air kecil 
+9,2,9/16/2026,5:33:00 AM,258,263,"0,5",Sedang,Kandidat Aktivitas,2,muncul riak air kecil 
+10,2,9/16/2026,5:33:00 AM,331,334,"0,3",Sedang,Kandidat Aktivitas,2,muncul riak air kecil 
+11,2,9/16/2026,5:33:00 AM,335,340,"0,5",Sedang,Kandidat Aktivitas,2,muncul riak air kecil 
+12,2,9/16/2026,5:33:00 AM,367,371,"0,4",Sedang,Kandidat Aktivitas,2,muncul riak air kecil 
+13,2,9/16/2026,5:33:00 AM,379,385,"0,6",Sedang,Kandidat Aktivitas,2,muncul riak air kecil 
+14,2,9/16/2026,5:33:00 AM,394,398,"0,4",Sedang,Kandidat Aktivitas,2,muncul riak air kecil 
+15,2,9/16/2026,5:33:00 AM,419,423,"0,4",Sedang,Kandidat Aktivitas,2,muncul riak air kecil 
+16,2,9/16/2026,5:33:00 AM,421,426,"0,5",Sedang,Kandidat Aktivitas,2,muncul riak air kecil 
+17,2,9/16/2026,5:33:00 AM,428,434,"0,6",Sedang,Kandidat Aktivitas,2,munculnya beberapa riak kecil
+18,2,9/16/2026,5:33:00 AM,428,434,"0,6",Sedang,Kandidat Aktivitas,2,muncul riak air kecil 
+19,2,9/16/2026,5:33:00 AM,477,483,"0,6",Sedang,Kandidat Aktivitas,2,munculnya riak kecil --> gelombang
+20,2,9/16/2026,5:33:00 AM,489,495,"0,6",Sedang,Kandidat Aktivitas,2,muncul riak air kecil 
+21,2,9/16/2026,5:33:00 AM,616,622,"0,6",Sedang,Kandidat Aktivitas,2,muncul beberapa riak
+22,2,9/16/2026,5:33:00 AM,634,640,"0,6",Sedang,Kandidat Aktivitas,2,muncul riak kecil akibat ikan
+23,2,9/16/2026,5:33:00 AM,641,646,"0,5",Sedang,Kandidat Aktivitas,2,muncul riak air kecil 
+24,2,9/16/2026,5:33:00 AM,658,666,"0,8",Sedang,Kandidat Keresahan,2,ikan lompat --> gelombang sedang
+25,2,9/16/2026,5:33:00 AM,669,674,"0,5",Sedang,Kandidat Aktivitas,2,muncul beberapa rik kecil
+26,2,9/16/2026,5:33:00 AM,674,678,"0,4",Sedang,Kandidat Aktivitas,2,muncul riak air kecil 
+27,2,9/16/2026,5:33:00 AM,738,743,"0,5",Sedang,Kandidat Aktivitas,2,muncul riak kecil
+28,2,9/16/2026,5:33:00 AM,744,749,"0,5",Sedang,Kandidat Aktivitas,2,muncul riak air kecil 
+29,2,9/16/2026,5:33:00 AM,750,755,"0,5",Sedang,Kandidat Aktivitas,2,muncul beberapa riak kecil
+30,2,9/16/2026,5:33:00 AM,873,879,"0,6",Sedang,Kandidat Aktivitas,2,muncul riak --> gelombang
+31,2,9/16/2026,5:33:00 AM,898,900,"0,2",Sedang,Kandidat Aktivitas,2,muncul riak
+32,2,9/16/2026,5:33:00 AM,987,991,"0,4",Sedang,Kandidat Aktivitas,2,
+33,3,9/16/2026,7:36:00 AM,19,22,"0,3",Sedang,Kandidat Aktivitas,2,muncul riak air --> gelombang
+34,3,9/16/2026,7:36:00 AM,28,31,"0,3",Sedang,Kandidat Aktivitas,2,muncul riak air --> gelombang
+35,3,9/16/2026,7:36:00 AM,57,62,"0,5",Sedang,Kandidat Aktivitas,2,muncul riak air kecil
+36,3,9/16/2026,7:36:00 AM,71,74,"0,3",Sedang,Kandidat Aktivitas,2,muncul riak air --> gelombang
+37,3,9/16/2026,7:36:00 AM,83,85,"0,2",Sedang,Kandidat Aktivitas,2,muncul riak air --> gelombang
+38,3,9/16/2026,7:36:00 AM,221,230,"0,9",Sedang,Kandidat Aktivitas,2,muncul beberapa riak air kecil
+39,3,9/16/2026,7:36:00 AM,251,254,"0,3",Sedang,Kandidat Aktivitas,2,riak air --> gelombang
+40,3,9/16/2026,7:36:00 AM,267,272,"0,5",Sedang,Kandidat Aktivitas,2,riak air --> gelombang
+41,3,9/16/2026,7:36:00 AM,292,300,"0,8",Sedang,Kandidat Aktivitas,2,muncul beberapa riak air kecil
+42,3,9/16/2026,7:36:00 AM,311,313,"0,2",Sedang,Kandidat Aktivitas,2,riak air kecil
+43,3,9/16/2026,7:36:00 AM,318,322,"0,4",Sedang,Kandidat Aktivitas,2,riak air kecil
+44,3,9/16/2026,7:36:00 AM,325,330,"0,5",Sedang,Kandidat Aktivitas,2,riak air kecil
+45,3,9/16/2026,7:36:00 AM,346,350,"0,4",Sedang,Kandidat Aktivitas,2,riak air kecil
+46,3,9/16/2026,7:36:00 AM,358,362,"0,4",Sedang,Kandidat Aktivitas,2,riak air kecil
+47,3,9/16/2026,7:36:00 AM,362,371,"0,9",Sedang,Kandidat Aktivitas,2,muncul beberapa riak air kecil
+48,4,9/16/2026,1:00:00 PM,1259,1263,"0,4",Rendah,Kandidat Aktivitas,1,riak air --> gelombang
+49,4,9/16/2026,1:00:00 PM,1574,1577,"0,3",Rendah,Kandidat Aktivitas,1,riak air kecil
+50,4,9/16/2026,1:00:00 PM,1578,1582,"0,4",Rendah,Kandidat Aktivitas,1,riak air kecil
+51,4,9/16/2026,1:00:00 PM,1651,1653,"0,2",Rendah,Kandidat Aktivitas,1,riak air kecil
+52,4,9/16/2026,1:00:00 PM,1950,1954,"0,4",Rendah,Kandidat Aktivitas,1,riak air kecil
+53,4,9/16/2026,1:00:00 PM,2026,2029,"0,3",Rendah,Kandidat Aktivitas,1,riak air kecil
+54,4,9/16/2026,1:00:00 PM,2186,2191,"0,5",Rendah,Kandidat Aktivitas,1,riak air kecil
+55,4,9/16/2026,1:00:00 PM,2204,2207,"0,3",Rendah,Kandidat Aktivitas,1,riak air kecil
+56,4,9/16/2026,1:00:00 PM,2869,2871,"0,2",Rendah,Kandidat Aktivitas,1,riak air kecil
+57,4,9/16/2026,1:00:00 PM,2873,2877,"0,4",Rendah,Kandidat Aktivitas,1,riak air kecil
+58,4,9/16/2026,1:00:00 PM,3241,3244,"0,3",Rendah,Kandidat Aktivitas,1,riak air kecil
+59,4,9/16/2026,1:00:00 PM,3895,3899,"0,4",Rendah,Kandidat Aktivitas,1,riak air kecil
+60,4,9/16/2026,1:00:00 PM,4195,4198,"0,3",Rendah,Kandidat Aktivitas,1,riak air kecil
+61,4,9/16/2026,1:00:00 PM,4227,4230,"0,3",Rendah,Kandidat Aktivitas,1,riak air kecil
+62,4,9/16/2026,1:00:00 PM,4386,4390,"0,4",Rendah,Kandidat Aktivitas,1,riak air kecil
+63,4,9/16/2026,1:00:00 PM,4419,4422,"0,3",Rendah,Kandidat Aktivitas,1,riak air kecil
+64,4,9/16/2026,1:00:00 PM,4598,4602,"0,4",Rendah,Kandidat Aktivitas,1,riak air kecil
+65,4,9/16/2026,1:00:00 PM,4629,4633,"0,4",Rendah,Kandidat Aktivitas,1,riak air kecil
+66,4,9/16/2026,1:00:00 PM,5442,5445,"0,3",Rendah,Kandidat Aktivitas,1,riak air kecil
+67,4,9/16/2026,1:00:00 PM,5450,5452,"0,2",Rendah,Kandidat Aktivitas,1,riak air kecil
+68,4,9/16/2026,1:00:00 PM,6335,6338,"0,3",Rendah,Kandidat Aktivitas,1,riak air kecil
+69,4,9/16/2026,1:00:00 PM,6464,6468,"0,4",Rendah,Kandidat Aktivitas,1,riak --> gelombang
+70,4,9/16/2026,1:00:00 PM,6640,6643,"0,3",Rendah,Kandidat Aktivitas,1,riak --> gelombang
+71,4,9/16/2026,1:00:00 PM,7198,7202,"0,4",,Kandidat Aktivitas,,riak air kecil
+72,4,9/16/2026,1:00:00 PM,7318,7321,"0,3",,Kandidat Aktivitas,,riak air kecil
+73,4,9/16/2026,1:00:00 PM,7456,7458,"0,2",,Kandidat Aktivitas,,riak air kecil
+74,4,9/16/2026,1:00:00 PM,7463,7466,"0,3",,Kandidat Aktivitas,,riak air kecil
+75,4,9/16/2026,1:00:00 PM,8004,8008,"0,4",,Kandidat Aktivitas,,riak air kecil
+76,4,9/16/2026,1:00:00 PM,8135,8139,"0,4",,Kandidat Aktivitas,,riak air naik kecil 
+77,4,9/16/2026,1:00:00 PM,8157,8159,"0,2",,Kandidat Aktivitas,,riak air kecil
+78,4,9/16/2026,1:00:00 PM,8373,8376,"0,3",,Kandidat Aktivitas,,riak air kecil
+79,4,9/16/2026,1:00:00 PM,8629,8631,"0,2",,Kandidat Aktivitas,,riak air kecil
+80,4,9/16/2026,1:00:00 PM,8985,8988,"0,3",,Kandidat Aktivitas,,riak air kecil
+81,6,9/17/2026,1:00:00 AM,2,5,"0,3",,Kandidat Aktivitas,,riak air kecil
+82,6,9/17/2026,1:00:00 AM,495,500,"0,5",,Kandidat Aktivitas,,riak air kecil
+83,6,9/17/2026,1:00:00 AM,1110,1116,"0,6",,Kandidat Aktivitas,,riak air kecil
+84,6,9/17/2026,1:00:00 AM,1367,1378,"1,1",,Kandidat Aktivitas,,riak air kecil
+85,6,9/17/2026,1:00:00 AM,1393,1397,"0,4",,Kandidat Aktivitas,,riak air kecil
+86,6,9/17/2026,1:00:00 AM,1501,1505,"0,4",,Kandidat Aktivitas,,riak air kecil
+87,6,9/17/2026,1:00:00 AM,1550,1554,"0,4",,Kandidat Aktivitas,,riak air kecil
+88,6,9/17/2026,1:00:00 AM,2955,2959,"0,4",,Kandidat Aktivitas,,riak air kecil
+89,6,9/17/2026,1:00:00 AM,3014,3018,"0,4",,Kandidat Aktivitas,,riak air kecil
+90,6,9/17/2026,1:00:00 AM,3586,3591,"0,5",,Kandidat Aktivitas,,riak air kecil
+91,6,9/17/2026,1:00:00 AM,4689,4695,"0,6",,Kandidat Aktivitas,,riak air kecil
+92,7,9/17/2026,6:45:00 AM,26,30,"0,4",,Kandidat Aktivitas,,riak air kecil
+93,7,9/17/2026,6:45:00 AM,94,97,"0,3",,Kandidat Aktivitas,,riak air kecil
+94,7,9/17/2026,6:45:00 AM,165,173,"0,8",,Kandidat Aktivitas,,muncul beberapa riak kecil
+95,7,9/17/2026,6:45:00 AM,214,219,"0,5",,Kandidat Aktivitas,,riak air kecil
+96,7,9/17/2026,6:45:00 AM,314,320,"0,6",,Kandidat Aktivitas,,riak air kecil
+97,7,9/17/2026,6:45:00 AM,440,443,"0,3",,Kandidat Aktivitas,,riak air kecil
+98,7,9/17/2026,6:45:00 AM,915,920,"0,5",,Kandidat Aktivitas,,riak air kecil
+99,7,9/17/2026,6:45:00 AM,978,983,"0,5",,Kandidat Aktivitas,,riak air kecil
+100,7,9/17/2026,6:45:00 AM,1029,1032,"0,3",,Kandidat Aktivitas,,riak air kecil
+101,7,9/17/2026,6:45:00 AM,1265,1272,"0,7",,Kandidat Aktivitas,,muncul beberapa riak air
+102,7,9/17/2026,6:45:00 AM,1270,1272,"0,2",,Kandidat Aktivitas,,riak air kecil
+103,7,9/17/2026,6:45:00 AM,1284,1289,"0,5",,Kandidat Aktivitas,,muncul beberapa riak air
+104,7,9/17/2026,6:45:00 AM,1649,1653,"0,4",,Kandidat Aktivitas,,muncul beberapa riak air
+105,7,9/17/2026,6:45:00 AM,1666,1674,"0,8",,Kandidat Aktivitas,,riak air kecil
+106,7,9/17/2026,6:45:00 AM,1778,1782,"0,4",,Kandidat Aktivitas,,riak air kecil
+107,7,9/17/2026,6:45:00 AM,1886,1893,"0,7",,Kandidat Aktivitas,,muncul beberapa riak air
+108,7,9/17/2026,6:45:00 AM,1914,1919,"0,5",,Kandidat Aktivitas,,muncul beberapa riak air
+109,7,9/17/2026,6:45:00 AM,2007,2018,"1,1",,Kandidat Aktivitas,,muncul beberapa riak air 
+110,7,9/17/2026,6:45:00 AM,2018,2022,"0,4",,Kandidat Aktivitas,,muncul beberapa riak air
+111,7,9/17/2026,6:45:00 AM,2063,2066,"0,3",,Kandidat Aktivitas,,muncul beberapa riak air
+112,7,9/17/2026,6:45:00 AM,2119,2125,"0,6",,Kandidat Aktivitas,,riak air --> gelombang
+113,7,9/17/2026,6:45:00 AM,2264,2271,"0,7",,Kandidat Aktivitas,,riak air kecil
+114,7,9/17/2026,6:45:00 AM,2316,2322,"0,6",,Kandidat Aktivitas,,riak air --> gelombang
+115,7,9/17/2026,6:45:00 AM,2497,2500,"0,3",,Kandidat Aktivitas,,riak air kecil
+116,7,9/17/2026,6:45:00 AM,3039,3098,"5,9",,Kandidat Aktivitas,,riak air --> gelombang
+117,7,9/17/2026,6:45:00 AM,3528,3534,"0,6",,Kandidat Keresahan,,ikan lompat --> gelombang sedang
+118,7,9/17/2026,6:45:00 AM,3537,3542,"0,5",,Kandidat Keresahan,,ikan lompat --> gelombang sedang
+119,7,9/17/2026,6:45:00 AM,3558,3565,"0,7",,Kandidat Keresahan,,ikan lompat --> gelombang sedang
+120,7,9/17/2026,6:45:00 AM,3841,3845,"0,4",,Kandidat Aktivitas,,riak air kecil
+121,7,9/17/2026,6:45:00 AM,4269,4276,"0,7",,Kandidat Keresahan,,ikan lompat --> gelombang sedang
+122,7,9/17/2026,6:45:00 AM,4329,4335,"0,6",,Kandidat Aktivitas,,riak air --> gelombang
+123,7,9/17/2026,6:45:00 AM,4851,4856,"0,5",,Kandidat Aktivitas,,riak air kecil
+124,7,9/17/2026,6:45:00 AM,4877,4883,"0,6",,Kandidat Keresahan,,ikan lompat --> gelombang sedang
+125,7,9/17/2026,6:45:00 AM,5109,5115,"0,6",,Kandidat Keresahan,,ikan lompat --> gelombang sedang
+126,7,9/17/2026,6:45:00 AM,5324,5330,"0,6",,Kandidat Aktivitas,,riak air --> gelombang
+127,7,9/17/2026,6:45:00 AM,5479,5486,"0,7",,Kandidat Aktivitas,,muncul beebrapa riak air
+128,7,9/17/2026,6:45:00 AM,5587,5596,"0,9",,Kandidat Aktivitas,,muncul beberapa riak air
+129,7,9/17/2026,6:45:00 AM,5711,5716,"0,5",,Kandidat Aktivitas,,riak air kecil
+130,7,9/17/2026,6:45:00 AM,5798,5803,"0,5",,Kandidat Aktivitas,,riak air kecil
+131,7,9/17/2026,6:45:00 AM,5807,5811,"0,4",,Kandidat Aktivitas,,muncul beberapa riak air
+132,9,9/17/2026,1:00:00 PM,6,11,"0,5",,Kandidat Aktivitas,,riak air kecil
+133,9,9/17/2026,1:00:00 PM,245,249,"0,4",,Kandidat Aktivitas,,riak air kecil
+134,9,9/17/2026,1:00:00 PM,412,417,"0,5",,Kandidat Aktivitas,,riak air --> gelombang
+135,9,9/17/2026,1:00:00 PM,492,495,"0,3",,Kandidat Aktivitas,,riak air kecil
+136,9,9/17/2026,1:00:00 PM,692,696,"0,4",,Kandidat Aktivitas,,riak air kecil
+137,9,9/17/2026,1:00:00 PM,759,762,"0,3",,Kandidat Aktivitas,,riak air kecil
+138,9,9/17/2026,1:00:00 PM,784,791,"0,7",,Kandidat Aktivitas,,muncul beberapa riak air kecil
+139,9,9/17/2026,1:00:00 PM,886,897,"1,1",,Kandidat Aktivitas,,muncul beberapa riak air kecil
+140,9,9/17/2026,1:00:00 PM,976,981,"0,5",,Kandidat Aktivitas,,riak air kecil
+141,9,9/17/2026,1:00:00 PM,2063,2068,"0,5",,Kandidat Aktivitas,,riak air kecil
+142,9,9/17/2026,1:00:00 PM,2324,2333,"0,9",,Kandidat Aktivitas,,muncul beberapa riak air kecil
+143,9,9/17/2026,1:00:00 PM,2188,2193,"0,5",,Kandidat Aktivitas,,riak air kecil
+144,9,9/17/2026,1:00:00 PM,3318,3323,"0,5",,Kandidat Aktivitas,,rriak air kecil
+145,9,9/17/2026,1:00:00 PM,3355,3361,"0,6",,Kandidat Aktivitas,,riak air kecil
+146,9,9/17/2026,1:00:00 PM,4301,4304,"0,3",,Kandidat Aktivitas,,riak air kecil
+147,9,9/17/2026,1:00:00 PM,4868,4872,"0,4",,Kandidat Aktivitas,,riak air --> gelombang
+148,9,9/17/2026,1:00:00 PM,4948,4951,"0,3",,Kandidat Aktivitas,,riak air kecil
+149,9,9/17/2026,1:00:00 PM,5218,5221,"0,3",,Kandidat Aktivitas,,riak air kecil
+150,9,9/17/2026,1:00:00 PM,5716,5719,"0,3",,Kandidat Aktivitas,,riak air kecil
+151,9,9/17/2026,1:00:00 PM,5726,5732,"0,6",,Kandidat Aktivitas,,riak air --> gelombang
+152,10,9/17/2026,6:45:00 PM,30,35,"0,5",,Kandidat Aktivitas,,muncul beberapa riak air kecil
+153,10,9/17/2026,6:45:00 PM,98,103,"0,5",,Kandidat Aktivitas,,riak air kecil
+154,10,9/17/2026,6:45:00 PM,105,109,"0,4",,Kandidat Aktivitas,,riak air kecil
+155,10,9/17/2026,6:45:00 PM,147,157,1,,Kandidat Aktivitas,,muncul beberapa riak air kecil
+156,10,9/17/2026,6:45:00 PM,163,167,"0,4",,Kandidat Aktivitas,,riak air kecil
+157,10,9/17/2026,6:45:00 PM,173,177,"0,4",,Kandidat Aktivitas,,riak air kecil
+158,10,9/17/2026,6:45:00 PM,207,211,"0,4",,Kandidat Aktivitas,,riak air --> gelombang
+159,10,9/17/2026,6:45:00 PM,218,223,"0,5",,Kandidat Aktivitas,,riak air --> gelombang
+160,10,9/17/2026,6:45:00 PM,267,270,"0,3",,Kandidat Aktivitas,,riak air --> gelombang
+161,10,9/17/2026,6:45:00 PM,341,344,"0,3",,Kandidat Aktivitas,,riak air --> gelombang
+162,10,9/17/2026,6:45:00 PM,379,386,"0,7",,Kandidat Aktivitas,,muncul beberapa riak air kecil
+163,10,9/17/2026,6:45:00 PM,398,402,"0,4",,Kandidat Aktivitas,,riak air --> gelombang
+164,10,9/17/2026,6:45:00 PM,528,531,"0,3",,Kandidat Aktivitas,,riak air kecil
+165,10,9/17/2026,6:45:00 PM,633,637,"0,4",,Kandidat Aktivitas,,riak air --> gelombang
+166,10,9/17/2026,6:45:00 PM,642,645,"0,3",,Kandidat Aktivitas,,riak air kecil
+167,10,9/17/2026,6:45:00 PM,697,705,"0,8",,Kandidat Aktivitas,,muncul beberapa riak air
+168,10,9/17/2026,6:45:00 PM,765,770,"0,5",,Kandidat Aktivitas,,muncul beberapa riak air
+169,10,9/17/2026,6:45:00 PM,782,792,1,,Kandidat Aktivitas,,muncul beberapa riak air
+170,10,9/17/2026,6:45:00 PM,814,818,"0,4",,Kandidat Aktivitas,,muncul beberapa riak air
+171,10,9/17/2026,6:45:00 PM,820,823,"0,3",,Kandidat Aktivitas,,riak air kecil
+172,10,9/17/2026,6:45:00 PM,919,921,"0,2",,Kandidat Aktivitas,,riak air kecil
+173,10,9/17/2026,6:45:00 PM,989,995,"0,6",,Kandidat Aktivitas,,riak air --> gelombang
+174,10,9/17/2026,6:45:00 PM,1023,1028,"0,5",,Kandidat Aktivitas,,riak air --> gelombang
+175,10,9/17/2026,6:45:00 PM,1034,1038,"0,4",,Kandidat Aktivitas,,riak air kecil
+176,10,9/17/2026,6:45:00 PM,1068,1073,"0,5",,Kandidat Aktivitas,,riak air --> gelombang
+177,10,9/17/2026,6:45:00 PM,1087,1091,"0,4",,Kandidat Aktivitas,,riak air kecil
+178,10,9/17/2026,6:45:00 PM,1176,1180,"0,4",,Kandidat Aktivitas,,riak air kecil
+179,10,9/17/2026,6:45:00 PM,1226,1230,"0,4",,Kandidat Aktivitas,,riak air kecil
+180,10,9/17/2026,6:45:00 PM,1562,1568,"0,6",,Kandidat Aktivitas,,riak air kecil
+181,10,9/17/2026,6:45:00 PM,1622,1628,"0,6",,Kandidat Aktivitas,,muncul beberapa riak air
+182,10,9/17/2026,6:45:00 PM,1711,1716,"0,5",,Kandidat Aktivitas,,riak air --> gelombang
+183,10,9/17/2026,6:45:00 PM,1853,1857,"0,4",,Kandidat Aktivitas,,riak air kecil
+184,10,9/17/2026,6:45:00 PM,1860,1863,"0,3",,Kandidat Aktivitas,,muncul beberapa riak air
+185,10,9/17/2026,6:45:00 PM,2130,2136,"0,6",,Kandidat Aktivitas,,muncul bebeberapa riak air
+186,10,9/17/2026,6:45:00 PM,2141,2157,"1,6",,Kandidat Aktivitas,,riak air kecil
+187,10,9/17/2026,6:45:00 PM,2153,2158,"0,5",,Kandidat Aktivitas,,muncul beberapa riak air
+188,10,9/17/2026,6:45:00 PM,2290,2301,"1,1",,Kandidat Keresahan,,muncul beberapa riak air --> gelombang
+189,10,9/17/2026,6:45:00 PM,2427,2431,"0,4",,Kandidat Aktivitas,,riak air kecil
+190,10,9/17/2026,6:45:00 PM,2487,2489,"0,2",,Kandidat Aktivitas,,riak air kecil
+191,10,9/17/2026,6:45:00 PM,2676,2681,"0,5",,Kandidat Aktivitas,,riak air --> gelombang
+192,10,9/17/2026,6:45:00 PM,2713,2718,"0,5",,Kandidat Aktivitas,,riak air kecil
+193,10,9/17/2026,6:45:00 PM,2786,2790,"0,4",,Kandidat Aktivitas,,muncul beberapa riak air kecil
+194,10,9/17/2026,6:45:00 PM,2808,2813,"0,5",,Kandidat Aktivitas,,muncul bebeberapa riak air kecil
+195,10,9/17/2026,6:45:00 PM,2889,2894,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+196,10,9/17/2026,6:45:00 PM,2971,2977,"0,6",,Kandidat Aktivitas,,muncul beberapa riak air kecil
+197,10,9/17/2026,6:45:00 PM,3025,3029,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+198,10,9/17/2026,6:45:00 PM,3060,3064,"0,4",,Kandidat Aktivitas,,muncul beberapa riak air kecil
+199,10,9/17/2026,6:45:00 PM,3428,3437,"0,9",,Kandidat Aktivitas,,muncul beberapa riak air kecil
+200,10,9/17/2026,6:45:00 PM,3464,3472,"0,8",,Kandidat Aktivitas,,riak air --> gelombang
+201,10,9/17/2026,6:45:00 PM,3551,3557,"0,6",,Kandidat Aktivitas,,riak air --> gelombang
+202,10,9/17/2026,6:45:00 PM,3566,3571,"0,5",,Kandidat Aktivitas,,riak air --> gelombang
+203,10,9/17/2026,6:45:00 PM,3742,3746,"0,4",,Kandidat Aktivitas,,riak air kecil
+204,10,9/17/2026,6:45:00 PM,3791,3795,"0,4",,Kandidat Aktivitas,,riak air kecil
+205,10,9/17/2026,6:45:00 PM,3839,3843,"0,4",,Kandidat Aktivitas,,riak air kecil
+206,10,9/17/2026,6:45:00 PM,4048,4055,"0,7",,Kandidat Aktivitas,,muncul beberapa riak air
+207,10,9/17/2026,6:45:00 PM,4063,4067,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+208,10,9/17/2026,6:45:00 PM,4076,4080,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+209,10,9/17/2026,6:45:00 PM,4141,4145,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+210,10,9/17/2026,6:45:00 PM,4350,4354,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+211,10,9/17/2026,6:45:00 PM,4756,4760,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+212,10,9/17/2026,6:45:00 PM,4817,4820,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+213,10,9/17/2026,6:45:00 PM,4865,4868,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+214,10,9/17/2026,6:45:00 PM,4991,4995,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+215,10,9/17/2026,6:45:00 PM,5091,5097,"0,6",,Kandidat Aktivitas,,muncul riak air kecil
+216,10,9/17/2026,6:45:00 PM,5360,5365,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+217,10,9/17/2026,6:45:00 PM,6018,6022,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+218,11,9/18/2026,1:00:00 AM,44,48,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+219,11,9/18/2026,1:00:00 AM,144,148,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+220,11,9/18/2026,1:00:00 AM,305,311,"0,6",,Kandidat Aktivitas,,riak air --> gelombang
+221,11,9/18/2026,1:00:00 AM,477,479,"0,2",,Kandidat Aktivitas,,muncul riak air kecil
+222,11,9/18/2026,1:00:00 AM,533,537,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+223,11,9/18/2026,1:00:00 AM,805,808,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+224,11,9/18/2026,1:00:00 AM,873,876,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+225,11,9/18/2026,1:00:00 AM,1171,1174,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+226,11,9/18/2026,1:00:00 AM,1240,1247,"0,7",,Kandidat Aktivitas,,riak air --> gelombang
+227,11,9/18/2026,1:00:00 AM,1508,1514,"0,6",,Kandidat Aktivitas,,riak air --> gelombang
+228,11,9/18/2026,1:00:00 AM,1940,1947,"0,7",,Kandidat Aktivitas,,muncul riak air kecil
+229,11,9/18/2026,1:00:00 AM,2093,2097,"0,4",,Kandidat Aktivitas,,riak air --> gelombang
+230,11,9/18/2026,1:00:00 AM,2198,2202,"0,4",,Kandidat Aktivitas,,muncul beberapa riak air
+231,11,9/18/2026,1:00:00 AM,2232,2237,"0,5",,Kandidat Aktivitas,,riak air --> gelombang
+232,11,9/18/2026,1:00:00 AM,2300,2305,"0,5",,Kandidat Aktivitas,,muncul beberapa riak air
+233,11,9/18/2026,1:00:00 AM,2696,2700,"0,4",,Kandidat Aktivitas,,muncul beberapa riak air
+234,11,9/18/2026,1:00:00 AM,3201,3205,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+235,11,9/18/2026,1:00:00 AM,3310,3314,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+236,11,9/18/2026,1:00:00 AM,3594,3598,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+237,11,9/18/2026,1:00:00 AM,3780,3783,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+238,11,9/18/2026,1:00:00 AM,3893,3897,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+239,11,9/18/2026,1:00:00 AM,4341,4345,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+240,11,9/18/2026,1:00:00 AM,4348,4352,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+241,11,9/18/2026,1:00:00 AM,4554,4557,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+242,11,9/18/2026,1:00:00 AM,4595,4598,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+243,11,9/18/2026,1:00:00 AM,4764,4767,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+244,11,9/18/2026,1:00:00 AM,4800,4805,"0,5",,Kandidat Keresahan,,ikan lompat
+245,11,9/18/2026,1:00:00 AM,4853,4856,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+246,11,9/18/2026,1:00:00 AM,4868,4872,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+247,11,9/18/2026,1:00:00 AM,4986,4993,"0,7",,Kandidat Aktivitas,,riak air --> gelombang
+248,11,9/18/2026,1:00:00 AM,5106,5112,"0,6",,Kandidat Aktivitas,,muncul beberapa riak air kecil
+249,11,9/18/2026,1:00:00 AM,5269,5273,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+250,11,9/18/2026,1:00:00 AM,5339,5342,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+251,12,9/18/2026,6:45:00 AM,328,334,"0,6",,Kandidat Aktivitas,,riak air --> gelombang
+252,12,9/18/2026,6:45:00 AM,363,368,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+253,12,9/18/2026,6:45:00 AM,565,570,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+254,12,9/18/2026,6:45:00 AM,814,819,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+255,12,9/18/2026,6:45:00 AM,907,911,"0,4",,Kandidat Keresahan,,ikan lompat
+256,12,9/18/2026,6:45:00 AM,930,935,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+257,12,9/18/2026,6:45:00 AM,961,969,"0,8",,Kandidat Aktivitas,,muncul beberapa riak air kecil
+258,12,9/18/2026,6:45:00 AM,1384,1391,"0,7",,Kandidat Aktivitas,,riak air --> gelombang
+259,12,9/18/2026,6:45:00 AM,1800,1807,"0,7",,Kandidat Aktivitas,,riak air --> gelombang
+260,12,9/18/2026,6:45:00 AM,1987,1993,"0,6",,Kandidat Aktivitas,,riak air --> gelombang
+261,12,9/18/2026,6:45:00 AM,2171,2177,"0,6",,Kandidat Keresahan,,ikan lompat
+262,12,9/18/2026,6:45:00 AM,2342,2349,"0,7",,Kandidat Aktivitas,,muncul beberapa riak air kecil
+263,12,9/18/2026,6:45:00 AM,2517,2523,"0,6",,Kandidat Aktivitas,,riak air --> gelombang
+264,12,9/18/2026,6:45:00 AM,2829,2834,"0,5",,Kandidat Aktivitas,,muncul beberapa riak air
+265,12,9/18/2026,6:45:00 AM,2839,2847,"0,8",,Kandidat Aktivitas,,muncul beberapa riak air
+266,12,9/18/2026,6:45:00 AM,3097,3101,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+267,12,9/18/2026,6:45:00 AM,3103,3105,"0,2",,Kandidat Aktivitas,,muncul riak air kecil
+268,12,9/18/2026,6:45:00 AM,3227,3230,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+269,12,9/18/2026,6:45:00 AM,3541,3547,"0,6",,Kandidat Aktivitas,,riak air --> gelombang
+270,12,9/18/2026,6:45:00 AM,3556,3560,"0,4",,Kandidat Aktivitas,,muncul beberapa riak air
+271,12,9/18/2026,6:45:00 AM,4004,4008,"0,4",,Kandidat Aktivitas,,riak air --> gelombang
+272,12,9/18/2026,6:45:00 AM,4220,4228,"0,8",,Kandidat Keresahan,,riak air --> gelombang
+273,12,9/18/2026,6:45:00 AM,4323,4329,"0,6",,Kandidat Aktivitas,,riak air --> gelombang
+274,12,9/18/2026,6:45:00 AM,4370,4377,"0,7",,Kandidat Aktivitas,,riak air --> gelombang
+275,12,9/18/2026,6:45:00 AM,4380,4386,"0,6",,Kandidat Aktivitas,,riak air --> gelombang
+276,12,9/18/2026,6:45:00 AM,4703,4710,"0,7",,Kandidat Keresahan,,ikan lompat
+277,12,9/18/2026,6:45:00 AM,4714,4721,"0,7",,Kandidat Aktivitas,,riak air --> gelombang
+278,12,9/18/2026,6:45:00 AM,4823,4829,"0,6",,Kandidat Aktivitas,,muncul riak air kecil
+279,12,9/18/2026,6:45:00 AM,5107,5113,"0,6",,Kandidat Aktivitas,,riak air --> gelombang
+280,13,9/18/2026,1:00:00 PM,93,96,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+281,13,9/18/2026,1:00:00 PM,189,193,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+282,13,9/18/2026,1:00:00 PM,211,216,"0,5",,Kandidat Keresahan,,ikan lompat
+283,13,9/18/2026,1:00:00 PM,293,298,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+284,13,9/18/2026,1:00:00 PM,316,319,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+285,13,9/18/2026,1:00:00 PM,334,338,"0,4",,Kandidat Keresahan,,ikan lompat
+286,13,9/18/2026,1:00:00 PM,342,347,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+287,13,9/18/2026,1:00:00 PM,364,371,"0,7",,Kandidat Keresahan,,ikan lompat
+288,13,9/18/2026,1:00:00 PM,423,427,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+289,13,9/18/2026,1:00:00 PM,443,448,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+290,13,9/18/2026,1:00:00 PM,483,491,"0,8",,Kandidat Keresahan,,muncul beberapa riak --> gelombang
+291,13,9/18/2026,1:00:00 PM,520,525,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+292,13,9/18/2026,1:00:00 PM,536,540,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+293,13,9/18/2026,1:00:00 PM,562,567,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+294,13,9/18/2026,1:00:00 PM,611,616,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+295,13,9/18/2026,1:00:00 PM,635,639,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+296,13,9/18/2026,1:00:00 PM,694,698,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+297,13,9/18/2026,1:00:00 PM,753,756,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+298,13,9/18/2026,1:00:00 PM,772,777,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+299,13,9/18/2026,1:00:00 PM,779,783,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+300,13,9/18/2026,1:00:00 PM,795,799,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+301,13,9/18/2026,1:00:00 PM,810,820,1,,Kandidat Aktivitas,,muncul beberapa riak air kecil
+302,13,9/18/2026,1:00:00 PM,832,835,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+303,13,9/18/2026,1:00:00 PM,881,886,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+304,13,9/18/2026,1:00:00 PM,921,925,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+305,13,9/18/2026,1:00:00 PM,929,936,"0,7",,Kandidat Keresahan,,muncul beberapa riak air
+306,13,9/18/2026,1:00:00 PM,972,977,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+307,13,9/18/2026,1:00:00 PM,992,996,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+308,13,9/18/2026,1:00:00 PM,1141,1146,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+309,13,9/18/2026,1:00:00 PM,1165,1169,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+310,13,9/18/2026,1:00:00 PM,1182,1191,"0,9",,Kandidat Keresahan,,ikan lompat
+311,13,9/18/2026,1:00:00 PM,1239,1244,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+312,13,9/18/2026,1:00:00 PM,1321,1331,1,,Kandidat Aktivitas,,muncul beberapa riak air
+313,13,9/18/2026,1:00:00 PM,1416,1421,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+314,13,9/18/2026,1:00:00 PM,1444,1449,"0,5",,Kandidat Aktivitas,,riak air --> gelombang
+315,13,9/18/2026,1:00:00 PM,1470,1474,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+316,13,9/18/2026,1:00:00 PM,1503,1508,"0,5",,Kandidat Aktivitas,,muncul beberapa riak air
+317,13,9/18/2026,1:00:00 PM,1634,1639,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+318,13,9/18/2026,1:00:00 PM,1644,1648,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+319,13,9/18/2026,1:00:00 PM,1658,1662,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+320,13,9/18/2026,1:00:00 PM,1711,1716,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+321,13,9/18/2026,1:00:00 PM,1805,1808,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+322,13,9/18/2026,1:00:00 PM,1813,1817,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+323,13,9/18/2026,1:00:00 PM,2098,2103,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+324,13,9/18/2026,1:00:00 PM,2116,2120,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+325,13,9/18/2026,1:00:00 PM,2154,2159,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+326,13,9/18/2026,1:00:00 PM,2206,2210,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+327,13,9/18/2026,1:00:00 PM,2266,2270,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+328,13,9/18/2026,1:00:00 PM,2301,2306,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+329,13,9/18/2026,1:00:00 PM,2374,2377,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+330,13,9/18/2026,1:00:00 PM,2389,2394,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+331,13,9/18/2026,1:00:00 PM,2490,2496,"0,6",,Kandidat Aktivitas,,muncul riak air kecil
+332,13,9/18/2026,1:00:00 PM,2608,2616,"0,8",,Kandidat Aktivitas,,muncul beberapa riak air
+333,13,9/18/2026,1:00:00 PM,2779,2783,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+334,13,9/18/2026,1:00:00 PM,2986,2989,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+335,13,9/18/2026,1:00:00 PM,3158,3163,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+336,13,9/18/2026,1:00:00 PM,3187,3191,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+337,13,9/18/2026,1:00:00 PM,3452,3455,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+338,13,9/18/2026,1:00:00 PM,3471,3476,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+339,13,9/18/2026,1:00:00 PM,3520,3525,"0,5",,Kandidat Keresahan,,ikan lompat
+340,13,9/18/2026,1:00:00 PM,3720,3728,"0,8",,Kandidat Aktivitas,,muncul beberapa riak air
+341,13,9/18/2026,1:00:00 PM,3737,3741,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+342,13,9/18/2026,1:00:00 PM,3774,3778,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+343,13,9/18/2026,1:00:00 PM,3823,3827,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+344,13,9/18/2026,1:00:00 PM,3830,3836,"0,6",,Kandidat Aktivitas,,muncul beberapa riak air
+345,13,9/18/2026,1:00:00 PM,4055,4058,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+346,13,9/18/2026,1:00:00 PM,4176,4178,"0,2",,Kandidat Aktivitas,,muncul riak air kecil
+347,13,9/18/2026,1:00:00 PM,4217,4221,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+348,13,9/18/2026,1:00:00 PM,4231,4236,"0,5",,Kandidat Keresahan,,ikan lompat
+349,13,9/18/2026,1:00:00 PM,4251,4255,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+350,13,9/18/2026,1:00:00 PM,4293,4298,"0,5",,Kandidat Aktivitas,,muncul riak air kecil
+351,13,9/18/2026,1:00:00 PM,4578,4582,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+352,13,9/18/2026,1:00:00 PM,4636,4640,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
+353,13,9/18/2026,1:00:00 PM,4878,4881,"0,3",,Kandidat Aktivitas,,muncul riak air kecil
+354,13,9/18/2026,1:00:00 PM,5339,5343,"0,4",,Kandidat Aktivitas,,muncul riak air kecil
